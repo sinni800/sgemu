@@ -15,13 +15,6 @@ func OnChat(c *GClient, p *C.Packet) {
 	p.ReadByte() //type?
 	text := p.ReadString()
 
-	//Help Text
-	//packet := C.NewPacket2(30 + len(text))
-	//packet.WriteHeader(CSM_CHAT)
-	//packet.WriteByte(0x15)
-	//packet.WriteString(fmt.Sprintf("[%s] %s", c.Player.Name, text))
-	//packet.Write([]byte{0x46, 0xFA, 0xC8}) //Color
-
 	SendNormalChat(c, text)
 }
 

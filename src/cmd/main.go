@@ -7,16 +7,16 @@ import (
 	LS "LoginServer"
 	GS "GameServer"
 	"log" 
-)        
-     
+)          
+      
 func main() {
+	defer OnClose()
+	
 	log.SetFlags(log.Ltime | log.Lshortfile)
 	log.SetPrefix("[Log]")
-
-	if !D.InitializeDatabase() {
-		log.Println("Shutting down..")
-		return
-	}
+ 
+	D.InitializeDatabase()
+	D.CreateDatabase()
 	
 	D.LoadData()  
    
@@ -27,6 +27,15 @@ func main() {
 	 
 	CMD()
 } 
+
+func OnClose() {
+	if x := recover(); x != nil {
+		log.Println(x)
+	} 
+	cmd := ""
+	fmt.Println("Press enter to quit...")
+	fmt.Scanln(&cmd)
+}
  
 func CMD() {
 	for {
@@ -34,15 +43,10 @@ func CMD() {
 		fmt.Scanln(&cmd)
 		switch cmd {
 		case "exit":
-			OnClose()
 			return
 		case "cleardb":
 			D.ClearDatabase()
 			log.Println("Database has been cleared!")
 		}
 	}
-}
-
-func OnClose() {
-
 }

@@ -395,3 +395,21 @@ func (p *Packet) oReadString(size int) (pValue string) {
 	p.Index += size
 	return pValue
 }
+
+func (p *Packet) WriteColor(c *Color) {
+	p.WCheck(3)
+	i := p.Index
+	p.Buffer[i] = c.R
+	p.Buffer[i+1] = c.G
+	p.Buffer[i+2] = c.B
+	p.Index = i+3
+}
+
+func (p *Packet) ReadColor() *Color{
+	if !p.RCheck(3) {
+		panic("Reading outside of the packet!")
+	}
+	i := p.Index
+	p.Index = i+3
+	return NColor(p.Buffer[i],p.Buffer[i+1],p.Buffer[i+2])
+}

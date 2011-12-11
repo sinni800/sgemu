@@ -13,44 +13,43 @@ var (
 	CPlayers *mgo.Collection
 )
 
-func InitializeDatabase() bool {
+func InitializeDatabase() {
 	log.Printf("Connecting to MongoDB...\n")
 	session, err := mgo.Mongo("localhost")
 	if err != nil {
-		log.Println(err)
-		return false
+		panic(err)
 	}
 	session.SetSyncTimeout(30 * 1000000000)
 	err = session.Ping()
 	if err != nil {
-		log.Println(err)
-		return false
+		panic(err)
 	}
 	log.Println("Connected!")
 	Session = session
+}
 
-	c := session.DB("SGEmu").C("Users")
-	p := session.DB("SGEmu").C("Players")
+func CreateDatabase() {
+	c := Session.DB("SGEmu").C("Users")
+	p := Session.DB("SGEmu").C("Players")
 	CPlayers = &p
 	CUsers = &c
 	index := mgo.Index{
-		Key:        []string{"id", "user", "email"},
+		Key:        []string{"_id", "user", "email"},
 		Unique:     true,
 		DropDups:   true,
 		Background: true,
 		Sparse:     true,
 	}
-	err = CUsers.EnsureIndex(index)
+	err := CUsers.EnsureIndex(index)
 	if err != nil {
-		log.Println(err)
-		return false
+		panic(err)
 	}
 
 	n, _ := CUsers.Find(nil).Count()
 	log.Printf("%d Users found!\n", n)
 
 	index = mgo.Index{
-		Key:        []string{"id", "userid"},
+		Key:        []string{"_id", "userid"},
 		Unique:     true,
 		DropDups:   true,
 		Background: true,
@@ -58,13 +57,9 @@ func InitializeDatabase() bool {
 	}
 	err = CPlayers.EnsureIndex(index)
 	if err != nil {
-		log.Println(err)
-		return false
+		panic(err)
 	}
-
-	return true
 }
-
 
 func ClearDatabase() {
 	if Session != nil {
@@ -76,3 +71,25 @@ func ClearDatabase() {
 func NewID() string {
 	return hex.EncodeToString([]byte(string(bson.NewObjectId())))
 }
+
+func NewIID(c *mgo.Collection) uint32 {
+	type dummyID struct {
+		Seq uint32
+	}
+	
+	d := dummyID{0}
+ 
+	change := mgo.Change{Update: bson.M{"$inc": bson.M{"seq": 1}}, New: true}
+	e := c.Find(bson.M{"_id":"users"}).Modify(change,&d)
+	if e != nil { panic(e) }
+	return d.Seq
+}
+ 
+func AddAutoIncrementingField(c *mgo.Collection) {
+	i,e := c.Find(bson.M{"_id":"users"}).Count()
+	if e != nil { panic(e) }
+	if i > 0 { return }
+	c.Insert(bson.M{"_id":"users", "seq":uint32(0)})
+}
+
+

@@ -12,11 +12,24 @@ func SendNormalChat(c *GClient, text string) {
 	packet.WriteByte(0)
 	packet.WriteUInt32(c.ID)
 	packet.WriteString(text)
-	packet.Write([]byte{0xFF, 0x00, 0x00}) //Color
+	packet.WriteColor(C.Red) 
 	packet.WriteByte(0)
 
 	Server.Run.Funcs <- func() { c.Map.Send(packet) }
 }  
+
+func SendHelpChat(c *GClient, text string) {	
+	c.Send(HelpChatPacket(text))
+}
+
+func HelpChatPacket(text string) (*C.Packet){
+	packet := C.NewPacket2(30 + len(text))
+	packet.WriteHeader(CSM_CHAT)
+	packet.WriteByte(0x15)
+	packet.WriteString(text)
+	packet.WriteColor(C.HelpColor) 
+	return packet
+}
 
 func PlayerAppear(c *GClient) *C.Packet {
 	packet := C.NewPacket2(44)
@@ -29,7 +42,7 @@ func PlayerAppear(c *GClient) *C.Packet {
 	packet.WriteUInt32(11)
 	 
 	//
-	c.Log().Printf("%d %d", c.Player.X, c.Player.Y)
+	//c.Log().Printf("%d %d", c.Player.X, c.Player.Y)
 	//
 	
 	packet.WriteInt16(c.Player.X)
