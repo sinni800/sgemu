@@ -7,14 +7,17 @@ import (
 	LS "LoginServer"
 	GS "GameServer"
 	"log" 
+	"runtime"
 )          
       
 func main() {
 	defer OnClose()
 	
+	runtime.GOMAXPROCS(5)
+	
 	log.SetFlags(log.Ltime | log.Lshortfile)
 	log.SetPrefix("[Log]")
- 
+	
 	D.InitializeDatabase()
 	D.CreateDatabase()
 	
@@ -25,16 +28,22 @@ func main() {
 	C.Start(LS.Server, "LoginServer", "127.0.0.1", 3000)
 	C.Start(GS.Server, "GameServer", "127.0.0.1", 13010)    
 	 
-	CMD()
-} 
-
+  
+	   
+	CMD()  
+}   
+ 
 func OnClose() {
-	if x := recover(); x != nil {
-		log.Println(x)
-	} 
-	cmd := ""
-	fmt.Println("Press enter to quit...")
-	fmt.Scanln(&cmd)
+	defer func() {
+		if x := recover(); x != nil {
+			log.Println(x)
+		}
+			cmd := ""
+			fmt.Println("Press enter to quit...")
+			fmt.Scanln(&cmd)
+	}() 
+	
+	GS.Server.OnShutdown()
 }
  
 func CMD() {

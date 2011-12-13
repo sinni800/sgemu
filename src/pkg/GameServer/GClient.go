@@ -185,7 +185,7 @@ func (client *GClient) SendWelcome() {
 	packet = C.NewPacket2(13)
 	packet.WriteHeader(0x0E)
 	packet.Write([]byte{0x05, 0x00})
-	client.Send(packet)
+	client.Send(packet) 
 
 	packet = C.NewPacket2(21)
 	packet.WriteHeader(0x0E)

@@ -3,6 +3,7 @@ package GameServer
 import (
 	"Core"
 	"net"
+	"Data"
 )
 
 type GamePacketFunc func(c *GClient, p *Core.Packet)
@@ -18,6 +19,7 @@ type GServer struct {
 	IDG  *Core.IDGen
 	Run  *Core.Runner
 	DBRun  *Core.Runner
+	Sdr		*Core.Scheduler
 }
 
 func (serv *GServer) OnSetup() {
@@ -29,6 +31,9 @@ func (serv *GServer) OnSetup() {
 	serv.Run.Start()
 	serv.DBRun = Core.NewRunner()
 	serv.DBRun.Start()
+	serv.Sdr = Core.NewScheduler()
+	serv.Sdr.Start()
+	serv.Sdr.AddMin(func() {serv.SavePlayers()}, 1)
 }
 
 func init() {
@@ -37,8 +42,37 @@ func init() {
 	Handler[CM_PING] = OnPing
 	Handler[CSM_MOVE] = OnMove
 	Handler[CM_PROFILE] = OnProfileRequest 
+	Handler[CM_LEAVE_PROFILE] = OnProfileLeave
 	Handler[CM_SHOP_REQUEST] = OnShopRequest
-} 
+}  
+
+func (serv *GServer) SavePlayers() {
+	serv.Log.Printf("Saving Players...")
+	for _,m := range serv.Maps {
+		m.Run.Add(func() {
+			for _,c := range m.Players {
+					serv.DBRun.Add(func() {Data.SavePlayer(c.Player)})
+			}
+		})
+	}
+	serv.Sdr.AddMin(func() {serv.SavePlayers()}, 1)
+}
+
+func (serv *GServer) OnShutdown() {
+	serv.Run.StopAndWait()
+	serv.Log.Printf("GServer runner stopped!")
+	serv.DBRun.StopAndWait()
+	serv.Log.Printf("GServer DB runner stopped!")
+	for id,m := range serv.Maps {
+		m.Run.StopAndWait() 
+		serv.Log.Printf("Mapid %d runner stopped!", id)
+		for _,c := range m.Players {
+			Data.SavePlayer(c.Player)
+		}
+	}
+	serv.Server.Socket.Close()
+	serv.Log.Printf("GServer socket closed!")
+}
 
 func (serv *GServer) OnConnect(socket *net.TCPConn) {
 	serv.Log.Printf("Client connected to GServer!")

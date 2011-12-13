@@ -115,5 +115,77 @@ func SendShopInformation(c *GClient) {
 }
 
 func ProfileInfo(c *GClient, p *Player) *C.Packet { 
-	return nil
+	c.Log().Println("ProfileInfo")
+	
+	packet := C.NewPacket2(200)
+	 
+	packet.WriteHeader(SM_PROFILE)
+	if (p != c.Player) {
+		packet.WriteByte(1)
+		packet.WriteString(p.Name)
+		packet.WriteByte(p.Avatar) 
+		packet.WriteInt32(0)
+		packet.WriteInt16(-1)
+	} else {
+		packet.WriteByte(0)
+	}
+	
+	
+	packet.WriteInt16(0)
+	
+	packet.WriteByte(1)
+	packet.WriteString("a")
+	packet.WriteByte(0xc)
+	packet.WriteByte(1)
+	packet.WriteInt32(0)
+	packet.WriteInt32(1)
+	   
+	packet.WriteByte(2)
+	packet.WriteString("b")
+	packet.WriteByte(0xc)
+	packet.WriteByte(1)
+	packet.WriteInt32(0)
+	packet.WriteInt32(1)
+	
+	packet.WriteByte(3)
+	packet.WriteString("c")
+	packet.WriteByte(0xc)
+	packet.WriteByte(1)
+	packet.WriteInt32(0)
+	packet.WriteInt32(1)
+	
+	packet.WriteByte(4)
+	packet.WriteString("d")
+	packet.WriteByte(0xc)
+	packet.WriteByte(1)
+	packet.WriteInt32(0)
+	packet.WriteInt32(1) 
+	   
+	packet.WriteByte(0)
+	packet.WriteInt16(0)
+	
+	packet.WriteInt16(123) //prestige
+	packet.WriteInt32(0)
+	   
+	packet.WriteInt32(2000)
+	packet.WriteByte(0)
+	
+	packet.WriteInt16(0) //record
+	packet.WriteInt16(1) //record total
+	 
+	if (p == c.Player) {
+		packet.WriteByte(p.Tactics)
+		packet.WriteByte(p.Clout)
+		packet.WriteByte(p.Education)
+		packet.WriteByte(p.MechApt)
+		packet.WriteUInt16(p.Points)   
+	} else {
+		packet.WriteByte(0)
+		packet.WriteInt16(0)
+	}
+	
+	packet.WriteString("Troololo")
+	packet.WriteByte(0) 
+	
+	return packet
 }

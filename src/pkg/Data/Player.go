@@ -14,6 +14,8 @@ type Player struct {
 	Clout     byte
 	Education byte
 	MechApt   byte
+	
+	Points	uint16
 
 	Map  int16 
 	X, Y int16
@@ -29,19 +31,19 @@ func RegisterPlayer(plyaer *Player) {
 	if e != nil {
 		panic(e)
 	}
-}
-
+} 
+  
 func GetPlayerByUserID(id string) *Player {
 	p := new(Player)
 	e := CPlayers.Find(M{"userid": id}).One(p)
 	if e != nil {
 		panic(e)
 	}
-	return p
-}
+	return p 
+} 
 
 func SavePlayer(Player *Player) {
-	e := CPlayers.Update(M{"_id": Player.ID}, M{"$set": M{"x": Player.X, "y": Player.Y}} )
+	e := CPlayers.Update(M{"_id": Player.ID}, Player )
 	if e != nil {
 		panic(e) 
 	}

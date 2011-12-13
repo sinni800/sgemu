@@ -85,5 +85,30 @@ func OnShopRequest(c *GClient, p *C.Packet) {
 
 func OnProfileRequest(c *GClient, p *C.Packet) {
 	p.ReadByte()
-	p.ReadInt32()
+	id := p.ReadUInt32()
+	if (id == c.ID) {
+		c.Send(ProfileInfo(c,c.Player)) 
+	} else {
+		c.Map.Run.Add(func() { 
+		 	player, exists := c.Map.Players[id]
+		 	if exists {
+		 		c.Send(ProfileInfo(c,player.Player)) 
+		 	} 
+		})
+	}
+}
+
+func OnProfileLeave(c *GClient, p *C.Packet) {
+	t := p.ReadByte()
+	cl := p.ReadByte()
+	e := p.ReadByte()
+	m := p.ReadByte()
+	totalp := uint16(t+cl+e+m)
+	if totalp <= c.Player.Points {
+		c.Player.Points -= totalp
+		c.Player.Tactics += t
+		c.Player.Clout += cl
+		c.Player.Education += e
+		c.Player.MechApt += m
+	}
 }

@@ -12,20 +12,20 @@ func NewIDG() *IDGen {
  
 func NewIDG2(size int) *IDGen {
 	g := new(IDGen)
-	g.cGen = make(chan uint32, size+10)
-	g.lastNumber = 0
+	g.cGen = make(chan uint32, size)
+	g.lastNumber = 1
 	go g.Gen()
 	return g
-} 
+}  
 
 func (g *IDGen) Gen() {
-	for i := 0; i < cap(g.cGen)-10; i++ {
+	for i := 0; i < cap(g.cGen); i++ {
 		g.cGen <- g.lastNumber
 		g.lastNumber++
 	} 
 }
 
-
+ 
 func (g *IDGen) Next() (id uint32, full bool) {
 	select {
 		case id = <-g.cGen:
