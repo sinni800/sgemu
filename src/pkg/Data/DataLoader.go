@@ -13,6 +13,12 @@ var (
 	Gamedata	= new(Data)
 	Shopdata	= new(ShopData)
 	Units		= make(map[string]*UnitData)
+	Divisions 	= map[string]DType{"Infantry":Infantry, 
+									"Mobile":Mobile,
+									"Aviation":Aviation,
+									"Organic":Organic,
+									"":Other}
+	
 )
   
 type Data struct {
@@ -44,6 +50,7 @@ type UnitData struct {
 	U2 string `xml:"attr"`
 	Name string
 	Description string
+	DType DType
 } 
   
 type ShopData struct { 
@@ -71,7 +78,12 @@ func LoadData() {
 	} 
 	
 	for _,group := range Gamedata.Groups {
+		d,e := Divisions[group.Division]
+		if !e {
+			d = Other
+		}
 		for _,unit := range group.Units {
+			unit.DType = d
 			Units[unit.Name] = unit
 		} 
 	}

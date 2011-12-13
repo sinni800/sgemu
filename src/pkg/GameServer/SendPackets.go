@@ -77,12 +77,14 @@ func SendShopInformation(c *GClient) {
 			packet.WriteByte(byte(len(units)))
 			packet.WriteByte(1)
 		}
-		packet.WriteByte(c.Player.Influence())
-		
+
 		u, exist := Units[units[i].Name]
+		
 		if exist {
+			packet.WriteByte(c.Player.Divisions[u.DType].Influence(c.Player))
 			packet.WriteByte(u.Influence)
 		} else {
+			packet.WriteByte(0)
 			packet.WriteByte(0)
 		}
 		packet.WriteString(units[i].Name)
@@ -132,46 +134,27 @@ func ProfileInfo(c *GClient, p *Player) *C.Packet {
 	
 	
 	packet.WriteInt16(0)
-	
-	packet.WriteByte(1)
-	packet.WriteString("a")
-	packet.WriteByte(0xc)
-	packet.WriteByte(1)
-	packet.WriteInt32(0)
-	packet.WriteInt32(1)
+	 
+	for i := 0;i<4;i++ {	
+		packet.WriteByte(p.Divisions[i].Level)
+		packet.WriteString(p.Divisions[i].Rank)
+		packet.WriteByte(0x0c)
+		packet.WriteByte(1)
+		packet.WriteUInt32(p.Divisions[i].XP)
+		packet.WriteUInt32(p.Divisions[i].TotalXP()) 
+	}
 	   
-	packet.WriteByte(2)
-	packet.WriteString("b")
-	packet.WriteByte(0xc)
-	packet.WriteByte(1)
-	packet.WriteInt32(0)
-	packet.WriteInt32(1)
+	packet.WriteByte(p.Reincatnation) //Reincatnation
 	
-	packet.WriteByte(3)
-	packet.WriteString("c")
-	packet.WriteByte(0xc)
-	packet.WriteByte(1)
-	packet.WriteInt32(0)
-	packet.WriteInt32(1)
+	packet.WriteUInt32(p.Prestige) //prestige
 	
-	packet.WriteByte(4)
-	packet.WriteString("d")
-	packet.WriteByte(0xc)
-	packet.WriteByte(1)
-	packet.WriteInt32(0)
-	packet.WriteInt32(1) 
-	   
-	packet.WriteByte(0)
-	packet.WriteInt16(0)
+	packet.WriteUInt32(p.Honor) //honor
+	packet.WriteUInt32(p.TotalHonor()) //honor total
+	  
+	packet.WriteByte(0)  //Medal
 	
-	packet.WriteInt16(123) //prestige
-	packet.WriteInt32(0)
-	   
-	packet.WriteInt32(2000)
-	packet.WriteByte(0)
-	
-	packet.WriteInt16(0) //record
-	packet.WriteInt16(1) //record total
+	packet.WriteUInt16(p.RecordWon) //record
+	packet.WriteUInt16(p.RecordLost) //record total
 	 
 	if (p == c.Player) {
 		packet.WriteByte(p.Tactics)

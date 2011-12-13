@@ -97,7 +97,7 @@ func OnRegisterDone(c *LClient, p *C.Packet) {
 	c.Log().Printf("OnRegisterDone: % #X\n", p.Buffer)
 	if c.TempUser != nil {
 
-		player := new(D.Player)
+		player := D.NewPlayer()
 		player.Faction = p.ReadInt32()
 		player.Avatar = p.ReadByte()
 		p.RSkip(1) //avatar twice
