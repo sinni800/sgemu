@@ -51,7 +51,7 @@ func OnPlanetDataRequest(c *LClient, p *C.Packet) {
 	p.WriteByte(2) //look
 	p.WriteByte(7)
 	p.WriteInt32(0)
-	p.WSkip(3)               //angle 3 bytes float -_- fml 
+	p.WSkip(3)               //angle 3 bytes (x,y,z) rotation 
 	p.WriteInt16(100)        //radius
 	p.WriteInt16(100)        //radius
 	p.WriteInt32(3 * 100000) //location
@@ -64,7 +64,7 @@ func OnPlanetDataRequest(c *LClient, p *C.Packet) {
 
 	p.WriteInt16(0) //default planet
 
-	c.Send(p)
+	c.Send(p) 
 }
 
 func OnRegister(c *LClient, p *C.Packet) {

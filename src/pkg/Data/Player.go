@@ -46,13 +46,23 @@ type Division struct {
 	Rank  string
 	XP    uint32
 }
-
+ 
 func (d *Division) Influence(p *Player) byte {
 	return (p.Clout / 2) + d.Level
 }
 
 func (d *Division) TotalXP() uint32{
-	return uint32(d.Level) * 10
+	level3 := uint32(d.Level) * uint32(d.Level) * uint32(d.Level);
+	if (d.Level >= 49) {
+		return uint32((float32(1.5) * float32(level3)) * float32(d.Level - 45))
+	} else {
+		return 6 * level3
+	}
+	return 0
+}
+
+func (p *Player) MaxUnits() byte{
+	return 48 + (p.Tactics/20)
 }
 
 func (d *Player) TotalHonor() uint32{
@@ -64,10 +74,10 @@ func NewPlayer() *Player {
 	p.Points = 0
 
 	p.Divisions = make([]Division, 4)
-	p.Divisions[Infantry] = Division{Infantry, 1, "Infantry", 0}
-	p.Divisions[Mobile] = Division{Mobile, 1, "Mobile" , 0}
-	p.Divisions[Aviation] = Division{Aviation, 1, "Aviation", 0}
-	p.Divisions[Organic] = Division{Organic, 1, "Organic", 0}
+	p.Divisions[Infantry] = Division{Infantry, 1, "", 0}
+	p.Divisions[Mobile] = Division{Mobile, 1, "" , 0}
+	p.Divisions[Aviation] = Division{Aviation, 1, "", 0}
+	p.Divisions[Organic] = Division{Organic, 1, "", 0}
 
 	//Note: set default map and position
 

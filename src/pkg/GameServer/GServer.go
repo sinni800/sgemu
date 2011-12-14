@@ -28,11 +28,12 @@ func (serv *GServer) OnSetup() {
 	serv.IDG = Core.NewIDG()
 	serv.Maps[0] = NewMap()
 	serv.Run = Core.NewRunner()
-	serv.Run.Start()
 	serv.DBRun = Core.NewRunner()
-	serv.DBRun.Start()
 	serv.Sdr = Core.NewScheduler()
+	serv.Run.Start()
+	serv.DBRun.Start()
 	serv.Sdr.Start()
+	
 	serv.Sdr.AddMin(func() {serv.SavePlayers()}, 1)
 }
 

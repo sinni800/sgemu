@@ -19,12 +19,23 @@ var (
 									"Organic":Organic,
 									"":Other}
 	
+	Ranks		= make(map[byte]*RankData)
+	
 )
   
 type Data struct {
 	XMLName xml.Name `xml:"data"`
 	Groups []*Group	`xml:"unitslist>group"`
+	Ranks  []*RankData	`xml:"rankslist>rank"`
 } 
+
+type RankData struct {
+	Level byte `xml:"attr"`
+	Infantry string `xml:"attr"`
+	Mobile string `xml:"attr"`
+	Aviation string `xml:"attr"`
+	Organic string `xml:"attr"`
+}
    
 type Group struct { 
 	XMLName xml.Name `xml:"group"`
@@ -44,7 +55,7 @@ type UnitData struct {
 	Speed string `xml:"attr"`
 	UnitType string `xml:"attr"`
 	Slots string `xml:"attr"`
-	Max_Weight string `xml:"attr"`
+	Max_Weight uint16 `xml:"attr"`
 	ViewType string `xml:"attr"`
 	U1 string `xml:"attr"`
 	U2 string `xml:"attr"`
@@ -70,7 +81,7 @@ type ShopUnit struct {
 func LoadData() {
 	f, e := os.Open(dataPath)
 	if e != nil {
-		panic(e) 
+		panic(e)  
 	} 
 	e = xml.Unmarshal(f, Gamedata)
 	if e != nil {  
@@ -86,6 +97,10 @@ func LoadData() {
 			unit.DType = d
 			Units[unit.Name] = unit
 		} 
+	}
+	
+	for _,rank := range Gamedata.Ranks {
+		Ranks[rank.Level] = rank
 	}
 	
 	f.Close()

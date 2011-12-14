@@ -16,11 +16,11 @@ var (
 	Closing = false
 )    
       
-func main() {
+func main() { 
 	defer OnClose()
 	     
 	runtime.GOMAXPROCS(5)
-	 
+	  
 	log.SetFlags(log.Ltime | log.Lshortfile)
 	log.SetPrefix("[Log]") 
 	 
@@ -33,8 +33,8 @@ func main() {
 	GS.Server = new(GS.GServer)
 	C.Start(LS.Server, "LoginServer", "127.0.0.1", 3000)
 	C.Start(GS.Server, "GameServer", "127.0.0.1", 13010)    
-	 
-  	go ListenSignals()
+	  
+  	go ListenSignals() 
 	   
 	CMD()  
 }     
@@ -46,21 +46,23 @@ func ListenSignals() {
 			return
 	}  
 } 
- 
+  
 func OnClose() {
 	if Closing { return }; Closing = true
 	
 	defer func() {
 		if x := recover(); x != nil {
-			log.Println(x)
+			log.Printf("%v\n", x)
 		}   
-			cmd := ""
-			fmt.Println("Press enter to quit...")
-			fmt.Scanln(&cmd)
-			os.Exit(0)
+		cmd := ""
+		fmt.Println("Press enter to quit...")
+		fmt.Scanln(&cmd)
+		os.Exit(0)
 	}()  
 	
-	GS.Server.OnShutdown()
+	if GS.Server != nil {
+		GS.Server.OnShutdown()
+	}
 }
  
 func CMD() {

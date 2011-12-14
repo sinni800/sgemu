@@ -137,7 +137,24 @@ func ProfileInfo(c *GClient, p *Player) *C.Packet {
 	 
 	for i := 0;i<4;i++ {	
 		packet.WriteByte(p.Divisions[i].Level)
-		packet.WriteString(p.Divisions[i].Rank)
+		if p.Divisions[i].Rank != "" {
+			packet.WriteString(p.Divisions[i].Rank) //Custom rank
+		} else {
+			switch i {
+				case 0:
+					packet.WriteString(Ranks[p.Divisions[i].Level].Infantry)
+					break;
+				case 1:
+					packet.WriteString(Ranks[p.Divisions[i].Level].Mobile)
+					break;
+				case 2:
+					packet.WriteString(Ranks[p.Divisions[i].Level].Aviation)
+					break;
+				case 3:
+					packet.WriteString(Ranks[p.Divisions[i].Level].Organic)
+					break;
+			}
+		}
 		packet.WriteByte(0x0c)
 		packet.WriteByte(1)
 		packet.WriteUInt32(p.Divisions[i].XP)
