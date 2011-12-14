@@ -27,6 +27,27 @@ func OnPing(c *GClient, p *C.Packet) {
 	c.Send(packet)
 }
 
+func OnGameEnter(c *GClient, p *C.Packet) {
+	typ := p.ReadByte()
+	switch typ {
+		case 1:
+			packet := C.NewPacket2(21)
+			packet.WriteHeader(CSM_GAME_ENTER)
+			packet.WriteByte(typ)
+			packet.WriteInt32(p.ReadInt32())
+			packet.WriteInt32(0)
+			packet.WriteByte(0)
+			c.Send(packet)		
+		case 2:
+			packet := C.NewPacket2(17)
+			packet.WriteHeader(CSM_GAME_ENTER)
+			packet.WriteByte(4)
+			packet.WriteByte(1)
+			packet.WriteInt32(0)
+			c.Send(packet)		
+	}
+}	
+
 func OnMove(c *GClient, p *C.Packet) {
 
 	p.RSkip(6)

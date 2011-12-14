@@ -186,19 +186,8 @@ func (client *GClient) SendWelcome() {
 	packet.WriteHeader(0x0E)
 	packet.Write([]byte{0x05, 0x00})
 	client.Send(packet) 
-
-	packet = C.NewPacket2(21)
-	packet.WriteHeader(0x0E)
-	packet.Write([]byte{0x01, 0x0E, 0x14, 0xFC, 0x50, 0x05, 0x20, 0xB7, 0x2B, 0x00})
-	client.Send(packet)
-
-	//send ready to get ingame
-	packet = C.NewPacket2(17)
-	packet.WriteHeader(0x0E)
-	packet.Write([]byte{0x04, 0x01, 0x05, 0x20, 0xB7, 0x46})
-	client.Send(packet)
-
-	packet = C.NewPacket2(13)
+	
+	packet = C.NewPacket2(13) 
 	packet.WriteHeader(0x3E)
 	packet.Write([]byte{0x00, 0x00})
 	//client.Map.Send(packet)

@@ -39,7 +39,7 @@ func PlayerAppear(c *GClient) *C.Packet {
 	packet.WriteString(c.Player.Name)
 	packet.WriteString("") // guild
 	packet.WriteUInt32(c.ID)
-	packet.WriteUInt32(11)
+	packet.WriteUInt32(13)
 	 
 	//
 	//c.Log().Printf("%d %d", c.Player.X, c.Player.Y)
