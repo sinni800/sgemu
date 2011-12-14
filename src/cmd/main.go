@@ -23,7 +23,7 @@ func main() {
 	
 	log.SetFlags(log.Ltime | log.Lshortfile)
 	log.SetPrefix("[Log]")
-	
+	 
 	D.InitializeDatabase()
 	D.CreateDatabase()
 	
@@ -37,7 +37,7 @@ func main() {
   	go ListenSignals()
 	   
 	CMD()  
-}    
+}     
  
 func ListenSignals() {
 	for signal := range signal.Incoming {

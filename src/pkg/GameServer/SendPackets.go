@@ -114,7 +114,7 @@ func SendShopInformation(c *GClient) {
 	
 	c.Send(packet)
 
-}
+} 
 
 func ProfileInfo(c *GClient, p *Player) *C.Packet { 
 	c.Log().Println("ProfileInfo")
@@ -167,7 +167,7 @@ func ProfileInfo(c *GClient, p *Player) *C.Packet {
 		packet.WriteInt16(0)
 	}
 	
-	packet.WriteString("Troololo")
+	packet.WriteString("") //superior
 	packet.WriteByte(0) 
 	
 	return packet
