@@ -99,7 +99,7 @@ func SendShopInformation(c *GClient) {
 	packet.WriteInt32(0) //Num of units you own
 	
 	/*
-	packet.WriteInt32(0x29C63F) //unit id - need to send player unit list first
+	packet.WriteInt32(0) //unit id - need to send player unit list first 
 	packet.WriteInt32(0)
 	packet.WriteInt32(0)
 	packet.WriteInt32(0)
@@ -161,17 +161,17 @@ func ProfileInfo(c *GClient, p *Player) *C.Packet {
 		packet.WriteUInt32(p.Divisions[i].TotalXP()) 
 	}
 	   
-	packet.WriteByte(p.Reincatnation) //Reincatnation
+	packet.WriteByte(p.Reincatnation) 
 	
-	packet.WriteUInt32(p.Prestige) //prestige
+	packet.WriteUInt32(p.Prestige) 
 	
-	packet.WriteUInt32(p.Honor) //honor
-	packet.WriteUInt32(p.TotalHonor()) //honor total
+	packet.WriteUInt32(p.Honor) 
+	packet.WriteUInt32(p.TotalHonor())
 	  
 	packet.WriteByte(0)  //Medal
 	
-	packet.WriteUInt16(p.RecordWon) //record
-	packet.WriteUInt16(p.RecordLost) //record total
+	packet.WriteUInt16(p.RecordWon) 
+	packet.WriteUInt16(p.RecordLost)
 	 
 	if (p == c.Player) {
 		packet.WriteByte(p.Tactics)
