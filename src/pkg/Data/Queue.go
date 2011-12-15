@@ -47,7 +47,7 @@ func (q *Queue) Check(ip string) (string, bool) {
 }
 
 func (q *Queue) run() {
-	timer := time.After(10 * 1e9)
+	timer :=  time.After(10 * time.Second)
 	for {
 	SELECT:
 		select {
@@ -85,12 +85,12 @@ func (q *Queue) run() {
 		case <-timer:
 			for e := q.List.Front(); e != nil; e = e.Next() {
 				if i, ok := e.Value.(*InStruct); ok {
-					if (time.Now().Unix() - i.Time.Unix()) >= 10 {
+					if (time.Now().Sub(i.Time).Seconds()) >= 10 {
 						q.List.Remove(e) 
 					}
 				}
 			}
-			timer = time.After(10 * 1e9)
+			timer = time.After(10 * time.Second)
 		}
 	}
 }

@@ -5,7 +5,7 @@ import (
 	D "Data"
 	"log"
 )
-
+ 
 type LClient struct {
 	C.Client
 	Key      byte

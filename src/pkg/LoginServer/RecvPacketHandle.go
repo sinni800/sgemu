@@ -71,7 +71,7 @@ func OnRegister(c *LClient, p *C.Packet) {
 	user := p.ReadString()
 	pass := p.ReadString()
 	email := p.ReadString()
-	c.Log().Printf("OnRegister Packet User Register: User(%s) Pass(%s) EMail(%s)", user, pass, email)
+	c.Log().Printf("OnRegister Packet User Register: User(%s) EMail(%s)", user, email)
 
 	ec, s := D.CheckUser(user, email, pass)
 	if ec == 1 {
@@ -112,6 +112,7 @@ func OnRegisterDone(c *LClient, p *C.Packet) {
 		if D.RegisterUser(c.TempUser) == true {
 			player.ID = D.NewID()
 			player.UserID = c.TempUser.ID
+			player.SetDefaultStats()
 			D.RegisterPlayer(player)
 		}
 		c.TempUser = nil
@@ -203,7 +204,7 @@ func OnFactionDataRequest(c *LClient, p *C.Packet) {
 func OnLogin(c *LClient, p *C.Packet) {
 	user := p.ReadString()
 	pass := p.ReadString()
-	c.Log().Printf("OnLogin Packet User Register: User(%s) Pass(%s)", user, pass)
+	c.Log().Printf("OnLogin Packet User Register: User(%s)", user) 
 
 	ec, s, id := D.Login(user, pass)
 	SendMessage(c, ec, s)

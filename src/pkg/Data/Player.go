@@ -16,7 +16,7 @@ type Player struct {
 	ID     string "_id"
 	UserID string
 	Name   string
-
+ 
 	Faction int32
 
 	Avatar    byte
@@ -33,6 +33,12 @@ type Player struct {
 	Prestige uint32
 	
 	Honor uint32 //Level = Honor / 100
+	
+	Money int32
+	Ore int32
+	Silicon int32
+	Uranium int32
+	Sulfur byte
 	
 	Reincatnation byte
 
@@ -71,7 +77,6 @@ func (d *Player) TotalHonor() uint32{
 
 func NewPlayer() *Player {
 	p := new(Player)
-	p.Points = 0
 
 	p.Divisions = make([]Division, 4)
 	p.Divisions[Infantry] = Division{Infantry, 1, "", 0}
@@ -79,9 +84,12 @@ func NewPlayer() *Player {
 	p.Divisions[Aviation] = Division{Aviation, 1, "", 0}
 	p.Divisions[Organic] = Division{Organic, 1, "", 0}
 
-	//Note: set default map and position
-
 	return p
+}
+ 
+func (p *Player) SetDefaultStats() {
+	p.Points = 0
+	p.Money = 300000
 }
 
 func RegisterPlayer(plyaer *Player) {
@@ -95,7 +103,7 @@ func GetPlayerByUserID(id string) *Player {
 	p := new(Player)
 	e := CPlayers.Find(M{"userid": id}).One(p)
 	if e != nil {
-		panic(e)
+		return nil
 	}
 	return p
 }

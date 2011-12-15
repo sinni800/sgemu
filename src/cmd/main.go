@@ -10,15 +10,15 @@ import (
 	"runtime"
 	"os/signal"
 	"os"
-)      
+)       
   
 var (
 	Closing = false
-)    
+)      
       
 func main() { 
 	defer OnClose()
-	     
+	        
 	runtime.GOMAXPROCS(5)
 	  
 	log.SetFlags(log.Ltime | log.Lshortfile)
@@ -26,9 +26,9 @@ func main() {
 	 
 	D.InitializeDatabase()
 	D.CreateDatabase()
-	
+	 
 	D.LoadData()  
-   
+    
 	LS.Server = new(LS.LServer)
 	GS.Server = new(GS.GServer)
 	C.Start(LS.Server, "LoginServer", "127.0.0.1", 3000)
@@ -38,7 +38,7 @@ func main() {
 	   
 	CMD()  
 }     
- 
+  
 func ListenSignals() {
 	for signal := range signal.Incoming {
 			_ = signal
@@ -46,7 +46,7 @@ func ListenSignals() {
 			return
 	}  
 } 
-  
+   
 func OnClose() {
 	if Closing { return }; Closing = true
 	
@@ -58,11 +58,11 @@ func OnClose() {
 		fmt.Println("Press enter to quit...")
 		fmt.Scanln(&cmd)
 		os.Exit(0)
-	}()  
+	}()   
 	
 	if GS.Server != nil {
 		GS.Server.OnShutdown()
-	}
+	} 
 }
  
 func CMD() {
