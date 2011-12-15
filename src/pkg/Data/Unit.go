@@ -27,7 +27,7 @@ func (u *Unit) UQ() byte{
 }
 
 func (u *Unit) MaxWeight() uint16{
-	return uint16(float32(u.Data.Max_Weight) * (1 + float32(u.Owner.MechApt/120)))
+	return uint16(float32(u.Data.Max_Weight) * (1 + (float32(u.Owner.MechApt)/120)))
 }
 
 //Alien Tech Level
