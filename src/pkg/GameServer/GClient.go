@@ -152,7 +152,7 @@ func (client *GClient) SendWelcome() {
 	packet.WriteUInt32(12)
 	packet.WriteByte(9)
 	packet.WriteUInt32(0)
-	
+	  
 	packet.WriteInt32(client.Player.Money) 
 	packet.WriteInt32(client.Player.Ore) 
 	packet.WriteInt32(client.Player.Silicon) 

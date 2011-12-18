@@ -1,128 +1,271 @@
 package Data
 
 import (
-	"encoding/xml"
-	"os"
 	"bufio"
 	"fmt"
+	"os"
+	"Data/xml"
+	"log"
+)
+
+type Group byte
+
+const (
+	Weapons   = Group(4)
+	Engines   = Group(1)
+	Misc      = Group(7)
+	Armors    = Group(5)
+	Bonus     = Group(6)
+	Specials  = Group(8)
+	Storage   = Group(2)
+	Computers = Group(3)
 )
 
 var (
-	dataPath = "../sg_data.xml"
-	shopPath = "../sg_shop.xml"
-	Gamedata	= new(Data)
-	Shopdata	= new(ShopData)
-	Units		= make(map[string]*UnitData)
-	Divisions 	= map[string]DType{"Infantry":Infantry, 
-									"Mobile":Mobile,
-									"Aviation":Aviation,
-									"Organic":Organic,
-									"":Other}
+	dataPath  = "../sg_data.xml"
+	itemPath  = "../sg_items.xml"
+	shopPath  = "../sg_shop.xml"
+	Gamedata  = new(Data)
+	Shopdata  = new(ShopData)
 	
-	Ranks		= make(map[byte]*RankData)
-	
+	Units     = make(map[string]*UnitData)
+	Divisions = map[string]DType{"Infantry": Infantry,
+		"Mobile":   Mobile,
+		"Aviation": Aviation,
+		"Organic":  Organic,
+		"":         Other}
+
+	Ranks = make(map[byte]*RankData)
+
+	Items = make(map[uint16]*ItemData)
+
+	GroupNames = map[Group]string{Engines: "Engines", Weapons: "Weapons", Misc: "Misc", Armors: "Armors", Bonus: "Bonus", Specials: "Specials", Storage: "Storage", Computers: "Computers"}
 )
-  
+
 type Data struct {
-	XMLName xml.Name `xml:"data"`
-	Groups []*Group	`xml:"unitslist>group"`
-	Ranks  []*RankData	`xml:"rankslist>rank"`
-} 
+	XMLName xml.Name     `xml:"data"`
+	Groups  []*GroupData `xml:"unitslist>group"`
+	Ranks   []*RankData  `xml:"rankslist>rank"`
+}
 
 type RankData struct {
-	Level byte `xml:"attr"`
+	Level    byte   `xml:"attr"`
 	Infantry string `xml:"attr"`
-	Mobile string `xml:"attr"`
+	Mobile   string `xml:"attr"`
 	Aviation string `xml:"attr"`
-	Organic string `xml:"attr"`
+	Organic  string `xml:"attr"`
 }
-   
-type Group struct { 
-	XMLName xml.Name `xml:"group"`
-	ID string `xml:"attr"`
-	Division string `xml:"attr"`
-	Name string 
-	Units []*UnitData	`xml:"unitlist>unit"`
-}   
-  
+
+type GroupData struct {
+	XMLName  xml.Name `xml:"group"`
+	ID       string   `xml:"attr"`
+	Division string   `xml:"attr"`
+	Name     string
+	Units    []*UnitData `xml:"unitlist>unit"`
+}
+
 type UnitData struct {
-	UID string `xml:"attr"`
-	Influence byte `xml:"attr"` 
-	Space string `xml:"attr"`
-	Health string `xml:"attr"`
-	Armor string `xml:"attr"`
-	ViewRange string `xml:"attr"`
-	Speed string `xml:"attr"`
-	UnitType string `xml:"attr"`
-	Slots string `xml:"attr"`
-	Max_Weight uint16 `xml:"attr"`
-	ViewType string `xml:"attr"`
-	U1 string `xml:"attr"`
-	U2 string `xml:"attr"`
-	Name string
+	UID         string `xml:"attr"`
+	Influence   byte   `xml:"attr"`
+	Space       string `xml:"attr"`
+	Health      string `xml:"attr"`
+	Armor       string `xml:"attr"`
+	ViewRange   string `xml:"attr"`
+	Speed       string `xml:"attr"`
+	UnitType    string `xml:"attr"`
+	Slots       string `xml:"attr"`
+	Max_Weight  uint16 `xml:"attr"`
+	ViewType    string `xml:"attr"`
+	U1          string `xml:"attr"`
+	U2          string `xml:"attr"`
+	Name        string
 	Description string
-	DType DType
-} 
-  
-type ShopData struct { 
-	XMLName xml.Name `xml:"Shop"` 
+	DType       DType
+}
+
+type ShopData struct {
+	XMLName   xml.Name    `xml:"Shop"`
 	ShopUnits []*ShopUnit `xml:"Units>Unit"`
-}                 
-  
+}
+
 type ShopUnit struct {
-	Name string
-	Money int32
-	Ore int32
+	XMLName xml.Name `xml:"Unit"`
+	Name    string
+	Money   int32
+	Ore     int32
 	Silicon int32
 	Uranium int32
-	Sulfur byte
+	Sulfur  byte
 }
- 
+
+type ItemDataList struct {
+	XMLName xml.Name    `xml:"ItemList"`
+	Items   []*ItemData `xml:"Items>Item"`
+}
+
+type ItemData struct {
+	XMLName       xml.Name `xml:"Item"`
+	Name          string
+	Description   string 
+	Group         string `xml:"attr"`
+	ID            uint16 `xml:"attr"`
+	GID           uint16 `xml:"attr"`
+	TL            uint16
+	Weight        uint16
+	Space         uint16
+	Complexity    byte
+	EnergyUse     byte //also Energy-regen
+	EnergyMax     uint16
+	Damage        byte
+	Range         float32
+	CD            float32
+	Effectiveness uint16
+	Health        uint16
+	Power         uint16
+	Armor         uint16
+	ItemType      byte
+	ItemSubType   byte
+	EnergyDrain   int8
+	Unk1          int8
+	EnergyType    int8
+	Unk2          int8
+	Unk3          int8
+	WeaponType    byte
+	ViewRange     float32
+	GroupType     Group
+	ComplexityMax uint16
+	XpBonus       uint16
+}
+
+func (item *ItemData) String() string {
+	return fmt.Sprintf(
+		"Name:%s\tDescription:%s\tGroup:%s\tGroupType:%d\tID:%d\tGID:%d\tTL:%d\tWeight:%d\tSpace:%d\tComplexity:%d\tEnergyUse:%d\tEnergyMax:%d\tDamage:%d\tRange:%f\tCD:%f\tEffectiveness:%d\tHealth:%d\tPower:%d\tArmor:%d\tItemType:%d\tItemSubType:%d\tUnk1:%d\tUnk2:%d\tUnk3:%d\tEnergyType:%d\tEnergyDrain:%d\tWeaponType:%d\tViewRange:%f\tComplexityMax:%d\tXpBonus:%d\t",
+		item.Name, item.Description, item.Group, item.GroupType, item.ID, item.GID, item.TL, item.Weight, item.Space, item.Complexity, item.EnergyUse, item.EnergyMax, item.Damage, item.Range, item.CD, item.Effectiveness, item.Health, item.Power, item.Armor, item.ItemType, item.ItemSubType, item.Unk1, item.Unk2, item.Unk3, item.EnergyType, item.EnergyDrain, item.WeaponType, item.ViewRange, item.ComplexityMax, item.XpBonus)
+
+}
+
 func LoadData() {
+	log.Println("Loading data...")
+
+	units := make(chan bool)
+	shop := make(chan bool)
+	items := make(chan bool)
+
+	go LoadItems(items)
+	go LoadUnitsAndRanks(units)
+	go LoadShop(shop) 
+	
+	
+	<-items
+	log.Println("Loaded", len(Items), "Items!")
+	<-units
+	log.Println("Loaded", len(Units), "Units!")
+	log.Println("Loaded", len(Ranks), "Ranks!")
+	<-shop
+	log.Println("Loaded", len(Shopdata.ShopUnits), "Shop units!")
+
+}
+
+func LoadUnitsAndRanks(Done chan bool) {
+	defer func() { 
+		if x := recover(); x != nil {
+			log.Printf("%v\n", x)
+			Done <- false
+		} else {
+			Done <- true
+		}
+	}()
 	f, e := os.Open(dataPath)
 	if e != nil {
-		panic(e)  
-	} 
-	e = xml.Unmarshal(f, Gamedata)
-	if e != nil {  
-		panic(e) 
-	} 
+		log.Panicln(e)
+	}
 	
-	for _,group := range Gamedata.Groups {
-		d,e := Divisions[group.Division]
+	defer f.Close()
+	
+	e = xml.Unmarshal(f, Gamedata)
+	if e != nil {
+		log.Panicln(e)
+	}
+
+	for _, group := range Gamedata.Groups {
+		d, e := Divisions[group.Division]
 		if !e {
 			d = Other
 		}
-		for _,unit := range group.Units {
+		for _, unit := range group.Units {
 			unit.DType = d
 			Units[unit.Name] = unit
-		} 
+		}
 	}
-	
-	for _,rank := range Gamedata.Ranks {
+
+	for _, rank := range Gamedata.Ranks {
 		Ranks[rank.Level] = rank
 	}
-	
-	f.Close()
-	
-	f, e = os.Open(shopPath)
+}
+
+func LoadShop(Done chan bool) {
+	defer func() { 
+		if x := recover(); x != nil {
+			log.Printf("%v\n", x)
+			Done <- false
+		} else {
+			Done <- true
+		}
+	}()
+	f, e := os.Open(shopPath)
 	if e != nil {
-		panic(e) 
-	} 
+		log.Panicln(e)
+	}
+	
+	defer f.Close()
+	
 	e = xml.Unmarshal(f, Shopdata)
-	if e != nil {  
-		panic(e) 
-	} 
-	f.Close()
+	if e != nil {
+		log.Panicln(e)
+	}
+}
+
+func LoadItems(Done chan bool) {
+	defer func() { 
+		if x := recover(); x != nil {
+			log.Printf("%v\n", x)
+			Done <- false
+		} else {
+			Done <- true
+		}
+	}()
+	ItemsDataList := new(ItemDataList)
+	f, e := os.Open(itemPath)
+	if e != nil {
+		log.Panicln(e)
+	}
+	
+	defer f.Close()
+	
+	e = xml.Unmarshal(f, ItemsDataList)
+	if e != nil {
+		log.Panicln(e)
+	}
+	 
+	for _,item := range ItemsDataList.Items {
+		Items[item.ID] = item
+	}
 }
 
 func OutputShopBinary() {
-	f,e := os.Open("../shop.bin")
+	defer func() { 
+		if x := recover(); x != nil {
+			log.Printf("%v\n", x)
+		} 
+	}()
+	f, e := os.Open("../shop.bin")
+
+	if e != nil {
+		log.Panicln(e)
+	}
 	
-	if e != nil {  
-		panic(e) 
-	} 
-	
+	defer f.Close()
+
 	format := `<Unit>
 	<Name>%s</Name>
 	<Money>1</Money>
@@ -132,17 +275,17 @@ func OutputShopBinary() {
 	<Sulfur>0</Sulfur>
 </Unit> 
 `
-	
+
 	r := bufio.NewReader(f)
 	bytes := [20]byte{}
 	buff := bytes[:]
-	for i := 0;i<51;i++ {
+	for i := 0; i < 51; i++ {
 		r.Read(buff[:7])
-		s,e2 := r.ReadString(0)
-		if e2 != nil {  
-			panic(e) 
-		} 
-		fmt.Printf(format,s[:len(s)-1])
+		s, e2 := r.ReadString(0)
+		if e2 != nil {
+			log.Panicln(e)
+		}
+		fmt.Printf(format, s[:len(s)-1])
 		r.Read(buff[:16])
 	}
 }

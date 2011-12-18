@@ -18,7 +18,7 @@ type Player struct {
 	Name   string
  
 	Faction int32
-
+  
 	Avatar    byte
 	Tactics   byte
 	Clout     byte
@@ -85,7 +85,7 @@ func NewPlayer() *Player {
 	p.Divisions[Organic] = Division{Organic, 1, "", 0}
 
 	return p
-}
+} 
  
 func (p *Player) SetDefaultStats() {
 	p.Points = 0

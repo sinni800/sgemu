@@ -8,12 +8,14 @@ type Unit struct {
 }
 
 type UnitDB struct {
-	DBID  uint32 "_id"
-	Level byte
-	HP    uint32
-	XP    uint32
-	Squad string
-}
+	DBID     string "_id"
+	PlayerID string
+	Level    byte
+	HP       uint32
+	XP       uint32
+	Squad    string
+	Name     string
+} 
 
 func (u *Unit) TotalXP() uint32 {
 	n := uint32(u.Level + 1)

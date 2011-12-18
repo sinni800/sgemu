@@ -14,13 +14,13 @@ import (
   
 var (
 	Closing = false
-)      
-      
+)       
+        
 func main() { 
 	defer OnClose()
-	        
+	 
 	runtime.GOMAXPROCS(5)
-	  
+	   
 	log.SetFlags(log.Ltime | log.Lshortfile)
 	log.SetPrefix("[Log]") 
 	 
@@ -28,7 +28,7 @@ func main() {
 	D.CreateDatabase()
 	 
 	D.LoadData()  
-    
+ 
 	LS.Server = new(LS.LServer)
 	GS.Server = new(GS.GServer)
 	C.Start(LS.Server, "LoginServer", "127.0.0.1", 3000)
@@ -44,26 +44,30 @@ func ListenSignals() {
 			_ = signal
 			OnClose() 
 			return
-	}  
+	}   
 } 
    
 func OnClose() {
 	if Closing { return }; Closing = true
 	
+	if x := recover(); x != nil {
+			log.Printf("%v\n", x)
+	} 
+	
 	defer func() {
 		if x := recover(); x != nil {
 			log.Printf("%v\n", x)
-		}   
+		}  
 		cmd := ""
 		fmt.Println("Press enter to quit...")
 		fmt.Scanln(&cmd)
-		os.Exit(0)
+		os.Exit(0) 
 	}()   
 	
 	if GS.Server != nil {
 		GS.Server.OnShutdown()
 	} 
-}
+} 
  
 func CMD() {
 	for {

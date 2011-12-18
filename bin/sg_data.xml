@@ -2222,11 +2222,11 @@
 		<unit uid="a010" influence="0" space="200" health="1050" armor="0" view-range="25.00" speed="4.2" unit-type="biological" slots="10" max-weight="120" unit-weight="120" view-type="cone" u1="0" u2="9">
 			<name>Mamos-Primus</name>
 			<description>The Mamos flings dangerous balls of acid across the skies to take down enemy airplanes</description>
-		</unit> 
+		</unit>
 		<unit uid="a010" influence="10" space="200" health="1139" armor="0" view-range="25.50" speed="4.3" unit-type="biological" slots="10" max-weight="120" unit-weight="120" view-type="cone" u1="0" u2="9">
 			<name>Mamos-Amplus</name>
 			<description>The Mamos flings dangerous balls of acid across the skies to take down enemy airplanes</description>
-		</unit> 
+		</unit>
 		<unit uid="a010_2" influence="100" space="200" health="4175" armor="0" view-range="30.00" speed="5.8" unit-type="biological" slots="10" max-weight="120" unit-weight="120" view-type="cone" u1="0" u2="9">
 			<name>Momas-Magnus</name>
 			<description>The Mamos flings dangerous balls of acid across the skies to take down enemy airplanes</description>
