@@ -1,1370 +1,1370 @@
 <BindingFile>
 	<BindingList uid="g001">
-		<Bind uid="g001" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g001" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g001" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g001" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g001" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g001" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g001" id="4001" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g001" id="4001" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g001" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g001" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g001" id="6001" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g001" id="6001" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g001" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g001" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g001" id="8001" type="Special" unk="5" unk2="273">
+		<Bind uid="g001" id="8001" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g002">
-		<Bind uid="g002" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g002" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g002" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g002" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g002" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g002" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g002" id="4199" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g002" id="4199" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g002" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g002" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g002" id="6601" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g002" id="6601" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g002" id="7131" type="Misc" unk="206" unk2="273">
+		<Bind uid="g002" id="7131" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g002" id="8202" type="Special" unk="5" unk2="273">
+		<Bind uid="g002" id="8202" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g003">
-		<Bind uid="g003" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g003" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g003" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g003" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g003" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g003" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g003" id="4003" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g003" id="4003" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g003" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g003" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g003" id="6003" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g003" id="6003" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g003" id="7003" type="Misc" unk="206" unk2="273">
+		<Bind uid="g003" id="7003" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g003" id="8003" type="Special" unk="5" unk2="273">
+		<Bind uid="g003" id="8003" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g004">
-		<Bind uid="g004" id="1001" type="Engine" unk="107" unk2="139">
+		<Bind uid="g004" id="1001" grouptype="1" unk="107" unk2="139">
 		</Bind>
-		<Bind uid="g004" id="2001" type="Storage" unk="107" unk2="208">
+		<Bind uid="g004" id="2001" grouptype="2" unk="107" unk2="208">
 		</Bind>
-		<Bind uid="g004" id="3001" type="Computer" unk="107" unk2="69">
+		<Bind uid="g004" id="3001" grouptype="3" unk="107" unk2="69">
 		</Bind>
-		<Bind uid="g004" id="4004" type="Weapon" unk="12" unk2="142">
+		<Bind uid="g004" id="4004" grouptype="4" unk="12" unk2="142">
 		</Bind>
-		<Bind uid="g004" id="5001" type="Armor" unk="177" unk2="139">
+		<Bind uid="g004" id="5001" grouptype="5" unk="177" unk2="139">
 		</Bind>
-		<Bind uid="g004" id="6001" type="Ammo" unk="191" unk2="43">
+		<Bind uid="g004" id="6001" grouptype="6" unk="191" unk2="43">
 		</Bind>
-		<Bind uid="g004" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g004" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g004" id="8004" type="Special" unk="5" unk2="273">
+		<Bind uid="g004" id="8004" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g005">
-		<Bind uid="g005" id="1001" type="Engine" unk="107" unk2="139">
+		<Bind uid="g005" id="1001" grouptype="1" unk="107" unk2="139">
 		</Bind>
-		<Bind uid="g005" id="2001" type="Storage" unk="107" unk2="208">
+		<Bind uid="g005" id="2001" grouptype="2" unk="107" unk2="208">
 		</Bind>
-		<Bind uid="g005" id="3001" type="Computer" unk="107" unk2="69">
+		<Bind uid="g005" id="3001" grouptype="3" unk="107" unk2="69">
 		</Bind>
-		<Bind uid="g005" id="4005" type="Weapon" unk="12" unk2="142">
+		<Bind uid="g005" id="4005" grouptype="4" unk="12" unk2="142">
 		</Bind>
-		<Bind uid="g005" id="5001" type="Armor" unk="177" unk2="139">
+		<Bind uid="g005" id="5001" grouptype="5" unk="177" unk2="139">
 		</Bind>
-		<Bind uid="g005" id="6001" type="Ammo" unk="191" unk2="43">
+		<Bind uid="g005" id="6001" grouptype="6" unk="191" unk2="43">
 		</Bind>
-		<Bind uid="g005" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g005" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g005" id="8005" type="Special" unk="5" unk2="273">
+		<Bind uid="g005" id="8005" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g006">
-		<Bind uid="g006" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g006" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g006" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g006" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g006" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g006" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g006" id="4006" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g006" id="4006" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g006" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g006" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g006" id="6001" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g006" id="6001" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g006" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g006" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g006" id="8006" type="Special" unk="5" unk2="273">
+		<Bind uid="g006" id="8006" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g007">
-		<Bind uid="g007" id="1000" type="Engine" unk="107" unk2="139">
+		<Bind uid="g007" id="1000" grouptype="1" unk="107" unk2="139">
 		</Bind>
-		<Bind uid="g007" id="2000" type="Storage" unk="107" unk2="208">
+		<Bind uid="g007" id="2000" grouptype="2" unk="107" unk2="208">
 		</Bind>
-		<Bind uid="g007" id="3000" type="Computer" unk="107" unk2="69">
+		<Bind uid="g007" id="3000" grouptype="3" unk="107" unk2="69">
 		</Bind>
-		<Bind uid="g007" id="4000" type="Weapon" unk="12" unk2="142">
+		<Bind uid="g007" id="4000" grouptype="4" unk="12" unk2="142">
 		</Bind>
-		<Bind uid="g007" id="5000" type="Armor" unk="177" unk2="139">
+		<Bind uid="g007" id="5000" grouptype="5" unk="177" unk2="139">
 		</Bind>
-		<Bind uid="g007" id="6000" type="Ammo" unk="191" unk2="43">
+		<Bind uid="g007" id="6000" grouptype="6" unk="191" unk2="43">
 		</Bind>
-		<Bind uid="g007" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g007" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g007" id="8000" type="Special" unk="5" unk2="273">
+		<Bind uid="g007" id="8000" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g008">
-		<Bind uid="g008" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g008" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g008" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g008" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g008" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g008" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g008" id="4108" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g008" id="4108" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g008" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g008" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g008" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g008" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g008" id="7100" type="Misc" unk="206" unk2="273">
+		<Bind uid="g008" id="7100" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g008" id="8108" type="Special" unk="5" unk2="273">
+		<Bind uid="g008" id="8108" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g009">
-		<Bind uid="g009" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g009" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g009" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g009" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g009" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g009" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g009" id="4109" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g009" id="4109" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g009" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g009" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g009" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g009" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g009" id="7100" type="Misc" unk="206" unk2="273">
+		<Bind uid="g009" id="7100" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g009" id="8109" type="Special" unk="5" unk2="273">
+		<Bind uid="g009" id="8109" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g010">
-		<Bind uid="g010" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g010" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g010" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g010" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g010" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g010" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g010" id="4301" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g010" id="4301" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g010" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g010" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g010" id="6201" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g010" id="6201" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g010" id="7101" type="Misc" unk="206" unk2="273">
+		<Bind uid="g010" id="7101" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g010" id="8210" type="Special" unk="5" unk2="273">
+		<Bind uid="g010" id="8210" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g011">
-		<Bind uid="g011" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g011" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g011" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g011" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g011" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g011" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g011" id="4321" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g011" id="4321" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g011" id="5321" type="Armor" unk="647" unk2="647">
+		<Bind uid="g011" id="5321" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g011" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g011" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g011" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g011" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g011" id="8311" type="Special" unk="5" unk2="273">
+		<Bind uid="g011" id="8311" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g012">
-		<Bind uid="g012" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g012" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g012" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g012" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g012" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g012" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g012" id="4321" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g012" id="4321" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g012" id="5321" type="Armor" unk="647" unk2="647">
+		<Bind uid="g012" id="5321" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g012" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g012" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g012" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g012" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g012" id="8311" type="Special" unk="5" unk2="273">
+		<Bind uid="g012" id="8311" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g013">
-		<Bind uid="g013" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g013" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g013" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g013" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g013" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g013" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g013" id="4321" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g013" id="4321" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g013" id="5321" type="Armor" unk="647" unk2="647">
+		<Bind uid="g013" id="5321" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g013" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g013" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g013" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g013" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g013" id="8311" type="Special" unk="5" unk2="273">
+		<Bind uid="g013" id="8311" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g014">
-		<Bind uid="g014" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g014" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g014" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g014" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g014" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g014" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g014" id="4331" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g014" id="4331" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g014" id="5331" type="Armor" unk="647" unk2="647">
+		<Bind uid="g014" id="5331" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g014" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g014" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g014" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g014" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g014" id="8315" type="Special" unk="5" unk2="273">
+		<Bind uid="g014" id="8315" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g015">
-		<Bind uid="g015" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g015" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g015" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g015" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g015" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g015" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g015" id="4331" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g015" id="4331" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g015" id="5331" type="Armor" unk="647" unk2="647">
+		<Bind uid="g015" id="5331" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g015" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g015" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g015" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g015" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g015" id="8315" type="Special" unk="5" unk2="273">
+		<Bind uid="g015" id="8315" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g016">
-		<Bind uid="g016" id="1001" type="Engine" unk="106" unk2="97">
+		<Bind uid="g016" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
-		<Bind uid="g016" id="2001" type="Storage" unk="106" unk2="165">
+		<Bind uid="g016" id="2001" grouptype="2" unk="106" unk2="165">
 		</Bind>
-		<Bind uid="g016" id="3001" type="Computer" unk="106" unk2="29">
+		<Bind uid="g016" id="3001" grouptype="3" unk="106" unk2="29">
 		</Bind>
-		<Bind uid="g016" id="4016" type="Weapon" unk="10" unk2="182">
+		<Bind uid="g016" id="4016" grouptype="4" unk="10" unk2="182">
 		</Bind>
-		<Bind uid="g016" id="5001" type="Armor" unk="174" unk2="97">
+		<Bind uid="g016" id="5001" grouptype="5" unk="174" unk2="97">
 		</Bind>
-		<Bind uid="g016" id="6001" type="Ammo" unk="184" unk2="14">
+		<Bind uid="g016" id="6001" grouptype="6" unk="184" unk2="14">
 		</Bind>
-		<Bind uid="g016" id="7011" type="Misc" unk="206" unk2="273">
+		<Bind uid="g016" id="7011" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g016" id="8016" type="Special" unk="5" unk2="273">
+		<Bind uid="g016" id="8016" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g017">
-		<Bind uid="g017" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g017" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g017" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g017" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g017" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g017" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g017" id="4017" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g017" id="4017" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g017" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g017" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g017" id="6001" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g017" id="6001" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g017" id="7031" type="Misc" unk="206" unk2="273">
+		<Bind uid="g017" id="7031" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g017" id="8017" type="Special" unk="5" unk2="273">
+		<Bind uid="g017" id="8017" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g018">
-		<Bind uid="g018" id="1001" type="Engine" unk="146" unk2="166">
+		<Bind uid="g018" id="1001" grouptype="1" unk="146" unk2="166">
 		</Bind>
-		<Bind uid="g018" id="2001" type="Storage" unk="66" unk2="221">
+		<Bind uid="g018" id="2001" grouptype="2" unk="66" unk2="221">
 		</Bind>
-		<Bind uid="g018" id="3001" type="Computer" unk="76" unk2="143">
+		<Bind uid="g018" id="3001" grouptype="3" unk="76" unk2="143">
 		</Bind>
-		<Bind uid="g018" id="4018" type="Weapon" unk="32" unk2="41">
+		<Bind uid="g018" id="4018" grouptype="4" unk="32" unk2="41">
 		</Bind>
-		<Bind uid="g018" id="5001" type="Armor" unk="190" unk2="86">
+		<Bind uid="g018" id="5001" grouptype="5" unk="190" unk2="86">
 		</Bind>
-		<Bind uid="g018" id="6001" type="Ammo" unk="106" unk2="60">
+		<Bind uid="g018" id="6001" grouptype="6" unk="106" unk2="60">
 		</Bind>
-		<Bind uid="g018" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g018" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g018" id="8018" type="Special" unk="5" unk2="273">
+		<Bind uid="g018" id="8018" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g019">
-		<Bind uid="g019" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g019" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g019" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g019" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g019" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g019" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g019" id="4019" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g019" id="4019" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g019" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g019" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g019" id="6001" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g019" id="6001" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g019" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g019" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g019" id="8019" type="Special" unk="5" unk2="273">
+		<Bind uid="g019" id="8019" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g020">
-		<Bind uid="g020" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g020" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g020" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g020" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g020" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g020" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g020" id="4120" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g020" id="4120" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g020" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g020" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g020" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g020" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g020" id="7100" type="Misc" unk="206" unk2="273">
+		<Bind uid="g020" id="7100" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g020" id="8120" type="Special" unk="5" unk2="273">
+		<Bind uid="g020" id="8120" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g021">
-		<Bind uid="g021" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g021" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g021" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g021" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g021" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g021" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g021" id="4021" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g021" id="4021" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g021" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g021" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g021" id="6001" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g021" id="6001" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g021" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g021" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g021" id="8021" type="Special" unk="5" unk2="273">
+		<Bind uid="g021" id="8021" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g022">
-		<Bind uid="g022" id="1001" type="Engine" unk="106" unk2="97">
+		<Bind uid="g022" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
-		<Bind uid="g022" id="2001" type="Storage" unk="106" unk2="165">
+		<Bind uid="g022" id="2001" grouptype="2" unk="106" unk2="165">
 		</Bind>
-		<Bind uid="g022" id="3001" type="Computer" unk="106" unk2="29">
+		<Bind uid="g022" id="3001" grouptype="3" unk="106" unk2="29">
 		</Bind>
-		<Bind uid="g022" id="4522" type="Weapon" unk="10" unk2="182">
+		<Bind uid="g022" id="4522" grouptype="4" unk="10" unk2="182">
 		</Bind>
-		<Bind uid="g022" id="5001" type="Armor" unk="174" unk2="97">
+		<Bind uid="g022" id="5001" grouptype="5" unk="174" unk2="97">
 		</Bind>
-		<Bind uid="g022" id="6522" type="Ammo" unk="184" unk2="14">
+		<Bind uid="g022" id="6522" grouptype="6" unk="184" unk2="14">
 		</Bind>
-		<Bind uid="g022" id="7522" type="Misc" unk="206" unk2="273">
+		<Bind uid="g022" id="7522" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g022" id="8522" type="Special" unk="5" unk2="273">
+		<Bind uid="g022" id="8522" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g023">
-		<Bind uid="g023" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g023" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g023" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g023" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g023" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g023" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g023" id="4199" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g023" id="4199" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g023" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g023" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g023" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g023" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g023" id="7011" type="Misc" unk="206" unk2="273">
+		<Bind uid="g023" id="7011" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g023" id="8123" type="Special" unk="5" unk2="273">
+		<Bind uid="g023" id="8123" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g024">
-		<Bind uid="g024" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g024" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g024" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g024" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g024" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g024" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g024" id="4341" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g024" id="4341" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g024" id="5341" type="Armor" unk="647" unk2="647">
+		<Bind uid="g024" id="5341" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g024" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g024" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g024" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g024" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g024" id="8324" type="Special" unk="5" unk2="273">
+		<Bind uid="g024" id="8324" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g025">
-		<Bind uid="g025" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g025" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g025" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g025" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g025" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g025" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g025" id="4371" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g025" id="4371" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g025" id="5321" type="Armor" unk="647" unk2="647">
+		<Bind uid="g025" id="5321" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g025" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g025" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g025" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g025" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g025" id="8325" type="Special" unk="5" unk2="273">
+		<Bind uid="g025" id="8325" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g027">
-		<Bind uid="g027" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g027" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g027" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g027" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g027" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g027" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g027" id="4341" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g027" id="4341" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g027" id="5341" type="Armor" unk="647" unk2="647">
+		<Bind uid="g027" id="5341" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g027" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g027" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g027" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g027" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g027" id="8324" type="Special" unk="5" unk2="273">
+		<Bind uid="g027" id="8324" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g028">
-		<Bind uid="g028" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g028" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g028" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g028" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g028" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g028" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g028" id="4371" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g028" id="4371" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g028" id="5321" type="Armor" unk="647" unk2="647">
+		<Bind uid="g028" id="5321" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g028" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g028" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g028" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g028" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g028" id="8325" type="Special" unk="5" unk2="273">
+		<Bind uid="g028" id="8325" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g029">
-		<Bind uid="g029" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g029" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g029" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g029" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g029" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g029" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g029" id="4371" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g029" id="4371" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g029" id="5321" type="Armor" unk="647" unk2="647">
+		<Bind uid="g029" id="5321" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g029" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g029" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g029" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g029" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g029" id="8325" type="Special" unk="5" unk2="273">
+		<Bind uid="g029" id="8325" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g030">
-		<Bind uid="g030" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g030" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g030" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g030" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g030" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g030" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g030" id="4331" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g030" id="4331" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g030" id="5331" type="Armor" unk="647" unk2="647">
+		<Bind uid="g030" id="5331" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g030" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g030" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g030" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g030" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g030" id="8315" type="Special" unk="5" unk2="273">
+		<Bind uid="g030" id="8315" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g031">
-		<Bind uid="g031" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g031" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g031" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g031" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g031" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g031" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g031" id="4329" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g031" id="4329" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g031" id="5329" type="Armor" unk="647" unk2="647">
+		<Bind uid="g031" id="5329" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g031" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g031" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g031" id="7329" type="Misc" unk="206" unk2="273">
+		<Bind uid="g031" id="7329" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g031" id="8329" type="Special" unk="5" unk2="273">
+		<Bind uid="g031" id="8329" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g032">
-		<Bind uid="g032" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g032" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g032" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g032" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g032" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g032" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g032" id="4132" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g032" id="4132" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g032" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g032" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g032" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g032" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g032" id="7100" type="Misc" unk="206" unk2="273">
+		<Bind uid="g032" id="7100" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g032" id="8132" type="Special" unk="5" unk2="273">
+		<Bind uid="g032" id="8132" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g034">
-		<Bind uid="g034" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g034" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g034" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g034" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g034" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g034" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g034" id="4101" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g034" id="4101" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g034" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g034" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g034" id="6201" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g034" id="6201" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g034" id="7101" type="Misc" unk="206" unk2="273">
+		<Bind uid="g034" id="7101" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g034" id="8234" type="Special" unk="5" unk2="273">
+		<Bind uid="g034" id="8234" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g035">
-		<Bind uid="g035" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g035" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g035" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g035" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g035" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g035" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g035" id="4199" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g035" id="4199" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g035" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g035" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g035" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g035" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g035" id="7135" type="Misc" unk="206" unk2="273">
+		<Bind uid="g035" id="7135" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g035" id="8135" type="Special" unk="5" unk2="273">
+		<Bind uid="g035" id="8135" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g037">
-		<Bind uid="g037" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g037" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g037" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g037" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g037" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g037" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g037" id="4137" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g037" id="4137" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g037" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g037" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g037" id="6137" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g037" id="6137" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g037" id="7137" type="Misc" unk="206" unk2="273">
+		<Bind uid="g037" id="7137" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g037" id="8137" type="Special" unk="5" unk2="273">
+		<Bind uid="g037" id="8137" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g038">
-		<Bind uid="g038" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g038" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g038" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g038" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g038" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g038" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g038" id="4138" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g038" id="4138" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g038" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g038" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g038" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g038" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g038" id="7100" type="Misc" unk="206" unk2="273">
+		<Bind uid="g038" id="7100" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g038" id="8138" type="Special" unk="5" unk2="273">
+		<Bind uid="g038" id="8138" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g039">
-		<Bind uid="g039" id="1001" type="Engine" unk="106" unk2="97">
+		<Bind uid="g039" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
-		<Bind uid="g039" id="2001" type="Storage" unk="106" unk2="165">
+		<Bind uid="g039" id="2001" grouptype="2" unk="106" unk2="165">
 		</Bind>
-		<Bind uid="g039" id="3001" type="Computer" unk="106" unk2="29">
+		<Bind uid="g039" id="3001" grouptype="3" unk="106" unk2="29">
 		</Bind>
-		<Bind uid="g039" id="4039" type="Weapon" unk="10" unk2="182">
+		<Bind uid="g039" id="4039" grouptype="4" unk="10" unk2="182">
 		</Bind>
-		<Bind uid="g039" id="5001" type="Armor" unk="174" unk2="97">
+		<Bind uid="g039" id="5001" grouptype="5" unk="174" unk2="97">
 		</Bind>
-		<Bind uid="g039" id="6004" type="Ammo" unk="184" unk2="14">
+		<Bind uid="g039" id="6004" grouptype="6" unk="184" unk2="14">
 		</Bind>
-		<Bind uid="g039" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g039" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g039" id="8039" type="Special" unk="5" unk2="273">
+		<Bind uid="g039" id="8039" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g040">
-		<Bind uid="g040" id="1001" type="Engine" unk="107" unk2="139">
+		<Bind uid="g040" id="1001" grouptype="1" unk="107" unk2="139">
 		</Bind>
-		<Bind uid="g040" id="2001" type="Storage" unk="107" unk2="208">
+		<Bind uid="g040" id="2001" grouptype="2" unk="107" unk2="208">
 		</Bind>
-		<Bind uid="g040" id="3001" type="Computer" unk="107" unk2="69">
+		<Bind uid="g040" id="3001" grouptype="3" unk="107" unk2="69">
 		</Bind>
-		<Bind uid="g040" id="4040" type="Weapon" unk="12" unk2="142">
+		<Bind uid="g040" id="4040" grouptype="4" unk="12" unk2="142">
 		</Bind>
-		<Bind uid="g040" id="5001" type="Armor" unk="177" unk2="139">
+		<Bind uid="g040" id="5001" grouptype="5" unk="177" unk2="139">
 		</Bind>
-		<Bind uid="g040" id="6001" type="Ammo" unk="191" unk2="43">
+		<Bind uid="g040" id="6001" grouptype="6" unk="191" unk2="43">
 		</Bind>
-		<Bind uid="g040" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g040" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g040" id="8040" type="Special" unk="5" unk2="273">
+		<Bind uid="g040" id="8040" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g041">
-		<Bind uid="g041" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g041" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g041" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g041" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g041" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g041" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g041" id="4041" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g041" id="4041" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g041" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g041" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g041" id="6001" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g041" id="6001" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g041" id="7041" type="Misc" unk="206" unk2="273">
+		<Bind uid="g041" id="7041" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g041" id="8041" type="Special" unk="5" unk2="273">
+		<Bind uid="g041" id="8041" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g042">
-		<Bind uid="g042" id="1001" type="Engine" unk="146" unk2="166">
+		<Bind uid="g042" id="1001" grouptype="1" unk="146" unk2="166">
 		</Bind>
-		<Bind uid="g042" id="2001" type="Storage" unk="66" unk2="221">
+		<Bind uid="g042" id="2001" grouptype="2" unk="66" unk2="221">
 		</Bind>
-		<Bind uid="g042" id="3001" type="Computer" unk="76" unk2="143">
+		<Bind uid="g042" id="3001" grouptype="3" unk="76" unk2="143">
 		</Bind>
-		<Bind uid="g042" id="4042" type="Weapon" unk="32" unk2="41">
+		<Bind uid="g042" id="4042" grouptype="4" unk="32" unk2="41">
 		</Bind>
-		<Bind uid="g042" id="5001" type="Armor" unk="190" unk2="86">
+		<Bind uid="g042" id="5001" grouptype="5" unk="190" unk2="86">
 		</Bind>
-		<Bind uid="g042" id="6001" type="Ammo" unk="106" unk2="60">
+		<Bind uid="g042" id="6001" grouptype="6" unk="106" unk2="60">
 		</Bind>
-		<Bind uid="g042" id="7042" type="Misc" unk="206" unk2="273">
+		<Bind uid="g042" id="7042" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g042" id="8042" type="Special" unk="5" unk2="273">
+		<Bind uid="g042" id="8042" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g043">
-		<Bind uid="g043" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g043" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g043" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g043" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g043" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g043" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g043" id="4143" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g043" id="4143" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g043" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g043" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g043" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g043" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g043" id="7101" type="Misc" unk="206" unk2="273">
+		<Bind uid="g043" id="7101" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g043" id="8143" type="Special" unk="5" unk2="273">
+		<Bind uid="g043" id="8143" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g044">
-		<Bind uid="g044" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g044" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g044" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g044" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g044" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g044" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g044" id="4044" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g044" id="4044" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g044" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g044" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g044" id="6001" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g044" id="6001" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g044" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g044" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g044" id="8044" type="Special" unk="5" unk2="273">
+		<Bind uid="g044" id="8044" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g045">
-		<Bind uid="g045" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g045" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g045" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g045" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g045" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g045" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g045" id="4145" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g045" id="4145" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g045" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g045" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g045" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g045" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g045" id="7100" type="Misc" unk="206" unk2="273">
+		<Bind uid="g045" id="7100" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g045" id="8145" type="Special" unk="5" unk2="273">
+		<Bind uid="g045" id="8145" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g046">
-		<Bind uid="g046" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="g046" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="g046" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="g046" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="g046" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="g046" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="g046" id="4341" type="Weapon" unk="610" unk2="610">
+		<Bind uid="g046" id="4341" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="g046" id="5341" type="Armor" unk="647" unk2="647">
+		<Bind uid="g046" id="5341" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="g046" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="g046" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="g046" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="g046" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g046" id="8324" type="Special" unk="5" unk2="273">
+		<Bind uid="g046" id="8324" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g049">
-		<Bind uid="g049" id="1049" type="Engine" unk="109" unk2="79">
+		<Bind uid="g049" id="1049" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g049" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g049" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g049" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g049" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g049" id="4049" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g049" id="4049" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g049" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g049" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g049" id="6003" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g049" id="6003" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g049" id="7003" type="Misc" unk="206" unk2="273">
+		<Bind uid="g049" id="7003" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g049" id="8003" type="Special" unk="5" unk2="273">
+		<Bind uid="g049" id="8003" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g050">
-		<Bind uid="g050" id="1501" type="Engine" unk="109" unk2="79">
+		<Bind uid="g050" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g050" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g050" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g050" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g050" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g050" id="4550" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g050" id="4550" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g050" id="5501" type="Armor" unk="177" unk2="79">
+		<Bind uid="g050" id="5501" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g050" id="6500" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g050" id="6500" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g050" id="7550" type="Misc" unk="206" unk2="273">
+		<Bind uid="g050" id="7550" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g050" id="8550" type="Special" unk="5" unk2="273">
+		<Bind uid="g050" id="8550" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g051">
-		<Bind uid="g051" id="1049" type="Engine" unk="109" unk2="79">
+		<Bind uid="g051" id="1049" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g051" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g051" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g051" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g051" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g051" id="4049" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g051" id="4049" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g051" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g051" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g051" id="6003" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g051" id="6003" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g051" id="7003" type="Misc" unk="206" unk2="273">
+		<Bind uid="g051" id="7003" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g051" id="8051" type="Special" unk="5" unk2="273">
+		<Bind uid="g051" id="8051" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g052">
-		<Bind uid="g052" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g052" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g052" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g052" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g052" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g052" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g052" id="4552" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g052" id="4552" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g052" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g052" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g052" id="6500" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g052" id="6500" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g052" id="7552" type="Misc" unk="206" unk2="273">
+		<Bind uid="g052" id="7552" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g052" id="8552" type="Special" unk="5" unk2="273">
+		<Bind uid="g052" id="8552" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g054">
-		<Bind uid="g054" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g054" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g054" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g054" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g054" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g054" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g054" id="4199" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g054" id="4199" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g054" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g054" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g054" id="6154" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g054" id="6154" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g054" id="7154" type="Misc" unk="206" unk2="273">
+		<Bind uid="g054" id="7154" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g054" id="8154" type="Special" unk="5" unk2="273">
+		<Bind uid="g054" id="8154" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g055">
-		<Bind uid="g055" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g055" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g055" id="2055" type="Storage" unk="109" unk2="147">
+		<Bind uid="g055" id="2055" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g055" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g055" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g055" id="4155" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g055" id="4155" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g055" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g055" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g055" id="6155" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g055" id="6155" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g055" id="7155" type="Misc" unk="206" unk2="273">
+		<Bind uid="g055" id="7155" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g055" id="8155" type="Special" unk="5" unk2="273">
+		<Bind uid="g055" id="8155" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g056">
-		<Bind uid="g056" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g056" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g056" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g056" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g056" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g056" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g056" id="4771" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g056" id="4771" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g056" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="g056" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g056" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g056" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g056" id="7771" type="Misc" unk="206" unk2="273">
+		<Bind uid="g056" id="7771" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g056" id="8771" type="Special" unk="5" unk2="273">
+		<Bind uid="g056" id="8771" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g057">
-		<Bind uid="g057" id="1001" type="Engine" unk="106" unk2="97">
+		<Bind uid="g057" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
-		<Bind uid="g057" id="2077" type="Storage" unk="106" unk2="165">
+		<Bind uid="g057" id="2077" grouptype="2" unk="106" unk2="165">
 		</Bind>
-		<Bind uid="g057" id="3001" type="Computer" unk="106" unk2="29">
+		<Bind uid="g057" id="3001" grouptype="3" unk="106" unk2="29">
 		</Bind>
-		<Bind uid="g057" id="4077" type="Weapon" unk="10" unk2="182">
+		<Bind uid="g057" id="4077" grouptype="4" unk="10" unk2="182">
 		</Bind>
-		<Bind uid="g057" id="5001" type="Armor" unk="174" unk2="97">
+		<Bind uid="g057" id="5001" grouptype="5" unk="174" unk2="97">
 		</Bind>
-		<Bind uid="g057" id="6001" type="Ammo" unk="184" unk2="14">
+		<Bind uid="g057" id="6001" grouptype="6" unk="184" unk2="14">
 		</Bind>
-		<Bind uid="g057" id="7077" type="Misc" unk="206" unk2="273">
+		<Bind uid="g057" id="7077" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g057" id="8077" type="Special" unk="5" unk2="273">
+		<Bind uid="g057" id="8077" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g058">
-		<Bind uid="g058" id="1101" type="Engine" unk="109" unk2="79">
+		<Bind uid="g058" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g058" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g058" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g058" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g058" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g058" id="4171" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g058" id="4171" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g058" id="5171" type="Armor" unk="177" unk2="79">
+		<Bind uid="g058" id="5171" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g058" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g058" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g058" id="7171" type="Misc" unk="206" unk2="273">
+		<Bind uid="g058" id="7171" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g058" id="8171" type="Special" unk="5" unk2="273">
+		<Bind uid="g058" id="8171" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="g059">
-		<Bind uid="g059" id="1001" type="Engine" unk="109" unk2="79">
+		<Bind uid="g059" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="g059" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="g059" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="g059" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="g059" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="g059" id="4059" type="Weapon" unk="22" unk2="95">
+		<Bind uid="g059" id="4059" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="g059" id="5001" type="Armor" unk="177" unk2="79">
+		<Bind uid="g059" id="5001" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="g059" id="6059" type="Ammo" unk="204" unk2="8">
+		<Bind uid="g059" id="6059" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="g059" id="7000" type="Misc" unk="206" unk2="273">
+		<Bind uid="g059" id="7000" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="g059" id="8059" type="Special" unk="5" unk2="273">
+		<Bind uid="g059" id="8059" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a001">
-		<Bind uid="a001" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a001" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a001" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a001" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a001" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a001" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a001" id="4199" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a001" id="4199" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a001" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a001" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a001" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a001" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a001" id="7201" type="Misc" unk="206" unk2="273">
+		<Bind uid="a001" id="7201" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a001" id="8201" type="Special" unk="5" unk2="273">
+		<Bind uid="a001" id="8201" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a002">
-		<Bind uid="a002" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a002" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a002" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a002" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a002" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a002" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a002" id="4202" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a002" id="4202" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a002" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a002" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a002" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a002" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a002" id="7200" type="Misc" unk="206" unk2="273">
+		<Bind uid="a002" id="7200" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a002" id="8202" type="Special" unk="5" unk2="273">
+		<Bind uid="a002" id="8202" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a004">
-		<Bind uid="a004" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a004" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a004" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a004" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a004" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a004" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a004" id="4204" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a004" id="4204" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a004" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a004" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a004" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a004" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a004" id="7200" type="Misc" unk="206" unk2="273">
+		<Bind uid="a004" id="7200" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a004" id="8204" type="Special" unk="5" unk2="273">
+		<Bind uid="a004" id="8204" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a005">
-		<Bind uid="a005" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="a005" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="a005" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="a005" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="a005" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="a005" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="a005" id="4311" type="Weapon" unk="610" unk2="610">
+		<Bind uid="a005" id="4311" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="a005" id="5311" type="Armor" unk="647" unk2="647">
+		<Bind uid="a005" id="5311" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="a005" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="a005" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="a005" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="a005" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a005" id="8306" type="Special" unk="5" unk2="273">
+		<Bind uid="a005" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a006">
-		<Bind uid="a006" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="a006" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="a006" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="a006" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="a006" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="a006" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="a006" id="4311" type="Weapon" unk="610" unk2="610">
+		<Bind uid="a006" id="4311" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="a006" id="5311" type="Armor" unk="647" unk2="647">
+		<Bind uid="a006" id="5311" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="a006" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="a006" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="a006" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="a006" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a006" id="8306" type="Special" unk="5" unk2="273">
+		<Bind uid="a006" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a007">
-		<Bind uid="a007" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="a007" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="a007" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="a007" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="a007" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="a007" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="a007" id="4311" type="Weapon" unk="610" unk2="610">
+		<Bind uid="a007" id="4311" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="a007" id="5311" type="Armor" unk="647" unk2="647">
+		<Bind uid="a007" id="5311" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="a007" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="a007" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="a007" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="a007" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a007" id="8306" type="Special" unk="5" unk2="273">
+		<Bind uid="a007" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a008">
-		<Bind uid="a008" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a008" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a008" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a008" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a008" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a008" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a008" id="4208" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a008" id="4208" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a008" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a008" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a008" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a008" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a008" id="7200" type="Misc" unk="206" unk2="273">
+		<Bind uid="a008" id="7200" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a008" id="8208" type="Special" unk="5" unk2="273">
+		<Bind uid="a008" id="8208" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a009">
-		<Bind uid="a009" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="a009" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="a009" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="a009" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="a009" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="a009" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="a009" id="4311" type="Weapon" unk="610" unk2="610">
+		<Bind uid="a009" id="4311" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="a009" id="5311" type="Armor" unk="647" unk2="647">
+		<Bind uid="a009" id="5311" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="a009" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="a009" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="a009" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="a009" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a009" id="8306" type="Special" unk="5" unk2="273">
+		<Bind uid="a009" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a010">
-		<Bind uid="a010" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="a010" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="a010" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="a010" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="a010" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="a010" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="a010" id="4361" type="Weapon" unk="610" unk2="610">
+		<Bind uid="a010" id="4361" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="a010" id="5321" type="Armor" unk="647" unk2="647">
+		<Bind uid="a010" id="5321" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="a010" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="a010" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="a010" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="a010" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a010" id="8310" type="Special" unk="5" unk2="273">
+		<Bind uid="a010" id="8310" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a011">
-		<Bind uid="a011" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a011" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a011" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a011" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a011" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a011" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a011" id="4211" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a011" id="4211" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a011" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a011" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a011" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a011" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a011" id="7211" type="Misc" unk="206" unk2="273">
+		<Bind uid="a011" id="7211" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a011" id="8211" type="Special" unk="5" unk2="273">
+		<Bind uid="a011" id="8211" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a012">
-		<Bind uid="a012" id="1501" type="Engine" unk="109" unk2="79">
+		<Bind uid="a012" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a012" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a012" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a012" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a012" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a012" id="4612" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a012" id="4612" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a012" id="5501" type="Armor" unk="177" unk2="79">
+		<Bind uid="a012" id="5501" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a012" id="6500" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a012" id="6500" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a012" id="7612" type="Misc" unk="206" unk2="273">
+		<Bind uid="a012" id="7612" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a012" id="8612" type="Special" unk="5" unk2="273">
+		<Bind uid="a012" id="8612" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a013">
-		<Bind uid="a013" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a013" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a013" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a013" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a013" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a013" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a013" id="4213" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a013" id="4213" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a013" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a013" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a013" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a013" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a013" id="7213" type="Misc" unk="206" unk2="273">
+		<Bind uid="a013" id="7213" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a013" id="8213" type="Special" unk="5" unk2="273">
+		<Bind uid="a013" id="8213" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a014">
-		<Bind uid="a014" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a014" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a014" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a014" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a014" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a014" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a014" id="4214" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a014" id="4214" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a014" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a014" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a014" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a014" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a014" id="7214" type="Misc" unk="206" unk2="273">
+		<Bind uid="a014" id="7214" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a014" id="8214" type="Special" unk="5" unk2="273">
+		<Bind uid="a014" id="8214" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a015">
-		<Bind uid="a015" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a015" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a015" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a015" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a015" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a015" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a015" id="4215" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a015" id="4215" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a015" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a015" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a015" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a015" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a015" id="7200" type="Misc" unk="206" unk2="273">
+		<Bind uid="a015" id="7200" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a015" id="8215" type="Special" unk="5" unk2="273">
+		<Bind uid="a015" id="8215" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a016">
-		<Bind uid="a016" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a016" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a016" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a016" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a016" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a016" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a016" id="4216" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a016" id="4216" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a016" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a016" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a016" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a016" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a016" id="7200" type="Misc" unk="206" unk2="273">
+		<Bind uid="a016" id="7200" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a016" id="8216" type="Special" unk="5" unk2="273">
+		<Bind uid="a016" id="8216" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a017">
-		<Bind uid="a017" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="a017" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="a017" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="a017" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="a017" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="a017" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="a017" id="4351" type="Weapon" unk="610" unk2="610">
+		<Bind uid="a017" id="4351" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="a017" id="5311" type="Armor" unk="647" unk2="647">
+		<Bind uid="a017" id="5311" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="a017" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="a017" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="a017" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="a017" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a017" id="8317" type="Special" unk="5" unk2="273">
+		<Bind uid="a017" id="8317" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a018">
-		<Bind uid="a018" id="1000" type="Engine" unk="645" unk2="602">
+		<Bind uid="a018" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
-		<Bind uid="a018" id="2000" type="Storage" unk="602" unk2="632">
+		<Bind uid="a018" id="2000" grouptype="2" unk="602" unk2="632">
 		</Bind>
-		<Bind uid="a018" id="3000" type="Computer" unk="678" unk2="660">
+		<Bind uid="a018" id="3000" grouptype="3" unk="678" unk2="660">
 		</Bind>
-		<Bind uid="a018" id="4351" type="Weapon" unk="610" unk2="610">
+		<Bind uid="a018" id="4351" grouptype="4" unk="610" unk2="610">
 		</Bind>
-		<Bind uid="a018" id="5311" type="Armor" unk="647" unk2="647">
+		<Bind uid="a018" id="5311" grouptype="5" unk="647" unk2="647">
 		</Bind>
-		<Bind uid="a018" id="6000" type="Ammo" unk="609" unk2="673">
+		<Bind uid="a018" id="6000" grouptype="6" unk="609" unk2="673">
 		</Bind>
-		<Bind uid="a018" id="7300" type="Misc" unk="206" unk2="273">
+		<Bind uid="a018" id="7300" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a018" id="8317" type="Special" unk="5" unk2="273">
+		<Bind uid="a018" id="8317" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a019">
-		<Bind uid="a019" id="1501" type="Engine" unk="109" unk2="79">
+		<Bind uid="a019" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a019" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a019" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a019" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a019" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a019" id="4619" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a019" id="4619" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a019" id="5501" type="Armor" unk="177" unk2="79">
+		<Bind uid="a019" id="5501" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a019" id="6500" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a019" id="6500" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a019" id="7612" type="Misc" unk="206" unk2="273">
+		<Bind uid="a019" id="7612" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a019" id="8619" type="Special" unk="5" unk2="273">
+		<Bind uid="a019" id="8619" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a020">
-		<Bind uid="a020" id="1501" type="Engine" unk="109" unk2="79">
+		<Bind uid="a020" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a020" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a020" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a020" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a020" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a020" id="4620" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a020" id="4620" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a020" id="5501" type="Armor" unk="177" unk2="79">
+		<Bind uid="a020" id="5501" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a020" id="6500" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a020" id="6500" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a020" id="7550" type="Misc" unk="206" unk2="273">
+		<Bind uid="a020" id="7550" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a020" id="8620" type="Special" unk="5" unk2="273">
+		<Bind uid="a020" id="8620" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a021">
-		<Bind uid="a021" id="1501" type="Engine" unk="109" unk2="79">
+		<Bind uid="a021" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a021" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a021" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a021" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a021" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a021" id="4621" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a021" id="4621" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a021" id="5501" type="Armor" unk="177" unk2="79">
+		<Bind uid="a021" id="5501" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a021" id="6622" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a021" id="6622" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a021" id="7622" type="Misc" unk="206" unk2="273">
+		<Bind uid="a021" id="7622" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a021" id="8622" type="Special" unk="5" unk2="273">
+		<Bind uid="a021" id="8622" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a022">
-		<Bind uid="a022" id="1501" type="Engine" unk="109" unk2="79">
+		<Bind uid="a022" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a022" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a022" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a022" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a022" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a022" id="4622" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a022" id="4622" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a022" id="5501" type="Armor" unk="177" unk2="79">
+		<Bind uid="a022" id="5501" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a022" id="6622" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a022" id="6622" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a022" id="7622" type="Misc" unk="206" unk2="273">
+		<Bind uid="a022" id="7622" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a022" id="8622" type="Special" unk="5" unk2="273">
+		<Bind uid="a022" id="8622" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a023">
-		<Bind uid="a023" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a023" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a023" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a023" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a023" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a023" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a023" id="4223" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a023" id="4223" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a023" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a023" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a023" id="6101" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a023" id="6101" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a023" id="7200" type="Misc" unk="206" unk2="273">
+		<Bind uid="a023" id="7200" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a023" id="8223" type="Special" unk="5" unk2="273">
+		<Bind uid="a023" id="8223" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList uid="a024">
-		<Bind uid="a024" id="1201" type="Engine" unk="109" unk2="79">
+		<Bind uid="a024" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
-		<Bind uid="a024" id="2001" type="Storage" unk="109" unk2="147">
+		<Bind uid="a024" id="2001" grouptype="2" unk="109" unk2="147">
 		</Bind>
-		<Bind uid="a024" id="3001" type="Computer" unk="109" unk2="11">
+		<Bind uid="a024" id="3001" grouptype="3" unk="109" unk2="11">
 		</Bind>
-		<Bind uid="a024" id="4224" type="Weapon" unk="22" unk2="95">
+		<Bind uid="a024" id="4224" grouptype="4" unk="22" unk2="95">
 		</Bind>
-		<Bind uid="a024" id="5101" type="Armor" unk="177" unk2="79">
+		<Bind uid="a024" id="5101" grouptype="5" unk="177" unk2="79">
 		</Bind>
-		<Bind uid="a024" id="6201" type="Ammo" unk="204" unk2="8">
+		<Bind uid="a024" id="6201" grouptype="6" unk="204" unk2="8">
 		</Bind>
-		<Bind uid="a024" id="7202" type="Misc" unk="206" unk2="273">
+		<Bind uid="a024" id="7202" grouptype="7" unk="206" unk2="273">
 		</Bind>
-		<Bind uid="a024" id="8224" type="Special" unk="5" unk2="273">
+		<Bind uid="a024" id="8224" grouptype="8" unk="5" unk2="273">
 		</Bind>
 	</BindingList>
 	<BindingList>

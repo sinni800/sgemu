@@ -57,23 +57,23 @@ type RankData struct {
 }
 
 type BindingFile struct {
-	XMLName xml.Name `xml:"BindingFile"`
-	Groups   []*BindingGroup `xml:"BindingGroup"`
+	XMLName xml.Name        `xml:"BindingFile"`
+	Groups  []*BindingGroup `xml:"BindingGroup"`
 }
 
 type BindingGroup struct {
-	XMLName xml.Name `xml:"BindingList"`
-	UID     string   `xml:"attr"`
+	XMLName xml.Name       `xml:"BindingList"`
+	UID     string         `xml:"attr"`
 	Binds   []*BindingData `xml:"Bind"`
 }
 
 type BindingData struct {
-	XMLName xml.Name `xml:"Bind"`
-	UID     string   `xml:"attr"`
-	ID      uint16   `xml:"attr"`
-	Type    string   `xml:"attr"`
-	Unk		int16   `xml:"attr"`
-	Unk2    int16   `xml:"attr"`
+	XMLName   xml.Name `xml:"Bind"`
+	UID       string   `xml:"attr"`
+	ID        uint16   `xml:"attr"`
+	GroupType Group    `xml:"attr"`
+	Unk       int16    `xml:"attr"`
+	Unk2      int16    `xml:"attr"`
 }
 
 type GroupData struct {
@@ -152,7 +152,7 @@ type ItemData struct {
 	Unk3          int8
 	WeaponType    byte
 	ViewRange     float32
-	GroupType     Group
+	GroupType     Group `xml:"attr"`
 	ComplexityMax uint16
 	XpBonus       uint16
 }
