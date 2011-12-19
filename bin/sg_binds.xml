@@ -1,5 +1,5 @@
 <BindingFile>
-	<BindingList uid="g001">
+<Groups>	<BindingGroup uid="g001">
 		<Bind uid="g001" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g001" id="2001" grouptype="2" unk="109" unk2="147">
@@ -16,8 +16,8 @@
 		</Bind>
 		<Bind uid="g001" id="8001" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g002">
+	</BindingGroup>
+	<BindingGroup uid="g002">
 		<Bind uid="g002" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g002" id="2001" grouptype="2" unk="109" unk2="147">
@@ -34,8 +34,8 @@
 		</Bind>
 		<Bind uid="g002" id="8202" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g003">
+	</BindingGroup>
+	<BindingGroup uid="g003">
 		<Bind uid="g003" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g003" id="2001" grouptype="2" unk="109" unk2="147">
@@ -52,8 +52,8 @@
 		</Bind>
 		<Bind uid="g003" id="8003" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g004">
+	</BindingGroup>
+	<BindingGroup uid="g004">
 		<Bind uid="g004" id="1001" grouptype="1" unk="107" unk2="139">
 		</Bind>
 		<Bind uid="g004" id="2001" grouptype="2" unk="107" unk2="208">
@@ -70,8 +70,8 @@
 		</Bind>
 		<Bind uid="g004" id="8004" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g005">
+	</BindingGroup>
+	<BindingGroup uid="g005">
 		<Bind uid="g005" id="1001" grouptype="1" unk="107" unk2="139">
 		</Bind>
 		<Bind uid="g005" id="2001" grouptype="2" unk="107" unk2="208">
@@ -88,8 +88,8 @@
 		</Bind>
 		<Bind uid="g005" id="8005" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g006">
+	</BindingGroup>
+	<BindingGroup uid="g006">
 		<Bind uid="g006" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g006" id="2001" grouptype="2" unk="109" unk2="147">
@@ -106,8 +106,8 @@
 		</Bind>
 		<Bind uid="g006" id="8006" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g007">
+	</BindingGroup>
+	<BindingGroup uid="g007">
 		<Bind uid="g007" id="1000" grouptype="1" unk="107" unk2="139">
 		</Bind>
 		<Bind uid="g007" id="2000" grouptype="2" unk="107" unk2="208">
@@ -124,8 +124,8 @@
 		</Bind>
 		<Bind uid="g007" id="8000" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g008">
+	</BindingGroup>
+	<BindingGroup uid="g008">
 		<Bind uid="g008" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g008" id="2001" grouptype="2" unk="109" unk2="147">
@@ -142,8 +142,8 @@
 		</Bind>
 		<Bind uid="g008" id="8108" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g009">
+	</BindingGroup>
+	<BindingGroup uid="g009">
 		<Bind uid="g009" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g009" id="2001" grouptype="2" unk="109" unk2="147">
@@ -160,8 +160,8 @@
 		</Bind>
 		<Bind uid="g009" id="8109" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g010">
+	</BindingGroup>
+	<BindingGroup uid="g010">
 		<Bind uid="g010" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g010" id="2001" grouptype="2" unk="109" unk2="147">
@@ -178,8 +178,8 @@
 		</Bind>
 		<Bind uid="g010" id="8210" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g011">
+	</BindingGroup>
+	<BindingGroup uid="g011">
 		<Bind uid="g011" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g011" id="2000" grouptype="2" unk="602" unk2="632">
@@ -196,8 +196,8 @@
 		</Bind>
 		<Bind uid="g011" id="8311" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g012">
+	</BindingGroup>
+	<BindingGroup uid="g012">
 		<Bind uid="g012" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g012" id="2000" grouptype="2" unk="602" unk2="632">
@@ -214,8 +214,8 @@
 		</Bind>
 		<Bind uid="g012" id="8311" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g013">
+	</BindingGroup>
+	<BindingGroup uid="g013">
 		<Bind uid="g013" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g013" id="2000" grouptype="2" unk="602" unk2="632">
@@ -232,8 +232,8 @@
 		</Bind>
 		<Bind uid="g013" id="8311" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g014">
+	</BindingGroup>
+	<BindingGroup uid="g014">
 		<Bind uid="g014" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g014" id="2000" grouptype="2" unk="602" unk2="632">
@@ -250,8 +250,8 @@
 		</Bind>
 		<Bind uid="g014" id="8315" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g015">
+	</BindingGroup>
+	<BindingGroup uid="g015">
 		<Bind uid="g015" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g015" id="2000" grouptype="2" unk="602" unk2="632">
@@ -268,8 +268,8 @@
 		</Bind>
 		<Bind uid="g015" id="8315" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g016">
+	</BindingGroup>
+	<BindingGroup uid="g016">
 		<Bind uid="g016" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
 		<Bind uid="g016" id="2001" grouptype="2" unk="106" unk2="165">
@@ -286,8 +286,8 @@
 		</Bind>
 		<Bind uid="g016" id="8016" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g017">
+	</BindingGroup>
+	<BindingGroup uid="g017">
 		<Bind uid="g017" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g017" id="2001" grouptype="2" unk="109" unk2="147">
@@ -304,8 +304,8 @@
 		</Bind>
 		<Bind uid="g017" id="8017" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g018">
+	</BindingGroup>
+	<BindingGroup uid="g018">
 		<Bind uid="g018" id="1001" grouptype="1" unk="146" unk2="166">
 		</Bind>
 		<Bind uid="g018" id="2001" grouptype="2" unk="66" unk2="221">
@@ -322,8 +322,8 @@
 		</Bind>
 		<Bind uid="g018" id="8018" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g019">
+	</BindingGroup>
+	<BindingGroup uid="g019">
 		<Bind uid="g019" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g019" id="2001" grouptype="2" unk="109" unk2="147">
@@ -340,8 +340,8 @@
 		</Bind>
 		<Bind uid="g019" id="8019" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g020">
+	</BindingGroup>
+	<BindingGroup uid="g020">
 		<Bind uid="g020" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g020" id="2001" grouptype="2" unk="109" unk2="147">
@@ -358,8 +358,8 @@
 		</Bind>
 		<Bind uid="g020" id="8120" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g021">
+	</BindingGroup>
+	<BindingGroup uid="g021">
 		<Bind uid="g021" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g021" id="2001" grouptype="2" unk="109" unk2="147">
@@ -376,8 +376,8 @@
 		</Bind>
 		<Bind uid="g021" id="8021" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g022">
+	</BindingGroup>
+	<BindingGroup uid="g022">
 		<Bind uid="g022" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
 		<Bind uid="g022" id="2001" grouptype="2" unk="106" unk2="165">
@@ -394,8 +394,8 @@
 		</Bind>
 		<Bind uid="g022" id="8522" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g023">
+	</BindingGroup>
+	<BindingGroup uid="g023">
 		<Bind uid="g023" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g023" id="2001" grouptype="2" unk="109" unk2="147">
@@ -412,8 +412,8 @@
 		</Bind>
 		<Bind uid="g023" id="8123" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g024">
+	</BindingGroup>
+	<BindingGroup uid="g024">
 		<Bind uid="g024" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g024" id="2000" grouptype="2" unk="602" unk2="632">
@@ -430,8 +430,8 @@
 		</Bind>
 		<Bind uid="g024" id="8324" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g025">
+	</BindingGroup>
+	<BindingGroup uid="g025">
 		<Bind uid="g025" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g025" id="2000" grouptype="2" unk="602" unk2="632">
@@ -448,8 +448,8 @@
 		</Bind>
 		<Bind uid="g025" id="8325" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g027">
+	</BindingGroup>
+	<BindingGroup uid="g027">
 		<Bind uid="g027" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g027" id="2000" grouptype="2" unk="602" unk2="632">
@@ -466,8 +466,8 @@
 		</Bind>
 		<Bind uid="g027" id="8324" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g028">
+	</BindingGroup>
+	<BindingGroup uid="g028">
 		<Bind uid="g028" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g028" id="2000" grouptype="2" unk="602" unk2="632">
@@ -484,8 +484,8 @@
 		</Bind>
 		<Bind uid="g028" id="8325" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g029">
+	</BindingGroup>
+	<BindingGroup uid="g029">
 		<Bind uid="g029" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g029" id="2000" grouptype="2" unk="602" unk2="632">
@@ -502,8 +502,8 @@
 		</Bind>
 		<Bind uid="g029" id="8325" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g030">
+	</BindingGroup>
+	<BindingGroup uid="g030">
 		<Bind uid="g030" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g030" id="2000" grouptype="2" unk="602" unk2="632">
@@ -520,8 +520,8 @@
 		</Bind>
 		<Bind uid="g030" id="8315" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g031">
+	</BindingGroup>
+	<BindingGroup uid="g031">
 		<Bind uid="g031" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g031" id="2000" grouptype="2" unk="602" unk2="632">
@@ -538,8 +538,8 @@
 		</Bind>
 		<Bind uid="g031" id="8329" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g032">
+	</BindingGroup>
+	<BindingGroup uid="g032">
 		<Bind uid="g032" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g032" id="2001" grouptype="2" unk="109" unk2="147">
@@ -556,8 +556,8 @@
 		</Bind>
 		<Bind uid="g032" id="8132" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g034">
+	</BindingGroup>
+	<BindingGroup uid="g034">
 		<Bind uid="g034" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g034" id="2001" grouptype="2" unk="109" unk2="147">
@@ -574,8 +574,8 @@
 		</Bind>
 		<Bind uid="g034" id="8234" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g035">
+	</BindingGroup>
+	<BindingGroup uid="g035">
 		<Bind uid="g035" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g035" id="2001" grouptype="2" unk="109" unk2="147">
@@ -592,8 +592,8 @@
 		</Bind>
 		<Bind uid="g035" id="8135" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g037">
+	</BindingGroup>
+	<BindingGroup uid="g037">
 		<Bind uid="g037" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g037" id="2001" grouptype="2" unk="109" unk2="147">
@@ -610,8 +610,8 @@
 		</Bind>
 		<Bind uid="g037" id="8137" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g038">
+	</BindingGroup>
+	<BindingGroup uid="g038">
 		<Bind uid="g038" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g038" id="2001" grouptype="2" unk="109" unk2="147">
@@ -628,8 +628,8 @@
 		</Bind>
 		<Bind uid="g038" id="8138" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g039">
+	</BindingGroup>
+	<BindingGroup uid="g039">
 		<Bind uid="g039" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
 		<Bind uid="g039" id="2001" grouptype="2" unk="106" unk2="165">
@@ -646,8 +646,8 @@
 		</Bind>
 		<Bind uid="g039" id="8039" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g040">
+	</BindingGroup>
+	<BindingGroup uid="g040">
 		<Bind uid="g040" id="1001" grouptype="1" unk="107" unk2="139">
 		</Bind>
 		<Bind uid="g040" id="2001" grouptype="2" unk="107" unk2="208">
@@ -664,8 +664,8 @@
 		</Bind>
 		<Bind uid="g040" id="8040" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g041">
+	</BindingGroup>
+	<BindingGroup uid="g041">
 		<Bind uid="g041" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g041" id="2001" grouptype="2" unk="109" unk2="147">
@@ -682,8 +682,8 @@
 		</Bind>
 		<Bind uid="g041" id="8041" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g042">
+	</BindingGroup>
+	<BindingGroup uid="g042">
 		<Bind uid="g042" id="1001" grouptype="1" unk="146" unk2="166">
 		</Bind>
 		<Bind uid="g042" id="2001" grouptype="2" unk="66" unk2="221">
@@ -700,8 +700,8 @@
 		</Bind>
 		<Bind uid="g042" id="8042" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g043">
+	</BindingGroup>
+	<BindingGroup uid="g043">
 		<Bind uid="g043" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g043" id="2001" grouptype="2" unk="109" unk2="147">
@@ -718,8 +718,8 @@
 		</Bind>
 		<Bind uid="g043" id="8143" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g044">
+	</BindingGroup>
+	<BindingGroup uid="g044">
 		<Bind uid="g044" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g044" id="2001" grouptype="2" unk="109" unk2="147">
@@ -736,8 +736,8 @@
 		</Bind>
 		<Bind uid="g044" id="8044" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g045">
+	</BindingGroup>
+	<BindingGroup uid="g045">
 		<Bind uid="g045" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g045" id="2001" grouptype="2" unk="109" unk2="147">
@@ -754,8 +754,8 @@
 		</Bind>
 		<Bind uid="g045" id="8145" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g046">
+	</BindingGroup>
+	<BindingGroup uid="g046">
 		<Bind uid="g046" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="g046" id="2000" grouptype="2" unk="602" unk2="632">
@@ -772,8 +772,8 @@
 		</Bind>
 		<Bind uid="g046" id="8324" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g049">
+	</BindingGroup>
+	<BindingGroup uid="g049">
 		<Bind uid="g049" id="1049" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g049" id="2001" grouptype="2" unk="109" unk2="147">
@@ -790,8 +790,8 @@
 		</Bind>
 		<Bind uid="g049" id="8003" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g050">
+	</BindingGroup>
+	<BindingGroup uid="g050">
 		<Bind uid="g050" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g050" id="2001" grouptype="2" unk="109" unk2="147">
@@ -808,8 +808,8 @@
 		</Bind>
 		<Bind uid="g050" id="8550" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g051">
+	</BindingGroup>
+	<BindingGroup uid="g051">
 		<Bind uid="g051" id="1049" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g051" id="2001" grouptype="2" unk="109" unk2="147">
@@ -826,8 +826,8 @@
 		</Bind>
 		<Bind uid="g051" id="8051" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g052">
+	</BindingGroup>
+	<BindingGroup uid="g052">
 		<Bind uid="g052" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g052" id="2001" grouptype="2" unk="109" unk2="147">
@@ -844,8 +844,8 @@
 		</Bind>
 		<Bind uid="g052" id="8552" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g054">
+	</BindingGroup>
+	<BindingGroup uid="g054">
 		<Bind uid="g054" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g054" id="2001" grouptype="2" unk="109" unk2="147">
@@ -862,8 +862,8 @@
 		</Bind>
 		<Bind uid="g054" id="8154" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g055">
+	</BindingGroup>
+	<BindingGroup uid="g055">
 		<Bind uid="g055" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g055" id="2055" grouptype="2" unk="109" unk2="147">
@@ -880,8 +880,8 @@
 		</Bind>
 		<Bind uid="g055" id="8155" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g056">
+	</BindingGroup>
+	<BindingGroup uid="g056">
 		<Bind uid="g056" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g056" id="2001" grouptype="2" unk="109" unk2="147">
@@ -898,8 +898,8 @@
 		</Bind>
 		<Bind uid="g056" id="8771" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g057">
+	</BindingGroup>
+	<BindingGroup uid="g057">
 		<Bind uid="g057" id="1001" grouptype="1" unk="106" unk2="97">
 		</Bind>
 		<Bind uid="g057" id="2077" grouptype="2" unk="106" unk2="165">
@@ -916,8 +916,8 @@
 		</Bind>
 		<Bind uid="g057" id="8077" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g058">
+	</BindingGroup>
+	<BindingGroup uid="g058">
 		<Bind uid="g058" id="1101" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g058" id="2001" grouptype="2" unk="109" unk2="147">
@@ -934,8 +934,8 @@
 		</Bind>
 		<Bind uid="g058" id="8171" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="g059">
+	</BindingGroup>
+	<BindingGroup uid="g059">
 		<Bind uid="g059" id="1001" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="g059" id="2001" grouptype="2" unk="109" unk2="147">
@@ -952,8 +952,8 @@
 		</Bind>
 		<Bind uid="g059" id="8059" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a001">
+	</BindingGroup>
+	<BindingGroup uid="a001">
 		<Bind uid="a001" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a001" id="2001" grouptype="2" unk="109" unk2="147">
@@ -970,8 +970,8 @@
 		</Bind>
 		<Bind uid="a001" id="8201" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a002">
+	</BindingGroup>
+	<BindingGroup uid="a002">
 		<Bind uid="a002" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a002" id="2001" grouptype="2" unk="109" unk2="147">
@@ -988,8 +988,8 @@
 		</Bind>
 		<Bind uid="a002" id="8202" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a004">
+	</BindingGroup>
+	<BindingGroup uid="a004">
 		<Bind uid="a004" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a004" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1006,8 +1006,8 @@
 		</Bind>
 		<Bind uid="a004" id="8204" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a005">
+	</BindingGroup>
+	<BindingGroup uid="a005">
 		<Bind uid="a005" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="a005" id="2000" grouptype="2" unk="602" unk2="632">
@@ -1024,8 +1024,8 @@
 		</Bind>
 		<Bind uid="a005" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a006">
+	</BindingGroup>
+	<BindingGroup uid="a006">
 		<Bind uid="a006" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="a006" id="2000" grouptype="2" unk="602" unk2="632">
@@ -1042,8 +1042,8 @@
 		</Bind>
 		<Bind uid="a006" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a007">
+	</BindingGroup>
+	<BindingGroup uid="a007">
 		<Bind uid="a007" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="a007" id="2000" grouptype="2" unk="602" unk2="632">
@@ -1060,8 +1060,8 @@
 		</Bind>
 		<Bind uid="a007" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a008">
+	</BindingGroup>
+	<BindingGroup uid="a008">
 		<Bind uid="a008" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a008" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1078,8 +1078,8 @@
 		</Bind>
 		<Bind uid="a008" id="8208" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a009">
+	</BindingGroup>
+	<BindingGroup uid="a009">
 		<Bind uid="a009" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="a009" id="2000" grouptype="2" unk="602" unk2="632">
@@ -1096,8 +1096,8 @@
 		</Bind>
 		<Bind uid="a009" id="8306" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a010">
+	</BindingGroup>
+	<BindingGroup uid="a010">
 		<Bind uid="a010" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="a010" id="2000" grouptype="2" unk="602" unk2="632">
@@ -1114,8 +1114,8 @@
 		</Bind>
 		<Bind uid="a010" id="8310" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a011">
+	</BindingGroup>
+	<BindingGroup uid="a011">
 		<Bind uid="a011" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a011" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1132,8 +1132,8 @@
 		</Bind>
 		<Bind uid="a011" id="8211" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a012">
+	</BindingGroup>
+	<BindingGroup uid="a012">
 		<Bind uid="a012" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a012" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1150,8 +1150,8 @@
 		</Bind>
 		<Bind uid="a012" id="8612" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a013">
+	</BindingGroup>
+	<BindingGroup uid="a013">
 		<Bind uid="a013" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a013" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1168,8 +1168,8 @@
 		</Bind>
 		<Bind uid="a013" id="8213" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a014">
+	</BindingGroup>
+	<BindingGroup uid="a014">
 		<Bind uid="a014" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a014" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1186,8 +1186,8 @@
 		</Bind>
 		<Bind uid="a014" id="8214" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a015">
+	</BindingGroup>
+	<BindingGroup uid="a015">
 		<Bind uid="a015" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a015" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1204,8 +1204,8 @@
 		</Bind>
 		<Bind uid="a015" id="8215" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a016">
+	</BindingGroup>
+	<BindingGroup uid="a016">
 		<Bind uid="a016" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a016" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1222,8 +1222,8 @@
 		</Bind>
 		<Bind uid="a016" id="8216" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a017">
+	</BindingGroup>
+	<BindingGroup uid="a017">
 		<Bind uid="a017" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="a017" id="2000" grouptype="2" unk="602" unk2="632">
@@ -1240,8 +1240,8 @@
 		</Bind>
 		<Bind uid="a017" id="8317" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a018">
+	</BindingGroup>
+	<BindingGroup uid="a018">
 		<Bind uid="a018" id="1000" grouptype="1" unk="645" unk2="602">
 		</Bind>
 		<Bind uid="a018" id="2000" grouptype="2" unk="602" unk2="632">
@@ -1258,8 +1258,8 @@
 		</Bind>
 		<Bind uid="a018" id="8317" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a019">
+	</BindingGroup>
+	<BindingGroup uid="a019">
 		<Bind uid="a019" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a019" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1276,8 +1276,8 @@
 		</Bind>
 		<Bind uid="a019" id="8619" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a020">
+	</BindingGroup>
+	<BindingGroup uid="a020">
 		<Bind uid="a020" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a020" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1294,8 +1294,8 @@
 		</Bind>
 		<Bind uid="a020" id="8620" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a021">
+	</BindingGroup>
+	<BindingGroup uid="a021">
 		<Bind uid="a021" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a021" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1312,8 +1312,8 @@
 		</Bind>
 		<Bind uid="a021" id="8622" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a022">
+	</BindingGroup>
+	<BindingGroup uid="a022">
 		<Bind uid="a022" id="1501" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a022" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1330,8 +1330,8 @@
 		</Bind>
 		<Bind uid="a022" id="8622" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a023">
+	</BindingGroup>
+	<BindingGroup uid="a023">
 		<Bind uid="a023" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a023" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1348,8 +1348,8 @@
 		</Bind>
 		<Bind uid="a023" id="8223" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList uid="a024">
+	</BindingGroup>
+	<BindingGroup uid="a024">
 		<Bind uid="a024" id="1201" grouptype="1" unk="109" unk2="79">
 		</Bind>
 		<Bind uid="a024" id="2001" grouptype="2" unk="109" unk2="147">
@@ -1366,7 +1366,7 @@
 		</Bind>
 		<Bind uid="a024" id="8224" grouptype="8" unk="5" unk2="273">
 		</Bind>
-	</BindingList>
-	<BindingList>
-	</BindingList>
-</BindingFile>
+	</BindingGroup>
+	<BindingGroup>
+	</BindingGroup>
+</Groups></BindingFile>

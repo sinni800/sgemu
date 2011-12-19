@@ -25,6 +25,7 @@ var (
 	dataPath = "../sg_data.xml"
 	itemPath = "../sg_items.xml"
 	shopPath = "../sg_shop.xml"
+	bindsPath = "../sg_binds.xml"
 	Gamedata = new(Data)
 	Shopdata = new(ShopData)
 
@@ -36,8 +37,8 @@ var (
 		"":         Other}
 
 	Ranks = make(map[byte]*RankData)
-
 	Items = make(map[uint16]*ItemData)
+	Binds = make(map[string]*BindingGroup)
 
 	GroupNames = map[Group]string{Engines: "Engines", Weapons: "Weapons", Misc: "Misc", Armors: "Armors", Bonus: "Bonus", Specials: "Specials", Storage: "Storage", Computers: "Computers"}
 )
@@ -58,13 +59,13 @@ type RankData struct {
 
 type BindingFile struct {
 	XMLName xml.Name        `xml:"BindingFile"`
-	Groups  []*BindingGroup `xml:"BindingGroup"`
+	Groups  []*BindingGroup `xml:">BindingGroup"`
 }
-
+ 
 type BindingGroup struct {
-	XMLName xml.Name       `xml:"BindingList"`
+	XMLName xml.Name       `xml:"BindingGroup"`
 	UID     string         `xml:"attr"`
-	Binds   []*BindingData `xml:"Bind"`
+	Binds   []*BindingData
 }
 
 type BindingData struct {
@@ -170,19 +171,51 @@ func LoadData() {
 	units := make(chan bool)
 	shop := make(chan bool)
 	items := make(chan bool)
+	binds := make(chan bool)
 
 	go LoadItems(items)
 	go LoadUnitsAndRanks(units)
 	go LoadShop(shop)
+	go LoadBinds(binds)
 
-	<-items
+	<-items 
 	log.Println("Loaded", len(Items), "Items!")
 	<-units
 	log.Println("Loaded", len(Units), "Units!")
 	log.Println("Loaded", len(Ranks), "Ranks!")
 	<-shop
 	log.Println("Loaded", len(Shopdata.ShopUnits), "Shop units!")
+	<-binds
+	log.Println("Loaded", len(Binds), "Bind groups!")
 
+}
+
+func LoadBinds(Done chan bool) {
+	defer func() {
+		if x := recover(); x != nil {
+			log.Printf("%v\n", x)
+			Done <- false 
+		} else {
+			Done <- true
+		}
+	}()
+	f, e := os.Open(bindsPath)
+	if e != nil {
+		log.Panicln(e)
+	}
+
+	defer f.Close()
+ 
+	bf := BindingFile{}
+
+	e = xml.Unmarshal(f, &bf)
+	if e != nil {
+		log.Panicln(e)
+	}
+	
+	for _,group := range bf.Groups {
+		Binds[group.UID] = group
+	}
 }
 
 func LoadUnitsAndRanks(Done chan bool) {
