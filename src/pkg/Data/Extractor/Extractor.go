@@ -8,16 +8,24 @@ import (
 	. "Core"
 	. "Data"
 	"log"
+	"bufio"
+	"strings"
+	"strconv"
 )
 
 var (
 	ItemsPath = "./IINF.udf"
 	ItemsDescPath = "./hlp.dat"
-	
+	NTTPath = "./ntt.dat"
+	 
 	ItemsOut = "sg_items.xml"
+	BindsOut = "sg_binds.xml"
 	
 	ItemsData []*ItemData
+	BindingGroups []*BindingGroup
+	
 	ItemExtractDone = make(chan bool)
+	NttExtractDone = make(chan bool)
 )
 
 //Path: Game folder
@@ -38,9 +46,119 @@ func ReadFiles(path string, outpath string) {
 		log.Printf("%f\n", Float16FromBits(Float16Bits(46)))
 	*/
 	
+	p,e := os.Getwd()
+	if e != nil {
+		log.Panicln(e)
+	}
+	
+	outpath = p + outpath 
+	
+	e = os.Chdir(path)
+	if e != nil {
+		log.Panicln(e)
+	}
+	
+
+	
+	
 	go ExtractItems(path, outpath)
+	go ExtractNtt(path, outpath)
 
 	<-ItemExtractDone
+	<-NttExtractDone
+	
+}
+
+func ExtractNtt(path string, outpath string) {
+	defer Panic()
+	defer func() {
+			NttExtractDone <- true
+	}()
+	
+	nttFile,e := NewDatFile(NTTPath)
+	if e != nil {
+		log.Panicln(e)
+	}
+	
+	defer nttFile.Close()
+	
+	offset, e := nttFile.SeekToFile("equip.txt")
+	if e != nil {
+		log.Panicln(e)
+	}
+	
+	_ = offset
+		
+	reader := bufio.NewReader(nttFile.File)
+	
+	fullsize,e := nttFile.FileSize("equip.txt")
+	if e != nil {
+		log.Panicln(e)
+	}
+	bytes := make([]byte, fullsize)
+	reader.Read(bytes)
+	
+	fulltext := string(bytes)
+	groups := strings.Split(fulltext, "-1\r\n")
+	
+	BindingGroups = make([]*BindingGroup, len(groups))
+	
+	for j:=0;j<len(BindingGroups);j++ { 
+		split1 := strings.Split(groups[j], "\r\n")
+		groupName := split1[0]
+		
+		
+		bg := BindingGroup{}
+		bg.Binds = make([]*BindingData, len(split1)-1)
+		
+		for i:=1;i<len(split1)-1;i++ {
+		
+			bind := BindingData{};
+			bind.UID = groupName
+			bg.UID = groupName
+		  
+			split2 := strings.Split(split1[i], "\t")
+
+			num,e := strconv.ParseUint(split2[0],10,32)
+			if e != nil {
+				log.Panicln(e)
+			}
+			bind.ID = uint16(num) 
+			
+			bind.Type = split2[1]
+			
+			num,e = strconv.ParseUint(split2[2],10,32)
+			if e != nil {
+				log.Panicln(e)
+			}
+			bind.Unk = int16(num) 
+			
+			num,e = strconv.ParseUint(split2[3],10,32)
+			if e != nil {
+				log.Panicln(e)
+			}
+			bind.Unk2 = int16(num) 
+			
+			bg.Binds[i-1] = &bind
+		}  
+		
+		BindingGroups[j] = &bg
+	}
+	
+	outBinds, e := os.Create(outpath + BindsOut)
+	if e != nil {
+		log.Panicln(e) 
+	} 
+	
+	defer outBinds.Close()
+	
+	l := BindingFile{}
+	l.Groups = BindingGroups 
+
+	e = xml.Marshal(outBinds, l)
+	if e != nil {
+		log.Panicln(e)
+	}
 }
 
 func ExtractItems(path string, outpath string) {
@@ -53,14 +171,10 @@ func ExtractItems(path string, outpath string) {
 	if e != nil {
 		log.Panicln(e)
 	}
-
-	e = os.Chdir(path)
-	if e != nil {
-		log.Panicln(e)
-	}
 	
 	defer outItems.Close()
 	 
+	
 		 
 	f, e := os.Open(ItemsPath)
 	if e != nil {

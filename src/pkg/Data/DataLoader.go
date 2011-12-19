@@ -1,11 +1,11 @@
 package Data
 
 import (
+	"Data/xml"
 	"bufio"
 	"fmt"
-	"os"
-	"Data/xml"
 	"log"
+	"os"
 )
 
 type Group byte
@@ -22,12 +22,12 @@ const (
 )
 
 var (
-	dataPath  = "../sg_data.xml"
-	itemPath  = "../sg_items.xml"
-	shopPath  = "../sg_shop.xml"
-	Gamedata  = new(Data)
-	Shopdata  = new(ShopData)
-	
+	dataPath = "../sg_data.xml"
+	itemPath = "../sg_items.xml"
+	shopPath = "../sg_shop.xml"
+	Gamedata = new(Data)
+	Shopdata = new(ShopData)
+
 	Units     = make(map[string]*UnitData)
 	Divisions = map[string]DType{"Infantry": Infantry,
 		"Mobile":   Mobile,
@@ -54,6 +54,26 @@ type RankData struct {
 	Mobile   string `xml:"attr"`
 	Aviation string `xml:"attr"`
 	Organic  string `xml:"attr"`
+}
+
+type BindingFile struct {
+	XMLName xml.Name `xml:"BindingFile"`
+	Groups   []*BindingGroup `xml:"BindingGroup"`
+}
+
+type BindingGroup struct {
+	XMLName xml.Name `xml:"BindingList"`
+	UID     string   `xml:"attr"`
+	Binds   []*BindingData `xml:"Bind"`
+}
+
+type BindingData struct {
+	XMLName xml.Name `xml:"Bind"`
+	UID     string   `xml:"attr"`
+	ID      uint16   `xml:"attr"`
+	Type    string   `xml:"attr"`
+	Unk		int16   `xml:"attr"`
+	Unk2    int16   `xml:"attr"`
 }
 
 type GroupData struct {
@@ -106,7 +126,7 @@ type ItemDataList struct {
 type ItemData struct {
 	XMLName       xml.Name `xml:"Item"`
 	Name          string
-	Description   string 
+	Description   string
 	Group         string `xml:"attr"`
 	ID            uint16 `xml:"attr"`
 	GID           uint16 `xml:"attr"`
@@ -153,9 +173,8 @@ func LoadData() {
 
 	go LoadItems(items)
 	go LoadUnitsAndRanks(units)
-	go LoadShop(shop) 
-	
-	
+	go LoadShop(shop)
+
 	<-items
 	log.Println("Loaded", len(Items), "Items!")
 	<-units
@@ -167,7 +186,7 @@ func LoadData() {
 }
 
 func LoadUnitsAndRanks(Done chan bool) {
-	defer func() { 
+	defer func() {
 		if x := recover(); x != nil {
 			log.Printf("%v\n", x)
 			Done <- false
@@ -179,9 +198,9 @@ func LoadUnitsAndRanks(Done chan bool) {
 	if e != nil {
 		log.Panicln(e)
 	}
-	
+
 	defer f.Close()
-	
+
 	e = xml.Unmarshal(f, Gamedata)
 	if e != nil {
 		log.Panicln(e)
@@ -204,7 +223,7 @@ func LoadUnitsAndRanks(Done chan bool) {
 }
 
 func LoadShop(Done chan bool) {
-	defer func() { 
+	defer func() {
 		if x := recover(); x != nil {
 			log.Printf("%v\n", x)
 			Done <- false
@@ -216,9 +235,9 @@ func LoadShop(Done chan bool) {
 	if e != nil {
 		log.Panicln(e)
 	}
-	
+
 	defer f.Close()
-	
+
 	e = xml.Unmarshal(f, Shopdata)
 	if e != nil {
 		log.Panicln(e)
@@ -226,7 +245,7 @@ func LoadShop(Done chan bool) {
 }
 
 func LoadItems(Done chan bool) {
-	defer func() { 
+	defer func() {
 		if x := recover(); x != nil {
 			log.Printf("%v\n", x)
 			Done <- false
@@ -239,31 +258,31 @@ func LoadItems(Done chan bool) {
 	if e != nil {
 		log.Panicln(e)
 	}
-	
+
 	defer f.Close()
-	
+
 	e = xml.Unmarshal(f, ItemsDataList)
 	if e != nil {
 		log.Panicln(e)
 	}
-	 
-	for _,item := range ItemsDataList.Items {
+
+	for _, item := range ItemsDataList.Items {
 		Items[item.ID] = item
 	}
 }
 
 func OutputShopBinary() {
-	defer func() { 
+	defer func() {
 		if x := recover(); x != nil {
 			log.Printf("%v\n", x)
-		} 
+		}
 	}()
 	f, e := os.Open("../shop.bin")
 
 	if e != nil {
 		log.Panicln(e)
 	}
-	
+
 	defer f.Close()
 
 	format := `<Unit>
