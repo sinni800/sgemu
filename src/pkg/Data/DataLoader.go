@@ -202,7 +202,7 @@ func LoadBinds(Done chan bool) {
 	f, e := os.Open(bindsPath)
 	if e != nil {
 		log.Panicln(e)
-	}
+	} 
 
 	defer f.Close()
  

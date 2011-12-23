@@ -9,20 +9,20 @@ import (
 	"log" 
 	"runtime"
 	"os/signal"
-	"os"
-)       
+	"os" 
+)         
   
 var (
 	Closing = false
 )       
         
-func main() { 
+func main() {  
 	defer OnClose()
 	 
 	runtime.GOMAXPROCS(5)
 	   
 	log.SetFlags(log.Ltime | log.Lshortfile)
-	log.SetPrefix("[Log]") 
+	log.SetPrefix("[Log]")  
 	 
 	D.InitializeDatabase()
 	D.CreateDatabase()
@@ -44,7 +44,7 @@ func ListenSignals() {
 			_ = signal
 			OnClose() 
 			return
-	}   
+	}    
 } 
    
 func OnClose() {

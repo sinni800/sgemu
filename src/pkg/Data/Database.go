@@ -91,5 +91,5 @@ func AddAutoIncrementingField(c *mgo.Collection) {
 	if i > 0 { return }
 	c.Insert(bson.M{"_id":"users", "seq":uint32(0)})
 }
-
+ 
 
