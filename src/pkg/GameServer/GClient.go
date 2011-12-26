@@ -131,6 +131,11 @@ func (client *GClient) OnDisconnect() {
 	if client.Map != nil {
 		client.Map.OnLeave(client)
 	}
+	if client.Units != nil {
+		for id,_ := range client.Units {
+			client.Server.IDG.Return(id)
+		}
+	}
 	if client.Player != nil {
 		client.Server.IDG.Return(client.ID)
 		client.Server.DBRun.Funcs <- func() { D.SavePlayer(client.Player) }
