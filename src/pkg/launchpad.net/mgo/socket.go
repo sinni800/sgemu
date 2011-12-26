@@ -373,7 +373,7 @@ func (socket *mongoSocket) readLoop() {
 	p := px[:]
 	sx := [4]byte{}
 	s := sx[:]
-	
+
 	conn := socket.conn // No locking, conn never changes.
 	for {
 		// XXX Handle timeouts, , etc

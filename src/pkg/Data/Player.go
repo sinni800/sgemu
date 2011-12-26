@@ -1,6 +1,7 @@
 package Data
 
 import . "launchpad.net/gobson/bson"
+
 //import "container/list"
 
 type DType byte
@@ -14,12 +15,12 @@ const (
 )
 
 type Player struct {
-	ID     string "_id" 
+	ID     string "_id"
 	UserID string
 	Name   string
- 
+
 	Faction int32
-  
+
 	Avatar    byte
 	Tactics   byte
 	Clout     byte
@@ -28,63 +29,63 @@ type Player struct {
 
 	Points    uint16
 	Divisions []Division
-	
-	RecordWon uint16
+
+	RecordWon  uint16
 	RecordLost uint16
-	Prestige uint32
-	
+	Prestige   uint32
+
 	Honor uint32 //Level = Honor / 100
-	
-	Money int32
-	Ore int32
+
+	Money   int32
+	Ore     int32
 	Silicon int32
 	Uranium int32
-	Sulfur byte
-	
+	Sulfur  byte
+
 	Reincatnation byte
 
 	Map  int16
 	X, Y int16
-	
+
 	UnitsData map[string]*UnitDB
-	Items map[string]*Item 
+	Items     map[string]*Item
 }
 
 type Item struct {
-	DBID     string "_id" 
-	ID 		 uint16 
+	DBID string "_id"
+	ID   uint16
 }
 
 func CreateItem(id uint16) *Item {
 	return &Item{NewID(), id}
 }
 
-type Division struct { 
+type Division struct {
 	Type  DType
 	Level byte
 	Rank  string
 	XP    uint32
 }
- 
+
 func (d *Division) Influence(p *Player) byte {
 	return (p.Clout / 2) + d.Level
 }
 
-func (d *Division) TotalXP() uint32{
-	level3 := uint32(d.Level) * uint32(d.Level) * uint32(d.Level);
-	if (d.Level >= 49) {
-		return uint32((float32(1.5) * float32(level3)) * float32(d.Level - 45))
+func (d *Division) TotalXP() uint32 {
+	level3 := uint32(d.Level) * uint32(d.Level) * uint32(d.Level)
+	if d.Level >= 49 {
+		return uint32((float32(1.5) * float32(level3)) * float32(d.Level-45))
 	} else {
 		return 6 * level3
 	}
 	return 0
 }
 
-func (p *Player) MaxUnits() byte{
-	return 48 + (p.Tactics/20)
+func (p *Player) MaxUnits() byte {
+	return 48 + (p.Tactics / 20)
 }
 
-func (d *Player) TotalHonor() uint32{
+func (d *Player) TotalHonor() uint32 {
 	return 200
 }
 
@@ -93,20 +94,20 @@ func NewPlayer() *Player {
 
 	p.Divisions = make([]Division, 4)
 	p.Divisions[Infantry] = Division{Infantry, 1, "", 0}
-	p.Divisions[Mobile] = Division{Mobile, 1, "" , 0}
+	p.Divisions[Mobile] = Division{Mobile, 1, "", 0}
 	p.Divisions[Aviation] = Division{Aviation, 1, "", 0}
 	p.Divisions[Organic] = Division{Organic, 1, "", 0}
-	
+
 	p.UnitsData = make(map[string]*UnitDB)
 	p.Items = make(map[string]*Item)
 
 	return p
-} 
- 
+}
+
 func (p *Player) SetDefaultStats() {
 	p.Points = 0
 	p.Money = 300000
-	   
+
 	u := CreateUnit("Shade")
 	if u == nil {
 		panic("No such unit")
@@ -119,11 +120,11 @@ func RegisterPlayer(plyaer *Player) {
 	e := CPlayers.Insert(plyaer)
 	if e != nil {
 		panic(e)
-	}	
+	}
 }
 
 func GetPlayerByUserID(id string) *Player {
-	p := new(Player) 
+	p := new(Player)
 	e := CPlayers.Find(M{"userid": id}).One(p)
 	if e != nil {
 		panic(e)

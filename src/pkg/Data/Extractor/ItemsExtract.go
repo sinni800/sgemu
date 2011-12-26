@@ -1,9 +1,9 @@
 package Extractor
 
 import (
+	. "Core/SG"
 	"Data/xml"
 	. "encoding/binary"
-	. "Core/SG"
 	"os"
 	//"fmt" 
 	. "Data"
@@ -30,26 +30,26 @@ func ExtractItems(path string, outpath string) {
 	ReadItems(f)
 
 	type dummyXML struct {
-		XMLName      xml.Name `xml:"Items"`
+		XMLName       xml.Name `xml:"Items"`
 		ItemDataGroup []*ItemDataGroup
-	} 
-	 
+	}
+
 	gmap := make(map[uint16]*ItemDataGroup)
 
-	for _,item := range ItemsData {
-		g,exist := gmap[item.GID]
+	for _, item := range ItemsData {
+		g, exist := gmap[item.GID]
 		if exist {
 			g.ItemData = append(g.ItemData, item)
 		} else {
 			g = &ItemDataGroup{item.GID, make([]*ItemData, 0)}
 			gmap[item.GID] = g
 			g.ItemData = append(g.ItemData, item)
-		} 
+		}
 	}
 
 	l := dummyXML{}
 	l.ItemDataGroup = make([]*ItemDataGroup, len(gmap))
-	for _,g := range gmap {
+	for _, g := range gmap {
 		l.ItemDataGroup = append(l.ItemDataGroup, g)
 	}
 
@@ -81,7 +81,7 @@ func ReadItems(file *os.File) {
 	e = Read(file, BigEndian, &items)
 	if e != nil {
 		log.Panicf("Read size panic err:%v ", e)
-	} 
+	}
 
 	ItemsData = make([]*ItemData, items)
 

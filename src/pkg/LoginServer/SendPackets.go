@@ -3,13 +3,12 @@ package LoginServer
 import (
 	. "Core/SG"
 	GS "GameServer"
-) 
-
+)
 
 func SendMessage(c *LClient, errcode int, msg string) {
 	packet := NewPacket2(len(msg) + 20)
 	packet.WriteHeader(CSM_REGISTER)
-	switch errcode { 
+	switch errcode {
 	case 0:
 		break
 	case 1:
@@ -24,7 +23,6 @@ func SendMessage(c *LClient, errcode int, msg string) {
 	c.Send(packet)
 }
 
-
 func SendToGameServer(c *LClient, username string) {
 	packet := NewPacket2(20)
 	packet.WriteHeader(SM_SENDIP)
@@ -38,7 +36,6 @@ func SendToGameServer(c *LClient, username string) {
 
 	c.Send(packet)
 }
-
 
 func SendWelcome(c *LClient) {
 	packet := NewPacket2(40)

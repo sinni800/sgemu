@@ -5,7 +5,7 @@ import "log"
 type Func func()
 
 type Runner struct {
-	Funcs chan Func
+	Funcs  chan Func
 	Closer chan bool
 }
 
@@ -19,7 +19,6 @@ func NewRunner2(size int) *Runner {
 	f.Closer = make(chan bool)
 	return f
 }
-
 
 func (r *Runner) Start() {
 	go r.run()

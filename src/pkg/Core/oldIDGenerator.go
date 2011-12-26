@@ -1,4 +1,5 @@
 package Core
+
 /*
 import (
 	H "container/vector"

@@ -1,14 +1,14 @@
 package Core
 
 import (
-	"math"
-	"fmt"
 	. "encoding/binary"
+	"fmt"
 	"io"
+	"math"
 )
 
 var (
-	BytesOrder = BigEndian 
+	BytesOrder = BigEndian
 )
 
 type Packet struct {
@@ -29,8 +29,8 @@ func NewPacket2(size int) (p *Packet) {
 	p.Index = 0
 	p.Buffer = make([]byte, size+7)
 	return p
-} 
- 
+}
+
 func NewPacket3(buffer []byte) (p *Packet) {
 	p = new(Packet)
 	p.Buffer = make([]byte, len(buffer))
@@ -46,10 +46,9 @@ func NewPacketRef(buffer []byte) (p *Packet) {
 	return p
 }
 
-func (p *Packet) String() (string) { 
+func (p *Packet) String() string {
 	return fmt.Sprintf("Header(%d) len(%d) : % #X\n %s", p.Buffer[0], len(p.Buffer), p.Buffer, p.Buffer)
 }
-
 
 func (p *Packet) Clone() (pn *Packet) {
 	pn = new(Packet)
@@ -113,7 +112,6 @@ func (p *Packet) WriteByte(b byte) {
 	p.Index++
 }
 
-
 func (p *Packet) WriteLen() {
 	t := p.Index
 	p.Index = 1
@@ -121,13 +119,12 @@ func (p *Packet) WriteLen() {
 	p.Index = t
 }
 
-
 func (p *Packet) WriteInt16(value int16) {
 	if !p.WCheck(2) {
 		return
 	}
 	BytesOrder.PutUint16(p.Buffer[p.Index:], uint16(value))
-	p.Index += 2; 
+	p.Index += 2
 }
 
 func (p *Packet) WriteUInt16(value uint16) {
@@ -135,7 +132,7 @@ func (p *Packet) WriteUInt16(value uint16) {
 		return
 	}
 	BytesOrder.PutUint16(p.Buffer[p.Index:], value)
-	p.Index += 2; 
+	p.Index += 2
 }
 
 func (p *Packet) WriteInt32(value int32) {
@@ -143,7 +140,7 @@ func (p *Packet) WriteInt32(value int32) {
 		return
 	}
 	BytesOrder.PutUint32(p.Buffer[p.Index:], uint32(value))
-	p.Index += 4; 
+	p.Index += 4
 }
 
 func (p *Packet) WriteUInt32(value uint32) {
@@ -151,7 +148,7 @@ func (p *Packet) WriteUInt32(value uint32) {
 		return
 	}
 	BytesOrder.PutUint32(p.Buffer[p.Index:], value)
-	p.Index += 4; 
+	p.Index += 4
 }
 
 func (p *Packet) WriteInt64(value int64) {
@@ -159,7 +156,7 @@ func (p *Packet) WriteInt64(value int64) {
 		return
 	}
 	BytesOrder.PutUint64(p.Buffer[p.Index:], uint64(value))
-	p.Index += 8; 
+	p.Index += 8
 }
 
 func (p *Packet) WriteUInt64(value uint64) {
@@ -167,9 +164,8 @@ func (p *Packet) WriteUInt64(value uint64) {
 		return
 	}
 	BytesOrder.PutUint64(p.Buffer[p.Index:], value)
-	p.Index += 8; 
+	p.Index += 8
 }
-
 
 func (p *Packet) WriteFloat32(pValue float32) {
 	if !p.WCheck(4) {
@@ -191,7 +187,7 @@ func (p *Packet) WriteString(pValue string, size int) {
 	}
 	copy(p.Buffer[p.Index:], pValue)
 	p.Index += size
-} 
+}
 
 func (p *Packet) WriteRawString(pValue string) {
 	p.WriteString(pValue, len(pValue))
@@ -220,7 +216,7 @@ func (p *Packet) ReadInt16() (pValue int16) {
 		panic("Reading outside of the packet!")
 	}
 	pValue = int16(BytesOrder.Uint16(p.Buffer[p.Index:]))
-	p.Index += 2;
+	p.Index += 2
 	return pValue
 }
 
@@ -229,7 +225,7 @@ func (p *Packet) ReadUInt16() (pValue uint16) {
 		panic("Reading outside of the packet!")
 	}
 	pValue = BytesOrder.Uint16(p.Buffer[p.Index:])
-	p.Index += 2;
+	p.Index += 2
 	return pValue
 }
 
@@ -238,7 +234,7 @@ func (p *Packet) ReadInt32() (pValue int32) {
 		panic("Reading outside of the packet!")
 	}
 	pValue = int32(BytesOrder.Uint32(p.Buffer[p.Index:]))
-	p.Index += 4;
+	p.Index += 4
 	return pValue
 }
 
@@ -247,7 +243,7 @@ func (p *Packet) ReadUInt32() (pValue uint32) {
 		panic("Reading outside of the packet!")
 	}
 	pValue = BytesOrder.Uint32(p.Buffer[p.Index:])
-	p.Index += 4;
+	p.Index += 4
 	return pValue
 }
 
@@ -256,7 +252,7 @@ func (p *Packet) ReadInt64() (pValue int64) {
 		panic("Reading outside of the packet!")
 	}
 	pValue = int64(BytesOrder.Uint64(p.Buffer[p.Index:]))
-	p.Index += 8;
+	p.Index += 8
 	return pValue
 }
 
@@ -265,7 +261,7 @@ func (p *Packet) ReadUInt64() (pValue uint64) {
 		panic("Reading outside of the packet!")
 	}
 	pValue = BytesOrder.Uint64(p.Buffer[p.Index:])
-	p.Index += 8;
+	p.Index += 8
 	return pValue
 }
 
@@ -299,17 +295,17 @@ func (p *Packet) ReadString(size int) (pValue string) {
 }
 
 func (p *Packet) Read(b []byte) (n int, err error) {
-	if (p.Buffer == nil) {
-		return 0,&io.Error{"nil buffer"}
-	}	 
-	if (p.Index >= cap(p.Buffer)) {
-		return 0,io.EOF
+	if p.Buffer == nil {
+		return 0, &io.Error{"nil buffer"}
+	}
+	if p.Index >= cap(p.Buffer) {
+		return 0, io.EOF
 	}
 	n = len(b)
-	t := p.Index+n
-	if (t > cap(p.Buffer)) {
-		n = t-cap(p.Buffer)
+	t := p.Index + n
+	if t > cap(p.Buffer) {
+		n = t - cap(p.Buffer)
 	}
 	copy(b, p.Buffer[p.Index:n])
-	return n,nil
+	return n, nil
 }

@@ -180,7 +180,7 @@ func NewObjectId() ObjectId {
 	// Timestamp, 4 bytes, big endian
 	binary.BigEndian.PutUint32(b, uint32(time.Now().Second()))
 	// Machine, first 3 bytes of md5(hostname)
-	if machineId == nil { 
+	if machineId == nil {
 		initMachineId()
 	}
 	b[4] = machineId[0]
@@ -538,7 +538,7 @@ func getStructFields(st reflect.Type) (*structFields, error) {
 			recommend := tag[:s]
 			for _, c := range tag[s+1:] {
 				switch c {
-				case rune('c'): 
+				case rune('c'):
 					recommend += ",omitempty"
 				case rune('s'):
 					recommend += ",minsize"

@@ -25,7 +25,7 @@ type Server struct {
 	OnClient chan *net.TCPConn
 	Name     string
 	IServ    IServer
-} 
+}
 
 func (serv *Server) OnConnect(socket *net.TCPConn) {
 	serv.Log.Printf("Client connected!")
@@ -53,7 +53,7 @@ func Start(iServ IServer, name, ip string, port int) (err error) {
 		serv.Log.Printf("The Server struct is nil")
 		return errors.New("The Server struct is nil")
 	}
- 
+
 	serv.Log = log.New(os.Stderr, "["+name+"]", log.Ltime|log.Lshortfile)
 	serv.IServ = iServ
 	serv.IP = ip

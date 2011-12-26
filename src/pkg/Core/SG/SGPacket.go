@@ -7,12 +7,12 @@ import (
 
 type Packet interface {
 	BasePacket() *C.Packet
-} 
+}
 
 type SGPacket struct {
-	 C.Packet 
+	C.Packet
 }
- 
+
 func NewPacket() (p *SGPacket) {
 	p = new(SGPacket)
 	p.Index = 0
@@ -25,8 +25,8 @@ func NewPacket2(size int) (p *SGPacket) {
 	p.Index = 0
 	p.Buffer = make([]byte, size)
 	return p
-} 
- 
+}
+
 func NewPacket3(buffer []byte) (p *SGPacket) {
 	p = new(SGPacket)
 	p.Buffer = make([]byte, len(buffer))
@@ -41,15 +41,15 @@ func NewPacketRef(buffer []byte) (p *SGPacket) {
 	p.Index = 0
 	return p
 }
- 
+
 func (p *SGPacket) WriteColor(c *Color) {
 	p.WCheck(3)
 	i := p.Index
 	p.Buffer[i] = c.R
 	p.Buffer[i+1] = c.G
-	p.Buffer[i+2] = c.B 
-	p.Index = i+3
-} 
+	p.Buffer[i+2] = c.B
+	p.Index = i + 3
+}
 
 func (p *SGPacket) ReadString() (pValue string) {
 	return p.Packet.ReadString(int(p.ReadByte()))
@@ -68,17 +68,17 @@ func (p *SGPacket) WriteHeader(opCode byte) {
 	p.Index += 2
 	p.WriteByte(opCode)
 	p.Index++
-} 
+}
 
-func (p *SGPacket) ReadColor() *Color{
+func (p *SGPacket) ReadColor() *Color {
 	if !p.RCheck(3) {
 		panic("Reading outside of the packet!")
 	}
 	i := p.Index
-	p.Index = i+3
-	return NColor(p.Buffer[i],p.Buffer[i+1],p.Buffer[i+2])
-} 
+	p.Index = i + 3
+	return NColor(p.Buffer[i], p.Buffer[i+1], p.Buffer[i+2])
+}
 
-func (p *SGPacket) String() (string) { 
+func (p *SGPacket) String() string {
 	return fmt.Sprintf("Header(%d) len(%d) : % #X\n %s", p.Buffer[0], len(p.Buffer), p.Buffer, p.Buffer)
 }

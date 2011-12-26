@@ -17,7 +17,6 @@ type Client struct {
 	IP         string
 }
 
-
 func SetupClient(iClnt IClient, socket *net.TCPConn, iServ IServer) {
 
 	client := iClnt.GetClient()

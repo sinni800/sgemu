@@ -2,9 +2,8 @@ package LoginServer
 
 import (
 	. "Core/SG"
-	D "Data" 
+	D "Data"
 )
-
 
 func OnWelcome(c *LClient, p *SGPacket) {
 	c.Log().Println("OnWelcome Packet")
@@ -64,7 +63,7 @@ func OnPlanetDataRequest(c *LClient, p *SGPacket) {
 
 	p.WriteInt16(0) //default planet
 
-	c.Send(p) 
+	c.Send(p)
 }
 
 func OnRegister(c *LClient, p *SGPacket) {
@@ -204,7 +203,7 @@ func OnFactionDataRequest(c *LClient, p *SGPacket) {
 func OnLogin(c *LClient, p *SGPacket) {
 	user := p.ReadString()
 	pass := p.ReadString()
-	c.Log().Printf("OnLogin Packet User Register: User(%s)", user) 
+	c.Log().Printf("OnLogin Packet User Register: User(%s)", user)
 
 	ec, s, id := D.Login(user, pass)
 	SendMessage(c, ec, s)

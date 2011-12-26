@@ -7,7 +7,7 @@ var (
 	Black     = NColor(0, 0, 0)
 	White     = NColor(255, 255, 255)
 	HelpColor = NColor(0x46, 0xFA, 0xC8)
-) 
+)
 
 type Color struct {
 	R, G, B byte

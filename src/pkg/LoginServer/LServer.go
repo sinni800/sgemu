@@ -1,13 +1,12 @@
 package LoginServer
 
 import (
-	. "Core/SG" 
 	"Core"
+	. "Core/SG"
 	"net"
 )
 
 type LoginPacketFunc func(c *LClient, p *SGPacket)
-
 
 var (
 	Handler map[int]LoginPacketFunc
@@ -22,7 +21,7 @@ func (serv *LServer) OnSetup() {
 	serv.Server.OnSetup()
 }
 
-func init() { 
+func init() {
 	Handler = make(map[int]LoginPacketFunc)
 	Handler[CSM_WELCOME] = OnWelcome
 	Handler[CM_WELCOME2] = OnWelcome2

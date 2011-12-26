@@ -28,15 +28,15 @@ func NewQueue(ipcheck bool) *Queue {
 	q.IPCheck = ipcheck
 	go q.run()
 	return q
-}  
+}
 
 func (q *Queue) Add(ip, id string) {
 	q.In <- &InStruct{ip, id, time.Time{}}
 }
-  
+
 func (q *Queue) Check(ip string) (string, bool) {
 	chn := make(chan QItem)
-	q.Request <- chn 
+	q.Request <- chn
 	chn <- ip
 	id := <-chn
 
@@ -47,7 +47,7 @@ func (q *Queue) Check(ip string) (string, bool) {
 }
 
 func (q *Queue) run() {
-	timer :=  time.After(10 * time.Second)
+	timer := time.After(10 * time.Second)
 	for {
 	SELECT:
 		select {
@@ -86,7 +86,7 @@ func (q *Queue) run() {
 			for e := q.List.Front(); e != nil; e = e.Next() {
 				if i, ok := e.Value.(*InStruct); ok {
 					if (time.Now().Sub(i.Time).Seconds()) >= 10 {
-						q.List.Remove(e) 
+						q.List.Remove(e)
 					}
 				}
 			}

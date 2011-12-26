@@ -2,11 +2,11 @@ package LoginServer
 
 import (
 	C "Core"
+	. "Core/SG"
 	D "Data"
-	. "Core/SG" 
 	"log"
 )
- 
+
 type LClient struct {
 	C.Client
 	Key      byte
@@ -63,7 +63,7 @@ func (client *LClient) StartRecive() {
 					//keeping the user under 4048k use to save memory
 					if cap(client.packet.Buffer) > 4048 {
 						client.Buffer = make([]byte, 1024)
-						client.packet = C.NewPacketRef(client.Buffer) 
+						client.packet = C.NewPacketRef(client.Buffer)
 					}
 				}
 			} else {
@@ -72,7 +72,6 @@ func (client *LClient) StartRecive() {
 		}
 	}
 }
-
 
 func (client *LClient) OnConnect() {
 	client.packet = C.NewPacketRef(client.Buffer)
@@ -83,7 +82,7 @@ func (client *LClient) OnConnect() {
 
 func (client *LClient) OnDisconnect() {
 	if x := recover(); x != nil {
-			client.Log().Printf("panic : %v",x)
+		client.Log().Printf("panic : %v", x)
 	}
 	client.Socket.Close()
 	client.MainServer.GetServer().Log.Println("Client Disconnected!")
@@ -107,7 +106,6 @@ func (client *LClient) SendRaw(p *SGPacket) {
 	p.WriteLen()
 	client.Socket.Write(p.Buffer[:p.Index])
 }
-
 
 func (client *LClient) SendWelcome() {
 	SendWelcome(client)

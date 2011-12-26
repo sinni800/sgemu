@@ -1,12 +1,10 @@
 package LoginServer
 
-
 const (
 	CSM_WELCOME = 0
 	SM_WELCOME2 = 70
 	SM_SENDIP   = 3
 	CM_WELCOME2 = 11
-
 
 	CSM_REGISTER     = 2
 	CM_REGISTER_DONE = 4

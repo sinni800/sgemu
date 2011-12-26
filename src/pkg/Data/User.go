@@ -1,19 +1,19 @@
 package Data
 
 import (
-	"launchpad.net/gobson/bson"
-	"strings"
 	"crypto/md5"
 	"encoding/hex"
-)  
-  
+	"launchpad.net/gobson/bson"
+	"strings"
+)
+
 type User struct {
 	ID       string "_id"
 	User     string
 	EMail    string
 	Password string
 }
- 
+
 const (
 	TakenUser   = "This username is already taken."
 	TakenEmail  = "This email is already in use."
@@ -28,29 +28,29 @@ func CheckUser(user, email, password string) (int, string) {
 	if e != nil {
 		panic(e)
 	}
-	 
+
 	if i != 0 {
 		return -1, TakenUser
 	}
-	 
+
 	i, e = CUsers.Find(bson.M{"email": strings.ToLower(email)}).Count()
-	if e != nil { 
+	if e != nil {
 		panic(e)
 	}
 	if i != 0 {
 		return -2, TakenEmail
-	} 
-  
+	}
+
 	return 1, OK
-} 
-  
+}
+
 func RegisterUser(user *User) bool {
 	if i, _ := CheckUser(user.User, user.EMail, user.Password); i == 1 {
 		MD5 := md5.New()
 		MD5.Write([]byte(user.Password))
-	 
+
 		user.Password = hex.EncodeToString(MD5.Sum(nil))
-	
+
 		user.User = strings.ToLower(user.User)
 		user.EMail = strings.ToLower(user.EMail)
 		CUsers.Insert(user)

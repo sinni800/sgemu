@@ -19,7 +19,7 @@ const (
 	Specials  = Group(8)
 	Storage   = Group(2)
 	Computers = Group(3)
-) 
+)
 
 var (
 	dataPath  = "../sg_data.xml"
@@ -35,7 +35,7 @@ var (
 		"Aviation": Aviation,
 		"Organic":  Organic,
 		"":         Other}
- 
+
 	Ranks        = make(map[byte]*RankData)
 	Items        = make(map[uint16]*ItemData)
 	ItemsByGroup = make(map[uint16][]*ItemData)
@@ -114,19 +114,19 @@ type ShopUnit struct {
 	XMLName xml.Name `xml:"Unit"`
 	Name    string
 	Money   int32
-	Ore     int32 
+	Ore     int32
 	Silicon int32
 	Uranium int32
 	Sulfur  byte
 }
 
 type ItemDataGroup struct {
-	GID   uint16 `xml:"attr"`
+	GID      uint16 `xml:"attr"`
 	ItemData []*ItemData
 }
- 
+
 type ItemData struct {
-	Name          string   `xml:"attr"`
+	Name          string `xml:"attr"`
 	Description   string
 	Group         string `xml:"attr"`
 	ID            uint16 `xml:"attr"`
@@ -211,7 +211,7 @@ func LoadBinds(Done chan bool) {
 	if e != nil {
 		log.Panicln(e)
 	}
- 
+
 	for _, group := range bf.Groups {
 		Binds[group.UID] = group
 	}
@@ -283,7 +283,7 @@ func LoadItems(Done chan bool) {
 			Done <- false
 		} else {
 			Done <- true
-		} 
+		}
 	}()
 
 	f, e := os.Open(itemPath)
@@ -293,21 +293,20 @@ func LoadItems(Done chan bool) {
 
 	defer f.Close()
 
-	
 	type xmlitems struct {
-		XMLName   xml.Name `xml:"Items"`
-		ItemDataGroup 	  []*ItemDataGroup `xml:"ItemDataGroup"`
-	}  
+		XMLName       xml.Name         `xml:"Items"`
+		ItemDataGroup []*ItemDataGroup `xml:"ItemDataGroup"`
+	}
 
 	items := new(xmlitems)
 	e = xml.Unmarshal(f, items)
 	if e != nil {
-		log.Panicln(e) 
-	} 
- 
-	for _,ig := range items.ItemDataGroup {
+		log.Panicln(e)
+	}
+
+	for _, ig := range items.ItemDataGroup {
 		ItemsByGroup[ig.GID] = ig.ItemData
-		for _,it := range ig.ItemData {
+		for _, it := range ig.ItemData {
 			Items[it.ID] = it
 		}
 	}

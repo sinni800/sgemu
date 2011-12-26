@@ -388,7 +388,7 @@ func (p *Parser) unmarshal(val reflect.Value, start *StartElement) error {
 
 	// Find end element.
 	// Process sub-elements along the way.
-Loop: 
+Loop:
 	for {
 		var savedOffset int
 		if saveXML.IsValid() {

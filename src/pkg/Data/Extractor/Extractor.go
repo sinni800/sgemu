@@ -22,7 +22,6 @@ var (
 	NttExtractDone  = make(chan bool)
 )
 
-
 //Path: Game folder.
 //
 //outpath: xmls output path.
@@ -62,14 +61,8 @@ func ReadFiles(path string, outpath string) {
 
 }
 
-
-
-
-
 func Panic() {
 	if x := recover(); x != nil {
 		log.Printf("Panic extractor %v\n", x)
 	}
 }
-
-

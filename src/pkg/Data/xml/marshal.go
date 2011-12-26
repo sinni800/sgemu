@@ -115,7 +115,7 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 		if val.IsNil() {
 			return nil
 		}
-		return p.marshalValue(val.Elem(), name,	inner)
+		return p.marshalValue(val.Elem(), name, inner)
 	}
 
 	// Slices and arrays iterate over the elements. They do not have an enclosing tag.
@@ -144,7 +144,7 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 		}
 	}
 
-	for i:=0;i<inner;i++ {
+	for i := 0; i < inner; i++ {
 		p.WriteByte('\t')
 	}
 
@@ -162,46 +162,46 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 		for i, n := 0, typ.NumField(); i < n; i++ {
 			if f := typ.Field(i); f.PkgPath == "" && f.Tag.Get("xml") == "attr" {
 				switch k := f.Type.Kind(); k {
-					
-					case reflect.String: 
-						if str := val.Field(i).String(); str != "" {
-							p.WriteByte(' ')
-							p.WriteString(strings.ToLower(f.Name))
-							p.WriteString(`="`)
-							Escape(p, []byte(str))
-							p.WriteByte('"')
-						}
-					 
-					case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+
+				case reflect.String:
+					if str := val.Field(i).String(); str != "" {
 						p.WriteByte(' ')
 						p.WriteString(strings.ToLower(f.Name))
 						p.WriteString(`="`)
-						p.WriteString(strconv.FormatInt(val.Field(i).Int(), 10))
+						Escape(p, []byte(str))
 						p.WriteByte('"')
-					case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:
-						p.WriteByte(' ')
-						p.WriteString(strings.ToLower(f.Name))
-						p.WriteString(`="`)
-						p.WriteString(strconv.FormatUint(val.Field(i).Uint(), 10))
-						p.WriteByte('"')
-					case reflect.Float32:
-						p.WriteByte(' ')
-						p.WriteString(strings.ToLower(f.Name))
-						p.WriteString(`="`)
-						p.WriteString(strconv.FormatFloat(val.Field(i).Float(), 'g', -1, 32))
-						p.WriteByte('"')
-					case reflect.Float64:
-						p.WriteByte(' ')
-						p.WriteString(strings.ToLower(f.Name))
-						p.WriteString(`="`)
-						p.WriteString(strconv.FormatFloat(val.Field(i).Float(), 'g', -1, 64))
-						p.WriteByte('"')
-					case reflect.Bool:
-						p.WriteByte(' ')
-						p.WriteString(strings.ToLower(f.Name))
-						p.WriteString(`="`)
-						p.WriteString(strconv.FormatBool(val.Field(i).Bool()))
-						p.WriteByte('"')	
+					}
+
+				case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+					p.WriteByte(' ')
+					p.WriteString(strings.ToLower(f.Name))
+					p.WriteString(`="`)
+					p.WriteString(strconv.FormatInt(val.Field(i).Int(), 10))
+					p.WriteByte('"')
+				case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:
+					p.WriteByte(' ')
+					p.WriteString(strings.ToLower(f.Name))
+					p.WriteString(`="`)
+					p.WriteString(strconv.FormatUint(val.Field(i).Uint(), 10))
+					p.WriteByte('"')
+				case reflect.Float32:
+					p.WriteByte(' ')
+					p.WriteString(strings.ToLower(f.Name))
+					p.WriteString(`="`)
+					p.WriteString(strconv.FormatFloat(val.Field(i).Float(), 'g', -1, 32))
+					p.WriteByte('"')
+				case reflect.Float64:
+					p.WriteByte(' ')
+					p.WriteString(strings.ToLower(f.Name))
+					p.WriteString(`="`)
+					p.WriteString(strconv.FormatFloat(val.Field(i).Float(), 'g', -1, 64))
+					p.WriteByte('"')
+				case reflect.Bool:
+					p.WriteByte(' ')
+					p.WriteString(strings.ToLower(f.Name))
+					p.WriteString(`="`)
+					p.WriteString(strconv.FormatBool(val.Field(i).Bool()))
+					p.WriteByte('"')
 				}
 			}
 		}
@@ -274,26 +274,25 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 							parents[0] = f.Name
 						}
 					}
- 
+
 					s.trim(parents)
 					if !(vf.Kind() == reflect.Ptr || vf.Kind() == reflect.Interface) || !vf.IsNil() {
 						s.push(parents[len(s.stack):])
 					}
 				}
 
-				if err := p.marshalValue(vf, name,inner+1); err != nil {
+				if err := p.marshalValue(vf, name, inner+1); err != nil {
 					return err
 				}
 			}
 		}
 		s.trim(nil)
-		for i:=0;i<inner;i++ {
+		for i := 0; i < inner; i++ {
 			p.WriteByte('\t')
 		}
 	default:
 		return &UnsupportedTypeError{typ}
 	}
-	
 
 	p.WriteByte('<')
 	p.WriteByte('/')

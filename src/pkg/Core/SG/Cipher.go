@@ -3,29 +3,28 @@ package SG
 var (
 	Key1 []byte
 	Key2 []byte
-) 
+)
 
 func init() {
 	sKey1 := "NexonInc.NexonInc.NexonInc.NexonInc."
 	Key1 = make([]byte, len(sKey1))
 	copy(Key1, sKey1)
 	Key2 = make([]byte, 256*4)
-   
+
 	for i := 0; i < 256; i++ {
 		Key2[i*4] = uint8(i)
 		Key2[(i*4)+1] = uint8(i)
 		Key2[(i*4)+2] = uint8(i)
 		Key2[(i*4)+3] = uint8(i)
-	} 
+	}
 }
- 
 
 func DecryptPacket(bufferf []byte) ([]byte, bool) {
 	buffer := bufferf[:len(bufferf)-2]
 
 	if len(buffer) < 6 {
 		return buffer, true
-	} 
+	}
 
 	cSum := byte(0)
 	for i := 0; i < len(bufferf[3:])-1; i++ {

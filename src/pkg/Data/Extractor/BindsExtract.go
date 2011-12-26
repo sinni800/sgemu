@@ -1,13 +1,13 @@
 package Extractor
 
 import (
-	"Data/xml"
 	. "Data"
+	"Data/xml"
+	"bufio"
 	"log"
+	"os"
 	"strconv"
 	"strings"
-	"os"
-	"bufio"
 )
 
 func ExtractNtt(path string, outpath string) {
@@ -43,14 +43,14 @@ func ExtractNtt(path string, outpath string) {
 	groups := strings.Split(fulltext, "-1\r\n")
 
 	BindingGroups = make([]*BindingGroup, len(groups)-1)
- 
+
 	for j := 0; j < len(BindingGroups); j++ {
 		split1 := strings.Split(groups[j], "\r\n")
 		groupName := split1[0]
 
 		bg := BindingGroup{}
 		bg.Binds = make([]*BindingData, len(split1)-1)
- 
+
 		for i := 1; i < len(bg.Binds); i++ {
 
 			bind := BindingData{}

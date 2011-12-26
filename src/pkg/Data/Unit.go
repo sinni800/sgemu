@@ -14,37 +14,37 @@ type UnitDB struct {
 	Level      byte
 	HP         uint16
 	XP         uint32
-	Kills	   uint16
+	Kills      uint16
 	CustomName string
 	Name       string
-	Items	   []*Item
+	Items      []*Item
 }
- 
+
 func (u *Unit) TotalXP() uint32 {
 	n := uint32(u.Level + 1)
 	return n * n
 }
 
 func CreateUnit(unitName string) *UnitDB {
-	unit, e := Units[unitName];
+	unit, e := Units[unitName]
 	if !e {
 		return nil
 	}
-	
+
 	var items [8]*Item
 	bitems := Binds[unit.UID]
-	for _,bind := range bitems.Binds {
+	for _, bind := range bitems.Binds {
 		pitems := ItemsByGroup[bind.ID]
 		var cItem *ItemData = nil
-		for _,item := range pitems {
-			if (item.TL == 2 && !strings.Contains(item.Name, "Gold")) {
+		for _, item := range pitems {
+			if item.TL == 2 && !strings.Contains(item.Name, "Gold") {
 				cItem = item
 				items[cItem.GroupType] = CreateItem(cItem.ID)
-				break; 
+				break
 			}
-		}  	 
-	}    
-	
+		}
+	}
+
 	return &UnitDB{NewID(), 1, unit.Health, 0, 0, unitName, unitName, items[:]}
 }
 
@@ -55,7 +55,7 @@ func (u *Unit) UQ() byte {
 
 func (u *Unit) MaxWeight() uint16 {
 	return uint16(float32(u.Data.Max_Weight) * (1 + (float32(u.Owner.MechApt) / 120)))
-} 
+}
 
 //Alien Tech Level
 func (u *Unit) ATL() byte {
