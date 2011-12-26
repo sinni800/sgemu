@@ -301,7 +301,7 @@ func (p *Packet) ReadString(size int) (pValue string) {
 func (p *Packet) Read(b []byte) (n int, err error) {
 	if (p.Buffer == nil) {
 		return 0,&io.Error{"nil buffer"}
-	}	
+	}	 
 	if (p.Index >= cap(p.Buffer)) {
 		return 0,io.EOF
 	}
