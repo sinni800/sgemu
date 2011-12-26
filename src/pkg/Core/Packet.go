@@ -255,7 +255,7 @@ func (p *Packet) ReadInt64() (pValue int64) {
 	if !p.RCheck(4) {
 		panic("Reading outside of the packet!")
 	}
-	pValue = int64(BytesOrder.Uint32(p.Buffer[p.Index:]))
+	pValue = int64(BytesOrder.Uint64(p.Buffer[p.Index:]))
 	p.Index += 8;
 	return pValue
 }
@@ -264,22 +264,8 @@ func (p *Packet) ReadUInt64() (pValue uint64) {
 	if !p.RCheck(8) {
 		panic("Reading outside of the packet!")
 	}
-	pValue = uint64(p.Buffer[p.Index] << 56)
-	p.Index++
-	pValue |= (uint64(p.Buffer[p.Index]) << 48)
-	p.Index++
-	pValue |= (uint64(p.Buffer[p.Index]) << 40)
-	p.Index++
-	pValue |= (uint64(p.Buffer[p.Index]) << 32)
-	p.Index++
-	pValue = (uint64(p.Buffer[p.Index]) << 24)
-	p.Index++
-	pValue |= (uint64(p.Buffer[p.Index]) << 16)
-	p.Index++
-	pValue |= (uint64(p.Buffer[p.Index]) << 8)
-	p.Index++
-	pValue |= uint64(p.Buffer[p.Index])
-	p.Index++
+	pValue = BytesOrder.Uint64(p.Buffer[p.Index:])
+	p.Index += 8;
 	return pValue
 }
 
