@@ -1,11 +1,12 @@
 package LoginServer
 
 import (
+	. "Core/SG" 
 	"Core"
 	"net"
 )
 
-type LoginPacketFunc func(c *LClient, p *Core.Packet)
+type LoginPacketFunc func(c *LClient, p *SGPacket)
 
 
 var (

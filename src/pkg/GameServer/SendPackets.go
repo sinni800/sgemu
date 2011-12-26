@@ -1,38 +1,38 @@
 package GameServer
 
 import (
-	C "Core"
 	. "Data"
+	. "Core/SG"
 )  
  
 func SendNormalChat(c *GClient, text string) {
 
-	packet := C.NewPacket2(30 + len(text))
+	packet := NewPacket2(30 + len(text))
 	packet.WriteHeader(CSM_CHAT)
 	packet.WriteByte(0)
 	packet.WriteUInt32(c.ID)
 	packet.WriteString(text)
-	packet.WriteColor(C.Red) 
+	packet.WriteColor(Red) 
 	packet.WriteByte(0)
-
+	 
 	Server.Run.Funcs <- func() { c.Map.Send(packet) }
-}  
-
-func SendHelpChat(c *GClient, text string) {	
-	c.Send(HelpChatPacket(text))
 }
 
-func HelpChatPacket(text string) (*C.Packet){
-	packet := C.NewPacket2(30 + len(text))
+func SendHelpChat(c *GClient, text string) {	
+	c.Send(HelpChatPacket(text)) 
+}
+
+func HelpChatPacket(text string) (*SGPacket){
+	packet := NewPacket2(30 + len(text))
 	packet.WriteHeader(CSM_CHAT)
 	packet.WriteByte(0x15)
 	packet.WriteString(text)
-	packet.WriteColor(C.HelpColor) 
+	packet.WriteColor(HelpColor) 
 	return packet
 }
 
-func PlayerAppear(c *GClient) *C.Packet {
-	packet := C.NewPacket2(44)
+func PlayerAppear(c *GClient) *SGPacket {
+	packet := NewPacket2(44)
 	packet.WriteHeader(0x20)
 	packet.WriteByte(0)
 	packet.WriteByte(c.Player.Avatar)
@@ -55,7 +55,7 @@ func PlayerAppear(c *GClient) *C.Packet {
 }
 
 func SendPlayerLeave(c *GClient) {
-	packet := C.NewPacket2(44)
+	packet := NewPacket2(44)
 	packet.WriteHeader(0x19)
 	packet.WriteUInt32(c.ID)
 	packet.WriteUInt32(0)
@@ -63,7 +63,7 @@ func SendPlayerLeave(c *GClient) {
 }
 
 func SendShopInformation(c *GClient) {
-	packet := C.NewPacket2(1024) //change this sheet
+	packet := NewPacket2(1024) //change this sheet
 	packet.WriteHeader(SM_SHOP_RESPONSE)
 	
 	packet.WriteByte(0x40) 
@@ -96,30 +96,19 @@ func SendShopInformation(c *GClient) {
 		packet.WriteByte(units[i].Sulfur)
 	} 
 	
-	packet.WriteInt32(0) //Num of units you own
-	
-	/*
-	packet.WriteInt32(0) //unit id - need to send player unit list first 
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	packet.WriteInt32(0)
-	*/
+	packet.WriteUInt32(uint32(len(c.Units))) //Num of units you own
+	for id,_ := range c.Units {
+		packet.WriteUInt32(id)
+	}
 	
 	c.Send(packet)
 
 } 
 
-func ProfileInfo(c *GClient, p *Player) *C.Packet { 
+func ProfileInfo(c *GClient, p *Player) *SGPacket { 
 	c.Log().Println("ProfileInfo")
 	
-	packet := C.NewPacket2(200)
+	packet := NewPacket2(200)
 	 
 	packet.WriteHeader(SM_PROFILE)
 	if (p != c.Player) {

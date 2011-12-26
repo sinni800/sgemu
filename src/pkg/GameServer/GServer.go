@@ -2,11 +2,12 @@ package GameServer
 
 import (
 	"Core"
+	. "Core/SG" 
 	"net"
 	"Data"
 )
 
-type GamePacketFunc func(c *GClient, p *Core.Packet)
+type GamePacketFunc func(c *GClient, p *SGPacket)
 
 var (
 	Handler map[int]GamePacketFunc
@@ -16,12 +17,12 @@ var (
 type GServer struct {
 	Core.Server
 	Maps map[int]*Map
-	IDG  *Core.IDGen
+	IDG  *Core.IDGen 
 	Run  *Core.Runner
 	DBRun  *Core.Runner
 	Sdr		*Core.Scheduler
 }
-
+ 
 func (serv *GServer) OnSetup() {
 	serv.Server.OnSetup()
 	serv.Maps = make(map[int]*Map)

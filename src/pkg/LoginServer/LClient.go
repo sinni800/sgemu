@@ -3,6 +3,7 @@ package LoginServer
 import (
 	C "Core"
 	D "Data"
+	. "Core/SG" 
 	"log"
 )
  
@@ -45,7 +46,7 @@ func (client *LClient) StartRecive() {
 
 				if op > 13 || (op > 1 && op < 5) || (op > 6 && op < 13) {
 					var sumCheck bool
-					temp, sumCheck = C.DecryptPacket(temp)
+					temp, sumCheck = DecryptPacket(temp)
 					if !sumCheck {
 						client.Log().Println("Packet sum check failed!")
 						return
@@ -53,7 +54,7 @@ func (client *LClient) StartRecive() {
 				} else {
 					temp = temp[3:]
 				}
-				client.ParsePacket(C.NewPacketRef(temp))
+				client.ParsePacket(NewPacketRef(temp))
 				client.packet.Index = 0
 				if size > l+3 {
 					client.packet.Index = size - (l + 3)
@@ -88,12 +89,12 @@ func (client *LClient) OnDisconnect() {
 	client.MainServer.GetServer().Log.Println("Client Disconnected!")
 }
 
-func (client *LClient) Send(p *C.Packet) {
+func (client *LClient) Send(p *SGPacket) {
 	if !p.Encrypted {
 		op := p.Buffer[3]
 		if op > 13 || (op > 0 && op < 3) || (op > 3 && op < 11) {
 			p.WSkip(2)
-			C.EncryptPacket(p.Buffer[:p.Index], client.Key)
+			EncryptPacket(p.Buffer[:p.Index], client.Key)
 			p.Encrypted = true
 			client.Key++
 		}
@@ -102,7 +103,7 @@ func (client *LClient) Send(p *C.Packet) {
 	client.Socket.Write(p.Buffer[:p.Index])
 }
 
-func (client *LClient) SendRaw(p *C.Packet) {
+func (client *LClient) SendRaw(p *SGPacket) {
 	p.WriteLen()
 	client.Socket.Write(p.Buffer[:p.Index])
 }
@@ -116,7 +117,7 @@ func (client *LClient) Log() *log.Logger {
 	return Server.Log
 }
 
-func (client *LClient) ParsePacket(p *C.Packet) {
+func (client *LClient) ParsePacket(p *SGPacket) {
 	header := p.ReadByte()
 
 	fnc, exist := Handler[int(header)]

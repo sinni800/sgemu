@@ -1,4 +1,4 @@
-package Core
+package SG
 
 var (
 	Red       = NColor(255, 0, 0)

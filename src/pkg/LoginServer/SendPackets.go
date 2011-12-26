@@ -1,13 +1,13 @@
 package LoginServer
 
 import (
-	C "Core"
+	. "Core/SG"
 	GS "GameServer"
 ) 
 
 
 func SendMessage(c *LClient, errcode int, msg string) {
-	packet := C.NewPacket2(len(msg) + 20)
+	packet := NewPacket2(len(msg) + 20)
 	packet.WriteHeader(CSM_REGISTER)
 	switch errcode { 
 	case 0:
@@ -26,7 +26,7 @@ func SendMessage(c *LClient, errcode int, msg string) {
 
 
 func SendToGameServer(c *LClient, username string) {
-	packet := C.NewPacket2(20)
+	packet := NewPacket2(20)
 	packet.WriteHeader(SM_SENDIP)
 	packet.Index--
 	ip := []byte(GS.Server.Addr.IP.To4())
@@ -41,7 +41,7 @@ func SendToGameServer(c *LClient, username string) {
 
 
 func SendWelcome(c *LClient) {
-	packet := C.NewPacket2(40)
+	packet := NewPacket2(40)
 	packet.WriteHeader(0x7E)
 	packet.Buffer[4] = 0x1B
 	packet.WriteRawString("SERVER CONNECTED\n")

@@ -1,14 +1,14 @@
 package LoginServer
 
 import (
-	C "Core"
+	. "Core/SG"
 	D "Data" 
 )
 
 
-func OnWelcome(c *LClient, p *C.Packet) {
+func OnWelcome(c *LClient, p *SGPacket) {
 	c.Log().Println("OnWelcome Packet")
-	packet := C.NewPacket2(15)
+	packet := NewPacket2(15)
 	packet.WriteHeader(CSM_WELCOME)
 	packet.WriteUInt16(46381)
 	packet.WriteUInt16(168)
@@ -16,11 +16,11 @@ func OnWelcome(c *LClient, p *C.Packet) {
 	c.Send(packet)
 }
 
-func OnWelcome2(c *LClient, p *C.Packet) {
+func OnWelcome2(c *LClient, p *SGPacket) {
 	c.Log().Printf("OnWelcome2 Packet")
 	switch p.ReadByte() {
 	case 0:
-		packet := C.NewPacket2(20)
+		packet := NewPacket2(20)
 		packet.WriteHeader(SM_SENDIP)
 		packet.Index--
 		ip := []byte(Server.Addr.IP.To4())
@@ -31,7 +31,7 @@ func OnWelcome2(c *LClient, p *C.Packet) {
 		c.Send(packet)
 		break
 	case 1:
-		packet := C.NewPacket2(200)
+		packet := NewPacket2(200)
 		packet.WriteHeader(SM_WELCOME2)
 		packet.Write([]byte{0x00, 0x21, 0x78, 0x9C, 0x63, 0x64, 0x70, 0xD3, 0xAF, 0x71, 0xE0, 0xDE, 0xC1, 0x18, 0x9C, 0x91, 0x58, 0x52, 0x92, 0x5A, 0x94, 0x9A, 0xE2, 0x9E, 0x98, 0x93, 0x58, 0x51, 0xC9, 0x00, 0x00, 0x5D, 0x17, 0x08, 0x01})
 		c.Send(packet)
@@ -39,9 +39,9 @@ func OnWelcome2(c *LClient, p *C.Packet) {
 	}
 }
 
-func OnPlanetDataRequest(c *LClient, p *C.Packet) {
+func OnPlanetDataRequest(c *LClient, p *SGPacket) {
 	c.Log().Printf("OnPlanetDataRequest Packet")
-	p = C.NewPacket2(200)
+	p = NewPacket2(200)
 	p.WriteHeader(CS_PLANET_DATA)
 
 	p.WriteByte(1) // planet number loop
@@ -67,7 +67,7 @@ func OnPlanetDataRequest(c *LClient, p *C.Packet) {
 	c.Send(p) 
 }
 
-func OnRegister(c *LClient, p *C.Packet) {
+func OnRegister(c *LClient, p *SGPacket) {
 	user := p.ReadString()
 	pass := p.ReadString()
 	email := p.ReadString()
@@ -80,20 +80,20 @@ func OnRegister(c *LClient, p *C.Packet) {
 	SendMessage(c, ec, s)
 }
 
-func OnFriendSelect(c *LClient, p *C.Packet) {
+func OnFriendSelect(c *LClient, p *SGPacket) {
 	user := p.ReadString()
 	c.Log().Printf("OnFriendSelect Packet: User(%s)", user)
 
 	//55 00 - not found
 	//55 01 00 00 00 0C - found and faction
 
-	packet := C.NewPacket2(20)
+	packet := NewPacket2(20)
 	packet.WriteHeader(SM_FRIEND_SELECT)
 	packet.WriteByte(0)
 	c.Send(packet)
 }
 
-func OnRegisterDone(c *LClient, p *C.Packet) {
+func OnRegisterDone(c *LClient, p *SGPacket) {
 	c.Log().Printf("OnRegisterDone: % #X\n", p.Buffer)
 	if c.TempUser != nil {
 
@@ -119,18 +119,18 @@ func OnRegisterDone(c *LClient, p *C.Packet) {
 	}
 }
 
-func OnLoginWelcome(c *LClient, p *C.Packet) {
+func OnLoginWelcome(c *LClient, p *SGPacket) {
 	c.Log().Printf("OnLoginWelcome Packet")
-	packet := C.NewPacket2(20)
+	packet := NewPacket2(20)
 	packet.WriteHeader(SM_REG_METHOD)
 	packet.WriteByte(1) //1 advanced reg , else simple reg
 	packet.WriteByte(0)
 	c.Send(packet)
 }
 
-func OnFactionDataRequest(c *LClient, p *C.Packet) {
+func OnFactionDataRequest(c *LClient, p *SGPacket) {
 	c.Log().Printf("OnFactionDataRequest Packet")
-	packet := C.NewPacket2(1000)
+	packet := NewPacket2(1000)
 	packet.WriteHeader(CSM_FACTION_DATA)
 	packet.Write([]byte{0x23,
 		0x00, 0x00, 0x00, 0x63, 0x08, 0x4B, 0x61, 0x6D, 0x61, 0x6E, 0x61, 0x73, 0x6F, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x00, 0x0A, 0xAE, 0x67, 0x02, 0x0A, 0xC9, 0x9C, 0x40,
@@ -201,7 +201,7 @@ func OnFactionDataRequest(c *LClient, p *C.Packet) {
 	c.Send(packet)
 }
 
-func OnLogin(c *LClient, p *C.Packet) {
+func OnLogin(c *LClient, p *SGPacket) {
 	user := p.ReadString()
 	pass := p.ReadString()
 	c.Log().Printf("OnLogin Packet User Register: User(%s)", user) 

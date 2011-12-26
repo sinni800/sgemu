@@ -3,6 +3,12 @@ package Core
 import (
 	"math"
 	"fmt"
+	. "encoding/binary"
+	"io"
+)
+
+var (
+	BytesOrder = BigEndian 
 )
 
 type Packet struct {
@@ -107,16 +113,6 @@ func (p *Packet) WriteByte(b byte) {
 	p.Index++
 }
 
-func (p *Packet) WriteHeader(opCode byte) {
-	if !p.WCheck(5) {
-		return
-	}
-	p.WriteByte(0xAA)
-	p.Index += 2
-	p.WriteByte(opCode)
-	p.Index++
-}
-
 
 func (p *Packet) WriteLen() {
 	t := p.Index
@@ -130,92 +126,48 @@ func (p *Packet) WriteInt16(value int16) {
 	if !p.WCheck(2) {
 		return
 	}
-	p.Buffer[p.Index] = (byte)(value >> 8)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value)
-	p.Index++
+	BytesOrder.PutUint16(p.Buffer[p.Index:], uint16(value))
+	p.Index += 2; 
 }
 
 func (p *Packet) WriteUInt16(value uint16) {
 	if !p.WCheck(2) {
 		return
 	}
-	p.Buffer[p.Index] = (byte)(value >> 8)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value)
-	p.Index++
+	BytesOrder.PutUint16(p.Buffer[p.Index:], value)
+	p.Index += 2; 
 }
 
 func (p *Packet) WriteInt32(value int32) {
 	if !p.WCheck(4) {
 		return
 	}
-	p.Buffer[p.Index] = (byte)(value >> 24)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 16)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 8)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 0)
-	p.Index++
+	BytesOrder.PutUint32(p.Buffer[p.Index:], uint32(value))
+	p.Index += 4; 
 }
 
 func (p *Packet) WriteUInt32(value uint32) {
 	if !p.WCheck(4) {
 		return
 	}
-	p.Buffer[p.Index] = (byte)(value >> 24)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 16)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 8)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 0)
-	p.Index++
+	BytesOrder.PutUint32(p.Buffer[p.Index:], value)
+	p.Index += 4; 
 }
 
 func (p *Packet) WriteInt64(value int64) {
 	if !p.WCheck(8) {
 		return
 	}
-	p.Buffer[p.Index] = (byte)(value >> 56)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 48)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 40)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 32)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 24)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 16)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 8)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 0)
-	p.Index++
+	BytesOrder.PutUint64(p.Buffer[p.Index:], uint64(value))
+	p.Index += 8; 
 }
 
 func (p *Packet) WriteUInt64(value uint64) {
 	if !p.WCheck(8) {
 		return
 	}
-	p.Buffer[p.Index] = (byte)(value >> 56)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 48)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 40)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 32)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 24)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 16)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 8)
-	p.Index++
-	p.Buffer[p.Index] = (byte)(value >> 0)
-	p.Index++
+	BytesOrder.PutUint64(p.Buffer[p.Index:], value)
+	p.Index += 8; 
 }
 
 
@@ -233,12 +185,7 @@ func (p *Packet) WriteFloat64(pValue float64) {
 	p.WriteUInt64(math.Float64bits(pValue))
 }
 
-func (p *Packet) WriteString(pValue string) {
-	p.WriteByte(byte(len(pValue)))
-	p.oWriteString(pValue, len(pValue))
-}
-
-func (p *Packet) oWriteString(pValue string, size int) {
+func (p *Packet) WriteString(pValue string, size int) {
 	if !p.WCheck(size) {
 		return
 	}
@@ -247,7 +194,7 @@ func (p *Packet) oWriteString(pValue string, size int) {
 } 
 
 func (p *Packet) WriteRawString(pValue string) {
-	p.oWriteString(pValue, len(pValue))
+	p.WriteString(pValue, len(pValue))
 }
 
 func (p *Packet) ReadBytes(size int) (pValue []byte) {
@@ -272,10 +219,8 @@ func (p *Packet) ReadInt16() (pValue int16) {
 	if !p.RCheck(2) {
 		panic("Reading outside of the packet!")
 	}
-	pValue = int16(p.Buffer[p.Index]) << 8
-	p.Index++
-	pValue |= (int16(p.Buffer[p.Index]))
-	p.Index++
+	pValue = int16(BytesOrder.Uint16(p.Buffer[p.Index:]))
+	p.Index += 2;
 	return pValue
 }
 
@@ -283,10 +228,8 @@ func (p *Packet) ReadUInt16() (pValue uint16) {
 	if !p.RCheck(2) {
 		panic("Reading outside of the packet!")
 	}
-	pValue = uint16(p.Buffer[p.Index]) << 8
-	p.Index++
-	pValue |= (uint16(p.Buffer[p.Index]))
-	p.Index++
+	pValue = BytesOrder.Uint16(p.Buffer[p.Index:])
+	p.Index += 2;
 	return pValue
 }
 
@@ -294,14 +237,8 @@ func (p *Packet) ReadInt32() (pValue int32) {
 	if !p.RCheck(4) {
 		panic("Reading outside of the packet!")
 	}
-	pValue = (int32(p.Buffer[p.Index]) << 24)
-	p.Index++
-	pValue |= (int32(p.Buffer[p.Index]) << 16)
-	p.Index++
-	pValue |= (int32(p.Buffer[p.Index]) << 8)
-	p.Index++
-	pValue |= int32(p.Buffer[p.Index])
-	p.Index++
+	pValue = int32(BytesOrder.Uint32(p.Buffer[p.Index:]))
+	p.Index += 4;
 	return pValue
 }
 
@@ -309,14 +246,8 @@ func (p *Packet) ReadUInt32() (pValue uint32) {
 	if !p.RCheck(4) {
 		panic("Reading outside of the packet!")
 	}
-	pValue = (uint32(p.Buffer[p.Index]) << 24)
-	p.Index++
-	pValue |= (uint32(p.Buffer[p.Index]) << 16)
-	p.Index++
-	pValue |= (uint32(p.Buffer[p.Index]) << 8)
-	p.Index++
-	pValue |= uint32(p.Buffer[p.Index])
-	p.Index++
+	pValue = BytesOrder.Uint32(p.Buffer[p.Index:])
+	p.Index += 4;
 	return pValue
 }
 
@@ -324,22 +255,8 @@ func (p *Packet) ReadInt64() (pValue int64) {
 	if !p.RCheck(4) {
 		panic("Reading outside of the packet!")
 	}
-	pValue = int64(p.Buffer[p.Index] << 56)
-	p.Index++
-	pValue |= (int64(p.Buffer[p.Index]) << 48)
-	p.Index++
-	pValue |= (int64(p.Buffer[p.Index]) << 40)
-	p.Index++
-	pValue |= (int64(p.Buffer[p.Index]) << 32)
-	p.Index++
-	pValue = (int64(p.Buffer[p.Index]) << 24)
-	p.Index++
-	pValue |= (int64(p.Buffer[p.Index]) << 16)
-	p.Index++
-	pValue |= (int64(p.Buffer[p.Index]) << 8)
-	p.Index++
-	pValue |= int64(p.Buffer[p.Index])
-	p.Index++
+	pValue = int64(BytesOrder.Uint32(p.Buffer[p.Index:]))
+	p.Index += 8;
 	return pValue
 }
 
@@ -382,12 +299,11 @@ func (p *Packet) ReadFloat64() (pValue float64) {
 	return pValue
 }
 
-func (p *Packet) ReadString() (pValue string) {
-	return p.oReadString(int(p.ReadByte()))
+func (p *Packet) BasePacket() *Packet {
+	return p
 }
 
-
-func (p *Packet) oReadString(size int) (pValue string) {
+func (p *Packet) ReadString(size int) (pValue string) {
 	if !p.RCheck(size) {
 		panic("Reading outside of the packet!")
 	}
@@ -396,20 +312,18 @@ func (p *Packet) oReadString(size int) (pValue string) {
 	return pValue
 }
 
-func (p *Packet) WriteColor(c *Color) {
-	p.WCheck(3)
-	i := p.Index
-	p.Buffer[i] = c.R
-	p.Buffer[i+1] = c.G
-	p.Buffer[i+2] = c.B
-	p.Index = i+3
-}
-
-func (p *Packet) ReadColor() *Color{
-	if !p.RCheck(3) {
-		panic("Reading outside of the packet!")
+func (p *Packet) Read(b []byte) (n int, err error) {
+	if (p.Buffer == nil) {
+		return 0,&io.Error{"nil buffer"}
+	}	
+	if (p.Index >= cap(p.Buffer)) {
+		return 0,io.EOF
 	}
-	i := p.Index
-	p.Index = i+3
-	return NColor(p.Buffer[i],p.Buffer[i+1],p.Buffer[i+2])
+	n = len(b)
+	t := p.Index+n
+	if (t > cap(p.Buffer)) {
+		n = t-cap(p.Buffer)
+	}
+	copy(b, p.Buffer[p.Index:n])
+	return n,nil
 }

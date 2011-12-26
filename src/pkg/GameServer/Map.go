@@ -1,6 +1,7 @@
 package GameServer
 
 import C "Core"
+import . "Core/SG"
 
 type Map struct {
 	Players map[uint32]*GClient
@@ -33,14 +34,14 @@ func (m *Map) OnLeave(c *GClient) {
 	delete(m.Players, c.ID)
 }
 
-func (m *Map) Send(p *C.Packet) {
+func (m *Map) Send(p *SGPacket) {
 	m.SendAllExcept(p, nil)
-}
+} 
 
-func (m *Map) SendAllExcept(p *C.Packet, c *GClient) {
+func (m *Map) SendAllExcept(p *SGPacket, c *GClient) {
 	for _, value := range m.Players {
 		if c != value {
-			value.Send(p)
+			value.Send(p) 
 		}
 	}
 }

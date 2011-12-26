@@ -19,15 +19,15 @@ const (
 	Specials  = Group(8)
 	Storage   = Group(2)
 	Computers = Group(3)
-)
+) 
 
 var (
-	dataPath = "../sg_data.xml"
-	itemPath = "../sg_items.xml"
-	shopPath = "../sg_shop.xml"
+	dataPath  = "../sg_data.xml"
+	itemPath  = "../sg_items.xml"
+	shopPath  = "../sg_shop.xml"
 	bindsPath = "../sg_binds.xml"
-	Gamedata = new(Data)
-	Shopdata = new(ShopData)
+	Gamedata  = new(Data)
+	Shopdata  = new(ShopData)
 
 	Units     = make(map[string]*UnitData)
 	Divisions = map[string]DType{"Infantry": Infantry,
@@ -35,10 +35,11 @@ var (
 		"Aviation": Aviation,
 		"Organic":  Organic,
 		"":         Other}
-
-	Ranks = make(map[byte]*RankData)
-	Items = make(map[uint16]*ItemData)
-	Binds = make(map[string]*BindingGroup)
+ 
+	Ranks        = make(map[byte]*RankData)
+	Items        = make(map[uint16]*ItemData)
+	ItemsByGroup = make(map[uint16][]*ItemData)
+	Binds        = make(map[string]*BindingGroup)
 
 	GroupNames = map[Group]string{Engines: "Engines", Weapons: "Weapons", Misc: "Misc", Armors: "Armors", Bonus: "Bonus", Specials: "Specials", Storage: "Storage", Computers: "Computers"}
 )
@@ -61,15 +62,15 @@ type BindingFile struct {
 	XMLName xml.Name        `xml:"BindingFile"`
 	Groups  []*BindingGroup `xml:">BindingGroup"`
 }
- 
+
 type BindingGroup struct {
-	XMLName xml.Name       `xml:"BindingGroup"`
-	UID     string         `xml:"attr"`
+	XMLName xml.Name `xml:"BindingGroup"`
+	UID     string   `xml:"attr"`
 	Binds   []*BindingData
 }
 
 type BindingData struct {
-	XMLName   xml.Name `xml:"Bind"`
+	XMLName   xml.Name `xml:"Binds"`
 	UID       string   `xml:"attr"`
 	ID        uint16   `xml:"attr"`
 	GroupType Group    `xml:"attr"`
@@ -89,7 +90,7 @@ type UnitData struct {
 	UID         string `xml:"attr"`
 	Influence   byte   `xml:"attr"`
 	Space       string `xml:"attr"`
-	Health      string `xml:"attr"`
+	Health      uint16 `xml:"attr"`
 	Armor       string `xml:"attr"`
 	ViewRange   string `xml:"attr"`
 	Speed       string `xml:"attr"`
@@ -113,20 +114,19 @@ type ShopUnit struct {
 	XMLName xml.Name `xml:"Unit"`
 	Name    string
 	Money   int32
-	Ore     int32
+	Ore     int32 
 	Silicon int32
 	Uranium int32
 	Sulfur  byte
 }
 
-type ItemDataList struct {
-	XMLName xml.Name    `xml:"ItemList"`
-	Items   []*ItemData `xml:"Items>Item"`
+type ItemDataGroup struct {
+	GID   uint16 `xml:"attr"`
+	ItemData []*ItemData
 }
-
+ 
 type ItemData struct {
-	XMLName       xml.Name `xml:"Item"`
-	Name          string
+	Name          string   `xml:"attr"`
 	Description   string
 	Group         string `xml:"attr"`
 	ID            uint16 `xml:"attr"`
@@ -178,7 +178,7 @@ func LoadData() {
 	go LoadShop(shop)
 	go LoadBinds(binds)
 
-	<-items 
+	<-items
 	log.Println("Loaded", len(Items), "Items!")
 	<-units
 	log.Println("Loaded", len(Units), "Units!")
@@ -187,14 +187,13 @@ func LoadData() {
 	log.Println("Loaded", len(Shopdata.ShopUnits), "Shop units!")
 	<-binds
 	log.Println("Loaded", len(Binds), "Bind groups!")
-
 }
 
 func LoadBinds(Done chan bool) {
 	defer func() {
 		if x := recover(); x != nil {
 			log.Printf("%v\n", x)
-			Done <- false 
+			Done <- false
 		} else {
 			Done <- true
 		}
@@ -202,18 +201,18 @@ func LoadBinds(Done chan bool) {
 	f, e := os.Open(bindsPath)
 	if e != nil {
 		log.Panicln(e)
-	} 
+	}
 
 	defer f.Close()
- 
+
 	bf := BindingFile{}
 
 	e = xml.Unmarshal(f, &bf)
 	if e != nil {
 		log.Panicln(e)
 	}
-	
-	for _,group := range bf.Groups {
+ 
+	for _, group := range bf.Groups {
 		Binds[group.UID] = group
 	}
 }
@@ -284,9 +283,9 @@ func LoadItems(Done chan bool) {
 			Done <- false
 		} else {
 			Done <- true
-		}
+		} 
 	}()
-	ItemsDataList := new(ItemDataList)
+
 	f, e := os.Open(itemPath)
 	if e != nil {
 		log.Panicln(e)
@@ -294,13 +293,23 @@ func LoadItems(Done chan bool) {
 
 	defer f.Close()
 
-	e = xml.Unmarshal(f, ItemsDataList)
-	if e != nil {
-		log.Panicln(e)
-	}
+	
+	type xmlitems struct {
+		XMLName   xml.Name `xml:"Items"`
+		ItemDataGroup 	  []*ItemDataGroup `xml:"ItemDataGroup"`
+	}  
 
-	for _, item := range ItemsDataList.Items {
-		Items[item.ID] = item
+	items := new(xmlitems)
+	e = xml.Unmarshal(f, items)
+	if e != nil {
+		log.Panicln(e) 
+	} 
+ 
+	for _,ig := range items.ItemDataGroup {
+		ItemsByGroup[ig.GID] = ig.ItemData
+		for _,it := range ig.ItemData {
+			Items[it.ID] = it
+		}
 	}
 }
 

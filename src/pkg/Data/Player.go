@@ -1,6 +1,7 @@
 package Data
 
 import . "launchpad.net/gobson/bson"
+//import "container/list"
 
 type DType byte
 
@@ -13,7 +14,7 @@ const (
 )
 
 type Player struct {
-	ID     string "_id"
+	ID     string "_id" 
 	UserID string
 	Name   string
  
@@ -44,9 +45,21 @@ type Player struct {
 
 	Map  int16
 	X, Y int16
+	
+	UnitsData map[string]*UnitDB
+	Items map[string]*Item 
 }
 
-type Division struct {
+type Item struct {
+	DBID     string "_id" 
+	ID 		 uint16 
+}
+
+func CreateItem(id uint16) *Item {
+	return &Item{NewID(), id}
+}
+
+type Division struct { 
 	Type  DType
 	Level byte
 	Rank  string
@@ -83,6 +96,9 @@ func NewPlayer() *Player {
 	p.Divisions[Mobile] = Division{Mobile, 1, "" , 0}
 	p.Divisions[Aviation] = Division{Aviation, 1, "", 0}
 	p.Divisions[Organic] = Division{Organic, 1, "", 0}
+	
+	p.UnitsData = make(map[string]*UnitDB)
+	p.Items = make(map[string]*Item)
 
 	return p
 } 
@@ -90,19 +106,27 @@ func NewPlayer() *Player {
 func (p *Player) SetDefaultStats() {
 	p.Points = 0
 	p.Money = 300000
+	   
+	u := CreateUnit("Shade")
+	if u == nil {
+		panic("No such unit")
+	} else {
+		p.UnitsData[u.DBID] = u
+	}
 }
 
 func RegisterPlayer(plyaer *Player) {
 	e := CPlayers.Insert(plyaer)
 	if e != nil {
 		panic(e)
-	}
+	}	
 }
 
 func GetPlayerByUserID(id string) *Player {
-	p := new(Player)
+	p := new(Player) 
 	e := CPlayers.Find(M{"userid": id}).One(p)
 	if e != nil {
+		panic(e)
 		return nil
 	}
 	return p

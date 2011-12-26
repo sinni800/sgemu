@@ -8,28 +8,28 @@ import (
 	GS "GameServer"
 	"log" 
 	"runtime"
-	"os/signal"
-	"os" 
-)         
+	"os/signal" 
+	"os"  
+)          
   
-var (
+var ( 
 	Closing = false
-)       
+)        
         
 func main() {  
 	defer OnClose()
 	 
 	runtime.GOMAXPROCS(5)
-	   
-	log.SetFlags(log.Ltime | log.Lshortfile)
+	     
+	log.SetFlags(log.Ltime | log.Lshortfile) 
 	log.SetPrefix("[Log]")  
 	 
 	D.InitializeDatabase()
 	D.CreateDatabase()
-	 
+	  
 	D.LoadData()  
  
-	LS.Server = new(LS.LServer)
+	LS.Server = new(LS.LServer) 
 	GS.Server = new(GS.GServer)
 	C.Start(LS.Server, "LoginServer", "127.0.0.1", 3000)
 	C.Start(GS.Server, "GameServer", "127.0.0.1", 13010)    
@@ -37,7 +37,7 @@ func main() {
   	go ListenSignals() 
 	   
 	CMD()  
-}     
+}        
   
 func ListenSignals() {
 	for signal := range signal.Incoming {
@@ -45,7 +45,7 @@ func ListenSignals() {
 			OnClose() 
 			return
 	}    
-} 
+}  
    
 func OnClose() {
 	if Closing { return }; Closing = true
@@ -67,7 +67,7 @@ func OnClose() {
 	if GS.Server != nil {
 		GS.Server.OnShutdown()
 	} 
-} 
+}  
  
 func CMD() {
 	for {

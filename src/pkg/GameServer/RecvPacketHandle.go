@@ -1,25 +1,25 @@
 package GameServer
 
 import (
-	C "Core"
+	. "Core/SG"
 )  
 
 
-func OnWelcome(c *GClient, p *C.Packet) {
+func OnWelcome(c *GClient, p *SGPacket) {
 	c.Log().Println("OnWelcome Packet")
 }
 
-func OnChat(c *GClient, p *C.Packet) {
-	c.Log().Println("OnChat Packet")
-
+func OnChat(c *GClient, p *SGPacket) {
 	p.ReadByte() //type?
 	text := p.ReadString()
 
+	c.Log().Print("OnChat Packet ", text)
+	 
 	SendNormalChat(c, text)
 }
 
-func OnPing(c *GClient, p *C.Packet) {
-	packet := C.NewPacket2(20)
+func OnPing(c *GClient, p *SGPacket) {
+	packet := NewPacket2(20) 
 	packet.WriteHeader(SM_PONG)
 	packet.WriteInt16(p.ReadInt16())
 	packet.WriteInt16(p.ReadInt16())
@@ -27,11 +27,11 @@ func OnPing(c *GClient, p *C.Packet) {
 	c.Send(packet)
 }
 
-func OnGameEnter(c *GClient, p *C.Packet) {
+func OnGameEnter(c *GClient, p *SGPacket) {
 	typ := p.ReadByte()
 	switch typ {
 		case 1:
-			packet := C.NewPacket2(21)
+			packet := NewPacket2(21)
 			packet.WriteHeader(CSM_GAME_ENTER)
 			packet.WriteByte(typ)
 			packet.WriteInt32(p.ReadInt32())
@@ -39,7 +39,7 @@ func OnGameEnter(c *GClient, p *C.Packet) {
 			packet.WriteByte(0)
 			c.Send(packet)		
 		case 2:
-			packet := C.NewPacket2(17)
+			packet := NewPacket2(17)
 			packet.WriteHeader(CSM_GAME_ENTER)
 			packet.WriteByte(4)
 			packet.WriteByte(1)
@@ -48,7 +48,7 @@ func OnGameEnter(c *GClient, p *C.Packet) {
 	}
 }	
 
-func OnMove(c *GClient, p *C.Packet) {
+func OnMove(c *GClient, p *SGPacket) {
 
 	p.RSkip(6)
 	tp := p.ReadByte() //type
@@ -59,7 +59,7 @@ func OnMove(c *GClient, p *C.Packet) {
 		c.Player.X = p.ReadInt16()
 		c.Player.Y = p.ReadInt16()
 
-		packet := C.NewPacket2(50)
+		packet := NewPacket2(50)
 		packet.WriteHeader(CSM_MOVE)
 		packet.WriteInt16(0)
 
@@ -83,7 +83,7 @@ func OnMove(c *GClient, p *C.Packet) {
 	}  
 } 
 
-func OnShopRequest(c *GClient, p *C.Packet) {
+func OnShopRequest(c *GClient, p *SGPacket) {
 	c.Log().Println("OnShopRequest Packet")
 	
 	p.ReadInt32()
@@ -104,7 +104,7 @@ func OnShopRequest(c *GClient, p *C.Packet) {
 }
 
 
-func OnProfileRequest(c *GClient, p *C.Packet) {
+func OnProfileRequest(c *GClient, p *SGPacket) {
 	p.ReadByte()
 	id := p.ReadUInt32()
 	if (id == c.ID) {
@@ -119,7 +119,7 @@ func OnProfileRequest(c *GClient, p *C.Packet) {
 	}
 }
 
-func OnProfileLeave(c *GClient, p *C.Packet) {
+func OnProfileLeave(c *GClient, p *SGPacket) {
 	t := p.ReadByte()
 	cl := p.ReadByte()
 	e := p.ReadByte()

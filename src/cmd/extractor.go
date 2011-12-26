@@ -10,8 +10,8 @@ import (
 func main() {
 	flag.Parse()
 	args := flag.Args()
+	  
 	 
-	
 	path := "./"
 
 	if len(args) != 0 {
@@ -19,8 +19,10 @@ func main() {
 	} else {
 		fmt.Println("No game path, Use like extractor.exe \"game path\"")
 	} 
-	 
-	   
+	  
+	path = "C:/Games/Shattered Galaxy/" //Default path used for debugging
+	  
+	  
 	ReadFiles(path, "./")   
 	    
 	cmd := ""  

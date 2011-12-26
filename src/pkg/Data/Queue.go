@@ -5,11 +5,11 @@ import "time"
 
 var LoginQueue *Queue = NewQueue(false)
 
-type Item interface{}
+type QItem interface{}
 
 type Queue struct {
 	In      chan *InStruct
-	Request chan chan Item
+	Request chan chan QItem
 	List    *List
 	IPCheck bool
 }
@@ -23,7 +23,7 @@ type InStruct struct {
 func NewQueue(ipcheck bool) *Queue {
 	q := new(Queue)
 	q.In = make(chan *InStruct, 50)
-	q.Request = make(chan chan Item, 50)
+	q.Request = make(chan chan QItem, 50)
 	q.List = New()
 	q.IPCheck = ipcheck
 	go q.run()
@@ -35,8 +35,8 @@ func (q *Queue) Add(ip, id string) {
 }
   
 func (q *Queue) Check(ip string) (string, bool) {
-	chn := make(chan Item)
-	q.Request <- chn
+	chn := make(chan QItem)
+	q.Request <- chn 
 	chn <- ip
 	id := <-chn
 
