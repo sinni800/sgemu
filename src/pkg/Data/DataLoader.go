@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	C "Core"
 )
 
 type Group byte
@@ -192,7 +193,7 @@ func LoadData() {
 func LoadBinds(Done chan bool) {
 	defer func() {
 		if x := recover(); x != nil {
-			log.Printf("%v\n", x)
+			log.Printf("%v\n%s", x, C.PanicPath())
 			Done <- false
 		} else {
 			Done <- true
@@ -220,7 +221,7 @@ func LoadBinds(Done chan bool) {
 func LoadUnitsAndRanks(Done chan bool) {
 	defer func() {
 		if x := recover(); x != nil {
-			log.Printf("%v\n", x)
+			log.Printf("%v\n%s", x, C.PanicPath())
 			Done <- false
 		} else {
 			Done <- true
@@ -257,7 +258,7 @@ func LoadUnitsAndRanks(Done chan bool) {
 func LoadShop(Done chan bool) {
 	defer func() {
 		if x := recover(); x != nil {
-			log.Printf("%v\n", x)
+			log.Printf("%v\n%s", x, C.PanicPath())
 			Done <- false
 		} else {
 			Done <- true
@@ -279,7 +280,7 @@ func LoadShop(Done chan bool) {
 func LoadItems(Done chan bool) {
 	defer func() {
 		if x := recover(); x != nil {
-			log.Printf("%v\n", x)
+			log.Printf("%v\n%s", x, C.PanicPath())
 			Done <- false
 		} else {
 			Done <- true
@@ -315,13 +316,13 @@ func LoadItems(Done chan bool) {
 func OutputShopBinary() {
 	defer func() {
 		if x := recover(); x != nil {
-			log.Printf("%v\n", x)
+			log.Printf("%v\n%s", x, C.PanicPath())
 		}
 	}()
 	f, e := os.Open("../shop.bin")
 
 	if e != nil {
-		log.Panicln(e)
+		panic(e)
 	}
 
 	defer f.Close()

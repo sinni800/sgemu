@@ -4,6 +4,7 @@ import (
 	"encoding/hex"
 	"launchpad.net/gobson/bson"
 	"launchpad.net/mgo"
+	"fmt"
 	"log"
 )
 
@@ -17,12 +18,12 @@ func InitializeDatabase() {
 	log.Printf("Connecting to MongoDB...\n")
 	session, err := mgo.Mongo("localhost")
 	if err != nil {
-		log.Panicf("Connecting to MongoDB has been failed! err:%v\n", err)
+		panic(fmt.Sprintf("Connecting to MongoDB has been failed! err:%v\n", err))
 	}
 	session.SetSyncTimeout(30 * 1000000000)
 	err = session.Ping()
 	if err != nil {
-		log.Panicf("Connecting to MongoDB has been failed! err:%v\n", err)
+		panic(fmt.Sprintf("Connecting to MongoDB has been failed! err:%v\n", err))
 	}
 	log.Println("Connected!")
 	Session = session
@@ -82,7 +83,7 @@ func NewIID(c *mgo.Collection) uint32 {
 	change := mgo.Change{Update: bson.M{"$inc": bson.M{"seq": 1}}, New: true}
 	e := c.Find(bson.M{"_id": "users"}).Modify(change, &d)
 	if e != nil {
-		log.Panicf("Could not generate NewIID! err:%v\n", e)
+		panic(fmt.Sprintf("Could not generate NewIID! collection:%s err:%v\n", c.FullName, e))
 	}
 	return d.Seq
 }
@@ -90,7 +91,7 @@ func NewIID(c *mgo.Collection) uint32 {
 func AddAutoIncrementingField(c *mgo.Collection) {
 	i, e := c.Find(bson.M{"_id": "users"}).Count()
 	if e != nil {
-		log.Panicf("Could not Add Auto Incrementing Field! err:%v\n", e)
+		panic(fmt.Sprintf("Could not Add Auto Incrementing Field! collection:%s err:%v\n", c.FullName, e))
 	}
 	if i > 0 {
 		return

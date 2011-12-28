@@ -23,17 +23,17 @@ func main() {
 
 	log.SetFlags(log.Ltime | log.Lshortfile)
 	log.SetPrefix("[Log]")
-
+ 
 	D.InitializeDatabase()
 	D.CreateDatabase()
-
+ 
 	D.LoadData()
 
 	LS.Server = new(LS.LServer)
 	GS.Server = new(GS.GServer)
 	C.Start(LS.Server, "LoginServer", "127.0.0.1", 3000)
 	C.Start(GS.Server, "GameServer", "127.0.0.1", 13010)
- 
+  
 	go ListenSignals()
 
 	CMD()
