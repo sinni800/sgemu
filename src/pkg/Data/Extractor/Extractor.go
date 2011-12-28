@@ -9,6 +9,7 @@ import (
 
 var (
 	ItemsPath     = "./IINF.udf"
+	UnitsPath     = "./RNF.udf"
 	ItemsDescPath = "./hlp.dat"
 	NTTPath       = "./ntt.dat"
 
@@ -17,9 +18,6 @@ var (
 
 	ItemsData     []*ItemData
 	BindingGroups []*BindingGroup
-
-	ItemExtractDone = make(chan bool)
-	NttExtractDone  = make(chan bool)
 )
 
 //Path: Game folder.
@@ -53,11 +51,17 @@ func ReadFiles(path string, outpath string) {
 		log.Panicln(e)
 	}
 
-	go ExtractItems(path, outpath)
-	go ExtractNtt(path, outpath)
+	ItemExtractDone := make(chan bool)
+	NttExtractDone := make(chan bool)
+	UnitsExtractDone := make(chan bool)
+
+	go ExtractItems(path, outpath, ItemExtractDone)
+	go ExtractNtt(path, outpath, NttExtractDone)
+	go ExtractUnits(path, outpath, UnitsExtractDone)
 
 	<-ItemExtractDone
 	<-NttExtractDone
+	<-UnitsExtractDone
 
 }
 

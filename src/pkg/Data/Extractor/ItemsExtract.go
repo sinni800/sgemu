@@ -10,7 +10,7 @@ import (
 	"log"
 )
 
-func ExtractItems(path string, outpath string) {
+func ExtractItems(path string, outpath string, ItemExtractDone chan bool) {
 	defer Panic()
 	defer func() {
 		ItemExtractDone <- true

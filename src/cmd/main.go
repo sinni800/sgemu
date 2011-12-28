@@ -33,7 +33,7 @@ func main() {
 	GS.Server = new(GS.GServer)
 	C.Start(LS.Server, "LoginServer", "127.0.0.1", 3000)
 	C.Start(GS.Server, "GameServer", "127.0.0.1", 13010)
-
+ 
 	go ListenSignals()
 
 	CMD()
@@ -45,24 +45,24 @@ func ListenSignals() {
 		OnClose()
 		return
 	}
-}
+}  
 
 func OnClose() {
 	if Closing {
-		return
+		return 
 	}
 	Closing = true
 
 	if x := recover(); x != nil {
-		log.Printf("%v\n", x)
+		log.Printf("%v %s\n", x, C.PanicPath())
 	}
 
 	defer func() {
 		if x := recover(); x != nil {
-			log.Printf("%v\n", x)
+			log.Printf("%v %s\n", x, C.PanicPath())
 		}
 		cmd := ""
-		fmt.Println("Press enter to quit...")
+		log.Println("Press enter to quit...")
 		fmt.Scanln(&cmd)
 		os.Exit(0)
 	}()

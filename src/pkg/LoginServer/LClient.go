@@ -22,7 +22,7 @@ func (client *LClient) StartRecive() {
 		if err != nil {
 			return
 		}
-
+ 
 		client.packet.Index += bl
 
 		for client.packet.Index > 2 {
@@ -82,7 +82,7 @@ func (client *LClient) OnConnect() {
 
 func (client *LClient) OnDisconnect() {
 	if x := recover(); x != nil {
-		client.Log().Printf("panic : %v", x)
+		client.Log().Printf("panic : %v \n %s", x, C.PanicPath())
 	}
 	client.Socket.Close()
 	client.MainServer.GetServer().Log.Println("Client Disconnected!")

@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-func ExtractNtt(path string, outpath string) {
+func ExtractNtt(path string, outpath string, NttExtractDone chan bool) {
 	defer Panic()
 	defer func() {
 		NttExtractDone <- true

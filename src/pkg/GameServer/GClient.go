@@ -126,7 +126,7 @@ func (client *GClient) OnConnect() {
 
 func (client *GClient) OnDisconnect() {
 	if x := recover(); x != nil {
-		client.Log().Printf("panic : %v", x)
+		client.Log().Printf("panic : %v \n %s", x, C.PanicPath())
 	}
 	if client.Map != nil {
 		client.Map.OnLeave(client)
