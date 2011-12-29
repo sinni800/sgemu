@@ -1,10 +1,10 @@
 package Extractor
 
 
-func ExtractUnits(path string, outpath string, NttExtractDone chan bool) {
+func ExtractUnits(path string, outpath string, UnitExtractDone chan bool) {
 	defer Panic()
 	defer func() {
-		NttExtractDone <- true
+		UnitExtractDone <- true
 	}()
 	
 }

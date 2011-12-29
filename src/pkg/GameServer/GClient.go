@@ -127,7 +127,7 @@ func (client *GClient) OnConnect() {
 func (client *GClient) OnDisconnect() {
 	if x := recover(); x != nil {
 		client.Log().Printf("panic : %v \n %s", x, C.PanicPath())
-	}
+	} 
 	if client.Map != nil {
 		client.Map.OnLeave(client)
 	}
@@ -162,7 +162,7 @@ func (client *GClient) SendRaw(p *SGPacket) {
 	p.WriteLen()
 	client.Socket.Write(p.Buffer[:p.Index])
 }
-
+ 
 func (client *GClient) SendWelcome() {
 
 	//player stats

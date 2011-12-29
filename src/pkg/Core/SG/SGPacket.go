@@ -53,7 +53,7 @@ func (p *SGPacket) WriteColor(c *Color) {
 
 func (p *SGPacket) ReadString() (pValue string) {
 	return p.Packet.ReadString(int(p.ReadByte()))
-}
+} 
 
 func (p *SGPacket) WriteString(pValue string) {
 	p.WriteByte(byte(len(pValue)))
@@ -78,6 +78,36 @@ func (p *SGPacket) ReadColor() *Color {
 	p.Index = i + 3
 	return NColor(p.Buffer[i], p.Buffer[i+1], p.Buffer[i+2])
 }
+
+func (p *SGPacket) ReadFloat(typ FloatType ) float32 {	
+	i := p.ReadUInt16()
+	f := float32(0)
+	switch typ {
+		case FloatViewRange:
+			f = Float16FromBits(i)
+			break;
+		case FloatCD:
+			f = Float16FromBits2(i)
+			break;
+	
+	}
+	return f
+}
+
+func (p *SGPacket) WriteFloat(f float32 , typ FloatType ) {	
+	i := uint16(0)
+	switch typ {
+		case FloatViewRange:
+			i = Float16Bits2(f)
+			break;
+		case FloatCD:
+			i = Float16Bits2(f)
+			break;
+	
+	}
+	p.WriteUInt16(i)
+}
+
 
 func (p *SGPacket) String() string {
 	return fmt.Sprintf("Header(%d) len(%d) : % #X\n %s", p.Buffer[0], len(p.Buffer), p.Buffer, p.Buffer)
