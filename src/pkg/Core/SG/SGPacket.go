@@ -42,7 +42,7 @@ func NewPacketRef(buffer []byte) (p *SGPacket) {
 	return p
 }
 
-func (p *SGPacket) WriteColor(c *Color) {
+func (p *SGPacket) WriteColor(c Color) {
 	p.WCheck(3)
 	i := p.Index
 	p.Buffer[i] = c.R
@@ -70,7 +70,7 @@ func (p *SGPacket) WriteHeader(opCode byte) {
 	p.Index++
 }
 
-func (p *SGPacket) ReadColor() *Color {
+func (p *SGPacket) ReadColor() Color {
 	if !p.RCheck(3) {
 		panic("Reading outside of the packet!")
 	}

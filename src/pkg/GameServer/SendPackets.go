@@ -12,7 +12,7 @@ func SendNormalChat(c *GClient, text string) {
 	packet.WriteByte(0)
 	packet.WriteUInt32(c.ID)
 	packet.WriteString(text)
-	packet.WriteColor(Red)
+	packet.WriteColor(White)
 	packet.WriteByte(0)
 
 	Server.Run.Funcs <- func() { c.Map.Send(packet) }
@@ -28,6 +28,19 @@ func HelpChatPacket(text string) *SGPacket {
 	packet.WriteByte(0x15)
 	packet.WriteString(text)
 	packet.WriteColor(HelpColor)
+	return packet
+}
+
+func SendCustomChatPacket(c *GClient, text string, color Color) {
+	c.Send(CustomChatPacket(text, color))
+}
+
+func CustomChatPacket(text string, color Color) *SGPacket {
+	packet := NewPacket2(30 + len(text))
+	packet.WriteHeader(CSM_CHAT)
+	packet.WriteByte(3)
+	packet.WriteString(text)
+	packet.WriteColor(color)
 	return packet
 }
 

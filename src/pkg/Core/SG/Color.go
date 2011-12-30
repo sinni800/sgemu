@@ -13,6 +13,6 @@ type Color struct {
 	R, G, B byte
 }
 
-func NColor(r, g, b byte) *Color {
-	return &Color{r, g, b}
+func NColor(r, g, b byte) Color {
+	return Color{r, g, b}
 }

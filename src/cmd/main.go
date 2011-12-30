@@ -36,7 +36,7 @@ func main() {
   
 	go ListenSignals()
 
-	CMD()
+	CMD()   
 }
 
 func ListenSignals() {
@@ -49,7 +49,7 @@ func ListenSignals() {
 
 func OnClose() {
 	if Closing {
-		return 
+		return  
 	}
 	Closing = true
 

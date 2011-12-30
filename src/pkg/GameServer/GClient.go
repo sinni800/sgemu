@@ -303,6 +303,9 @@ func (client *GClient) SendWelcome() {
 	packet.WriteHeader(0x3E)
 	packet.Write([]byte{0x00, 0x00})
 	//client.Map.Send(packet)
+	
+	SendCustomChatPacket(client, "***Merry Christmas***!", Red)
+	SendCustomChatPacket(client, "***Merry Christmas***!", Green) 
 }
 
 func (client *GClient) Log() *log.Logger {
