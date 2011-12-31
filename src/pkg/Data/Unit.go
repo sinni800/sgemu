@@ -53,6 +53,7 @@ func (u *Unit) UQ() byte {
 	return u.Level + (u.Owner.Clout / 2)
 }
 
+//Max Weight
 func (u *Unit) MaxWeight() uint16 {
 	return uint16(float32(u.Data.Max_Weight) * (1 + (float32(u.Owner.MechApt) / 120)))
 }

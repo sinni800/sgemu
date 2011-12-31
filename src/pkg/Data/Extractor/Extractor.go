@@ -9,7 +9,7 @@ import (
 
 var (
 	ItemsPath     = "./IINF.udf"
-	UnitsPath     = "./RNF.udf"
+	UnitsPath     = "./UNF.bkm"
 	ItemsDescPath = "./hlp.dat"
 	NTTPath       = "./ntt.dat"
 
