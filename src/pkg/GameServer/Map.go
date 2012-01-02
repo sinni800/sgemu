@@ -1,7 +1,7 @@
 package GameServer
 
 import C "Core"
-import . "Core/SG"
+import . "SG"
 
 type Map struct {
 	Players map[uint32]*GClient

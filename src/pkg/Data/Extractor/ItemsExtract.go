@@ -1,8 +1,8 @@
 package Extractor
 
 import (
-	. "Core/SG"
 	"Data/xml"
+	. "SG"
 	. "encoding/binary"
 	"os"
 	//"fmt" 

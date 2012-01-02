@@ -2,7 +2,7 @@ package GameServer
 
 import (
 	C "Core"
-	. "Core/SG"
+	. "SG"
 	D "Data"
 	"log"
 	//R "reflect"

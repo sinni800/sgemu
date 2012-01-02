@@ -2,7 +2,7 @@ package GameServer
 
 import (
 	"Core"
-	. "Core/SG"
+	. "SG"
 	"Data"
 	"net"
 )

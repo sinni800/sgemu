@@ -29,7 +29,7 @@ func NewPacket2(size int) (p *Packet) {
 	p.Index = 0
 	p.Buffer = make([]byte, size+7)
 	return p
-}
+} 
 
 func NewPacket3(buffer []byte) (p *Packet) {
 	p = new(Packet)
@@ -47,7 +47,7 @@ func NewPacketRef(buffer []byte) (p *Packet) {
 }
 
 func (p *Packet) String() string {
-	return fmt.Sprintf("Header(%d) len(%d) : % #X\n %s", p.Buffer[0], len(p.Buffer), p.Buffer, p.Buffer)
+	return fmt.Sprintf("len(%d) : % #X\n %s",  len(p.Buffer), p.Buffer, p.Buffer)
 }
 
 func (p *Packet) Clone() (pn *Packet) {
@@ -295,6 +295,9 @@ func (p *Packet) ReadString(size int) (pValue string) {
 }
 
 func (p *Packet) Read(b []byte) (n int, err error) {
+	if len(b) == 0 {
+		return 0, nil
+	}
 	if p.Buffer == nil {
 		return 0, &io.Error{"nil buffer"}
 	}
@@ -309,3 +312,4 @@ func (p *Packet) Read(b []byte) (n int, err error) {
 	copy(b, p.Buffer[p.Index:n])
 	return n, nil
 }
+

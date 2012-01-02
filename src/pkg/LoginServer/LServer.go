@@ -2,7 +2,7 @@ package LoginServer
 
 import (
 	"Core"
-	. "Core/SG"
+	. "SG"
 	"net"
 )
 

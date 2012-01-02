@@ -1,7 +1,7 @@
 package GameServer
 
 import (
-	. "Core/SG"
+	. "SG"
 )
 
 func OnWelcome(c *GClient, p *SGPacket) {

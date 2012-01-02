@@ -3,20 +3,23 @@ package Core
 type IDGen struct {
 	cGen       chan uint32
 	lastNumber uint32
+	limited    bool
 }
 
 func NewIDG() *IDGen {
-	return NewIDG2(3000)
+	return NewIDG3(3000, true)
 }
 
 func NewIDG2(size int) *IDGen {
-	g := new(IDGen)
-	g.cGen = make(chan uint32, size)
-	g.lastNumber = 1
+	return NewIDG3(size, false)
+}
+
+func NewIDG3(size int, limited bool) *IDGen {
+	g := &IDGen{ make(chan uint32, size), 1, limited}
 	go g.Gen()
 	return g
 }
-
+  
 func (g *IDGen) Gen() {
 	for i := 0; i < cap(g.cGen); i++ {
 		g.cGen <- g.lastNumber

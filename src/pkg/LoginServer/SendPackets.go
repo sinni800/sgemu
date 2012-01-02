@@ -1,7 +1,7 @@
 package LoginServer
 
 import (
-	. "Core/SG"
+	. "SG"
 	GS "GameServer"
 )
 
