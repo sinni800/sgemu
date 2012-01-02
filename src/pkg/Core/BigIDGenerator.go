@@ -1,46 +1,36 @@
 package Core
 
-/*
-import (
-	H "container/vector"
-)
-
-type IDGen struct {
+type BIDGen struct {
 	cGen       chan uint32
 	cHelper    chan uint32
-	tempHeap   *H.Vector
 	cSignal    chan bool
+	tempHeap   []uint32
 	lastNumber uint32
 }
 
-func NewIDG() *IDGen {
-	return NewIDG2(1000)
+func NewBIDG() *BIDGen {
+	return NewBIDG2(1000)
 } 
 
-func NewIDG2(size int) *IDGen {
-	g := new(IDGen)
-	g.cGen = make(chan uint32, size)
-	g.cHelper = make(chan uint32, size)
-	g.cSignal = make(chan bool, 10)
-	g.tempHeap = new(H.Vector)
-	g.lastNumber = 0
+func NewBIDG2(size int) *BIDGen {
+	g := &BIDGen{make(chan uint32, size),make(chan uint32, size),make(chan bool, 10),make([]uint32, 0),0}
 	go g.Gen()
 	return g
 }
 
-func (g *IDGen) Gen() {
+func (g *BIDGen) Gen() {
 	g.cSignal <- true
 	for {
 	Signal:
 		switch <-g.cSignal {
 		case true:
 			for {
-				if g.tempHeap.Len() > 0 {
-					id := g.tempHeap.Pop().(uint32)
+				if len(g.tempHeap) > 0 {
+					id := g.tempHeap[len(g.tempHeap)-1]
 					select {
 					case g.cGen <- id:
+						g.tempHeap = g.tempHeap[:len(g.tempHeap)-1]
 					default:
-						g.tempHeap.Push(id)
 						goto Signal
 					}
 				}
@@ -58,7 +48,7 @@ func (g *IDGen) Gen() {
 			for {
 				select {
 				case id = <-g.cHelper:
-					g.tempHeap.Push(id)
+					g.tempHeap = append(g.tempHeap, id)
 				default:
 					goto Signal
 				}
@@ -68,7 +58,7 @@ func (g *IDGen) Gen() {
 }
 
 
-func (g *IDGen) Next() (id uint32) {
+func (g *BIDGen) Next() (id uint32) {
 	select {
 	case id = <-g.cGen:
 	default:
@@ -86,7 +76,7 @@ func (g *IDGen) Next() (id uint32) {
 	return id
 }
 
-func (g *IDGen) Return(id uint32) {
+func (g *BIDGen) Return(id uint32) {
 	select {
 	case g.cGen <- id:
 	default:
@@ -94,5 +84,3 @@ func (g *IDGen) Return(id uint32) {
 		g.cSignal <- false
 	}
 }
-
-*/
