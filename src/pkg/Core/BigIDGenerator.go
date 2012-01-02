@@ -80,7 +80,11 @@ func (g *BIDGen) Return(id uint32) {
 	select {
 	case g.cGen <- id:
 	default:
-		g.cHelper <- id
-		g.cSignal <- false
+		select {
+			case g.cHelper <- id:
+				g.cSignal <- false
+			default:
+				go func() {  g.cHelper <- id;  g.cSignal <- false   }()
+			}
 	}
 }
