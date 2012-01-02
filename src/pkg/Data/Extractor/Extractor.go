@@ -5,6 +5,7 @@ import (
 	. "Data"
 	"log"
 	"os"
+	"bufio"
 )
 
 var (
@@ -15,6 +16,7 @@ var (
 
 	ItemsOut = "sg_items.xml"
 	BindsOut = "sg_binds.xml"
+	UnitsOut = "sg_units.xml"
 
 	ItemsData     []*ItemData
 	BindingGroups []*BindingGroup
@@ -68,5 +70,43 @@ func ReadFiles(path string, outpath string) {
 func Panic() {
 	if x := recover(); x != nil {
 		log.Printf("Panic extractor %v\n", x)
+	}
+}
+
+func OutputShopBinary() {
+	defer func() {
+		if x := recover(); x != nil {
+			log.Printf("%v\n", x)
+		}
+	}()
+	f, e := os.Open("../shop.bin")
+
+	if e != nil {
+		panic(e)
+	}
+
+	defer f.Close()
+
+	format := `<Unit>
+	<Name>%s</Name>
+	<Money>1</Money>
+	<Ore>0</Ore>
+	<Silicon>0</Silicon>
+	<Uranium>0</Uranium>
+	<Sulfur>0</Sulfur>
+</Unit> 
+`
+
+	r := bufio.NewReader(f)
+	bytes := [20]byte{}
+	buff := bytes[:]
+	for i := 0; i < 51; i++ {
+		r.Read(buff[:7])
+		s, e2 := r.ReadString(0)
+		if e2 != nil {
+			log.Panicln(e)
+		}
+		log.Printf(format, s[:len(s)-1])
+		r.Read(buff[:16])
 	}
 }

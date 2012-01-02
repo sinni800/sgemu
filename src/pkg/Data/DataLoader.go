@@ -2,7 +2,6 @@ package Data
 
 import (
 	"Data/xml"
-	"bufio"
 	"fmt"
 	"log"
 	"os"
@@ -310,43 +309,5 @@ func LoadItems(Done chan bool) {
 		for _, it := range ig.ItemData {
 			Items[it.ID] = it
 		}
-	}
-}
-
-func OutputShopBinary() {
-	defer func() {
-		if x := recover(); x != nil {
-			log.Printf("%v\n%s", x, C.PanicPath())
-		}
-	}()
-	f, e := os.Open("../shop.bin")
-
-	if e != nil {
-		panic(e)
-	}
-
-	defer f.Close()
-
-	format := `<Unit>
-	<Name>%s</Name>
-	<Money>1</Money>
-	<Ore>0</Ore>
-	<Silicon>0</Silicon>
-	<Uranium>0</Uranium>
-	<Sulfur>0</Sulfur>
-</Unit> 
-`
-
-	r := bufio.NewReader(f)
-	bytes := [20]byte{}
-	buff := bytes[:]
-	for i := 0; i < 51; i++ {
-		r.Read(buff[:7])
-		s, e2 := r.ReadString(0)
-		if e2 != nil {
-			log.Panicln(e)
-		}
-		fmt.Printf(format, s[:len(s)-1])
-		r.Read(buff[:16])
 	}
 }

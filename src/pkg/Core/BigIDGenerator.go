@@ -13,7 +13,7 @@ func NewBIDG() *BIDGen {
 } 
 
 func NewBIDG2(size int) *BIDGen {
-	g := &BIDGen{make(chan uint32, size),make(chan uint32, size),make(chan bool, 10),make([]uint32, 0),0}
+	g := &BIDGen{make(chan uint32, size),make(chan uint32, 100),make(chan bool, 10),make([]uint32, 0),0}
 	go g.Gen()
 	return g
 }
