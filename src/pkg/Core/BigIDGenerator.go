@@ -25,7 +25,7 @@ func (g *BIDGen) Gen() {
 		switch <-g.cSignal {
 		case true:
 			for {
-				if len(g.tempHeap) > 0 {
+				for len(g.tempHeap) > 0 {
 					id := g.tempHeap[len(g.tempHeap)-1]
 					select {
 					case g.cGen <- id:
