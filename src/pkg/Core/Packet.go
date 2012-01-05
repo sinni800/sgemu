@@ -95,13 +95,6 @@ func (p *Packet) RSkip(times int) {
 	p.Index += times
 }
 
-func (p *Packet) Write(bytes []byte) {
-	if !p.WCheck(len(bytes)) {
-		return
-	}
-	copy(p.Buffer[p.Index:], bytes)
-	p.Index += len(bytes)
-}
 
 func (p *Packet) WriteByte(b byte) {
 	if !p.WCheck(1) {
@@ -309,6 +302,35 @@ func (p *Packet) Read(b []byte) (n int, err error) {
 		n = t - cap(p.Buffer)
 	}
 	copy(b, p.Buffer[p.Index:n])
+	p.Index += n
+	return n, nil
+}
+
+func (p *Packet) WriteBytes(bytes []byte) {
+	if !p.WCheck(len(bytes)) {
+		return
+	}
+	copy(p.Buffer[p.Index:], bytes)
+	p.Index += len(bytes)
+}
+
+func (p *Packet) Write(bytes []byte) (n int, err error) {
+	if len(bytes) == 0 {
+		return 0, nil
+	}
+	if p.Buffer == nil {
+		return 0, &io.Error{"nil buffer"}
+	}
+	if p.Index >= cap(p.Buffer) {
+		return 0, io.EOF
+	}
+	n = len(bytes)
+	t := p.Index + n
+	if t > cap(p.Buffer) {
+		n = t - cap(p.Buffer)
+	}
+	copy(p.Buffer[p.Index:], bytes[:n])
+	p.Index += n
 	return n, nil
 }
 

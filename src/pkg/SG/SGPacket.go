@@ -3,6 +3,11 @@ package SG
 import (
 	C "Core"
 	"fmt"
+	"io"
+)
+
+const (
+	BufferSize = 1024
 )
 
 type Packet interface {
@@ -17,7 +22,7 @@ type SGPacket struct {
 func NewPacket() (p *SGPacket) {
 	p = new(SGPacket)
 	p.Index = 0
-	p.Buffer = make([]byte, 1024)
+	p.Buffer = make([]byte, BufferSize)
 	return p
 }
 
@@ -108,6 +113,75 @@ func (p *SGPacket) WriteFloat(f float32, typ FloatType) {
 	}
 	p.WriteUInt16(i)
 }
+
+
+func (packet *SGPacket) ReadPacketFromStream(Reader io.Reader, callback func(*SGPacket) ) {
+	bl, err := Reader.Read(packet.Buffer[packet.Index:])
+	if err != nil {
+		return
+	}
+ 
+	packet.Index += bl
+
+		//enter when we recive enough bytes to start reading them
+	for packet.Index > 2 {
+		p := packet
+		size := p.Index
+		p.Index = 0
+		
+		//Check header byte
+		if p.ReadByte() != 0xAA {
+			panic("Wrong packet header")
+			//client.Log().Printf("Wrong packet header")
+			//client.Log().Printf("% #X", p.Buffer[:size])
+			return
+		}
+		l := int(p.ReadUInt16())
+		p.Index = size
+		
+		if len(packet.Buffer) < l {
+			packet.Resize(l)
+		}
+
+		//enter when we recived enough packet data
+		if size >= l+3 {
+			temp := packet.Buffer[:l+3]
+			op := packet.Buffer[3]
+			
+			//check if packet is encrypted
+			if op > 13 || (op > 1 && op < 5) || (op > 6 && op < 13) {
+				var sumCheck bool
+				temp, sumCheck = DecryptPacket(temp)
+				if !sumCheck {
+					panic("Packet sum check failed!")
+					return
+				}
+			} else {
+				temp = temp[3:]
+			}
+			
+			//handle packet
+			callback(NewPacketRef(temp))
+			packet.Index = 0
+			
+			//enter when we have more than one packet in buffer
+			if size > l+3 {
+				packet.Index = size - (l + 3)
+				copy(packet.Buffer, packet.Buffer[l+3:size])
+			} else {
+				//enter when we done processing the buffer
+				//keeping the user under 4048k use to save memory
+				if cap(packet.Buffer) > 4048 {
+					packet.Buffer = make([]byte, BufferSize)
+					packet.Index = 0
+				}
+			}
+		} else {
+			//break if we didn't get all the packet bytes
+			break
+		}
+	}
+} 
 
 func (p *SGPacket) String() string {
 	return fmt.Sprintf("Header(%d) len(%d) : % #X\n %s", p.Buffer[0], len(p.Buffer), p.Buffer, p.Buffer)

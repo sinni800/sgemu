@@ -28,7 +28,7 @@ func SendToGameServer(c *LClient, username string) {
 	packet.WriteHeader(SM_SENDIP)
 	packet.Index--
 	ip := []byte(GS.Server.Addr.IP.To4())
-	packet.Write([]byte{ip[3], ip[2], ip[1], ip[0]})
+	packet.WriteBytes([]byte{ip[3], ip[2], ip[1], ip[0]})
 	packet.WriteUInt16(uint16(GS.Server.Port))
 	packet.WriteByte(0x0c)
 	packet.WriteByte(1)

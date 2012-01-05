@@ -13,7 +13,6 @@ type IClient interface {
 type Client struct {
 	Socket     *net.TCPConn
 	MainServer IServer
-	Buffer     []byte
 	IP         string
 }
 
@@ -27,22 +26,22 @@ func SetupClient(iClnt IClient, socket *net.TCPConn, iServ IServer) {
 
 	client.Socket = socket
 	client.MainServer = iServ
-	client.Buffer = make([]byte, 1024)
 	ip, _, _ := net.SplitHostPort(socket.RemoteAddr().String())
 	client.IP = ip
 	go iClnt.OnConnect()
 }
 
 func (client *Client) StartRecive() {
-
-	l, err := client.Socket.Read(client.Buffer)
-	if err != nil {
-		client.OnDisconnect()
-		return
+	Buffer := make([]byte, 1024)
+	
+	for {
+		l, err := client.Socket.Read(Buffer)
+		if err != nil {
+			client.OnDisconnect()
+			return
+		}
+		client.MainServer.GetServer().Log.Printf("Packet len %d", l)
 	}
-	client.MainServer.GetServer().Log.Printf("Packet len %d", l)
-
-	go client.StartRecive()
 }
 
 func (client *Client) GetClient() *Client {

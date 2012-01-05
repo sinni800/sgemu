@@ -27,6 +27,7 @@ func (g Group) String() string {
 
 var (
 	dataPath  = "../sg_data.xml"
+	unitsPath  = "../sg_units.xml"
 	itemPath  = "../sg_items.xml"
 	shopPath  = "../sg_shop.xml"
 	bindsPath = "../sg_binds.xml"
@@ -51,7 +52,7 @@ var (
 
 type Data struct {
 	XMLName xml.Name         `xml:"data"`
-	Groups  []*UnitGroupData `xml:"unitslist>group"`
+	//Groups  []*UnitGroupData `xml:"unitslist>group"`
 	Ranks   []*RankData      `xml:"rankslist>rank"`
 }
 
@@ -203,7 +204,38 @@ func LoadUnitsAndRanks(Done chan bool) {
 			Done <- true
 		}
 	}()
-	f, e := os.Open(dataPath)
+	
+	type dummyXML struct {
+		XMLName       xml.Name `xml:"Units"`
+		UnitGroupData []*UnitGroupData
+	}
+	
+	f, e := os.Open(unitsPath)
+	if e != nil {
+		log.Panicln(e)
+	}
+
+	defer f.Close()
+	
+	dum := &dummyXML{}
+	
+	e = xml.Unmarshal(f, dum)
+	if e != nil {
+		log.Panicln(e)
+	}
+
+	for _, group := range dum.UnitGroupData {
+		d, e := Divisions[group.Division]
+		if !e {
+			d = Other
+		}
+		for _, unit := range group.Units {
+			unit.DType = d
+			Units[unit.Name] = unit
+		}
+	}
+	
+	f, e = os.Open(dataPath)
 	if e != nil {
 		log.Panicln(e)
 	}
@@ -213,17 +245,6 @@ func LoadUnitsAndRanks(Done chan bool) {
 	e = xml.Unmarshal(f, Gamedata)
 	if e != nil {
 		log.Panicln(e)
-	}
-
-	for _, group := range Gamedata.Groups {
-		d, e := Divisions[group.Division]
-		if !e {
-			d = Other
-		}
-		for _, unit := range group.Units {
-			unit.DType = d
-			Units[unit.Name] = unit
-		}
 	}
 
 	for _, rank := range Gamedata.Ranks {
