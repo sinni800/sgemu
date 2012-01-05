@@ -16,7 +16,7 @@ var (
 type LServer struct {
 	Core.Server
 }
-
+  
 func (serv *LServer) OnSetup() {
 	serv.Server.OnSetup()
 }

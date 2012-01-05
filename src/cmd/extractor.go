@@ -10,7 +10,7 @@ import (
 func main() {
 	flag.Parse()
 	args := flag.Args()
- 
+  
 	path := "./"
 
 	if len(args) != 0 {

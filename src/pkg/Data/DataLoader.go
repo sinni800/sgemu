@@ -1,11 +1,11 @@
 package Data
 
 import (
+	C "Core"
 	"Data/xml"
 	"fmt"
 	"log"
 	"os"
-	C "Core"
 )
 
 type Group byte
@@ -21,6 +21,10 @@ const (
 	Computers = Group(3)
 )
 
+func (g Group) String() string {
+	return GroupNames[g]
+}
+
 var (
 	dataPath  = "../sg_data.xml"
 	itemPath  = "../sg_items.xml"
@@ -34,6 +38,7 @@ var (
 		"Mobile":   Mobile,
 		"Aviation": Aviation,
 		"Organic":  Organic,
+		"Other":    Other,
 		"":         Other}
 
 	Ranks        = make(map[byte]*RankData)
@@ -45,9 +50,9 @@ var (
 )
 
 type Data struct {
-	XMLName xml.Name     `xml:"data"`
+	XMLName xml.Name         `xml:"data"`
 	Groups  []*UnitGroupData `xml:"unitslist>group"`
-	Ranks   []*RankData  `xml:"rankslist>rank"`
+	Ranks   []*RankData      `xml:"rankslist>rank"`
 }
 
 type RankData struct {
@@ -78,7 +83,6 @@ type BindingData struct {
 	Unk2      int16    `xml:"attr"`
 }
 
-
 type ShopData struct {
 	XMLName   xml.Name    `xml:"Shop"`
 	ShopUnits []*ShopUnit `xml:"Units>Unit"`
@@ -100,43 +104,42 @@ type ItemDataGroup struct {
 }
 
 type ItemData struct {
-	Name          string `xml:"attr"`
-	Description   string
-	Group         string `xml:"attr"`
-	ID            uint16 `xml:"attr"`
-	GID           uint16 `xml:"attr"`
-	TL            uint16
-	Weight        uint16
-	Space         uint16
-	Complexity    byte
-	EnergyUse     byte //also Energy-regen
-	EnergyMax     uint16
-	Damage        byte
-	Range         float32
-	CD            float32
-	Effectiveness uint16
-	Health        uint16
-	Power         uint16
-	Armor         uint16
-	ItemType      byte
-	ItemSubType   byte
-	EnergyDrain   int8
-	Unk1          int8
-	EnergyType    int8
-	Unk2          int8
-	Unk3          int8
-	WeaponType    byte
-	ViewRange     float32
-	GroupType     Group `xml:"attr"`
-	ComplexityMax uint16
-	XpBonus       uint16
+	Name string `xml:"attr"`
+	//Description   string  //not needed
+	Group         string  `xml:"attr"`
+	ID            uint16  `xml:"attr"`
+	GID           uint16  `xml:"attr"`
+	TL            uint16  `xml:"attr"`
+	Weight        uint16  `xml:"attr"`
+	Space         uint16  `xml:"attr"`
+	Complexity    byte    `xml:"attr"`
+	EnergyUse     byte    `xml:"attr"` //also Energy-regen
+	EnergyMax     uint16  `xml:"attr"`
+	Damage        byte    `xml:"attr"`
+	Range         float32 `xml:"attr"`
+	CD            float32 `xml:"attr"`
+	Effectiveness uint16  `xml:"attr"`
+	Health        uint16  `xml:"attr"`
+	Power         uint16  `xml:"attr"`
+	Armor         uint16  `xml:"attr"`
+	ItemType      byte    `xml:"attr"`
+	ItemSubType   byte    `xml:"attr"`
+	EnergyDrain   int8    `xml:"attr"`
+	Unk1          int8    `xml:"attr"`
+	EnergyType    int8    `xml:"attr"`
+	Unk2          int8    `xml:"attr"`
+	Unk3          int8    `xml:"attr"`
+	WeaponType    byte    `xml:"attr"`
+	ViewRange     float32 `xml:"attr"`
+	GroupType     Group   `xml:"attr"`
+	ComplexityMax uint16  `xml:"attr"`
+	XpBonus       uint16  `xml:"attr"`
 }
 
 func (item *ItemData) String() string {
 	return fmt.Sprintf(
-		"Name:%s\tDescription:%s\tGroup:%s\tGroupType:%d\tID:%d\tGID:%d\tTL:%d\tWeight:%d\tSpace:%d\tComplexity:%d\tEnergyUse:%d\tEnergyMax:%d\tDamage:%d\tRange:%f\tCD:%f\tEffectiveness:%d\tHealth:%d\tPower:%d\tArmor:%d\tItemType:%d\tItemSubType:%d\tUnk1:%d\tUnk2:%d\tUnk3:%d\tEnergyType:%d\tEnergyDrain:%d\tWeaponType:%d\tViewRange:%f\tComplexityMax:%d\tXpBonus:%d\t",
-		item.Name, item.Description, item.Group, item.GroupType, item.ID, item.GID, item.TL, item.Weight, item.Space, item.Complexity, item.EnergyUse, item.EnergyMax, item.Damage, item.Range, item.CD, item.Effectiveness, item.Health, item.Power, item.Armor, item.ItemType, item.ItemSubType, item.Unk1, item.Unk2, item.Unk3, item.EnergyType, item.EnergyDrain, item.WeaponType, item.ViewRange, item.ComplexityMax, item.XpBonus)
-
+		"Name:%s\tGroup:%s\tGroupType:%d\tID:%d\tGID:%d\tTL:%d\tWeight:%d\tSpace:%d\tComplexity:%d\tEnergyUse:%d\tEnergyMax:%d\tDamage:%d\tRange:%f\tCD:%f\tEffectiveness:%d\tHealth:%d\tPower:%d\tArmor:%d\tItemType:%d\tItemSubType:%d\tUnk1:%d\tUnk2:%d\tUnk3:%d\tEnergyType:%d\tEnergyDrain:%d\tWeaponType:%d\tViewRange:%f\tComplexityMax:%d\tXpBonus:%d\t",
+		item.Name, item.Group, item.GroupType, item.ID, item.GID, item.TL, item.Weight, item.Space, item.Complexity, item.EnergyUse, item.EnergyMax, item.Damage, item.Range, item.CD, item.Effectiveness, item.Health, item.Power, item.Armor, item.ItemType, item.ItemSubType, item.Unk1, item.Unk2, item.Unk3, item.EnergyType, item.EnergyDrain, item.WeaponType, item.ViewRange, item.ComplexityMax, item.XpBonus)
 }
 
 func LoadData() {

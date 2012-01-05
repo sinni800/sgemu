@@ -5,11 +5,12 @@ import "strings"
 type UnitGroupData struct {
 	ID       uint16   `xml:"attr"`
 	Division string   `xml:"attr"`
-	Name     string
+	Name     string   `xml:"attr"`
 	Units    []*UnitData `xml:"unitlist>unit"`
 }
 
 type UnitData struct {
+	Name        string  `xml:"attr"`
 	UID         string  `xml:"attr"`
 	IID         uint16  `xml:"attr"`
 	GID         uint16  `xml:"attr"`
@@ -20,7 +21,8 @@ type UnitData struct {
 	ViewRange   float32 `xml:"attr"`
 	Speed       float32 `xml:"attr"`
 	UnitType    string  `xml:"attr"`
-	Slots       string  `xml:"attr"`
+	Slots       uint16  `xml:"attr"`
+	UnitWeight  uint16  `xml:"attr"`
 	Max_Weight  uint16  `xml:"attr"`
 	ViewType    string  `xml:"attr"`
 	U1          uint16  `xml:"attr"`
@@ -31,9 +33,7 @@ type UnitData struct {
 	U6          uint8   `xml:"attr"`
 	U7          uint32  `xml:"attr"`
 	U8          uint16  `xml:"attr"`
-	Name        string
-	Description string
-	DType       DType
+	DType       DType	`xml:"attr"`
 }
 
 type Unit struct {

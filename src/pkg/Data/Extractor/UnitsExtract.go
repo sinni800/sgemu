@@ -29,6 +29,33 @@ func ExtractUnits(path string, outpath string, UnitExtractDone chan bool) {
 	}
 	ReadUnits(f)
 	
+	f, e = os.Open(outpath + HelperPath)
+	if e != nil {
+		log.Panicln(e)
+	}
+	
+	defer outUnits.Close()
+	
+	ReadUnitsHelper(f)
+	
+	for _,group := range UnitGroups {
+		switch {
+			case len(group.Units) == 1:
+				group.Division = "Other"
+			case group.ID > 300:
+				group.Division = "Organic"
+			case group.ID > 200:
+				group.Division = "Aviation"
+			case group.ID > 100:	
+				group.Division = "Mobile"
+			case group.ID > 0:		
+				group.Division = "Infantry"	
+		} 
+		for _,unit := range group.Units {
+			unit.DType = Divisions[group.Division]
+		}
+	}
+	
 	type dummyXML struct {
 		XMLName       xml.Name `xml:"Units"`
 		UnitGroupData []*UnitGroupData
@@ -40,6 +67,48 @@ func ExtractUnits(path string, outpath string, UnitExtractDone chan bool) {
 	e = xml.Marshal(outUnits, &l)
 	if e != nil {
 		log.Panicln(e)
+	}
+}
+
+func ReadUnitsHelper(file *os.File) {
+	checkError := func(e error, text string) {
+		if e != nil {
+			log.Panicf("Read panic %s err:%v ", text, e)
+		}
+	}
+	_ = checkError
+	
+	type UnitHelper struct {
+		Name        string  `xml:"attr"`
+		UID         string  `xml:"attr"`
+		Influence   byte    `xml:"attr"`
+		Slots       uint16  `xml:"attr"`
+		UnitWeight  uint16  `xml:"attr"`
+	}
+	
+	type dummyXML struct {
+		XMLName       xml.Name `xml:"data"`
+		Units 	  []*UnitHelper `xml:"unitslist>division>unit"`
+	}
+	
+	l := dummyXML{}
+	e := xml.Unmarshal(file, &l)
+	checkError(e, "unmarshal")
+	
+	for _,unitHelper := range l.Units { 
+		for _,group := range UnitGroups {
+			for _,unit := range group.Units {
+				if unit.Name == unitHelper.Name {
+					unit.UID = unitHelper.UID
+					unit.Influence = unitHelper.Influence
+					unit.Slots = unitHelper.Slots
+					unit.UnitWeight = unitHelper.UnitWeight
+					goto End
+				}
+			}
+		}
+		log.Print("Could not find unit:", unitHelper.Name)
+		End:
 	}
 }
 

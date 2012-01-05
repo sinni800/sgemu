@@ -14,6 +14,20 @@ const (
 	Other    = DType(4)
 )
 
+func (d DType) String() string {
+	switch d {
+		case Infantry:
+			return "Infantry"
+		case Mobile:
+			return "Mobile"
+		case Aviation:
+			return "Aviation"
+		case Organic:
+			return "Organic"
+	}
+	return "Other"
+}
+
 type Player struct {
 	ID     string "_id"
 	UserID string
