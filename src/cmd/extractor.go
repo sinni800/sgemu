@@ -19,7 +19,7 @@ func main() {
 		fmt.Println("No game path, Use like extractor.exe \"game path\"")
 	} 
 
-	//path = "C:/Games/Shattered Galaxy/" //Default path used for debugging
+	path = "C:/Games/Shattered Galaxy/" //Default path used for debugging
 
 	ReadFiles(path, "./")
  

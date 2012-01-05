@@ -151,6 +151,9 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 	p.WriteByte('<')
 	p.WriteString(name)
 
+	attrOnly := false
+	attrs := 0
+
 	// Attributes
 	if kind == reflect.Struct {
 		if len(xmlns) > 0 {
@@ -158,11 +161,15 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 			Escape(p, []byte(xmlns))
 			p.WriteByte('"')
 		}
-
+ 
 		for i, n := 0, typ.NumField(); i < n; i++ {
-			if f := typ.Field(i); f.PkgPath == "" && f.Tag.Get("xml") == "attr" {
+			f := typ.Field(i)
+			if f.Name == "XMLName" {
+				attrs++
+			} else if f.PkgPath == "" && f.Tag.Get("xml") == "attr" {
+				attrs++
 				switch k := f.Type.Kind(); k {
-
+				
 				case reflect.String:
 					if str := val.Field(i).String(); str != "" {
 						p.WriteByte(' ')
@@ -206,8 +213,16 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 			}
 		}
 	}
+	
+	if attrs >= typ.NumField() {
+		attrOnly = true
+		p.WriteByte('/')
+	}
+	
 	p.WriteByte('>')
 	//
+
+
 
 	switch k := val.Kind(); k {
 	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
@@ -237,6 +252,7 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 		p.WriteByte('\n')
 		s := parentStack{printer: p}
 		innerHelper := 0
+		
 		for i, n := 0, val.NumField(); i < n; i++ {
 			if f := typ.Field(i); f.Name != "XMLName" && f.PkgPath == "" {
 				name := f.Name
@@ -292,18 +308,21 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 		}
 		inner -= innerHelper
 		s.trim(nil, inner)
-		for i := 0; i < inner; i++ {
-			p.WriteByte('\t')
-		}
 	default:
 		return &UnsupportedTypeError{typ}
 	}
 
-	p.WriteByte('<')
-	p.WriteByte('/')
-	p.WriteString(name)
-	p.WriteByte('>')
-	p.WriteByte('\n')
+	if !attrOnly {
+		for i := 0; i < inner; i++ {
+			p.WriteByte('\t')
+		}
+		
+		p.WriteByte('<')
+		p.WriteByte('/')
+		p.WriteString(name)
+		p.WriteByte('>')
+		p.WriteByte('\n')
+	}
 
 	return nil
 }
