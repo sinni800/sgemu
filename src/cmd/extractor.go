@@ -10,20 +10,20 @@ import (
 func main() {
 	flag.Parse()
 	args := flag.Args()
-
+ 
 	path := "./"
 
 	if len(args) != 0 {
 		path = args[0]
 	} else {
 		fmt.Println("No game path, Use like extractor.exe \"game path\"")
-	}
+	} 
 
-	path = "C:/Games/Shattered Galaxy/" //Default path used for debugging
+	//path = "C:/Games/Shattered Galaxy/" //Default path used for debugging
 
 	ReadFiles(path, "./")
-
+ 
 	cmd := ""
 	fmt.Println("Done! Press enter to quit...")
 	fmt.Scanln(&cmd)
-}
+} 

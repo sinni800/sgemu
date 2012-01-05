@@ -11,6 +11,7 @@ type Packet interface {
 
 type SGPacket struct {
 	C.Packet
+	Encrypted bool
 }
 
 func NewPacket() (p *SGPacket) {

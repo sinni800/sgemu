@@ -27,13 +27,16 @@ func (client *GClient) StartRecive() {
 		if err != nil {
 			return
 		}
-
+ 
 		client.packet.Index += bl
 
+		//enter when we recive enough bytes to start reading them
 		for client.packet.Index > 2 {
 			p := client.packet
 			size := p.Index
 			p.Index = 0
+			
+			//Check header byte
 			if p.ReadByte() != 0xAA {
 				client.Log().Printf("Wrong packet header")
 				client.Log().Printf("% #X", p.Buffer[:size])
@@ -41,13 +44,17 @@ func (client *GClient) StartRecive() {
 			}
 			l := int(p.ReadUInt16())
 			p.Index = size
+			
 			if len(client.packet.Buffer) < l {
 				client.packet.Resize(l)
 			}
 
+			//enter when we recived enough packet data
 			if size >= l+3 {
 				temp := client.packet.Buffer[:l+3]
 				op := client.packet.Buffer[3]
+				
+				//check if packet is encrypted
 				if op > 13 || (op > 1 && op < 5) || (op > 6 && op < 13) {
 					var sumCheck bool
 					temp, sumCheck = DecryptPacket(temp)
@@ -58,12 +65,17 @@ func (client *GClient) StartRecive() {
 				} else {
 					temp = temp[3:]
 				}
+				
+				//handle packet
 				client.ParsePacket(NewPacketRef(temp))
 				client.packet.Index = 0
+				
+				//enter when we have more than one packet in buffer
 				if size > l+3 {
 					client.packet.Index = size - (l + 3)
 					copy(client.packet.Buffer, client.packet.Buffer[l+3:size])
 				} else {
+					//enter when we done processing the buffer
 					//keeping the user under 4048k use to save memory
 					if cap(client.packet.Buffer) > 4048 {
 						client.Buffer = make([]byte, 1024)
@@ -71,6 +83,7 @@ func (client *GClient) StartRecive() {
 					}
 				}
 			} else {
+				//break if we didn't get all the packet bytes
 				break
 			}
 		}

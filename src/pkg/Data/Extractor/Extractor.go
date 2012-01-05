@@ -13,6 +13,8 @@ var (
 	UnitsPath     = "./UNF.bkm"
 	ItemsDescPath = "./hlp.dat"
 	NTTPath       = "./ntt.dat"
+	
+	HelperPath 	  = "./addon.xml"
 
 	ItemsOut = "sg_items.xml"
 	BindsOut = "sg_binds.xml"
@@ -20,6 +22,7 @@ var (
 
 	ItemsData     []*ItemData
 	BindingGroups []*BindingGroup
+	UnitGroups []*UnitGroupData
 )
 
 //Path: Game folder.

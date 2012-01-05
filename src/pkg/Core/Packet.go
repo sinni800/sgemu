@@ -14,7 +14,6 @@ var (
 type Packet struct {
 	Buffer    []byte
 	Index     int
-	Encrypted bool
 }
 
 func NewPacket() (p *Packet) {

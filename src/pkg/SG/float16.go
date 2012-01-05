@@ -24,3 +24,19 @@ func Float16FromBits2(n uint16) float32 {
 func Float16Bits2(n float32) uint16 {
 	return uint16(n * 100.0)
 }
+
+func Float16FromBits3(n uint16) float32 {
+	return float32(n)/10.0
+}
+
+func Float16Bits3(n float32) uint16 {
+	return uint16(n * 10.0)
+}
+
+func Float16FromBits4(n uint16) float32 {
+	return float32(float32(n)/2.0) / 10.0
+}
+
+func Float16Bits4(n float32) uint16 {
+	return uint16(n * 20.0)
+}

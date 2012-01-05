@@ -223,7 +223,7 @@ func ReadItems(file *os.File) {
 			e = Read(file, BigEndian, &item.Armor)
 			if e != nil {
 				log.Panicf("Read name Armor iter:%d err:%v ", i, e)
-			}
+			} 
 
 		case Bonus:
 			e = Read(file, LittleEndian, &item.ItemType)

@@ -46,7 +46,7 @@ var (
 
 type Data struct {
 	XMLName xml.Name     `xml:"data"`
-	Groups  []*GroupData `xml:"unitslist>group"`
+	Groups  []*UnitGroupData `xml:"unitslist>group"`
 	Ranks   []*RankData  `xml:"rankslist>rank"`
 }
 
@@ -78,32 +78,6 @@ type BindingData struct {
 	Unk2      int16    `xml:"attr"`
 }
 
-type GroupData struct {
-	XMLName  xml.Name `xml:"group"`
-	ID       string   `xml:"attr"`
-	Division string   `xml:"attr"`
-	Name     string
-	Units    []*UnitData `xml:"unitlist>unit"`
-}
-
-type UnitData struct {
-	UID         string `xml:"attr"`
-	Influence   byte   `xml:"attr"`
-	Space       string `xml:"attr"`
-	Health      uint16 `xml:"attr"`
-	Armor       string `xml:"attr"`
-	ViewRange   string `xml:"attr"`
-	Speed       string `xml:"attr"`
-	UnitType    string `xml:"attr"`
-	Slots       string `xml:"attr"`
-	Max_Weight  uint16 `xml:"attr"`
-	ViewType    string `xml:"attr"`
-	U1          string `xml:"attr"`
-	U2          string `xml:"attr"`
-	Name        string
-	Description string
-	DType       DType
-}
 
 type ShopData struct {
 	XMLName   xml.Name    `xml:"Shop"`

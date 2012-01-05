@@ -236,13 +236,14 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 	case reflect.Struct:
 		p.WriteByte('\n')
 		s := parentStack{printer: p}
+		innerHelper := 0
 		for i, n := 0, val.NumField(); i < n; i++ {
 			if f := typ.Field(i); f.Name != "XMLName" && f.PkgPath == "" {
 				name := f.Name
 				vf := val.Field(i)
 				switch tag := f.Tag.Get("xml"); tag {
 				case "":
-					s.trim(nil)
+					s.trim(nil, inner)
 				case "chardata":
 					if tk := f.Type.Kind(); tk == reflect.String {
 						Escape(p, []byte(vf.String()))
@@ -274,11 +275,14 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 							parents[0] = f.Name
 						}
 					}
-
-					s.trim(parents)
+					
+					s.trim(parents, inner)
+					
 					if !(vf.Kind() == reflect.Ptr || vf.Kind() == reflect.Interface) || !vf.IsNil() {
-						s.push(parents[len(s.stack):])
+						s.push(parents[len(s.stack):], inner+1)
 					}
+					innerHelper += len(parents)
+					inner += innerHelper;
 				}
 
 				if err := p.marshalValue(vf, name, inner+1); err != nil {
@@ -286,7 +290,8 @@ func (p *printer) marshalValue(val reflect.Value, name string, inner int) error 
 				}
 			}
 		}
-		s.trim(nil)
+		inner -= innerHelper
+		s.trim(nil, inner)
 		for i := 0; i < inner; i++ {
 			p.WriteByte('\t')
 		}
@@ -311,7 +316,7 @@ type parentStack struct {
 // trim updates the XML context to match the longest common prefix of the stack
 // and the given parents.  A closing tag will be written for every parent
 // popped.  Passing a zero slice or nil will close all the elements.
-func (s *parentStack) trim(parents []string) {
+func (s *parentStack) trim(parents []string, inner int) {
 	split := 0
 	for ; split < len(parents) && split < len(s.stack); split++ {
 		if parents[split] != s.stack[split] {
@@ -320,20 +325,29 @@ func (s *parentStack) trim(parents []string) {
 	}
 
 	for i := len(s.stack) - 1; i >= split; i-- {
+		for j := 0; j < inner+i; j++ {
+			s.WriteByte('\t')
+		}
 		s.WriteString("</")
 		s.WriteString(s.stack[i])
 		s.WriteByte('>')
+		s.WriteByte('\n')
 	}
 
 	s.stack = parents[:split]
 }
 
 // push adds parent elements to the stack and writes open tags.
-func (s *parentStack) push(parents []string) {
+func (s *parentStack) push(parents []string, inner int) {
+
 	for i := 0; i < len(parents); i++ {
+		for j := 0; j < inner+i; j++ {
+			s.WriteByte('\t')
+		}
 		s.WriteString("<")
 		s.WriteString(parents[i])
 		s.WriteByte('>')
+		s.WriteByte('\n')
 	}
 	s.stack = append(s.stack, parents...)
 }

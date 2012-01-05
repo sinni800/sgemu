@@ -2,6 +2,40 @@ package Data
 
 import "strings"
 
+type UnitGroupData struct {
+	ID       uint16   `xml:"attr"`
+	Division string   `xml:"attr"`
+	Name     string
+	Units    []*UnitData `xml:"unitlist>unit"`
+}
+
+type UnitData struct {
+	UID         string  `xml:"attr"`
+	IID         uint16  `xml:"attr"`
+	GID         uint16  `xml:"attr"`
+	Influence   byte    `xml:"attr"`
+	Space       uint16  `xml:"attr"`
+	Health      uint16  `xml:"attr"`
+	Armor       uint16  `xml:"attr"`
+	ViewRange   float32 `xml:"attr"`
+	Speed       float32 `xml:"attr"`
+	UnitType    string  `xml:"attr"`
+	Slots       string  `xml:"attr"`
+	Max_Weight  uint16  `xml:"attr"`
+	ViewType    string  `xml:"attr"`
+	U1          uint16  `xml:"attr"`
+	U2          uint8   `xml:"attr"`
+	U3          uint32  `xml:"attr"`
+	U4          uint8   `xml:"attr"`
+	U5          int16   `xml:"attr"`
+	U6          uint8   `xml:"attr"`
+	U7          uint32  `xml:"attr"`
+	U8          uint16  `xml:"attr"`
+	Name        string
+	Description string
+	DType       DType
+}
+
 type Unit struct {
 	*UnitDB
 	ID    uint32

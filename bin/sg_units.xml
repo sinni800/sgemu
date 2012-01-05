@@ -1,0 +1,2752 @@
+<Units>
+	<UnitGroupData id="302">
+		<Name>Xeno-ventus</Name>
+		<unitlist>
+			<unit iid="267" gid="302" influence="0" space="200" health="2001" armor="0" viewrange="16.5" speed="4.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ubik-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="269" gid="302" influence="0" space="200" health="2276" armor="0" viewrange="17" speed="4.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Tyr-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="269" gid="302" influence="0" space="200" health="2629" armor="0" viewrange="17.5" speed="4.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Tyr-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="268" gid="302" influence="0" space="200" health="8272" armor="0" viewrange="21" speed="6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Haltyr-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="269" gid="302" influence="0" space="200" health="3071" armor="0" viewrange="18" speed="4.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Tyr-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="268" gid="302" influence="0" space="200" health="7043" armor="0" viewrange="20.5" speed="5.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Haltyr-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="267" gid="302" influence="0" space="200" health="1510" armor="0" viewrange="15" speed="3.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ubik-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="267" gid="302" influence="0" space="200" health="1637" armor="0" viewrange="15.5" speed="4.1" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ubik-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="268" gid="302" influence="0" space="200" health="4273" armor="0" viewrange="19" speed="5.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Haltyr-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="268" gid="302" influence="0" space="200" health="5055" armor="0" viewrange="19.5" speed="5.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Haltyr-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="269" gid="302" influence="0" space="200" health="3615" armor="0" viewrange="18.5" speed="4.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Tyr-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="267" gid="302" influence="0" space="200" health="1792" armor="0" viewrange="16" speed="4.1" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ubik-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="268" gid="302" influence="0" space="200" health="5975" armor="0" viewrange="20" speed="5.4" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Haltyr-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="317">
+		<Name>Rayoks</Name>
+		<unitlist>
+			<unit iid="306" gid="317" influence="0" space="16" health="2530" armor="21" viewrange="3.5" speed="2.8" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rayoks-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="306" gid="317" influence="0" space="17" health="3070" armor="27" viewrange="3.7" speed="3.1" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rayoks-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="306" gid="317" influence="0" space="18" health="3910" armor="33" viewrange="4" speed="3.6" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rayoks-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="306" gid="317" influence="0" space="20" health="5230" armor="39" viewrange="4.2" speed="3.8" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rayoks-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="306" gid="317" influence="0" space="21" health="7090" armor="45" viewrange="4.5" speed="4" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rayoks-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="306" gid="317" influence="0" space="23" health="9580" armor="57" viewrange="4.7" speed="4.4" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rayoks-Evo6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="306" gid="317" influence="0" space="24" health="12820" armor="66" viewrange="5" speed="4.8" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rayoks-Evo7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="312">
+		<Name>Charise</Name>
+		<unitlist>
+			<unit iid="534" gid="312" influence="0" space="17" health="7360" armor="63" viewrange="15" speed="12" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charise-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="534" gid="312" influence="0" space="18" health="9340" armor="72" viewrange="16" speed="12.8" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charise-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="534" gid="312" influence="0" space="20" health="11890" armor="84" viewrange="17" speed="13.6" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charise-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="534" gid="312" influence="0" space="21" health="15010" armor="99" viewrange="18" speed="14.4" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charise-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="534" gid="312" influence="0" space="23" health="18850" armor="108" viewrange="19" speed="15.2" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charise-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="6">
+		<Name>Sci-frame</Name>
+		<unitlist>
+			<unit iid="273" gid="6" influence="0" space="11" health="1660" armor="3" viewrange="7.2" speed="3" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="12" health="1960" armor="6" viewrange="7.5" speed="3" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="12" health="2380" armor="9" viewrange="7.7" speed="3.2" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="13" health="2950" armor="12" viewrange="8" speed="3.2" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="14" health="3670" armor="15" viewrange="8.2" speed="3.4" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="15" health="4600" armor="18" viewrange="8.5" speed="3.4" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="16" health="5740" armor="21" viewrange="8.7" speed="3.6" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="17" health="7120" armor="24" viewrange="9" speed="3.8" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="9" health="1510" armor="0" viewrange="4.5" speed="2.4" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="273" gid="6" influence="0" space="10" health="1450" armor="0" viewrange="7" speed="2.8" max_weight="60" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Sapper</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="10" health="1750" armor="3" viewrange="4.7" speed="2.4" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="10" health="2080" armor="6" viewrange="5" speed="2.4" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="11" health="2560" armor="9" viewrange="5.2" speed="2.6" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="12" health="3190" armor="12" viewrange="5.5" speed="2.6" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="13" health="3970" armor="15" viewrange="5.7" speed="2.8" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="14" health="4960" armor="18" viewrange="6" speed="2.8" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="15" health="6190" armor="21" viewrange="6.2" speed="3" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="272" gid="6" influence="0" space="16" health="7630" armor="24" viewrange="6.5" speed="3.2" max_weight="56" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Medic-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="313" gid="6" influence="0" space="11" health="1510" armor="9" viewrange="2" speed="5.4" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Virus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="313" gid="6" influence="0" space="12" health="1840" armor="12" viewrange="2.5" speed="5.6" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Virus-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="313" gid="6" influence="0" space="13" health="2290" armor="15" viewrange="3" speed="5.8" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Virus-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="313" gid="6" influence="0" space="14" health="2860" armor="18" viewrange="3.5" speed="6" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Virus-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="313" gid="6" influence="0" space="15" health="3550" armor="21" viewrange="4" speed="6.2" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Virus-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="313" gid="6" influence="0" space="16" health="4450" armor="24" viewrange="4.5" speed="6.4" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Virus-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="313" gid="6" influence="0" space="17" health="5500" armor="27" viewrange="5" speed="6.6" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Virus-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="203">
+		<Name>Gaia-raptor</Name>
+		<unitlist>
+			<unit iid="520" gid="203" influence="0" space="17" health="1930" armor="6" viewrange="3.5" speed="3.2" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="527" gid="203" influence="0" space="14" health="1660" armor="3" viewrange="3.5" speed="2.6" max_weight="105" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phoenix</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="527" gid="203" influence="0" space="15" health="2020" armor="3" viewrange="3.7" speed="2.8" max_weight="105" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phoenix-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="527" gid="203" influence="0" space="16" health="2500" armor="6" viewrange="4" speed="3.1" max_weight="105" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phoenix-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="527" gid="203" influence="0" space="17" health="3130" armor="6" viewrange="4.2" speed="3.4" max_weight="105" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phoenix-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="527" gid="203" influence="0" space="19" health="3910" armor="9" viewrange="4.5" speed="3.6" max_weight="105" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phoenix-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="527" gid="203" influence="0" space="20" health="4870" armor="12" viewrange="4.7" speed="3.9" max_weight="105" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phoenix-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="527" gid="203" influence="0" space="21" health="6010" armor="15" viewrange="5" speed="4.1" max_weight="105" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phoenix-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="528" gid="203" influence="0" space="25" health="2560" armor="12" viewrange="9" speed="1.4" max_weight="136" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Condor</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="18" health="2230" armor="10" viewrange="3.7" speed="3.6" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="20" health="2680" armor="15" viewrange="4" speed="3.6" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="21" health="3280" armor="19" viewrange="4.2" speed="4" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="23" health="4060" armor="24" viewrange="4.5" speed="4" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="24" health="5080" armor="28" viewrange="4.7" speed="4.8" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="26" health="6370" armor="33" viewrange="5" speed="4.8" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="27" health="7900" armor="37" viewrange="5.2" speed="5.2" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="520" gid="203" influence="0" space="29" health="9910" armor="42" viewrange="5.5" speed="5.5" max_weight="112" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eagle-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="528" gid="203" influence="0" space="27" health="3130" armor="15" viewrange="9.2" speed="1.6" max_weight="136" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Condor-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="528" gid="203" influence="0" space="29" health="3910" armor="18" viewrange="9.5" speed="1.6" max_weight="136" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Condor-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="528" gid="203" influence="0" space="31" health="4870" armor="21" viewrange="9.7" speed="1.8" max_weight="136" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Condor-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="528" gid="203" influence="0" space="34" health="6100" armor="24" viewrange="10" speed="2" max_weight="136" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Condor-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="528" gid="203" influence="0" space="36" health="7570" armor="27" viewrange="10.2" speed="2.2" max_weight="136" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Condor-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="528" gid="203" influence="0" space="38" health="9370" armor="30" viewrange="10.5" speed="2.5" max_weight="136" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Condor-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="324">
+		<Name>Rayk</Name>
+		<unitlist>
+			<unit iid="516" gid="324" influence="0" space="10" health="21010" armor="90" viewrange="15" speed="8" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCHawk</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="104">
+		<Name>Cyclo-rig</Name>
+		<unitlist>
+			<unit iid="264" gid="104" influence="0" space="14" health="2905" armor="6" viewrange="9.5" speed="2.4" max_weight="128" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Chimera</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="294" gid="104" influence="0" space="17" health="4330" armor="7" viewrange="9.2" speed="4.2" max_weight="112" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hydra-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="294" gid="104" influence="0" space="18" health="5260" armor="9" viewrange="9.5" speed="4.5" max_weight="112" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hydra-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="294" gid="104" influence="0" space="20" health="6370" armor="13" viewrange="9.7" speed="4.5" max_weight="112" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hydra-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="294" gid="104" influence="0" space="21" health="7690" armor="17" viewrange="10" speed="4.8" max_weight="112" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hydra-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="294" gid="104" influence="0" space="23" health="9280" armor="20" viewrange="10.2" speed="4.8" max_weight="112" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hydra-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="294" gid="104" influence="0" space="24" health="11290" armor="24" viewrange="10.5" speed="5.4" max_weight="112" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hydra-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="264" gid="104" influence="0" space="15" health="3748" armor="8" viewrange="9.7" speed="2.5" max_weight="128" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Chimera-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="264" gid="104" influence="0" space="16" health="4591" armor="11" viewrange="10" speed="2.6" max_weight="128" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Chimera-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="264" gid="104" influence="0" space="18" health="6277" armor="16" viewrange="10.2" speed="2.8" max_weight="128" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Chimera-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="264" gid="104" influence="0" space="21" health="7963" armor="21" viewrange="10.5" speed="3" max_weight="128" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Chimera-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="264" gid="104" influence="0" space="23" health="9649" armor="26" viewrange="10.7" speed="3.2" max_weight="128" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Chimera-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="264" gid="104" influence="0" space="25" health="11335" armor="31" viewrange="11" speed="3.4" max_weight="128" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Chimera-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="14" health="2386" armor="5" viewrange="15" speed="2" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="294" gid="104" influence="0" space="16" health="3610" armor="4" viewrange="9" speed="4.2" max_weight="112" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hydra</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="15" health="2740" armor="8" viewrange="15.2" speed="2.2" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="16" health="3250" armor="11" viewrange="15.5" speed="2.2" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="17" health="3940" armor="14" viewrange="15.7" speed="2.5" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="19" health="4900" armor="17" viewrange="16" speed="2.5" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="20" health="6100" armor="20" viewrange="16.2" speed="2.6" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="21" health="7630" armor="24" viewrange="16.5" speed="2.6" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="23" health="9520" armor="27" viewrange="16.7" speed="2.9" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="288" gid="104" influence="0" space="25" health="11800" armor="30" viewrange="17" speed="3.2" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manticore-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="326">
+		<Name>Raks</Name>
+		<unitlist>
+			<unit iid="263" gid="326" influence="0" space="16" health="12010" armor="0" viewrange="40" speed="7.5" max_weight="100" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCRunner</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="5">
+		<Name>Cyclo-frame</Name>
+		<unitlist>
+			<unit iid="274" gid="5" influence="0" space="9" health="4060" armor="1" viewrange="12.5" speed="1.6" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="277" gid="5" influence="0" space="19" health="1990" armor="12" viewrange="14.7" speed="2.4" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Liche-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="277" gid="5" influence="0" space="21" health="2530" armor="18" viewrange="15" speed="2.4" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Liche-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="277" gid="5" influence="0" space="22" health="3220" armor="24" viewrange="15.2" speed="2.6" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Liche-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="277" gid="5" influence="0" space="22" health="4060" armor="33" viewrange="15.5" speed="3" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Liche-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="277" gid="5" influence="0" space="18" health="1585" armor="6" viewrange="14.5" speed="2.2" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Liche</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="262" gid="5" influence="0" space="15" health="1450" armor="0" viewrange="11.5" speed="1.6" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spectre</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="262" gid="5" influence="0" space="17" health="1780" armor="3" viewrange="11.7" speed="1.6" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spectre-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="262" gid="5" influence="0" space="18" health="2200" armor="6" viewrange="12" speed="1.6" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spectre-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="262" gid="5" influence="0" space="20" health="2770" armor="9" viewrange="12.2" speed="1.7" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spectre-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="262" gid="5" influence="0" space="22" health="3460" armor="12" viewrange="12.5" speed="1.7" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spectre-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="262" gid="5" influence="0" space="24" health="4300" armor="15" viewrange="12.7" speed="1.9" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spectre-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="262" gid="5" influence="0" space="26" health="5290" armor="18" viewrange="13" speed="2.1" max_weight="88" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spectre-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="9" health="5842" armor="1" viewrange="12.7" speed="1.6" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="10" health="6460" armor="2" viewrange="13" speed="1.6" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="10" health="8212" armor="2" viewrange="13.2" speed="1.8" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="11" health="9031" armor="3" viewrange="13.5" speed="1.8" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="12" health="11962" armor="3" viewrange="13.7" speed="1.9" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="13" health="14410" armor="4" viewrange="14" speed="1.9" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="14" health="16861" armor="4" viewrange="14.2" speed="2.1" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="274" gid="5" influence="0" space="14" health="19210" armor="5" viewrange="14.5" speed="2.3" max_weight="86" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wraith-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="1">
+		<Name>Geo-frame</Name>
+		<unitlist>
+			<unit iid="300" gid="1" influence="0" space="20" health="4015" armor="45" viewrange="8.7" speed="2" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mephit-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="300" gid="1" influence="0" space="22" health="5110" armor="60" viewrange="9" speed="2.2" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mephit-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="300" gid="1" influence="0" space="24" health="6220" armor="75" viewrange="9.2" speed="2.4" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mephit-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="300" gid="1" influence="0" space="26" health="7330" armor="90" viewrange="9.5" speed="2.6" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mephit-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="10" health="1690" armor="6" viewrange="3.5" speed="2" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="300" gid="1" influence="0" space="19" health="2905" armor="30" viewrange="8.5" speed="1.8" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mephit</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="257" gid="1" influence="0" space="13" health="1210" armor="6" viewrange="6.5" speed="3.6" max_weight="73" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Daeva</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="11" health="1930" armor="10" viewrange="3.7" speed="2" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="12" health="2260" armor="15" viewrange="4" speed="2.2" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="12" health="2770" armor="19" viewrange="4.2" speed="2.2" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="13" health="3400" armor="24" viewrange="4.5" speed="2.4" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="14" health="4270" armor="28" viewrange="4.7" speed="2.4" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="15" health="5320" armor="33" viewrange="5" speed="2.6" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="16" health="6640" armor="37" viewrange="5.2" speed="2.6" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="260" gid="1" influence="0" space="17" health="8230" armor="42" viewrange="5.5" speed="2.8" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Imp-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="257" gid="1" influence="0" space="14" health="1480" armor="10" viewrange="6.7" speed="3.6" max_weight="73" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Daeva-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="257" gid="1" influence="0" space="15" health="1840" armor="15" viewrange="7" speed="3.8" max_weight="73" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Daeva-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="257" gid="1" influence="0" space="16" health="2290" armor="19" viewrange="7.2" speed="3.8" max_weight="73" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Daeva-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="257" gid="1" influence="0" space="17" health="2860" armor="24" viewrange="7.5" speed="4" max_weight="73" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Daeva-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="257" gid="1" influence="0" space="19" health="3580" armor="28" viewrange="7.7" speed="4" max_weight="73" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Daeva-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="257" gid="1" influence="0" space="20" health="4420" armor="33" viewrange="8" speed="4.2" max_weight="73" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Daeva-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="107">
+		<Name>Sci-rig</Name>
+		<unitlist>
+			<unit iid="311" gid="107" influence="0" space="14" health="1510" armor="0" viewrange="15" speed="3" max_weight="100" u1="8" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Volte</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="314" gid="107" influence="0" space="19" health="2710" armor="54" viewrange="11" speed="1.8" max_weight="140" u1="0" u2="128" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mantlet</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="311" gid="107" influence="0" space="14" health="1780" armor="3" viewrange="15" speed="3.2" max_weight="100" u1="8" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Volte-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="311" gid="107" influence="0" space="15" health="2140" armor="6" viewrange="15" speed="3.4" max_weight="100" u1="8" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Volte-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="311" gid="107" influence="0" space="15" health="2830" armor="9" viewrange="15" speed="3.6" max_weight="100" u1="8" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Volte-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="311" gid="107" influence="0" space="16" health="4030" armor="12" viewrange="15" speed="3.8" max_weight="100" u1="8" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Volte-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="311" gid="107" influence="0" space="16" health="5320" armor="15" viewrange="15" speed="4" max_weight="100" u1="8" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Volte-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="14" health="2410" armor="0" viewrange="7.5" speed="3.5" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="15" health="2770" armor="3" viewrange="7.5" speed="3.5" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="16" health="3310" armor="6" viewrange="7.5" speed="3.7" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="17" health="4030" armor="9" viewrange="7.5" speed="3.7" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="19" health="5020" armor="12" viewrange="7.5" speed="3.9" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="20" health="6250" armor="15" viewrange="7.5" speed="3.9" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="21" health="7840" armor="18" viewrange="7.5" speed="4.2" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="23" health="9760" armor="21" viewrange="7.5" speed="4.2" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="312" gid="107" influence="0" space="24" health="12070" armor="24" viewrange="7.5" speed="4.5" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Triage-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="314" gid="107" influence="0" space="20" health="3520" armor="66" viewrange="11" speed="1.8" max_weight="140" u1="0" u2="128" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mantlet-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="314" gid="107" influence="0" space="22" health="4720" armor="75" viewrange="11" speed="2" max_weight="140" u1="0" u2="128" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mantlet-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="314" gid="107" influence="0" space="24" health="6160" armor="90" viewrange="11" speed="2.4" max_weight="140" u1="0" u2="128" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mantlet-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="314" gid="107" influence="0" space="25" health="8080" armor="96" viewrange="11" speed="2.6" max_weight="140" u1="0" u2="128" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mantlet-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="327">
+		<Name>Rys</Name>
+		<unitlist>
+			<unit iid="287" gid="327" influence="0" space="16" health="1510" armor="0" viewrange="40" speed="4.5" max_weight="100" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCLithubik</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="310">
+		<Name>Jorias</Name>
+		<unitlist>
+			<unit iid="278" gid="310" influence="0" space="11" health="1000" armor="12" viewrange="5.5" speed="7" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="12" health="1150" armor="16" viewrange="5.7" speed="7" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="13" health="1360" armor="21" viewrange="6" speed="8" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="14" health="1630" armor="25" viewrange="6.2" speed="8" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="15" health="2020" armor="30" viewrange="6.5" speed="9" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="16" health="2530" armor="36" viewrange="6.7" speed="9" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="17" health="3160" armor="42" viewrange="7" speed="11" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="18" health="3940" armor="48" viewrange="7.2" speed="11" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="278" gid="310" influence="0" space="19" health="4900" armor="54" viewrange="7.5" speed="12" max_weight="85" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Jorias-Evo9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="309">
+		<Name>Xeno-scavus</Name>
+		<unitlist>
+			<unit iid="284" gid="309" influence="0" space="200" health="3796" armor="0" viewrange="11.7" speed="6.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Scave-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="285" gid="309" influence="0" space="200" health="5308" armor="0" viewrange="12.7" speed="7.3" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Knell-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="284" gid="309" influence="0" space="200" health="2389" armor="0" viewrange="11" speed="6.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Scave-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="281" gid="309" influence="0" space="200" health="2101" armor="0" viewrange="10.7" speed="5.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Larva-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="284" gid="309" influence="0" space="200" health="2760" armor="0" viewrange="11.2" speed="6.4" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Scave-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="285" gid="309" influence="0" space="200" health="3970" armor="0" viewrange="12" speed="6.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Knell-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="285" gid="309" influence="0" space="200" health="4180" armor="0" viewrange="12.2" speed="6.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Knell-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="284" gid="309" influence="0" space="200" health="3224" armor="0" viewrange="11.5" speed="6.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Scave-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="281" gid="309" influence="0" space="200" health="1585" armor="0" viewrange="10" speed="5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Larva-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="281" gid="309" influence="0" space="200" health="1718" armor="0" viewrange="10.2" speed="5.3" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Larva-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="285" gid="309" influence="0" space="200" health="6274" armor="0" viewrange="13" speed="7.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Knell-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="285" gid="309" influence="0" space="200" health="4486" armor="0" viewrange="12.5" speed="7.1" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Knell-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="281" gid="309" influence="0" space="200" health="1881" armor="0" viewrange="10.5" speed="5.3" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Larva-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="311">
+		<Name>Vytyrs</Name>
+		<unitlist>
+			<unit iid="308" gid="311" influence="0" space="10" health="1540" armor="6" viewrange="8.5" speed="4" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="11" health="1750" armor="10" viewrange="9" speed="4.2" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="12" health="2080" armor="15" viewrange="9.5" speed="4.4" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="12" health="2530" armor="19" viewrange="10" speed="4.5" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="13" health="3130" armor="21" viewrange="10.5" speed="4.6" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="14" health="3910" armor="25" viewrange="11" speed="4.8" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="15" health="4900" armor="27" viewrange="11.5" speed="5" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="16" health="6100" armor="31" viewrange="12" speed="5.2" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="308" gid="311" influence="0" space="17" health="7540" armor="36" viewrange="12.5" speed="5.5" max_weight="65" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vytyr-Evo9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="313">
+		<Name>Dythe</Name>
+		<unitlist>
+			<unit iid="533" gid="313" influence="0" space="17" health="7360" armor="63" viewrange="15" speed="12" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Dythe-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="533" gid="313" influence="0" space="18" health="9340" armor="72" viewrange="16" speed="12.8" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Dythe-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="533" gid="313" influence="0" space="20" health="11890" armor="84" viewrange="17" speed="13.6" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Dythe-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="533" gid="313" influence="0" space="21" health="15010" armor="99" viewrange="18" speed="14.4" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Dythe-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="533" gid="313" influence="0" space="23" health="18850" armor="108" viewrange="19" speed="15.2" max_weight="112" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Dythe-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="307">
+		<Name>Xeno-collisi</Name>
+		<unitlist>
+			<unit iid="307" gid="307" influence="0" space="16" health="1330" armor="6" viewrange="7" speed="3.2" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Quorg</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="307" gid="307" influence="0" space="28" health="7180" armor="66" viewrange="7" speed="3.8" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Quorg-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="307" gid="307" influence="0" space="22" health="2800" armor="30" viewrange="7" speed="3.6" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Quorg-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="307" gid="307" influence="0" space="25" health="4540" armor="48" viewrange="7" speed="3.6" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Quorg-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="307" gid="307" influence="0" space="19" health="1810" armor="18" viewrange="7" speed="3.3" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Quorg-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="2">
+		<Name>Aero-frame</Name>
+		<unitlist>
+			<unit iid="261" gid="2" influence="0" space="18" health="1450" armor="7" viewrange="7.7" speed="4" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Banshee-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="261" gid="2" influence="0" space="20" health="1780" armor="12" viewrange="8" speed="4.2" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Banshee-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="261" gid="2" influence="0" space="22" health="2230" armor="16" viewrange="8.2" speed="4.7" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Banshee-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="261" gid="2" influence="0" space="24" health="2800" armor="21" viewrange="8.5" speed="5.2" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Banshee-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="261" gid="2" influence="0" space="26" health="3490" armor="25" viewrange="8.7" speed="5.7" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Banshee-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="261" gid="2" influence="0" space="28" health="4330" armor="30" viewrange="9" speed="6.2" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Banshee-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="296" gid="2" influence="0" space="8" health="2260" armor="9" viewrange="9" speed="4.2" max_weight="75" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phantom</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="8" health="1210" armor="9" viewrange="6" speed="4.8" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="261" gid="2" influence="0" space="17" health="1210" armor="3" viewrange="7.5" speed="3.8" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Banshee</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="9" health="1390" armor="13" viewrange="6.2" speed="5.2" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="9" health="1630" armor="18" viewrange="6.5" speed="5.2" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="10" health="1990" armor="22" viewrange="6.7" speed="5.6" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="11" health="2470" armor="27" viewrange="7" speed="5.6" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="11" health="3100" armor="31" viewrange="7.2" speed="6" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="12" health="3850" armor="36" viewrange="7.5" speed="6" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="13" health="4810" armor="40" viewrange="7.7" speed="6.4" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="275" gid="2" influence="0" space="14" health="5980" armor="45" viewrange="8" speed="6.4" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Shade-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="296" gid="2" influence="0" space="9" health="2770" armor="12" viewrange="9.2" speed="4.5" max_weight="75" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phantom-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="296" gid="2" influence="0" space="9" health="3460" armor="15" viewrange="9.5" speed="4.5" max_weight="75" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phantom-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="296" gid="2" influence="0" space="10" health="4300" armor="18" viewrange="9.7" speed="4.8" max_weight="75" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phantom-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="296" gid="2" influence="0" space="11" health="5380" armor="21" viewrange="10" speed="4.8" max_weight="75" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phantom-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="296" gid="2" influence="0" space="11" health="6700" armor="24" viewrange="10.2" speed="5.4" max_weight="75" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phantom-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="296" gid="2" influence="0" space="12" health="8290" armor="27" viewrange="10.5" speed="5.6" max_weight="75" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Phantom-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="314">
+		<Name>Miasmal</Name>
+		<unitlist>
+			<unit iid="524" gid="314" influence="0" space="18" health="4360" armor="36" viewrange="75" speed="4.6" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="19" health="4990" armor="42" viewrange="77.5" speed="4.8" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="21" health="5920" armor="48" viewrange="80" speed="4.8" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="22" health="7210" armor="57" viewrange="82.5" speed="5" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="24" health="8950" armor="66" viewrange="85" speed="5" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="26" health="11170" armor="72" viewrange="87.5" speed="5.2" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="27" health="13990" armor="81" viewrange="90" speed="5.2" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="29" health="17440" armor="87" viewrange="92.5" speed="5.4" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="524" gid="314" influence="0" space="31" health="21610" armor="93" viewrange="95" speed="5.6" max_weight="136" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasmal-Evo9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="328">
+		<Name>Raos</Name>
+		<unitlist>
+			<unit iid="536" gid="328" influence="0" space="16" health="12010" armor="30" viewrange="1" speed="1.3" max_weight="200" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCVulture</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="101">
+		<Name>Aero-rig</Name>
+		<unitlist>
+			<unit iid="299" gid="101" influence="0" space="6" health="1900" armor="3" viewrange="9.7" speed="8.8" max_weight="72" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gryphon-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="299" gid="101" influence="0" space="7" health="2350" armor="6" viewrange="10" speed="9" max_weight="72" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gryphon-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="299" gid="101" influence="0" space="8" health="2950" armor="8" viewrange="10.2" speed="9.4" max_weight="72" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gryphon-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="299" gid="101" influence="0" space="9" health="3670" armor="11" viewrange="10.5" speed="9.6" max_weight="72" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gryphon-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="299" gid="101" influence="0" space="10" health="4570" armor="14" viewrange="10.7" speed="10" max_weight="72" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gryphon-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="299" gid="101" influence="0" space="11" health="5650" armor="18" viewrange="11" speed="10.4" max_weight="72" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gryphon-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="8" health="1258" armor="0" viewrange="7.5" speed="7.2" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="9" health="1420" armor="2" viewrange="7.7" speed="7.6" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="9" health="1690" armor="4" viewrange="8" speed="7.6" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="10" health="2050" armor="7" viewrange="8.2" speed="8" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="11" health="2530" armor="9" viewrange="8.5" speed="8" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="11" health="3160" armor="13" viewrange="8.7" speed="8.4" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="12" health="3970" armor="17" viewrange="9" speed="8.4" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="13" health="4930" armor="19" viewrange="9.2" speed="8.8" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="265" gid="101" influence="0" space="14" health="6130" armor="21" viewrange="9.5" speed="9" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pegasus-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="299" gid="101" influence="0" space="6" health="1546" armor="1" viewrange="9.5" speed="8.4" max_weight="72" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gryphon</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="3">
+		<Name>Gaia-frame</Name>
+		<unitlist>
+			<unit iid="295" gid="3" influence="0" space="10" health="1138" armor="0" viewrange="5.5" speed="5" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="259" gid="3" influence="0" space="19" health="2440" armor="27" viewrange="8" speed="3.2" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Revenant-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="259" gid="3" influence="0" space="22" health="3100" armor="33" viewrange="8.5" speed="3.2" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Revenant-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="259" gid="3" influence="0" space="25" health="3910" armor="39" viewrange="9" speed="3.2" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Revenant-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="259" gid="3" influence="0" space="28" health="4960" armor="48" viewrange="9.5" speed="3.4" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Revenant-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="259" gid="3" influence="0" space="16" health="1930" armor="21" viewrange="7.5" speed="3" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Revenant</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="11" health="1300" armor="0" viewrange="5.7" speed="5.2" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="12" health="1540" armor="0" viewrange="6" speed="5.5" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="12" health="1870" armor="0" viewrange="6.2" speed="5.7" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="13" health="2320" armor="0" viewrange="6.5" speed="6" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="14" health="2920" armor="0" viewrange="6.7" speed="6.2" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="15" health="3640" armor="0" viewrange="7" speed="6.4" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="16" health="4540" armor="0" viewrange="7.2" speed="6.6" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="295" gid="3" influence="0" space="17" health="5620" armor="0" viewrange="7.5" speed="6.8" max_weight="70" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ghast-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="204">
+		<Name>Gyro-raptor</Name>
+		<unitlist>
+			<unit iid="513" gid="204" influence="0" space="17" health="2050" armor="9" viewrange="4.5" speed="2.6" max_weight="310" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Roc-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="513" gid="204" influence="0" space="18" health="2590" armor="12" viewrange="4.5" speed="2.6" max_weight="310" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Roc-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="513" gid="204" influence="0" space="20" health="3340" armor="15" viewrange="4.5" speed="2.8" max_weight="310" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Roc-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="513" gid="204" influence="0" space="21" health="4390" armor="18" viewrange="4.5" speed="2.8" max_weight="310" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Roc-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="513" gid="204" influence="0" space="23" health="5770" armor="21" viewrange="4.5" speed="3" max_weight="310" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Roc-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="513" gid="204" influence="0" space="24" health="7480" armor="24" viewrange="4.5" speed="3.2" max_weight="310" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Roc-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="525" gid="204" influence="0" space="18" health="1390" armor="12" viewrange="6" speed="3.2" max_weight="100" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Albatross-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="525" gid="204" influence="0" space="20" health="1690" armor="15" viewrange="6" speed="3.2" max_weight="100" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Albatross-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="525" gid="204" influence="0" space="21" health="2110" armor="18" viewrange="6" speed="3.6" max_weight="100" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Albatross-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="525" gid="204" influence="0" space="23" health="2650" armor="21" viewrange="6" speed="3.6" max_weight="100" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Albatross-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="525" gid="204" influence="0" space="24" health="3310" armor="24" viewrange="6" speed="3.8" max_weight="100" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Albatross-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="525" gid="204" influence="0" space="26" health="4120" armor="27" viewrange="6" speed="4" max_weight="100" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Albatross-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="513" gid="204" influence="0" space="16" health="1690" armor="6" viewrange="4.5" speed="2.4" max_weight="310" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Roc</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="525" gid="204" influence="0" space="17" health="1150" armor="9" viewrange="6" speed="3" max_weight="100" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Albatross</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="105">
+		<Name>Gyro-rig</Name>
+		<unitlist>
+			<unit iid="258" gid="105" influence="0" space="17" health="1660" armor="2" viewrange="3.5" speed="1.3" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="18" health="1960" armor="3" viewrange="4" speed="1.3" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="20" health="2380" armor="6" viewrange="4.5" speed="1.4" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="21" health="2920" armor="8" viewrange="5" speed="1.4" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="23" health="3640" armor="9" viewrange="5.5" speed="1.5" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="24" health="4570" armor="12" viewrange="6" speed="1.5" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="26" health="5680" armor="18" viewrange="6.5" speed="1.7" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="28" health="7060" armor="24" viewrange="7" speed="2" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="17" health="1660" armor="2" viewrange="3.2" speed="1.3" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="18" health="1960" armor="3" viewrange="3.5" speed="1.3" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="20" health="2380" armor="6" viewrange="3.7" speed="1.4" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="21" health="2920" armor="8" viewrange="4" speed="1.4" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="23" health="3640" armor="9" viewrange="4.2" speed="1.5" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="24" health="4570" armor="12" viewrange="4.5" speed="1.5" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="26" health="5680" armor="18" viewrange="4.7" speed="1.7" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="28" health="7060" armor="24" viewrange="5" speed="2" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="291" gid="105" influence="0" space="18" health="2110" armor="12" viewrange="3.2" speed="2.9" max_weight="90" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Orbus-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="291" gid="105" influence="0" space="20" health="2590" armor="15" viewrange="3.5" speed="3" max_weight="90" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Orbus-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="291" gid="105" influence="0" space="21" health="3220" armor="19" viewrange="3.7" speed="3.2" max_weight="90" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Orbus-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="291" gid="105" influence="0" space="23" health="4030" armor="22" viewrange="4" speed="3.3" max_weight="90" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Orbus-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="291" gid="105" influence="0" space="24" health="5020" armor="25" viewrange="4.2" speed="3.4" max_weight="90" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Orbus-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="291" gid="105" influence="0" space="26" health="6250" armor="29" viewrange="4.5" speed="3.5" max_weight="90" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Orbus-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="279" gid="105" influence="0" space="15" health="2320" armor="1" viewrange="6.2" speed="3.2" max_weight="70" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gear-Doc-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="279" gid="105" influence="0" space="17" health="3280" armor="3" viewrange="6.5" speed="3.2" max_weight="70" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gear-Doc-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="279" gid="105" influence="0" space="19" health="4660" armor="4" viewrange="6.7" speed="3.4" max_weight="70" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gear-Doc-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="279" gid="105" influence="0" space="21" health="6550" armor="6" viewrange="7" speed="3.5" max_weight="70" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gear-Doc-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="291" gid="105" influence="0" space="17" health="1738" armor="9" viewrange="3" speed="2.8" max_weight="90" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Orbus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="258" gid="105" influence="0" space="16" health="1450" armor="0" viewrange="3" speed="1.3" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Red-Eye</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="279" gid="105" influence="0" space="14" health="1738" armor="0" viewrange="6" speed="3" max_weight="70" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Gear-Doc</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="310" gid="105" influence="0" space="16" health="1450" armor="0" viewrange="3" speed="1.3" max_weight="72" u1="0" u2="136" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>SatCom</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="329">
+		<Name>Lithubik</Name>
+		<unitlist>
+			<unit iid="287" gid="329" influence="0" space="200" health="2360" armor="0" viewrange="12" speed="2.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lithubik-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="287" gid="329" influence="0" space="200" health="4810" armor="1" viewrange="12" speed="2.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lithubik-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="287" gid="329" influence="0" space="200" health="6790" armor="2" viewrange="12" speed="2.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lithubik-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="287" gid="329" influence="0" space="200" health="8510" armor="3" viewrange="12" speed="2.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lithubik-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="287" gid="329" influence="0" space="200" health="11280" armor="4" viewrange="12" speed="2.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lithubik-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="287" gid="329" influence="0" space="200" health="14700" armor="5" viewrange="12" speed="2.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lithubik-Evo6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="287" gid="329" influence="0" space="200" health="19420" armor="6" viewrange="12" speed="2.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lithubik-Evo7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="202">
+		<Name>Cyclo-raptor</Name>
+		<unitlist>
+			<unit iid="526" gid="202" influence="0" space="8" health="2260" armor="0" viewrange="10" speed="9.5" max_weight="55" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Falcon</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="526" gid="202" influence="0" space="9" health="2860" armor="3" viewrange="10.2" speed="10" max_weight="55" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Falcon-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="526" gid="202" influence="0" space="9" health="3640" armor="6" viewrange="10.5" speed="10.5" max_weight="55" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Falcon-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="526" gid="202" influence="0" space="10" health="4600" armor="9" viewrange="10.7" speed="11" max_weight="55" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Falcon-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="526" gid="202" influence="0" space="11" health="5770" armor="12" viewrange="11" speed="12.5" max_weight="55" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Falcon-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="514" gid="202" influence="0" space="11" health="2200" armor="6" viewrange="9.7" speed="6" max_weight="92" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Owl-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="514" gid="202" influence="0" space="12" health="2710" armor="9" viewrange="10" speed="6" max_weight="92" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Owl-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="514" gid="202" influence="0" space="12" health="3400" armor="12" viewrange="10.2" speed="7.2" max_weight="92" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Owl-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="514" gid="202" influence="0" space="13" health="4240" armor="15" viewrange="10.5" speed="7.2" max_weight="92" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Owl-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="514" gid="202" influence="0" space="14" health="5290" armor="18" viewrange="10.7" speed="7.8" max_weight="92" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Owl-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="514" gid="202" influence="0" space="15" health="6580" armor="21" viewrange="11" speed="8" max_weight="92" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Owl-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="514" gid="202" influence="0" space="10" health="1810" armor="3" viewrange="9.5" speed="5.4" max_weight="92" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Owl</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="7" health="1120" armor="1" viewrange="11.7" speed="8.8" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="8" health="1330" armor="3" viewrange="12" speed="8.8" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="9" health="1630" armor="6" viewrange="12.2" speed="8.8" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="9" health="2020" armor="9" viewrange="12.5" speed="8.8" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="10" health="2530" armor="12" viewrange="12.7" speed="9.9" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="11" health="3160" armor="15" viewrange="13" speed="9.9" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="11" health="3910" armor="18" viewrange="13.2" speed="10.2" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="12" health="4870" armor="21" viewrange="13.5" speed="10.5" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="516" gid="202" influence="0" space="7" health="994" armor="0" viewrange="11.5" speed="7.7" max_weight="60" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Hawk</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="301">
+		<Name>Xeno-ignus</Name>
+		<unitlist>
+			<unit iid="518" gid="301" influence="0" space="200" health="835" armor="0" viewrange="15" speed="7.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Oizys-Prima</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="518" gid="301" influence="0" space="200" health="990" armor="0" viewrange="16" speed="8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Oizys-Magna</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="517" gid="301" influence="0" space="200" health="1105" armor="0" viewrange="16.5" speed="8.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Boreas-Prima</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="519" gid="301" influence="0" space="200" health="1693" armor="0" viewrange="18" speed="8.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eris-Prima</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="517" gid="301" influence="0" space="200" health="1450" armor="0" viewrange="17.5" speed="8.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Boreas-Magna</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="519" gid="301" influence="0" space="200" health="2354" armor="0" viewrange="19" speed="9.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eris-Magna</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="518" gid="301" influence="0" space="200" health="905" armor="0" viewrange="15.5" speed="7.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Oizys-Ampla</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="521" gid="301" influence="0" space="200" health="3878" armor="0" viewrange="20.5" speed="11" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lyssa-Maxima</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="521" gid="301" influence="0" space="200" health="4554" armor="0" viewrange="21" speed="12" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lyssa-Extrema</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="521" gid="301" influence="0" space="200" health="2785" armor="0" viewrange="19.5" speed="10" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lyssa-Prima</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="517" gid="301" influence="0" space="200" health="1256" armor="0" viewrange="17" speed="8.4" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Boreas-Ampla</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="519" gid="301" influence="0" space="200" health="1993" armor="0" viewrange="18.5" speed="9" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Eris-Ampla</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="521" gid="301" influence="0" space="200" health="3290" armor="0" viewrange="20" speed="10.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Lyssa-Magna</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="319">
+		<Name>RCMiasma</Name>
+		<unitlist>
+			<unit iid="531" gid="319" influence="0" space="28" health="33010" armor="96" viewrange="95" speed="5.6" max_weight="200" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCMiasam</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="321">
+		<Name>Rayks</Name>
+		<unitlist>
+			<unit iid="275" gid="321" influence="0" space="16" health="27010" armor="45" viewrange="40" speed="5.4" max_weight="68" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCShade</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="304">
+		<Name>Xeno-motus</Name>
+		<unitlist>
+			<unit iid="302" gid="304" influence="0" space="200" health="7683" armor="15" viewrange="12" speed="5.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mlortha-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="302" gid="304" influence="0" space="200" health="9092" armor="18" viewrange="12.2" speed="5.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mlortha-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="280" gid="304" influence="0" space="200" health="2710" armor="0" viewrange="10" speed="3.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Poda-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="280" gid="304" influence="0" space="200" health="2939" armor="1" viewrange="10.2" speed="3.9" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Poda-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="302" gid="304" influence="0" space="200" health="10747" armor="21" viewrange="12.5" speed="5.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mlortha-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="280" gid="304" influence="0" space="200" health="3218" armor="2" viewrange="10.5" speed="3.9" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Poda-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="283" gid="304" influence="0" space="200" health="6500" armor="12" viewrange="11.7" speed="5.1" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Kritsk-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="283" gid="304" influence="0" space="200" health="4089" armor="6" viewrange="11" speed="4.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Kritsk-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="283" gid="304" influence="0" space="200" health="4724" armor="8" viewrange="11.2" speed="4.9" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Kritsk-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="302" gid="304" influence="0" space="200" health="14882" armor="30" viewrange="13" speed="6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mlortha-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="283" gid="304" influence="0" space="200" health="5521" armor="10" viewrange="11.5" speed="5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Kritsk-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="280" gid="304" influence="0" space="200" health="3594" armor="4" viewrange="10.7" speed="4.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Poda-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="302" gid="304" influence="0" space="200" health="12669" armor="25" viewrange="12.7" speed="6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mlortha-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="201">
+		<Name>Geo-raptor</Name>
+		<unitlist>
+			<unit iid="536" gid="201" influence="0" space="17" health="1450" armor="3" viewrange="1.7" speed="1.5" max_weight="84" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vulture-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="536" gid="201" influence="0" space="18" health="1870" armor="6" viewrange="2.5" speed="1.7" max_weight="84" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vulture-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="536" gid="201" influence="0" space="20" health="2410" armor="9" viewrange="3.2" speed="1.9" max_weight="84" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vulture-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="536" gid="201" influence="0" space="21" health="3130" armor="12" viewrange="4" speed="2.1" max_weight="84" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vulture-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="14" health="1210" armor="0" viewrange="4" speed="3" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="10" health="1690" armor="0" viewrange="5.5" speed="4" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="536" gid="201" influence="0" space="16" health="1135" armor="0" viewrange="1" speed="1.3" max_weight="84" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Vulture</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="15" health="1420" armor="3" viewrange="4.2" speed="3.2" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="16" health="1750" armor="6" viewrange="4.5" speed="3.4" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="17" health="2140" armor="9" viewrange="4.7" speed="3.6" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="19" health="2680" armor="12" viewrange="5" speed="3.9" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="20" health="3370" armor="15" viewrange="5.2" speed="4.1" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="21" health="4180" armor="18" viewrange="5.5" speed="4.3" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="523" gid="201" influence="0" space="23" health="5200" armor="21" viewrange="5.7" speed="4.6" max_weight="88" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>War Pigeon-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="11" health="1930" armor="3" viewrange="5.7" speed="4.2" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="12" health="2320" armor="6" viewrange="6" speed="4.4" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="12" health="2800" armor="9" viewrange="6.2" speed="4.8" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="13" health="3490" armor="12" viewrange="6.5" speed="5" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="14" health="4360" armor="15" viewrange="6.7" speed="5.2" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="15" health="5440" armor="18" viewrange="7" speed="5.4" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="16" health="6790" armor="21" viewrange="7.2" speed="5.6" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="535" gid="201" influence="0" space="18" health="8410" armor="24" viewrange="7.5" speed="6" max_weight="80" u1="0" u2="0" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Pelican-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="316">
+		<Name>Charnal</Name>
+		<unitlist>
+			<unit iid="532" gid="316" influence="0" space="15" health="3310" armor="18" viewrange="3.5" speed="7.2" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charnal-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="532" gid="316" influence="0" space="16" health="4000" armor="24" viewrange="3.7" speed="7.8" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charnal-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="532" gid="316" influence="0" space="17" health="5140" armor="30" viewrange="4" speed="8.8" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charnal-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="532" gid="316" influence="0" space="19" health="6850" armor="36" viewrange="4.2" speed="9.6" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charnal-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="532" gid="316" influence="0" space="20" health="9280" armor="42" viewrange="4.5" speed="10" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charnal-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="532" gid="316" influence="0" space="21" health="12520" armor="51" viewrange="4.7" speed="10.8" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charnal-Evo6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="532" gid="316" influence="0" space="23" health="16780" armor="60" viewrange="5" speed="11.4" max_weight="105" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Charnal-Evo7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="7">
+		<Name>Magna-frame</Name>
+		<unitlist>
+			<unit iid="315" gid="7" influence="0" space="11" health="1960" armor="19" viewrange="3" speed="2" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wight</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="315" gid="7" influence="0" space="12" health="2575" armor="22" viewrange="3" speed="2.2" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wight-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="315" gid="7" influence="0" space="13" health="3190" armor="24" viewrange="3" speed="2.4" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wight-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="315" gid="7" influence="0" space="15" health="4420" armor="30" viewrange="3" speed="2.6" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wight-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="315" gid="7" influence="0" space="17" health="5650" armor="36" viewrange="3" speed="2.8" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wight-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="315" gid="7" influence="0" space="19" health="6880" armor="39" viewrange="3" speed="3" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wight-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="315" gid="7" influence="0" space="21" health="8110" armor="45" viewrange="3" speed="3.4" max_weight="96" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Wight-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="320">
+		<Name>Raoks</Name>
+		<unitlist>
+			<unit iid="260" gid="320" influence="0" space="16" health="27010" armor="30" viewrange="20" speed="3.6" max_weight="64" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCImp</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="4">
+		<Name>Ghost-frame</Name>
+		<unitlist>
+			<unit iid="297" gid="4" influence="0" space="11" health="1300" armor="3" viewrange="15.2" speed="4.8" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="297" gid="4" influence="0" space="12" health="1570" armor="6" viewrange="15.5" speed="5" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="297" gid="4" influence="0" space="12" health="1930" armor="9" viewrange="15.7" speed="5" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="297" gid="4" influence="0" space="13" health="2410" armor="12" viewrange="16" speed="5.2" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="297" gid="4" influence="0" space="14" health="3010" armor="15" viewrange="16.2" speed="5.5" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="297" gid="4" influence="0" space="15" health="3760" armor="18" viewrange="16.5" speed="5.8" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="297" gid="4" influence="0" space="16" health="4660" armor="21" viewrange="16.7" speed="6" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="298" gid="4" influence="0" space="13" health="2080" armor="3" viewrange="20.2" speed="4.3" max_weight="56" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Apparition-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="298" gid="4" influence="0" space="14" health="2740" armor="6" viewrange="20.5" speed="4.7" max_weight="56" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Apparition-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="298" gid="4" influence="0" space="15" health="3610" armor="9" viewrange="20.7" speed="5" max_weight="56" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Apparition-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="298" gid="4" influence="0" space="16" health="4720" armor="12" viewrange="21" speed="5.3" max_weight="56" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Apparition-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="300" gid="4" influence="0" space="200" health="1066" armor="90" viewrange="0.5" speed="3" max_weight="200" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>CTF Enforcer</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="298" gid="4" influence="0" space="12" health="1585" armor="0" viewrange="20" speed="3.8" max_weight="56" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Apparition</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="297" gid="4" influence="0" space="10" health="1120" armor="0" viewrange="15" speed="4.8" max_weight="60" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Spirit</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="315">
+		<Name>Miasam</Name>
+		<unitlist>
+			<unit iid="531" gid="315" influence="0" space="15" health="4210" armor="27" viewrange="75" speed="4.6" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo1</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="16" health="4810" armor="33" viewrange="77.5" speed="4.8" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="17" health="5710" armor="39" viewrange="80" speed="4.8" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="19" health="6970" armor="48" viewrange="82.5" speed="5" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="20" health="8650" armor="54" viewrange="85" speed="5" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="21" health="10780" armor="63" viewrange="87.5" speed="5.2" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="23" health="13510" armor="72" viewrange="90" speed="5.2" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="24" health="16840" armor="78" viewrange="92.5" speed="5.4" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="531" gid="315" influence="0" space="26" health="20860" armor="90" viewrange="95" speed="5.6" max_weight="120" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Miasam-Evo9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="303">
+		<Name>Xeno-humus</Name>
+		<unitlist>
+			<unit iid="270" gid="303" influence="0" space="200" health="2503" armor="0" viewrange="34.5" speed="2" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Crudgin-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="270" gid="303" influence="0" space="200" health="2891" armor="0" viewrange="34.7" speed="2" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Crudgin-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="286" gid="303" influence="0" space="200" health="7746" armor="0" viewrange="36.2" speed="3" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rouke-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="271" gid="303" influence="0" space="200" health="1660" armor="0" viewrange="33.5" speed="1.6" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Slanth-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="271" gid="303" influence="0" space="200" health="1800" armor="0" viewrange="33.7" speed="1.8" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Slanth-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="270" gid="303" influence="0" space="200" health="3377" armor="0" viewrange="35" speed="2" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Crudgin-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="286" gid="303" influence="0" space="200" health="4699" armor="0" viewrange="35.5" speed="2.4" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rouke-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="286" gid="303" influence="0" space="200" health="5560" armor="0" viewrange="35.7" speed="2.6" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rouke-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="271" gid="303" influence="0" space="200" health="1970" armor="0" viewrange="34" speed="1.8" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Slanth-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="286" gid="303" influence="0" space="200" health="6571" armor="0" viewrange="36" speed="2.8" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rouke-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="270" gid="303" influence="0" space="200" health="3976" armor="0" viewrange="35.2" speed="2" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Crudgin-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="271" gid="303" influence="0" space="200" health="2200" armor="0" viewrange="34.2" speed="2" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Slanth-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="286" gid="303" influence="0" space="200" health="9098" armor="0" viewrange="36.5" speed="3.4" max_weight="120" u1="8" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Rouke-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="102">
+		<Name>Geo-rig</Name>
+		<unitlist>
+			<unit iid="276" gid="102" influence="0" space="17" health="2980" armor="9" viewrange="9.2" speed="1.2" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="18" health="3520" armor="12" viewrange="9.5" speed="1.3" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="20" health="4270" armor="17" viewrange="9.7" speed="1.3" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="21" health="5290" armor="20" viewrange="10" speed="1.4" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="23" health="6610" armor="23" viewrange="10.2" speed="1.5" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="24" health="8260" armor="26" viewrange="10.5" speed="1.6" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="26" health="10330" armor="33" viewrange="10.7" speed="1.7" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="28" health="12790" armor="39" viewrange="11" speed="1.8" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth-Mk9</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="276" gid="102" influence="0" space="16" health="2602" armor="6" viewrange="9" speed="1.2" max_weight="152" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Behemoth</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="301" gid="102" influence="0" space="3" health="3670" armor="46" viewrange="10.2" speed="2" max_weight="140" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Leviathan-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="301" gid="102" influence="0" space="3" health="4510" armor="49" viewrange="10.5" speed="2.1" max_weight="140" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Leviathan-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="301" gid="102" influence="0" space="3" health="5530" armor="54" viewrange="10.7" speed="2.2" max_weight="140" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Leviathan-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="301" gid="102" influence="0" space="3" health="6910" armor="57" viewrange="11" speed="2.3" max_weight="140" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Leviathan-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="301" gid="102" influence="0" space="3" health="8380" armor="66" viewrange="11.2" speed="2.4" max_weight="140" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Leviathan-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="301" gid="102" influence="0" space="3" health="10390" armor="75" viewrange="11.5" speed="2.5" max_weight="140" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Leviathan-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="301" gid="102" influence="0" space="3" health="3070" armor="45" viewrange="10" speed="2" max_weight="140" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Leviathan</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="323">
+		<Name>Rayok</Name>
+		<unitlist>
+			<unit iid="264" gid="323" influence="0" space="18" health="19510" armor="45" viewrange="9.5" speed="4.5" max_weight="200" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCChimera</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="306">
+		<Name>Xeno-frigus</Name>
+		<unitlist>
+			<unit iid="530" gid="306" influence="0" space="200" health="6133" armor="0" viewrange="21.2" speed="5.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Onnir-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="530" gid="306" influence="0" space="200" health="8536" armor="0" viewrange="21.5" speed="5.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Onnir-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="529" gid="306" influence="0" space="200" health="3010" armor="0" viewrange="20" speed="4.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manta-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="529" gid="306" influence="0" space="200" health="3265" armor="0" viewrange="20.2" speed="4.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manta-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="530" gid="306" influence="0" space="200" health="10101" armor="0" viewrange="21.7" speed="6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Onnir-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="529" gid="306" influence="0" space="200" health="3574" armor="0" viewrange="20.5" speed="4.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manta-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="529" gid="306" influence="0" space="200" health="4542" armor="0" viewrange="20.7" speed="5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manta-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="529" gid="306" influence="0" space="200" health="5248" armor="0" viewrange="21" speed="5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Manta-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="530" gid="306" influence="0" space="200" health="16534" armor="0" viewrange="22.2" speed="6.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Onnir-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="530" gid="306" influence="0" space="200" health="11940" armor="0" viewrange="22" speed="6.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Onnir-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="106">
+		<Name>Flak-rig</Name>
+		<unitlist>
+			<unit iid="266" gid="106" influence="0" space="16" health="1306" armor="0" viewrange="2" speed="1.2" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="290" gid="106" influence="0" space="20" health="1450" armor="3" viewrange="3" speed="1.3" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ballista</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="293" gid="106" influence="0" space="27" health="2260" armor="13" viewrange="0" speed="1.3" max_weight="108" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Trebuchet-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="293" gid="106" influence="0" space="29" health="3010" armor="18" viewrange="0" speed="1.4" max_weight="108" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Trebuchet-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="293" gid="106" influence="0" space="31" health="3940" armor="24" viewrange="0" speed="1.8" max_weight="108" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Trebuchet-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="293" gid="106" influence="0" space="34" health="5170" armor="30" viewrange="0" speed="2.2" max_weight="108" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Trebuchet-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="290" gid="106" influence="0" space="21" health="1750" armor="5" viewrange="4.7" speed="1.3" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ballista-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="290" gid="106" influence="0" space="23" health="2170" armor="8" viewrange="6.5" speed="1.4" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ballista-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="290" gid="106" influence="0" space="25" health="2710" armor="11" viewrange="9.2" speed="1.4" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ballista-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="290" gid="106" influence="0" space="27" health="3400" armor="14" viewrange="10.2" speed="1.5" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ballista-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="290" gid="106" influence="0" space="29" health="4240" armor="18" viewrange="11.2" speed="1.7" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ballista-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="290" gid="106" influence="0" space="31" health="5260" armor="21" viewrange="12.2" speed="2" max_weight="96" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Ballista-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="266" gid="106" influence="0" space="17" health="1540" armor="2" viewrange="2.4" speed="1.2" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest-Mk2</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="266" gid="106" influence="0" space="18" health="1870" armor="3" viewrange="2.8" speed="1.3" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest-Mk3</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="266" gid="106" influence="0" space="20" health="2290" armor="6" viewrange="3.2" speed="1.3" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest-Mk4</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="266" gid="106" influence="0" space="22" health="2860" armor="8" viewrange="3.6" speed="1.4" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest-Mk5</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="266" gid="106" influence="0" space="24" health="3580" armor="10" viewrange="4" speed="1.5" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest-Mk6</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="266" gid="106" influence="0" space="26" health="4480" armor="12" viewrange="4.4" speed="1.6" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest-Mk7</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="266" gid="106" influence="0" space="28" health="5560" armor="15" viewrange="4.8" speed="1.7" max_weight="80" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Arbalest-Mk8</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="293" gid="106" influence="0" space="25" health="1738" armor="9" viewrange="0" speed="1.2" max_weight="108" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Trebuchet</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="318">
+		<Name>RCMiasmal</Name>
+		<unitlist>
+			<unit iid="524" gid="318" influence="0" space="31" health="36010" armor="105" viewrange="95" speed="5.6" max_weight="200" u1="0" u2="1" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCMiasmal</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="305">
+		<Name>Xeno-frame</Name>
+		<unitlist>
+			<unit iid="305" gid="305" influence="0" space="19" health="1810" armor="18" viewrange="7" speed="3.3" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Abomination-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="305" gid="305" influence="0" space="16" health="1330" armor="6" viewrange="7" speed="3.2" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Abomination</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="305" gid="305" influence="0" space="25" health="4540" armor="48" viewrange="7" speed="3.6" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Abomination-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="305" gid="305" influence="0" space="22" health="2800" armor="30" viewrange="7" speed="3.6" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Abomination-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="305" gid="305" influence="0" space="28" health="7180" armor="66" viewrange="7" speed="3.8" max_weight="104" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Abomination-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="308">
+		<Name>Xeno-hoverus</Name>
+		<unitlist>
+			<unit iid="522" gid="308" influence="0" space="200" health="1596" armor="0" viewrange="27" speed="4.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momos-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="1843" armor="0" viewrange="27.5" speed="5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momos-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="5793" armor="0" viewrange="31" speed="6.7" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momas-Extremus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="1404" armor="0" viewrange="26.5" speed="4.7" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mamos-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="2153" armor="0" viewrange="28" speed="5.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momos-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="2534" armor="0" viewrange="28.5" speed="5.4" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momos-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="4933" armor="0" viewrange="30.5" speed="6.3" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momas-Maximus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="2994" armor="0" viewrange="29" speed="5.6" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momas-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="3541" armor="0" viewrange="29.5" speed="5.7" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momas-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="1060" armor="0" viewrange="25" speed="4.2" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mamos-Primus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="1149" armor="0" viewrange="25.5" speed="4.3" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mamos-Amplus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="4185" armor="0" viewrange="30" speed="5.8" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Momas-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+			<unit iid="522" gid="308" influence="0" space="200" health="1257" armor="0" viewrange="26" speed="4.5" max_weight="120" u1="0" u2="9" u3="0" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>Mamos-Magnus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+	<UnitGroupData id="322">
+		<Name>Rayos</Name>
+		<unitlist>
+			<unit iid="265" gid="322" influence="0" space="13" health="21010" armor="30" viewrange="15" speed="8" max_weight="60" u1="0" u2="8" u3="134217728" u4="100" u5="-129" u6="60" u7="0" u8="0">
+				<Name>RCPegasus</Name>
+				<Description></Description>
+				<DType>0</DType>
+			</unit>
+	</unitlist>
+	</UnitGroupData>
+</Units>

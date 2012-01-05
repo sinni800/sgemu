@@ -11,7 +11,7 @@ import (
 	"os/signal"
 	"runtime"
 )  
-
+ 
 var (
 	Closing = false
 )
@@ -35,7 +35,7 @@ func main() {
 	C.Start(GS.Server, "GameServer", "127.0.0.1", 13010)
   
 	go ListenSignals()
-
+	
 	CMD()   
 }
 

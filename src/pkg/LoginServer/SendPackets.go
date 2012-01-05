@@ -3,7 +3,7 @@ package LoginServer
 import (
 	. "SG"
 	GS "GameServer"
-)
+) 
 
 func SendMessage(c *LClient, errcode int, msg string) {
 	packet := NewPacket2(len(msg) + 20)
