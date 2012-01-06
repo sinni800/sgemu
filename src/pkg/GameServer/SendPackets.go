@@ -111,7 +111,15 @@ func SendShopInformation(c *GClient) {
 	packet.WriteUInt32(uint32(len(c.Units))) //Num of units you own
 	for id, _ := range c.Units {
 		packet.WriteUInt32(id)
-	}
+		packet.WriteUInt64(0)
+		packet.WriteUInt64(0)
+		packet.WriteUInt32(0)
+		packet.WriteUInt32(2)
+		packet.WriteUInt64(0)
+		packet.WriteUInt64(0)
+	} 
+	
+	packet.WriteByte(0)
 
 	c.Send(packet)
 

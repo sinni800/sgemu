@@ -8,6 +8,11 @@ func OnWelcome(c *GClient, p *SGPacket) {
 	c.Log().Println("OnWelcome Packet")
 }
 
+func OnDisconnectPacket(c *GClient, p *SGPacket) {
+	c.Log().Println("OnDisconnect Packet")
+	c.OnDisconnect()
+}
+
 func OnChat(c *GClient, p *SGPacket) {
 	p.ReadByte() //type?
 	text := p.ReadString()

@@ -2,30 +2,35 @@ package LoginServer
 
 import (
 	C "Core"
-	. "SG"
 	D "Data"
-	"log" 
+	. "SG"
+	"log"
 )
 
 type LClient struct {
 	C.Client
-	Key      byte
-	packet   *SGPacket
-	TempUser *D.User
-	Server   *LServer
+	Key           byte
+	packet        *SGPacket
+	TempUser      *D.User
+	Server        *LServer
+	Disconnecting bool
 }
-
+ 
 func (client *LClient) StartRecive() {
 	defer client.OnDisconnect()
-	
+
 	callback := func(p *SGPacket) { client.ParsePacket(p) }
-	
+
 	for {
-		client.packet.ReadPacketFromStream(client.Socket,  callback)
+		err := client.packet.ReadPacketFromStream(client.Socket, callback)
+		if err != 0{
+			return
+		}
 	}
 }
 
 func (client *LClient) OnConnect() {
+	client.Disconnecting = false
 	client.packet = NewPacket()
 	client.packet.Index = 0
 	client.SendWelcome()
@@ -36,6 +41,12 @@ func (client *LClient) OnDisconnect() {
 	if x := recover(); x != nil {
 		client.Log().Printf("panic : %v \n %s", x, C.PanicPath())
 	}
+	
+	if client.Disconnecting {
+		return
+	}
+	client.Disconnecting = true
+	
 	client.Socket.Close()
 	client.MainServer.GetServer().Log.Println("Client Disconnected!")
 }

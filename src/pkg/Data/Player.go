@@ -128,6 +128,13 @@ func (p *Player) SetDefaultStats() {
 	} else {
 		p.UnitsData[u.DBID] = u
 	}
+	
+	u = CreateUnit("Pegasus-Mk9")
+	if u == nil {
+		panic("No such unit")
+	} else {
+		p.UnitsData[u.DBID] = u
+	}
 }
 
 func RegisterPlayer(plyaer *Player) {

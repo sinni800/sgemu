@@ -2,8 +2,8 @@ package GameServer
 
 import (
 	C "Core"
-	. "SG"
 	D "Data"
+	. "SG"
 	"log"
 	//R "reflect"
 )
@@ -13,24 +13,28 @@ type GClient struct {
 	Key    byte
 	packet *SGPacket
 
-	ID     uint32
-	Player *D.Player
-	Units  map[uint32]*D.Unit
-	Server *GServer
-	Map    *Map
+	Disconnecting bool
+	ID            uint32
+	Player        *D.Player
+	Units         map[uint32]*D.Unit
+	Server        *GServer
+	Map           *Map
 }
 
 func (client *GClient) StartRecive() {
 	defer client.OnDisconnect()
 	callback := func(p *SGPacket) { client.ParsePacket(p) }
-	
+
 	for {
-		client.packet.ReadPacketFromStream(client.Socket,  callback)
+		err := client.packet.ReadPacketFromStream(client.Socket, callback)
+		if err != 0{
+			return
+		}
 	}
 }
 
 func (client *GClient) OnConnect() {
-
+	client.Disconnecting = false
 	userID, q := D.LoginQueue.Check(client.IP)
 	if !q {
 		client.OnDisconnect()
@@ -76,15 +80,26 @@ func (client *GClient) OnConnect() {
 	client.StartRecive()
 }
 
-func (client *GClient) OnDisconnect() {
+func (client *GClient) OnDisconnect() {	
 	if x := recover(); x != nil {
 		client.Log().Printf("panic : %v \n %s", x, C.PanicPath())
-	} 
+	}
+	
+	if client.Disconnecting {
+		return
+	}
+	client.Disconnecting = true
+	
+	client.Socket.Close()
+	
 	if client.Map != nil {
-		client.Map.OnLeave(client)
+		client.Map.Run.Add(
+		func() {
+			client.Map.OnLeave(client)
+		})
 	}
 	if client.Units != nil {
-		for id,_ := range client.Units {
+		for id, _ := range client.Units {
 			client.Server.IDG.Return(id)
 		}
 	}
@@ -92,7 +107,6 @@ func (client *GClient) OnDisconnect() {
 		client.Server.IDG.Return(client.ID)
 		client.Server.DBRun.Funcs <- func() { D.SavePlayer(client.Player) }
 	}
-	client.Socket.Close()
 	client.MainServer.GetServer().Log.Println("Client Disconnected!")
 }
 
@@ -114,7 +128,7 @@ func (client *GClient) SendRaw(p *SGPacket) {
 	p.WriteLen()
 	client.Socket.Write(p.Buffer[:p.Index])
 }
- 
+
 func (client *GClient) SendWelcome() {
 
 	//player stats
@@ -140,7 +154,7 @@ func (client *GClient) SendWelcome() {
 		0x30, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x01, 0x00, 0x00, 0x01, 0x19, 0x00})
 	//packet.Write([]byte{0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x0C, 0x07, 0x00, 0x00, 0x00, 0x01, 0x00, 0x04, 0x95, 0xD4, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x0F, 0x0A, 0x0A, 0x05, 0x30, 0x00, 0x00, 0x00, 0x02, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x64, 0x00, 0x01, 0x00, 0x00, 0x01, 0x19, 0x00})
 	client.Send(packet)
-  
+
 	packet = NewPacket2(10 + len(client.Units)*100)
 	packet.WriteHeader(0x16)
 	packet.WriteByte(1)
@@ -148,25 +162,25 @@ func (client *GClient) SendWelcome() {
 	client.Log().Print(len(client.Units))
 	for id, unit := range client.Units {
 		packet.WriteUInt32(id)
-		packet.WriteUInt16(0x113) //unit id
+		packet.WriteUInt16(unit.Data.IID) //unit id
 		packet.WriteUInt16(2)
-		packet.WriteUInt32(30)  //xp
-		packet.WriteInt32(0)    //xp modifier
-		packet.WriteUInt32(100) //xp total
+		packet.WriteUInt32(unit.XP)        //xp
+		packet.WriteInt32(0)               //xp modifier
+		packet.WriteUInt32(unit.TotalXP()) //xp total
 		packet.WriteByte(unit.Level)
 		packet.WriteByte(1)
 		packet.WriteByte(1)
-		packet.WriteUInt16(1570) //hp 
-		packet.WriteUInt16(1570) //max hp
-		packet.WriteUInt16(0x44) //max-weight?
-		packet.WriteUInt16(8)    //space?
-		packet.WriteUInt16(0x48) //weight?
-		packet.WriteUInt16(8)    //space?
-		packet.WriteUInt16(0x4b) //unit-weight? 
-		packet.WriteUInt16(0x30) //speed *10
+		packet.WriteUInt16(1570)                 //hp 
+		packet.WriteUInt16(1570)                 //max hp
+		packet.WriteUInt16(unit.MaxWeight())     //max-weight?
+		packet.WriteUInt16(8)                    //space?
+		packet.WriteUInt16(0x48)                 //weight?
+		packet.WriteUInt16(8)                    //space?
+		packet.WriteUInt16(unit.Data.UnitWeight) //unit-weight? 
+		packet.WriteUInt16(0x30)                 //speed *10
 		packet.WriteUInt16(0x12c)
 		packet.WriteByte(1)
-		packet.WriteUInt16(9) //armor?
+		packet.WriteUInt16(unit.Data.Armor) //armor?
 		packet.WriteUInt16(0)
 		packet.WriteUInt16(100)
 		packet.WriteUInt16(0x62)  //fire power?
@@ -176,7 +190,7 @@ func (client *GClient) SendWelcome() {
 		packet.WriteUInt16(0x168) //range * 2 / 10
 		packet.WriteUInt16(0xc8)  //cooldown * 100
 		packet.WriteUInt64(0x9000006)
-		packet.WriteUInt16(1) //kills
+		packet.WriteUInt16(unit.Kills) //kills
 		packet.WriteString(unit.CustomName)
 		packet.WriteString(unit.Name)
 	}
@@ -255,7 +269,7 @@ func (client *GClient) SendWelcome() {
 	packet.WriteHeader(0x3E)
 	packet.WriteBytes([]byte{0x00, 0x00})
 	//client.Map.Send(packet)
-	
+
 	//SendCustomChatPacket(client, "***Merry Christmas***!", Red)
 	//SendCustomChatPacket(client, "***Merry Christmas***!", Green) 
 }

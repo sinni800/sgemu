@@ -115,11 +115,11 @@ func (p *SGPacket) WriteFloat(f float32, typ FloatType) {
 }
 
 
-func (packet *SGPacket) ReadPacketFromStream(Reader io.Reader, callback func(*SGPacket) ) {
+func (packet *SGPacket) ReadPacketFromStream(Reader io.Reader, callback func(*SGPacket)) (errno int) {
 	bl, err := Reader.Read(packet.Buffer[packet.Index:])
 	if err != nil {
-		return
-	}
+		return -1
+	} 
  
 	packet.Index += bl
 
@@ -134,7 +134,7 @@ func (packet *SGPacket) ReadPacketFromStream(Reader io.Reader, callback func(*SG
 			panic("Wrong packet header")
 			//client.Log().Printf("Wrong packet header")
 			//client.Log().Printf("% #X", p.Buffer[:size])
-			return
+			return -2
 		}
 		l := int(p.ReadUInt16())
 		p.Index = size
@@ -154,7 +154,7 @@ func (packet *SGPacket) ReadPacketFromStream(Reader io.Reader, callback func(*SG
 				temp, sumCheck = DecryptPacket(temp)
 				if !sumCheck {
 					panic("Packet sum check failed!")
-					return
+					return -3
 				}
 			} else {
 				temp = temp[3:]
@@ -181,6 +181,7 @@ func (packet *SGPacket) ReadPacketFromStream(Reader io.Reader, callback func(*SG
 			break
 		}
 	}
+	return 0
 } 
 
 func (p *SGPacket) String() string {

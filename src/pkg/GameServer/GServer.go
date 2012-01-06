@@ -47,6 +47,7 @@ func init() {
 	Handler[CM_LEAVE_PROFILE] = OnProfileLeave
 	Handler[CM_SHOP_REQUEST] = OnShopRequest
 	Handler[CSM_GAME_ENTER] = OnGameEnter
+	Handler[CM_DISCONNECT] = OnDisconnectPacket
 }
 
 func (serv *GServer) SavePlayers() {
