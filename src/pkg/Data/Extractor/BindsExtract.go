@@ -3,6 +3,7 @@ package Extractor
 import (
 	. "Data"
 	"Data/xml"
+	//"encoding/xml"
 	"bufio"
 	"log"
 	"os"
@@ -122,7 +123,7 @@ func ExtractNtt(path string, outpath string, NttExtractDone chan bool) {
 	l := BindingFile{}
 	l.Groups = BindingGroups
 
-	e = xml.Marshal(outBinds, l)
+	e = xml.NewEncoder(outBinds).Encode(l)
 	if e != nil {
 		log.Panicln(e)
 	}

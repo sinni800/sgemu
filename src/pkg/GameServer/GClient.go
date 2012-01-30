@@ -4,12 +4,11 @@ import (
 	C "Core"
 	D "Data"
 	. "SG"
-	"log"
 	//R "reflect"
 )
 
 type GClient struct {
-	C.Client
+	C.CoreClient
 	Key    byte
 	packet *SGPacket
 
@@ -107,7 +106,7 @@ func (client *GClient) OnDisconnect() {
 		client.Server.IDG.Return(client.ID)
 		client.Server.DBRun.Funcs <- func() { D.SavePlayer(client.Player) }
 	}
-	client.MainServer.GetServer().Log.Println("Client Disconnected!")
+	client.MainServer.Server().Log.Println("Client Disconnected!")
 }
 
 func (client *GClient) Send(p *SGPacket) {
@@ -274,20 +273,20 @@ func (client *GClient) SendWelcome() {
 	//SendCustomChatPacket(client, "***Merry Christmas***!", Green) 
 }
 
-func (client *GClient) Log() *log.Logger {
+func (client *GClient) Log() *C.Logger {
 	return Server.Log
 }
 
 func (client *GClient) ParsePacket(p *SGPacket) {
 	header := p.ReadByte()
-
+	
 	fnc, exist := Handler[int(header)]
+	
 	if !exist {
 		client.Log().Printf("isnt registred : %s", p)
 		return
 	}
 	//client.Log().Printf("Header(%d) len(%d) : % #X\n %s", header, len(p.Buffer), p.Buffer, p.Buffer)
 	//client.Log().Printf("Handle %s\n", R.TypeOf(fnc))
-
-	fnc(client, p)
+	fnc(client, p)	
 }

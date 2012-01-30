@@ -2,6 +2,7 @@ package Extractor
 
 import (
 	"Data/xml"
+	//"encoding/xml"
 	. "SG"
 	. "encoding/binary"
 	"os"
@@ -31,7 +32,7 @@ func ExtractItems(path string, outpath string, ItemExtractDone chan bool) {
 
 	type dummyXML struct {
 		XMLName       xml.Name `xml:"Items"`
-		ItemDataGroup []*ItemDataGroup
+		ItemDataGroup []*ItemDataGroup  `xml:"ItemGroup"`
 	}
 
 	gmap := make(map[uint16]*ItemDataGroup)
@@ -47,13 +48,13 @@ func ExtractItems(path string, outpath string, ItemExtractDone chan bool) {
 		}
 	}
 
-	l := dummyXML{}
+	l := &dummyXML{}
 	l.ItemDataGroup = make([]*ItemDataGroup, len(gmap))
 	for _, g := range gmap {
 		l.ItemDataGroup = append(l.ItemDataGroup, g)
 	}
 
-	e = xml.Marshal(outItems, &l)
+	e = xml.NewEncoder(outItems).Encode(l)
 	if e != nil {
 		log.Panicln(e)
 	}

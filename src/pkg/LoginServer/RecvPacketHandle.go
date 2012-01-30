@@ -22,9 +22,9 @@ func OnWelcome2(c *LClient, p *SGPacket) {
 		packet := NewPacket2(20)
 		packet.WriteHeader(SM_SENDIP)
 		packet.Index--
-		ip := []byte(Server.Addr.IP.To4())
+		ip := []byte(Server.WANAddr.IP.To4()) 
 		packet.WriteBytes([]byte{ip[3], ip[2], ip[1], ip[0]})
-		packet.WriteUInt16(uint16(Server.Port))
+		packet.WriteUInt16(uint16(Server.WANAddr.Port))
 		packet.WriteByte(0)
 		packet.WriteByte(0)
 		c.Send(packet)
@@ -208,7 +208,8 @@ func OnLogin(c *LClient, p *SGPacket) {
 	ec, s, id := D.Login(user, pass)
 	SendMessage(c, ec, s)
 	if ec == 0 {
-		D.LoginQueue.Add(c.IP, id)
+		//D.LoginQueue.Add(c.IP, id)
+		addClient(c.IP, id)
 		SendToGameServer(c, user)
 	}
 }

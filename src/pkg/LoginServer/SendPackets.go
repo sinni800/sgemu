@@ -2,7 +2,6 @@ package LoginServer
 
 import (
 	. "SG"
-	GS "GameServer"
 ) 
 
 func SendMessage(c *LClient, errcode int, msg string) {
@@ -27,9 +26,10 @@ func SendToGameServer(c *LClient, username string) {
 	packet := NewPacket2(20)
 	packet.WriteHeader(SM_SENDIP)
 	packet.Index--
-	ip := []byte(GS.Server.Addr.IP.To4())
+	ip := []byte(GSAddr.IP.To4())
 	packet.WriteBytes([]byte{ip[3], ip[2], ip[1], ip[0]})
-	packet.WriteUInt16(uint16(GS.Server.Port))
+	
+	packet.WriteUInt16(uint16(GSAddr.Port))
 	packet.WriteByte(0x0c)
 	packet.WriteByte(1)
 	packet.WriteString(username)

@@ -1,5 +1,5 @@
 package Core
-
+ 
 type BIDGen struct {
 	cGen       chan uint32
 	cHelper    chan uint32
@@ -7,7 +7,7 @@ type BIDGen struct {
 	tempHeap   []uint32
 	lastNumber uint32
 }
-
+ 
 func NewBIDG() *BIDGen {
 	return NewBIDG2(1000)
 } 

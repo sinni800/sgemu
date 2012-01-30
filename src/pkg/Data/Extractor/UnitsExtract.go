@@ -2,6 +2,7 @@ package Extractor
 
 import (
 	"Data/xml"
+	//"encoding/xml"
 	. "SG"
 	. "encoding/binary"
 	"os"
@@ -58,13 +59,13 @@ func ExtractUnits(path string, outpath string, UnitExtractDone chan bool) {
 	
 	type dummyXML struct {
 		XMLName       xml.Name `xml:"Units"`
-		UnitGroupData []*UnitGroupData
+		UnitGroupData []*UnitGroupData `xml:"UnitGroup"`
 	}
 
-	l := dummyXML{}
+	l := &dummyXML{}
 	l.UnitGroupData = UnitGroups
 
-	e = xml.Marshal(outUnits, &l)
+	e = xml.NewEncoder(outUnits).Encode(l)
 	if e != nil {
 		log.Panicln(e)
 	}
@@ -74,25 +75,25 @@ func ReadUnitsHelper(file *os.File) {
 	checkError := func(e error, text string) {
 		if e != nil {
 			log.Panicf("Read panic %s err:%v ", text, e)
-		}
+		} 
 	}
 	_ = checkError
 	
 	type UnitHelper struct {
-		Name        string  `xml:"attr"`
-		UID         string  `xml:"attr"`
-		Influence   byte    `xml:"attr"`
-		Slots       uint16  `xml:"attr"`
-		UnitWeight  uint16  `xml:"attr"`
+		Name        string  `xml:"name,attr"`
+		UID         string  `xml:"uid,attr"`
+		Influence   byte    `xml:"influence,attr"`
+		Slots       uint16  `xml:"slots,attr"`
+		UnitWeight  uint16  `xml:"weight,attr"`
 	}
 	
 	type dummyXML struct {
 		XMLName       xml.Name `xml:"data"`
-		Units 	  []*UnitHelper `xml:"unitslist>division>unit"`
+		Units 	  []*UnitHelper `xml:"units-list>division>unit"`
 	}
 	
-	l := dummyXML{}
-	e := xml.Unmarshal(file, &l)
+	l := &dummyXML{}
+	e := xml.NewDecoder(file).Decode(l)
 	checkError(e, "unmarshal")
 	
 	for _,unitHelper := range l.Units { 

@@ -19,14 +19,14 @@ type Packet struct {
 func NewPacket() (p *Packet) {
 	p = new(Packet)
 	p.Index = 0
-	p.Buffer = make([]byte, 1024+7)
+	p.Buffer = make([]byte, 1024)
 	return p
 }
 
 func NewPacket2(size int) (p *Packet) {
 	p = new(Packet)
 	p.Index = 0
-	p.Buffer = make([]byte, size+7)
+	p.Buffer = make([]byte, size)
 	return p
 } 
 
@@ -57,11 +57,10 @@ func (p *Packet) Clone() (pn *Packet) {
 	return pn
 }
 
-func (p *Packet) WCheck(size int) bool {
+func (p *Packet) WCheck(size int) {
 	if p.Index+size > len(p.Buffer) {
 		p.Resize(p.Index + size + 10)
 	}
-	return true
 }
 
 func (p *Packet) RCheck(size int) bool {
@@ -76,15 +75,14 @@ func (p *Packet) Resize(newSize int) {
 		p.Buffer = p.Buffer[:newSize]
 		return
 	}
+	p.Buffer = append(make([]byte, newSize))
 	temp := make([]byte, newSize)
 	copy(temp, p.Buffer)
 	p.Buffer = temp
 }
 
 func (p *Packet) WSkip(times int) {
-	if !p.WCheck(times) {
-		return
-	}
+	p.WCheck(times)
 	p.Index += times
 }
 
@@ -97,9 +95,7 @@ func (p *Packet) RSkip(times int) {
 
 
 func (p *Packet) WriteByte(b byte) {
-	if !p.WCheck(1) {
-		return
-	}
+	p.WCheck(1)
 	p.Buffer[p.Index] = b
 	p.Index++
 }
@@ -112,71 +108,53 @@ func (p *Packet) WriteLen() {
 }
 
 func (p *Packet) WriteInt16(value int16) {
-	if !p.WCheck(2) {
-		return
-	}
+	p.WCheck(2)
 	BytesOrder.PutUint16(p.Buffer[p.Index:], uint16(value))
 	p.Index += 2
 }
 
 func (p *Packet) WriteUInt16(value uint16) {
-	if !p.WCheck(2) {
-		return
-	}
+	p.WCheck(2)
 	BytesOrder.PutUint16(p.Buffer[p.Index:], value)
 	p.Index += 2
 }
 
 func (p *Packet) WriteInt32(value int32) {
-	if !p.WCheck(4) {
-		return
-	}
+	p.WCheck(4)
 	BytesOrder.PutUint32(p.Buffer[p.Index:], uint32(value))
 	p.Index += 4
 }
 
 func (p *Packet) WriteUInt32(value uint32) {
-	if !p.WCheck(4) {
-		return
-	}
+	p.WCheck(4)
 	BytesOrder.PutUint32(p.Buffer[p.Index:], value)
 	p.Index += 4
 }
 
 func (p *Packet) WriteInt64(value int64) {
-	if !p.WCheck(8) {
-		return
-	}
+	p.WCheck(8)
 	BytesOrder.PutUint64(p.Buffer[p.Index:], uint64(value))
 	p.Index += 8
 }
 
 func (p *Packet) WriteUInt64(value uint64) {
-	if !p.WCheck(8) {
-		return
-	}
+	p.WCheck(8)
 	BytesOrder.PutUint64(p.Buffer[p.Index:], value)
 	p.Index += 8
 }
 
 func (p *Packet) WriteFloat32(pValue float32) {
-	if !p.WCheck(4) {
-		return
-	}
+	p.WCheck(4)
 	p.WriteUInt32(math.Float32bits(pValue))
 }
 
 func (p *Packet) WriteFloat64(pValue float64) {
-	if !p.WCheck(8) {
-		return
-	}
+	p.WCheck(8)
 	p.WriteUInt64(math.Float64bits(pValue))
 }
 
 func (p *Packet) WriteString(pValue string, size int) {
-	if !p.WCheck(size) {
-		return
-	}
+	p.WCheck(size)
 	copy(p.Buffer[p.Index:], pValue)
 	p.Index += size
 }
@@ -307,9 +285,7 @@ func (p *Packet) Read(b []byte) (n int, err error) {
 }
 
 func (p *Packet) WriteBytes(bytes []byte) {
-	if !p.WCheck(len(bytes)) {
-		return
-	}
+	p.WCheck(len(bytes))
 	copy(p.Buffer[p.Index:], bytes)
 	p.Index += len(bytes)
 }

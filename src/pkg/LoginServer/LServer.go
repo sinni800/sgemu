@@ -4,6 +4,7 @@ import (
 	"Core"
 	. "SG"
 	"net"
+	"strconv"
 )
 
 type LoginPacketFunc func(c *LClient, p *SGPacket)
@@ -14,11 +15,31 @@ var (
 )
 
 type LServer struct {
-	Core.Server
+	Core.CoreServer
+	WANAddr *net.TCPAddr
+	WANIP   string
+}
+
+func (serv *LServer) Start(name, ip string, port int, wanip string) (err error) {
+	err = Core.Start(serv,name,ip,port)
+	if err != nil { 
+		return err
+	}
+	
+	serv.WANIP = wanip
+	serv.WANAddr, err = net.ResolveTCPAddr("tcp", serv.WANIP+":"+strconv.Itoa(port))
+	if err != nil {
+		serv.Log.Printf("Server start failed %s", err.Error())
+		return err
+	}
+	
+	go startRPC()
+	
+	return nil
 }
   
 func (serv *LServer) OnSetup() {
-	serv.Server.OnSetup()
+	serv.CoreServer.OnSetup()
 }
 
 func init() {

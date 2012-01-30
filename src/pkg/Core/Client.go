@@ -4,23 +4,22 @@ import (
 	"net"
 )
 
-type IClient interface {
+type Client interface {
 	OnConnect()
-	OnDisconnect()
-	GetClient() *Client
-}
+	Client() *CoreClient
+} 
 
-type Client struct {
+type CoreClient struct {
 	Socket     *net.TCPConn
-	MainServer IServer
+	MainServer Server
 	IP         string
 }
 
-func SetupClient(iClnt IClient, socket *net.TCPConn, iServ IServer) {
+func SetupClient(iClnt Client, socket *net.TCPConn, iServ Server) {
 
-	client := iClnt.GetClient()
+	client := iClnt.Client()
 	if client == nil {
-		iServ.GetServer().Log.Printf("The client struct is nil")
+		iServ.Server().Log.Printf("The client struct is nil")
 		return
 	}
 
@@ -31,7 +30,7 @@ func SetupClient(iClnt IClient, socket *net.TCPConn, iServ IServer) {
 	go iClnt.OnConnect()
 }
 
-func (client *Client) StartRecive() {
+func (client *CoreClient) StartRecive() {
 	Buffer := make([]byte, 1024)
 	
 	for {
@@ -40,19 +39,19 @@ func (client *Client) StartRecive() {
 			client.OnDisconnect()
 			return
 		}
-		client.MainServer.GetServer().Log.Printf("Packet len %d", l)
+		client.MainServer.Server().Log.Printf("Packet len %d", l)
 	}
 }
 
-func (client *Client) GetClient() *Client {
+func (client *CoreClient) Client() *CoreClient {
 	return client
 }
 
-func (client *Client) OnConnect() {
+func (client *CoreClient) OnConnect() {
 	go client.StartRecive()
 }
 
-func (client *Client) OnDisconnect() {
+func (client *CoreClient) OnDisconnect() {
 	client.Socket.Close()
-	client.MainServer.GetServer().Log.Println("Client Disconnected!")
+	client.MainServer.Server().Log.Println("Client Disconnected!")
 }

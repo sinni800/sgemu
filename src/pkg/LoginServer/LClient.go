@@ -3,12 +3,11 @@ package LoginServer
 import (
 	C "Core"
 	D "Data"
-	. "SG"
-	"log"
+	. "SG" 
 )
 
 type LClient struct {
-	C.Client
+	C.CoreClient
 	Key           byte
 	packet        *SGPacket
 	TempUser      *D.User
@@ -48,7 +47,7 @@ func (client *LClient) OnDisconnect() {
 	client.Disconnecting = true
 	
 	client.Socket.Close()
-	client.MainServer.GetServer().Log.Println("Client Disconnected!")
+	client.MainServer.Server().Log.Println("Client Disconnected!")
 }
 
 func (client *LClient) Send(p *SGPacket) {
@@ -74,7 +73,7 @@ func (client *LClient) SendWelcome() {
 	SendWelcome(client)
 }
 
-func (client *LClient) Log() *log.Logger {
+func (client *LClient) Log() *C.Logger {
 	return Server.Log
 }
 

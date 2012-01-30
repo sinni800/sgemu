@@ -67,9 +67,7 @@ func (p *SGPacket) WriteString(pValue string) {
 }
 
 func (p *SGPacket) WriteHeader(opCode byte) {
-	if !p.WCheck(5) {
-		return
-	}
+	p.WCheck(5)
 	p.WriteByte(0xAA)
 	p.Index += 2
 	p.WriteByte(opCode)
@@ -131,6 +129,7 @@ func (packet *SGPacket) ReadPacketFromStream(Reader io.Reader, callback func(*SG
 		
 		//Check header byte
 		if p.ReadByte() != 0xAA {
+			//AA == SG Packet 
 			panic("Wrong packet header")
 			//client.Log().Printf("Wrong packet header")
 			//client.Log().Printf("% #X", p.Buffer[:size])

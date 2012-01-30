@@ -3,6 +3,7 @@ package Data
 import (
 	C "Core"
 	"Data/xml"
+	//"encoding/xml"
 	"fmt"
 	"log"
 	"os"
@@ -26,12 +27,11 @@ func (g Group) String() string {
 }
 
 var (
-	dataPath  = "../sg_data.xml"
-	unitsPath  = "../sg_units.xml"
+	ranksPath = "../sg_ranks.xml"
+	unitsPath = "../sg_units.xml"
 	itemPath  = "../sg_items.xml"
 	shopPath  = "../sg_shop.xml"
 	bindsPath = "../sg_binds.xml"
-	Gamedata  = new(Data)
 	Shopdata  = new(ShopData)
 
 	Units     = make(map[string]*UnitData)
@@ -50,38 +50,33 @@ var (
 	GroupNames = map[Group]string{Engines: "Engines", Weapons: "Weapons", Misc: "Misc", Armors: "Armors", Bonus: "Bonus", Specials: "Specials", Storage: "Storage", Computers: "Computers"}
 )
 
-type Data struct {
-	XMLName xml.Name         `xml:"data"`
-	//Groups  []*UnitGroupData `xml:"unitslist>group"`
-	Ranks   []*RankData      `xml:"rankslist>rank"`
-}
-
 type RankData struct {
-	Level    byte   `xml:"attr"`
-	Infantry string `xml:"attr"`
-	Mobile   string `xml:"attr"`
-	Aviation string `xml:"attr"`
-	Organic  string `xml:"attr"`
+	Level    byte   `xml:",attr"`
+	Infantry string `xml:",attr"`
+	Mobile   string `xml:",attr"`
+	Aviation string `xml:",attr"`
+	Organic  string `xml:",attr"`
+	Unk      byte   `xml:",attr"`
 }
 
 type BindingFile struct {
-	XMLName xml.Name        `xml:"BindingFile"`
-	Groups  []*BindingGroup `xml:">BindingGroup"`
+	XMLName xml.Name        `xml:"Binds"`
+	Groups  []*BindingGroup `xml:"BindGroup"`
 }
 
 type BindingGroup struct {
-	XMLName xml.Name `xml:"BindingGroup"`
-	UID     string   `xml:"attr"`
+	XMLName xml.Name `xml:"BindGroup"`
+	UID     string   `xml:",attr"`
 	Binds   []*BindingData
 }
 
 type BindingData struct {
-	XMLName   xml.Name `xml:"Binds"`
-	UID       string   `xml:"attr"`
-	ID        uint16   `xml:"attr"`
-	GroupType Group    `xml:"attr"`
-	Unk       int16    `xml:"attr"`
-	Unk2      int16    `xml:"attr"`
+	XMLName   xml.Name `xml:"Bind"`
+	UID       string   `xml:",attr"`
+	ID        uint16   `xml:",attr"`
+	GroupType Group    `xml:",attr"`
+	Unk       int16    `xml:",attr"`
+	Unk2      int16    `xml:",attr"`
 }
 
 type ShopData struct {
@@ -100,41 +95,41 @@ type ShopUnit struct {
 }
 
 type ItemDataGroup struct {
-	GID      uint16 `xml:"attr"`
-	ItemData []*ItemData
+	GID      uint16      `xml:",attr"`
+	ItemData []*ItemData `xml:"Item"`
 }
 
 type ItemData struct {
-	Name string `xml:"attr"`
+	Name string `xml:",attr"`
 	//Description   string  //not needed
-	Group         string  `xml:"attr"`
-	ID            uint16  `xml:"attr"`
-	GID           uint16  `xml:"attr"`
-	TL            uint16  `xml:"attr"`
-	Weight        uint16  `xml:"attr"`
-	Space         uint16  `xml:"attr"`
-	Complexity    byte    `xml:"attr"`
-	EnergyUse     byte    `xml:"attr"` //also Energy-regen
-	EnergyMax     uint16  `xml:"attr"`
-	Damage        byte    `xml:"attr"`
-	Range         float32 `xml:"attr"`
-	CD            float32 `xml:"attr"`
-	Effectiveness uint16  `xml:"attr"`
-	Health        uint16  `xml:"attr"`
-	Power         uint16  `xml:"attr"`
-	Armor         uint16  `xml:"attr"`
-	ItemType      byte    `xml:"attr"`
-	ItemSubType   byte    `xml:"attr"`
-	EnergyDrain   int8    `xml:"attr"`
-	Unk1          int8    `xml:"attr"`
-	EnergyType    int8    `xml:"attr"`
-	Unk2          int8    `xml:"attr"`
-	Unk3          int8    `xml:"attr"`
-	WeaponType    byte    `xml:"attr"`
-	ViewRange     float32 `xml:"attr"`
-	GroupType     Group   `xml:"attr"`
-	ComplexityMax uint16  `xml:"attr"`
-	XpBonus       uint16  `xml:"attr"`
+	Group         string  `xml:",attr"`
+	ID            uint16  `xml:",attr"`
+	GID           uint16  `xml:",attr"`
+	TL            uint16  `xml:",attr"`
+	Weight        uint16  `xml:",attr"`
+	Space         uint16  `xml:",attr"`
+	Complexity    byte    `xml:",attr"`
+	EnergyUse     byte    `xml:",attr"` //also Energy-regen
+	EnergyMax     uint16  `xml:",attr"`
+	Damage        byte    `xml:",attr"`
+	Range         float32 `xml:",attr"`
+	CD            float32 `xml:",attr"`
+	Effectiveness uint16  `xml:",attr"`
+	Health        uint16  `xml:",attr"`
+	Power         uint16  `xml:",attr"`
+	Armor         uint16  `xml:",attr"`
+	ItemType      byte    `xml:",attr"`
+	ItemSubType   byte    `xml:",attr"`
+	EnergyDrain   int8    `xml:",attr"`
+	Unk1          int8    `xml:",attr"`
+	EnergyType    int8    `xml:",attr"`
+	Unk2          int8    `xml:",attr"`
+	Unk3          int8    `xml:",attr"`
+	WeaponType    byte    `xml:",attr"`
+	ViewRange     float32 `xml:",attr"`
+	GroupType     Group   `xml:",attr"`
+	ComplexityMax uint16  `xml:",attr"`
+	XpBonus       uint16  `xml:",attr"`
 }
 
 func (item *ItemData) String() string {
@@ -150,9 +145,11 @@ func LoadData() {
 	shop := make(chan bool)
 	items := make(chan bool)
 	binds := make(chan bool)
+	ranks := make(chan bool)
 
 	go LoadItems(items)
-	go LoadUnitsAndRanks(units)
+	go LoadUnits(units)
+	go LoadRanks(ranks)
 	go LoadShop(shop)
 	go LoadBinds(binds)
 
@@ -160,6 +157,7 @@ func LoadData() {
 	log.Println("Loaded", len(Items), "Items!")
 	<-units
 	log.Println("Loaded", len(Units), "Units!")
+	<-ranks
 	log.Println("Loaded", len(Ranks), "Ranks!")
 	<-shop
 	log.Println("Loaded", len(Shopdata.ShopUnits), "Shop units!")
@@ -177,15 +175,15 @@ func LoadBinds(Done chan bool) {
 		}
 	}()
 	f, e := os.Open(bindsPath)
-	if e != nil {
+	if e != nil { 
 		log.Panicln(e)
 	}
 
 	defer f.Close()
 
-	bf := BindingFile{}
+	bf := &BindingFile{}
 
-	e = xml.Unmarshal(f, &bf)
+	e = xml.NewDecoder(f).Decode(bf)
 	if e != nil {
 		log.Panicln(e)
 	}
@@ -195,7 +193,7 @@ func LoadBinds(Done chan bool) {
 	}
 }
 
-func LoadUnitsAndRanks(Done chan bool) {
+func LoadUnits(Done chan bool) {
 	defer func() {
 		if x := recover(); x != nil {
 			log.Printf("%v\n%s", x, C.PanicPath())
@@ -204,22 +202,22 @@ func LoadUnitsAndRanks(Done chan bool) {
 			Done <- true
 		}
 	}()
-	
+
 	type dummyXML struct {
-		XMLName       xml.Name `xml:"Units"`
-		UnitGroupData []*UnitGroupData
+		XMLName       xml.Name         `xml:"Units"`
+		UnitGroupData []*UnitGroupData `xml:"UnitGroup"`
 	}
-	
+
 	f, e := os.Open(unitsPath)
 	if e != nil {
 		log.Panicln(e)
 	}
 
 	defer f.Close()
-	
+
 	dum := &dummyXML{}
-	
-	e = xml.Unmarshal(f, dum)
+
+	e = xml.NewDecoder(f).Decode(dum)
 	if e != nil {
 		log.Panicln(e)
 	}
@@ -234,20 +232,38 @@ func LoadUnitsAndRanks(Done chan bool) {
 			Units[unit.Name] = unit
 		}
 	}
+}
+
+func LoadRanks(Done chan bool) {
+	defer func() {
+		if x := recover(); x != nil {
+			log.Printf("%v\n%s", x, C.PanicPath())
+			Done <- false
+		} else {
+			Done <- true
+		}
+	}()
 	
-	f, e = os.Open(dataPath)
+	f, e := os.Open(ranksPath)
 	if e != nil {
 		log.Panicln(e)
 	}
 
 	defer f.Close()
 
-	e = xml.Unmarshal(f, Gamedata)
+	type dummyXML struct {
+		XMLName       xml.Name 	   `xml:"Ranks"`
+		Ranks 	      []*RankData  `xml:"Rank"`
+	}
+	
+	l := &dummyXML{}
+
+	e = xml.NewDecoder(f).Decode(l)
 	if e != nil {
 		log.Panicln(e)
 	}
 
-	for _, rank := range Gamedata.Ranks {
+	for _, rank := range l.Ranks {
 		Ranks[rank.Level] = rank
 	}
 }
@@ -268,7 +284,7 @@ func LoadShop(Done chan bool) {
 
 	defer f.Close()
 
-	e = xml.Unmarshal(f, Shopdata)
+	e = xml.NewDecoder(f).Decode(Shopdata)
 	if e != nil {
 		log.Panicln(e)
 	}
@@ -293,11 +309,11 @@ func LoadItems(Done chan bool) {
 
 	type xmlitems struct {
 		XMLName       xml.Name         `xml:"Items"`
-		ItemDataGroup []*ItemDataGroup `xml:"ItemDataGroup"`
+		ItemDataGroup []*ItemDataGroup `xml:"ItemGroup"`
 	}
 
 	items := new(xmlitems)
-	e = xml.Unmarshal(f, items)
+	e = xml.NewDecoder(f).Decode(items)
 	if e != nil {
 		log.Panicln(e)
 	}

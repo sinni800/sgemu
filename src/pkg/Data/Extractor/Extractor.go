@@ -13,16 +13,19 @@ var (
 	UnitsPath     = "./UNF.bkm"
 	ItemsDescPath = "./hlp.dat"
 	NTTPath       = "./ntt.dat"
+	RanksPath     = "./RNF.udf"
 
 	HelperPath = "../addon.xml"
 
 	ItemsOut = "sg_items.xml"
 	BindsOut = "sg_binds.xml"
 	UnitsOut = "sg_units.xml"
+	RanksOut = "sg_ranks.xml"
 
 	ItemsData     []*ItemData
 	BindingGroups []*BindingGroup
 	UnitGroups    []*UnitGroupData
+	RanksData     []*RankData
 )
 
 //Path: Game folder.
@@ -59,14 +62,17 @@ func ReadFiles(path string, outpath string) {
 	ItemExtractDone := make(chan bool)
 	NttExtractDone := make(chan bool)
 	UnitsExtractDone := make(chan bool)
-
+	RanksExtractDone := make(chan bool)
+	
 	go ExtractItems(path, outpath, ItemExtractDone)
 	go ExtractNtt(path, outpath, NttExtractDone)
 	go ExtractUnits(path, outpath, UnitsExtractDone)
-
+	go ExtractRanks(path, outpath, RanksExtractDone)
+	
 	<-ItemExtractDone
 	<-NttExtractDone
 	<-UnitsExtractDone
+	<-RanksExtractDone
 
 }
 

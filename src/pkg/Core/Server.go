@@ -8,59 +8,46 @@ import (
 	"strconv"
 )
 
-type IServer interface {
+type Server interface {
 	OnConnect(socket *net.TCPConn)
 	OnSetup()
-	GetServer() *Server
-	GetIServer() IServer
+	Server() *CoreServer
 }
 
-type Server struct {
+type CoreServer struct {
 	Socket   *net.TCPListener
 	Addr     *net.TCPAddr
-	IP       string
-	Port     int
-	Log      *log.Logger
-	Status   int
-	OnClient chan *net.TCPConn
+	Log      *Logger
 	Name     string
-	IServ    IServer
-}
+	server	 Server
+} 
 
-func (serv *Server) OnConnect(socket *net.TCPConn) {
+func (serv *CoreServer) OnConnect(socket *net.TCPConn) {
 	serv.Log.Printf("Client connected!")
-	client := new(Client)
+	client := new(CoreClient)
 	SetupClient(client, socket, serv)
 }
 
-func (serv *Server) OnSetup() {
-	go serv.handleClients()
-	serv.Log.Printf("Server:[%s] has started on %s:%d", serv.Name, serv.IP, serv.Port)
+func (serv *CoreServer) OnSetup() {
+	serv.Log.Printf("Server:[%s] has started on %s", serv.Name, serv.Addr)
 }
 
-func (serv *Server) GetServer() *Server {
+func (serv *CoreServer) Server() *CoreServer {
 	return serv
 }
 
-func (serv *Server) GetIServer() IServer {
-	return serv.IServ
-}
+func Start(iServ Server, name, ip string, port int) (err error) {
 
-func Start(iServ IServer, name, ip string, port int) (err error) {
-
-	serv := iServ.GetServer()
+	serv := iServ.Server()
 	if serv == nil {
 		serv.Log.Printf("The Server struct is nil")
 		return errors.New("The Server struct is nil")
 	}
-
-	serv.Log = log.New(os.Stderr, "["+name+"]", log.Ltime|log.Lshortfile)
-	serv.IServ = iServ
-	serv.IP = ip
-	serv.Status = -1
-	serv.Port = port
+ 	 
+	serv.Log = NewLogger(os.Stderr, "["+name+"]", log.Ltime|log.Lshortfile)
 	serv.Name = name
-	serv.Addr, err = net.ResolveTCPAddr("tcp", serv.IP+":"+strconv.Itoa(serv.Port))
+	serv.server = iServ
+	serv.Addr, err = net.ResolveTCPAddr("tcp", ip+":"+strconv.Itoa(port))
 	if err != nil {
 		serv.Log.Printf("Server start failed %s", err.Error())
 		return err
@@ -73,25 +60,19 @@ func Start(iServ IServer, name, ip string, port int) (err error) {
 		return err
 	}
 
-	serv.Status = 0
 	iServ.OnSetup()
 
 	return nil
 }
 
-func (serv *Server) handleClients() {
+func (serv *CoreServer) AcceptClients() {
 
 	if serv == nil {
 		serv.Log.Printf("The Server struct is nil")
 		return
 	}
 
-	if serv.Status == -1 {
-		serv.Log.Printf("Server is down!")
-		return
-	}
-
-	iServ := serv.GetIServer()
+	iServ := serv.server
 
 	conn_in := make(chan *net.TCPConn, 20)
 	go serv.acceptClients(conn_in)
@@ -104,7 +85,7 @@ func (serv *Server) handleClients() {
 	}
 }
 
-func (serv *Server) acceptClients(in chan *net.TCPConn) {
+func (serv *CoreServer) acceptClients(in chan *net.TCPConn) {
 	for {
 		c, err := serv.Socket.AcceptTCP()
 		if err != nil {

@@ -2,29 +2,39 @@ package GameServer
 
 import (
 	"Core"
-	. "SG"
 	"Data"
+	. "SG"
 	"net"
+	"net/rpc"
+	"strconv"
 )
 
 type GamePacketFunc func(c *GClient, p *SGPacket)
 
 var (
 	Handler map[int]GamePacketFunc
-	Server  *GServer
+
+	Server *GServer
 )
 
 type GServer struct {
-	Core.Server
-	Maps  map[int]*Map
+	Core.CoreServer
+	WANAddr *net.TCPAddr
+	WANIP   string
+	Maps    map[int]*Map
+
 	IDG   *Core.IDGen
 	Run   *Core.Runner
 	DBRun *Core.Runner
 	Sdr   *Core.Scheduler
+
+	RPCClient *rpc.Client
+	RPCServer *rpc.Server
+	RPCListener net.Listener
 }
 
 func (serv *GServer) OnSetup() {
-	serv.Server.OnSetup()
+	serv.CoreServer.OnSetup()
 	serv.Maps = make(map[int]*Map)
 	serv.IDG = Core.NewIDG()
 	serv.Maps[0] = NewMap()
@@ -36,18 +46,40 @@ func (serv *GServer) OnSetup() {
 	serv.Sdr.Start()
 
 	serv.Sdr.AddMin(func() { serv.SavePlayers() }, 1)
+	 
+	startRPCServer()
+	
+	go serv.AcceptClients()
+	//serv.Sdr.AddSec(func() { serv.SavePlayers() }, 5)
 }
 
 func init() {
-	Handler = make(map[int]GamePacketFunc)
-	Handler[CSM_CHAT] = OnChat
-	Handler[CM_PING] = OnPing
-	Handler[CSM_MOVE] = OnMove
-	Handler[CM_PROFILE] = OnProfileRequest
-	Handler[CM_LEAVE_PROFILE] = OnProfileLeave
-	Handler[CM_SHOP_REQUEST] = OnShopRequest
-	Handler[CSM_GAME_ENTER] = OnGameEnter
-	Handler[CM_DISCONNECT] = OnDisconnectPacket
+	Handler = map[int]GamePacketFunc{
+		CSM_CHAT:         OnChat,
+		CM_PING:          OnPing,
+		CSM_MOVE:         OnMove,
+		CM_PROFILE:       OnProfileRequest,
+		CM_LEAVE_PROFILE: OnProfileLeave,
+		CM_SHOP_REQUEST:  OnShopRequest,
+		CSM_GAME_ENTER:   OnGameEnter,
+		CM_DISCONNECT:    OnDisconnectPacket,
+	}
+}
+
+func (serv *GServer) Start(name, ip string, port int, wanip string) (err error) {
+	err = Core.Start(serv, name, ip, port)
+	if err != nil {
+		return err
+	}
+
+	serv.WANIP = wanip
+	serv.WANAddr, err = net.ResolveTCPAddr("tcp", serv.WANIP+":"+strconv.Itoa(port))
+	if err != nil {
+		serv.Log.Printf("Server start failed %s", err.Error())
+		return err
+	}
+
+	return nil
 }
 
 func (serv *GServer) SavePlayers() {
@@ -60,6 +92,7 @@ func (serv *GServer) SavePlayers() {
 		})
 	}
 	serv.Sdr.AddMin(func() { serv.SavePlayers() }, 1)
+	//serv.Sdr.AddSec(func() { serv.SavePlayers() }, 5)
 }
 
 func (serv *GServer) OnShutdown() {
@@ -74,8 +107,15 @@ func (serv *GServer) OnShutdown() {
 			Data.SavePlayer(c.Player)
 		}
 	}
-	serv.Server.Socket.Close()
+	serv.CoreServer.Socket.Close()
 	serv.Log.Printf("GServer socket closed!")
+	
+	if serv.RPCListener != nil {
+		e := serv.RPCListener.Close()
+		if e != nil  {
+			panic(e)
+		}
+	}
 }
 
 func (serv *GServer) OnConnect(socket *net.TCPConn) {

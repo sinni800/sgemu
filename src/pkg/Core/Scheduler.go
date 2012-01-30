@@ -18,7 +18,7 @@ type Action struct {
 }
 
 func NewScheduler() *Scheduler {
-	return NewScheduler2(1000)
+	return NewScheduler2(100)
 }
 
 func NewScheduler2(size int) *Scheduler {
@@ -85,7 +85,7 @@ func (r *Scheduler) run() {
 			log.Println(x)
 			go r.run()
 		}
-	}()
+	}() 
 
 	l := r.List
 
