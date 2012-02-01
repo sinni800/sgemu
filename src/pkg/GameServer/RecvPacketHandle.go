@@ -31,6 +31,18 @@ func OnPing(c *GClient, p *SGPacket) {
 	c.Send(packet)
 }
 
+func OnLabraryEnter(c *GClient, p *SGPacket) {
+	
+	packet := NewPacket2(20)
+	packet.WriteHeader(CSM_LAB_ENTER)
+	packet.WriteByte(0)
+	packet.WriteInt32(p.ReadInt32())
+	packet.WriteInt16(0)
+	packet.WriteByte(0)
+
+	c.Send(packet)
+}
+
 func OnGameEnter(c *GClient, p *SGPacket) {
 	typ := p.ReadByte()
 	switch typ {

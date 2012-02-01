@@ -63,6 +63,7 @@ func init() {
 		CM_SHOP_REQUEST:  OnShopRequest,
 		CSM_GAME_ENTER:   OnGameEnter,
 		CM_DISCONNECT:    OnDisconnectPacket,
+		CSM_LAB_ENTER:	  OnLabraryEnter,
 	}
 }
 

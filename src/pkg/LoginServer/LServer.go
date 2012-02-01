@@ -40,6 +40,7 @@ func (serv *LServer) Start(name, ip string, port int, wanip string) (err error) 
   
 func (serv *LServer) OnSetup() {
 	serv.CoreServer.OnSetup()
+	go serv.AcceptClients() 
 }
 
 func init() {

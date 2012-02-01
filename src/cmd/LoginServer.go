@@ -31,6 +31,7 @@ func main() {
 	
 	LS.Server = new(LS.LServer)
 	LS.Server.Start("LoginServer", SG.Config.LSConfig.IP, SG.Config.LSConfig.Port, SG.Config.LSConfig.WANIP)
+	 
 	
 	go ListenSignals() 
 	
