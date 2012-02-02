@@ -58,27 +58,35 @@ func (p *Packet) Clone() (pn *Packet) {
 }
 
 func (p *Packet) WCheck(size int) {
-	if p.Index+size > len(p.Buffer) {
+	if p.Index+size > cap(p.Buffer) {
 		p.Resize(p.Index + size + 10)
 	}
 }
 
 func (p *Packet) RCheck(size int) bool {
-	if p.Index+size > len(p.Buffer) {
+	if p.Index+size > cap(p.Buffer) {
 		return false
 	}
 	return true
 }
 
 func (p *Packet) Resize(newSize int) {
-	if len(p.Buffer) > newSize {
+	
+	if cap(p.Buffer) > newSize {
 		p.Buffer = p.Buffer[:newSize]
 		return
 	}
-	p.Buffer = append(make([]byte, newSize))
-	temp := make([]byte, newSize)
-	copy(temp, p.Buffer)
-	p.Buffer = temp
+	if (newSize-cap(p.Buffer) > 1024) {
+		p.Buffer = append(p.Buffer, make([]byte, newSize-cap(p.Buffer))...)
+	} else {
+		p.Buffer = append(p.Buffer, make([]byte, 1024)...)
+	}
+	
+	p.Buffer = p.Buffer[:cap(p.Buffer)]
+	
+	//temp := make([]byte, newSize)
+	//copy(temp, p.Buffer)
+	//p.Buffer = temp
 }
 
 func (p *Packet) WSkip(times int) {
@@ -155,7 +163,7 @@ func (p *Packet) WriteFloat64(pValue float64) {
 
 func (p *Packet) WriteString(pValue string, size int) {
 	p.WCheck(size)
-	copy(p.Buffer[p.Index:], pValue)
+	copy(p.Buffer[p.Index:], pValue[:size])
 	p.Index += size
 }
 

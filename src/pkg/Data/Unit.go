@@ -67,15 +67,17 @@ func CreateUnit(unitName string) *UnitDB {
 	}
 
 	var items [8]*Item
-	bitems := Binds[unit.UID]
-	for _, bind := range bitems.Binds {
-		pitems := ItemsByGroup[bind.ID]
-		var cItem *ItemData = nil
-		for _, item := range pitems {
-			if item.TL == 2 && !strings.Contains(item.Name, "Gold") {
-				cItem = item
-				items[cItem.GroupType] = CreateItem(cItem.ID)
-				break
+	bitems, exits := Binds[unit.UID]
+	if exits {
+		for _, bind := range bitems.Binds {
+			pitems := ItemsByGroup[bind.ID]
+			var cItem *ItemData = nil
+			for _, item := range pitems {
+				if item.TL == 2 && !strings.Contains(item.Name, "Gold") {
+					cItem = item
+					items[cItem.GroupType] = CreateItem(cItem.ID)
+					break
+				}
 			}
 		}
 	}

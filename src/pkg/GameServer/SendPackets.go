@@ -89,13 +89,14 @@ func SendShopInformation(c *GClient) {
 			packet.WriteByte(byte(len(units)))
 			packet.WriteByte(1)
 		}
-
+		
+		//this map should be removed from here
 		u, exist := Units[units[i].Name]
 
 		if exist {
 			packet.WriteByte(c.Player.Divisions[u.DType].Influence(c.Player))
 			packet.WriteByte(u.Influence)
-		} else {
+		} else { 
 			packet.WriteByte(0)
 			packet.WriteByte(0)
 		}

@@ -155,8 +155,8 @@
 <Unit Name="Condor-Mk7" UID="a016" IID="528" GID="203" Influence="119" Space="38" Health="9370" Armor="30" ViewRange="10.5" Speed="2.5" Slots="10" UnitWeight="0" Max_Weight="136" U1="0" U2="0" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="2">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="324" Division="Other" Name="Rayk">
-<Unit Name="RCHawk" IID="516" GID="324" Influence="0" Space="10" Health="21010" Armor="90" ViewRange="15" Speed="8" Slots="0" UnitWeight="0" Max_Weight="60" U1="0" U2="0" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="324" Division="Organic" Name="Rayk">
+<Unit Name="RCHawk" IID="516" GID="324" Influence="0" Space="10" Health="21010" Armor="90" ViewRange="15" Speed="8" Slots="0" UnitWeight="0" Max_Weight="60" U1="0" U2="0" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="104" Division="Mobile" Name="Cyclo-rig">
@@ -207,8 +207,8 @@
 <Unit Name="Manticore-Mk9" UID="g032" IID="288" GID="104" Influence="115" Space="25" Health="11800" Armor="30" ViewRange="17" Speed="3.200000047683716" Slots="10" UnitWeight="0" Max_Weight="96" U1="0" U2="8" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="1">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="326" Division="Other" Name="Raks">
-<Unit Name="RCRunner" IID="263" GID="326" Influence="0" Space="16" Health="12010" Armor="0" ViewRange="40" Speed="7.5" Slots="0" UnitWeight="0" Max_Weight="100" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="326" Division="Organic" Name="Raks">
+<Unit Name="RCRunner" IID="263" GID="326" Influence="0" Space="16" Health="12010" Armor="0" ViewRange="40" Speed="7.5" Slots="0" UnitWeight="0" Max_Weight="100" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="5" Division="Infantry" Name="Cyclo-frame">
@@ -341,8 +341,8 @@
 <Unit Name="Mantlet-Mk5" UID="g058" IID="314" GID="107" Influence="120" Space="25" Health="8080" Armor="96" ViewRange="11" Speed="2.5999999046325684" Slots="10" UnitWeight="0" Max_Weight="140" U1="0" U2="128" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="1">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="327" Division="Other" Name="Rys">
-<Unit Name="RCLithubik" IID="287" GID="327" Influence="0" Space="16" Health="1510" Armor="0" ViewRange="40" Speed="4.5" Slots="0" UnitWeight="0" Max_Weight="100" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="327" Division="Organic" Name="Rys">
+<Unit Name="RCLithubik" IID="287" GID="327" Influence="0" Space="16" Health="1510" Armor="0" ViewRange="40" Speed="4.5" Slots="0" UnitWeight="0" Max_Weight="100" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="310" Division="Organic" Name="Jorias">
@@ -505,8 +505,8 @@
 <Unit Name="Miasmal-Evo9" UID="a012" IID="524" GID="314" Influence="115" Space="31" Health="21610" Armor="93" ViewRange="95" Speed="5.599999904632568" Slots="10" UnitWeight="0" Max_Weight="136" U1="0" U2="1" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="328" Division="Other" Name="Raos">
-<Unit Name="RCVulture" IID="536" GID="328" Influence="0" Space="16" Health="12010" Armor="30" ViewRange="1" Speed="1.2999999523162842" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="0" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="328" Division="Organic" Name="Raos">
+<Unit Name="RCVulture" IID="536" GID="328" Influence="0" Space="16" Health="12010" Armor="30" ViewRange="1" Speed="1.2999999523162842" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="0" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="101" Division="Mobile" Name="Aero-rig">
@@ -753,12 +753,12 @@
 <Unit Name="Lyssa-Magna" UID="a009" IID="521" GID="301" Influence="100" Space="200" Health="3290" Armor="0" ViewRange="20" Speed="10.5" Slots="10" UnitWeight="0" Max_Weight="120" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="319" Division="Other" Name="RCMiasma">
-<Unit Name="RCMiasam" IID="531" GID="319" Influence="0" Space="28" Health="33010" Armor="96" ViewRange="95" Speed="5.599999904632568" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="1" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="319" Division="Organic" Name="RCMiasma">
+<Unit Name="RCMiasam" IID="531" GID="319" Influence="0" Space="28" Health="33010" Armor="96" ViewRange="95" Speed="5.599999904632568" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="1" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="321" Division="Other" Name="Rayks">
-<Unit Name="RCShade" IID="275" GID="321" Influence="0" Space="16" Health="27010" Armor="45" ViewRange="40" Speed="5.400000095367432" Slots="0" UnitWeight="0" Max_Weight="68" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="321" Division="Organic" Name="Rayks">
+<Unit Name="RCShade" IID="275" GID="321" Influence="0" Space="16" Health="27010" Armor="45" ViewRange="40" Speed="5.400000095367432" Slots="0" UnitWeight="0" Max_Weight="68" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="304" Division="Organic" Name="Xeno-motus">
@@ -867,8 +867,8 @@
 <Unit Name="Wight-Mk7" UID="g059" IID="315" GID="7" Influence="119" Space="21" Health="8110" Armor="45" ViewRange="3" Speed="3.4000000953674316" Slots="10" UnitWeight="0" Max_Weight="96" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="0">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="320" Division="Other" Name="Raoks">
-<Unit Name="RCImp" IID="260" GID="320" Influence="0" Space="16" Health="27010" Armor="30" ViewRange="20" Speed="3.5999999046325684" Slots="0" UnitWeight="0" Max_Weight="64" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="320" Division="Organic" Name="Raoks">
+<Unit Name="RCImp" IID="260" GID="320" Influence="0" Space="16" Health="27010" Armor="30" ViewRange="20" Speed="3.5999999046325684" Slots="0" UnitWeight="0" Max_Weight="64" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="4" Division="Infantry" Name="Ghost-frame">
@@ -983,8 +983,8 @@
 <Unit Name="Leviathan" UID="g045" IID="301" GID="102" Influence="40" Space="3" Health="3070" Armor="45" ViewRange="10" Speed="2" Slots="10" UnitWeight="0" Max_Weight="140" U1="0" U2="8" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="1">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="323" Division="Other" Name="Rayok">
-<Unit Name="RCChimera" IID="264" GID="323" Influence="0" Space="18" Health="19510" Armor="45" ViewRange="9.5" Speed="4.5" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="8" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="323" Division="Organic" Name="Rayok">
+<Unit Name="RCChimera" IID="264" GID="323" Influence="0" Space="18" Health="19510" Armor="45" ViewRange="9.5" Speed="4.5" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="8" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="306" Division="Organic" Name="Xeno-frigus">
@@ -1051,8 +1051,8 @@
 <Unit Name="Trebuchet" UID="g037" IID="293" GID="106" Influence="50" Space="25" Health="1738" Armor="9" ViewRange="0" Speed="1.2000000476837158" Slots="10" UnitWeight="0" Max_Weight="108" U1="0" U2="8" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="1">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="318" Division="Other" Name="RCMiasmal">
-<Unit Name="RCMiasmal" IID="524" GID="318" Influence="0" Space="31" Health="36010" Armor="105" ViewRange="95" Speed="5.599999904632568" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="1" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="318" Division="Organic" Name="RCMiasmal">
+<Unit Name="RCMiasmal" IID="524" GID="318" Influence="0" Space="31" Health="36010" Armor="105" ViewRange="95" Speed="5.599999904632568" Slots="0" UnitWeight="0" Max_Weight="200" U1="0" U2="1" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 <UnitGroup ID="305" Division="Organic" Name="Xeno-frame">
@@ -1095,8 +1095,8 @@
 <Unit Name="Mamos-Magnus" UID="a010" IID="522" GID="308" Influence="20" Space="200" Health="1257" Armor="0" ViewRange="26" Speed="4.5" Slots="10" UnitWeight="0" Max_Weight="120" U1="0" U2="9" U3="0" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
-<UnitGroup ID="322" Division="Other" Name="Rayos">
-<Unit Name="RCPegasus" IID="265" GID="322" Influence="0" Space="13" Health="21010" Armor="30" ViewRange="15" Speed="8" Slots="0" UnitWeight="0" Max_Weight="60" U1="0" U2="8" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="4">
+<UnitGroup ID="322" Division="Organic" Name="Rayos">
+<Unit Name="RCPegasus" IID="265" GID="322" Influence="0" Space="13" Health="21010" Armor="30" ViewRange="15" Speed="8" Slots="0" UnitWeight="0" Max_Weight="60" U1="0" U2="8" U3="134217728" U4="100" U5="-129" U6="60" U7="0" U8="0" DType="3">
 </Unit>
 </UnitGroup>
 </Units>

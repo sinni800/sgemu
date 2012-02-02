@@ -149,6 +149,13 @@ func (p *Player) SetDefaultStats() {
 	} else {
 		p.UnitsData[u.DBID] = u
 	}
+	
+	u = CreateUnit("RCShade") 
+	if u == nil {
+		panic("No such unit RCShade")
+	} else {
+		p.UnitsData[u.DBID] = u
+	}
 }
 
 func RegisterPlayer(plyaer *Player) {

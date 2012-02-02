@@ -12,7 +12,7 @@ func main() {
 	args := flag.Args()
               
 	path := "./"
-  
+ 
 	if len(args) != 0 {
 		path = args[0] 
 	} else {

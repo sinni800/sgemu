@@ -41,8 +41,8 @@ func ExtractUnits(path string, outpath string, UnitExtractDone chan bool) {
 	
 	for _,group := range UnitGroups {
 		switch {
-			case len(group.Units) == 1:
-				group.Division = "Other"
+			//case len(group.Units) == 1:
+			//	group.Division = "Other"
 			case group.ID > 300:
 				group.Division = "Organic"
 			case group.ID > 200:
