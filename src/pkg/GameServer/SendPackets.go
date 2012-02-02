@@ -125,6 +125,76 @@ func SendShopInformation(c *GClient) {
 
 }
 
+func SendPlayerStats(client *GClient) {
+	packet := NewPacket2(77)
+	packet.WriteHeader(SM_PLAYER_STATS)
+	packet.WriteUInt32(client.ID)
+	packet.WriteUInt32(12)
+	packet.WriteUInt32(12)
+	packet.WriteByte(9)
+	packet.WriteUInt32(0)
+
+	packet.WriteInt32(client.Player.Money)
+	packet.WriteInt32(client.Player.Ore)
+	packet.WriteInt32(client.Player.Silicon)
+	packet.WriteInt32(client.Player.Uranium)
+	packet.WriteByte(client.Player.Sulfur)
+	packet.WriteInt32(6)
+	packet.WriteByte(client.Player.Tactics)
+	packet.WriteByte(client.Player.Clout)
+	packet.WriteByte(client.Player.Education)
+	packet.WriteByte(client.Player.MechApt)
+	packet.WriteBytes([]byte{
+		0x30, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x01, 0x00, 0x00, 0x01, 0x19, 0x00})
+	//packet.Write([]byte{0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x0C, 0x07, 0x00, 0x00, 0x00, 0x01, 0x00, 0x04, 0x95, 0xD4, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x0F, 0x0A, 0x0A, 0x05, 0x30, 0x00, 0x00, 0x00, 0x02, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x64, 0x00, 0x01, 0x00, 0x00, 0x01, 0x19, 0x00})
+	client.Send(packet)
+}
+
+func SendUnitStats(c *GClient, unit *Unit) {
+	packet := NewPacket2(100)
+	packet.WriteHeader(SM_UNIT_STAT)
+	packet.WriteByte(4)	
+	unit.WriteToPacket(packet)
+	c.Send(packet)
+}
+
+func SendUnitInventory(c *GClient, unit *Unit) {
+	packet := NewPacket2(20+len(unit.Items)*2)
+	packet.WriteHeader(SM_INVENTORY_UPDATE)
+	packet.WriteUInt32(unit.ID)
+
+	i := packet.Index
+	packet.WriteByte(0)
+
+	mi := byte(0)
+	for _, item := range unit.Items {
+		if item != nil {
+			packet.WriteUInt16(item.ID)
+			mi++
+		}
+	}
+
+	packet.Buffer[i] = mi
+
+	packet.WriteByte(0)
+	c.Send(packet)
+}
+
+func SendPlayerInventory(c *GClient) {
+	packet := NewPacket2(20+len(c.Player.Items)*2)
+	packet.WriteHeader(SM_INVENTORY_UPDATE)
+	packet.WriteUInt32(c.ID)
+	packet.WriteUInt16(uint16(len(c.Player.Items)))
+
+	for _, item := range c.Player.Items {
+		if item != nil {
+			packet.WriteUInt16(item.ID)
+		}
+	}
+	packet.WriteByte(0)
+	c.Send(packet)
+}
+
 func ProfileInfo(c *GClient, p *Player) *SGPacket {
 	c.Log().Println_Debug("ProfileInfo packet")
 
@@ -197,3 +267,5 @@ func ProfileInfo(c *GClient, p *Player) *SGPacket {
 
 	return packet
 }
+
+

@@ -64,6 +64,7 @@ func init() {
 		CSM_GAME_ENTER:   OnGameEnter,
 		CM_DISCONNECT:    OnDisconnectPacket,
 		CSM_LAB_ENTER:	  OnLabraryEnter,
+		CM_UNIT_EDIT:	  OnUnitEdit,
 	}
 }
 

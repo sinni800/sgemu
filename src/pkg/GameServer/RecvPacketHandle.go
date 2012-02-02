@@ -98,6 +98,56 @@ func OnMove(c *GClient, p *SGPacket) {
 	}
 }
 
+func OnUnitEdit(c *GClient, p *SGPacket) {
+	id := p.ReadUInt32()
+	unit, exist := c.Units[id]
+	if exist {
+		itemsRemove := p.ReadByte()
+		
+		for i:=byte(0);i<itemsRemove;i++ {
+			id := p.ReadUInt16()
+			for i :=0;i< len(unit.Items);i++ {
+				item := unit.Items[i]
+				if item.ID == id {
+					unit.Items = append(unit.Items[:i], unit.Items[i+1:]...)
+					i--
+					c.Player.Items[item.DBID] = item
+					break
+				}
+			}
+		}
+		
+		itemsEquip := p.ReadByte()
+		
+		for i:=byte(0);i<itemsEquip;i++ {
+			id := p.ReadUInt16()
+			for dbid,item := range c.Player.Items  {
+				if item.ID == id {
+					delete(c.Player.Items, dbid)
+					unit.Items = append(unit.Items, item)
+					break
+				}
+			}
+		}
+		
+		name := p.ReadString()
+		if len(name) > 0 {
+			unit.CustomName = name
+		}
+		
+		SendPlayerInventory(c)
+		SendUnitInventory(c,unit)
+		
+		packet := NewPacket2(14)
+		packet.WriteHeader(CSM_LAB_ENTER)
+		packet.Write([]byte{0x01, 0x00, 0x00})
+		c.Send(packet)	
+		
+	} else {
+		//c.Log().Println_Debug("Access to not existed unit %s", c.Player.Name)
+	}
+}
+
 func OnShopRequest(c *GClient, p *SGPacket) {
 	c.Log().Println_Debug("OnShopRequest Packet")
 

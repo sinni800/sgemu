@@ -1,6 +1,7 @@
 package Data
 
 import "strings"
+import "SG"
 
 type UnitGroupData struct {
 	ID       uint16   `xml:",attr"`
@@ -100,4 +101,39 @@ func (u *Unit) ATL() byte {
 //Tech Level
 func (u *Unit) TL() byte {
 	return u.Level + (u.Owner.Education / 2)
+}
+
+func (unit *Unit) WriteToPacket(packet *SG.SGPacket) {
+	packet.WriteUInt32(unit.ID)
+	packet.WriteUInt16(unit.Data.IID) //unit id
+	packet.WriteUInt16(2)
+	packet.WriteUInt32(unit.XP)        //xp
+	packet.WriteInt32(0)               //xp modifier
+	packet.WriteUInt32(unit.TotalXP()) //xp total
+	packet.WriteByte(unit.Level)
+	packet.WriteByte(1)
+	packet.WriteByte(1)
+	packet.WriteUInt16(1570)                 //hp 
+	packet.WriteUInt16(1570)                 //max hp
+	packet.WriteUInt16(unit.MaxWeight())     //max-weight?
+	packet.WriteUInt16(8)                    //space?
+	packet.WriteUInt16(0x48)                 //weight?
+	packet.WriteUInt16(8)                    //space?
+	packet.WriteUInt16(unit.Data.UnitWeight) //unit-weight? 
+	packet.WriteUInt16(0x30)                 //speed *10
+	packet.WriteUInt16(0x12c)
+	packet.WriteByte(1)
+	packet.WriteUInt16(unit.Data.Armor) //armor?
+	packet.WriteUInt16(0)
+	packet.WriteUInt16(100)
+	packet.WriteUInt16(0x62)  //fire power?
+	packet.WriteUInt16(0x168) //range * 2 / 10
+	packet.WriteUInt16(0xc8)  //cooldown * 100
+	packet.WriteUInt16(0x62)  //fire power?
+	packet.WriteUInt16(0x168) //range * 2 / 10
+	packet.WriteUInt16(0xc8)  //cooldown * 100
+	packet.WriteUInt64(0x9000006)
+	packet.WriteUInt16(unit.Kills) //kills
+	packet.WriteString(unit.CustomName)
+	packet.WriteString(unit.Name)
 }
