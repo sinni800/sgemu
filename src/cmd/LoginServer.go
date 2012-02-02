@@ -27,6 +27,9 @@ func main() {
 	D.InitializeDatabase()
 	D.CreateDatabase()
 	
+	//Note: do this in the game server?
+	D.LoadData() 
+	
 	SG.ReadConfig()
 	
 	LS.Server = new(LS.LServer)

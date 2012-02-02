@@ -2,7 +2,6 @@ package GameServer
 
 import (
 	. "SG"
-	"Data"
 )
 
 func OnWelcome(c *GClient, p *SGPacket) {
@@ -110,7 +109,7 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 			for i :=0;i< len(unit.Items);i++ {
 				item := unit.Items[i]
 				if item != nil && item.ID == id {
-					unit.Items = append(unit.Items[:i], unit.Items[i+1:]...)
+					unit.Items[i] = nil
 					i--
 					c.Player.Items[item.DBID] = item
 					break
@@ -121,10 +120,10 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 		itemsEquip := p.ReadByte()
 		
 		for i:=byte(0);i<itemsEquip;i++ {
-			id := p.ReadUInt16()
+			id := p.ReadUInt16() 
 			for dbid,item := range c.Player.Items  {
 				if item.ID == id {
-					t := Data.Items[item.ID].GroupType 
+					t := item.Data().GroupType 
 					it := unit.Items[t] 
 					if it == nil {
 						unit.Items[t] = item
@@ -144,6 +143,7 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 		
 		SendPlayerInventory(c)
 		SendUnitInventory(c,unit)
+		SendUnitStats(c, unit)
 		
 		packet := NewPacket2(14)
 		packet.WriteHeader(CSM_LAB_ENTER)

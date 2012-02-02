@@ -1,6 +1,7 @@
 package Data
 
 import . "launchpad.net/gobson/bson"
+import "strconv"
 
 //import "container/list"
 
@@ -68,10 +69,23 @@ type Player struct {
 type Item struct {
 	DBID string "_id"
 	ID   uint16
+	data *ItemData
+}
+
+func (item *Item) Data() *ItemData{
+	if item.data == nil {
+		data,exist := Items[item.ID]
+		if exist {
+			item.data = data
+		} else {
+			panic("No such data item id " + strconv.FormatInt(int64(item.ID), 10))
+		}
+	} 
+	return item.data
 }
 
 func CreateItem(id uint16) *Item {
-	return &Item{NewID(), id}
+	return &Item{NewID(), id, nil}
 }
 
 type Division struct {
@@ -124,14 +138,14 @@ func (p *Player) SetDefaultStats() {
 
 	u := CreateUnit("Shade")
 	if u == nil {
-		panic("No such unit")
+		panic("No such unit Shade")
 	} else {
 		p.UnitsData[u.DBID] = u
 	}
 	
-	u = CreateUnit("Pegasus-Mk9")
+	u = CreateUnit("Pegasus-Mk9") 
 	if u == nil {
-		panic("No such unit")
+		panic("No such unit Pegasus-Mk9")
 	} else {
 		p.UnitsData[u.DBID] = u
 	}

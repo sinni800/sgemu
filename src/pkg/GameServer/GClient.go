@@ -33,17 +33,17 @@ func (client *GClient) StartRecive() {
 }
 
 func (client *GClient) OnConnect() {
+	defer client.OnDisconnect()
+	
 	client.Disconnecting = false
 	userID, q := D.LoginQueue.Check(client.IP)
 	if !q {
-		client.OnDisconnect()
 		return
 	}
 
 	id, r := client.Server.IDG.Next()
 
 	if !r {
-		client.OnDisconnect()
 		return
 	}
 
@@ -56,7 +56,6 @@ func (client *GClient) OnConnect() {
 		id, r := client.Server.IDG.Next()
 		if !r {
 			client.Log().Println_Warning("No more ids left - server is full!")
-			client.OnDisconnect()
 			return
 		}
 		name, e := D.Units[unitdb.Name]

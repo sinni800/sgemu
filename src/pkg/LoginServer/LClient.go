@@ -29,6 +29,8 @@ func (client *LClient) StartRecive() {
 }
 
 func (client *LClient) OnConnect() {
+	defer client.OnDisconnect() 
+	
 	client.Disconnecting = false
 	client.packet = NewPacket()
 	client.packet.Index = 0

@@ -67,11 +67,10 @@ type BindingFile struct {
 type BindingGroup struct {
 	XMLName xml.Name `xml:"BindGroup"`
 	UID     string   `xml:",attr"`
-	Binds   []*BindingData
+	Binds   []*BindingData `xml:"Bind"`
 }
 
 type BindingData struct {
-	XMLName   xml.Name `xml:"Bind"`
 	UID       string   `xml:",attr"`
 	ID        uint16   `xml:",attr"`
 	GroupType Group    `xml:",attr"`
