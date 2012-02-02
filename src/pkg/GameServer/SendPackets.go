@@ -181,10 +181,10 @@ func SendUnitInventory(c *GClient, unit *Unit) {
 }
 
 func SendPlayerInventory(c *GClient) {
-	packet := NewPacket2(20+len(c.Player.Items)*2)
+	packet := NewPacket2(20+len(c.Player.Items)*2) 
 	packet.WriteHeader(SM_INVENTORY_UPDATE)
 	packet.WriteUInt32(c.ID)
-	packet.WriteUInt16(uint16(len(c.Player.Items)))
+	packet.WriteByte(byte(len(c.Player.Items)))
 
 	for _, item := range c.Player.Items {
 		if item != nil {

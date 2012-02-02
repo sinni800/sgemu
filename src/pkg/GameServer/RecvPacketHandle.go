@@ -2,6 +2,7 @@ package GameServer
 
 import (
 	. "SG"
+	"Data"
 )
 
 func OnWelcome(c *GClient, p *SGPacket) {
@@ -108,7 +109,7 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 			id := p.ReadUInt16()
 			for i :=0;i< len(unit.Items);i++ {
 				item := unit.Items[i]
-				if item.ID == id {
+				if item != nil && item.ID == id {
 					unit.Items = append(unit.Items[:i], unit.Items[i+1:]...)
 					i--
 					c.Player.Items[item.DBID] = item
@@ -123,8 +124,14 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 			id := p.ReadUInt16()
 			for dbid,item := range c.Player.Items  {
 				if item.ID == id {
-					delete(c.Player.Items, dbid)
-					unit.Items = append(unit.Items, item)
+					t := Data.Items[item.ID].GroupType 
+					it := unit.Items[t] 
+					if it == nil {
+						unit.Items[t] = item
+						delete(c.Player.Items, dbid)
+					} else {
+						c.Log().Println_Warning("Trying to move item to already equipted slot %s", c.Player.Name)
+					}
 					break
 				}
 			}
