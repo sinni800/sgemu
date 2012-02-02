@@ -106,7 +106,7 @@ func (client *GClient) OnDisconnect() {
 		client.Server.IDG.Return(client.ID)
 		client.Server.DBRun.Funcs <- func() { D.SavePlayer(client.Player) }
 	}
-	client.MainServer.Server().Log.Println("Client Disconnected!")
+	client.MainServer.Server().Log.Println("Client Disconnected! %s", client.Socket.RemoteAddr())
 }
 
 func (client *GClient) Send(p *SGPacket) {
@@ -283,7 +283,7 @@ func (client *GClient) ParsePacket(p *SGPacket) {
 	fnc, exist := Handler[int(header)]
 	
 	if !exist {
-		client.Log().Printf("isnt registred : %s", p)
+		client.Log().Printf_Warning("isnt registred : %s", p)
 		return
 	}
 	//client.Log().Printf("Header(%d) len(%d) : % #X\n %s", header, len(p.Buffer), p.Buffer, p.Buffer)

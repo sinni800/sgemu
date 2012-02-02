@@ -44,5 +44,5 @@ func SendWelcome(c *LClient) {
 	packet.WriteRawString("SERVER CONNECTED\n")
 	c.SendRaw(packet)
 
-	c.Log().Println("Welcome packet sent!")
+	c.Log().Println_Debug("Welcome packet sent!")
 }

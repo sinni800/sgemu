@@ -8,6 +8,13 @@ import(
 	 "container/list"
  )
  
+const ( 
+	LOG_DEBUG = 1
+	LOG_WARNING = 2
+	LOG_INFO = 4
+	LOG_ALL = LOG_DEBUG | LOG_WARNING | LOG_INFO
+)
+ 
 type multiWriter struct {
 	writers *list.List
 }
@@ -44,6 +51,7 @@ func MultiWriter(writers ...io.Writer) *multiWriter {
 type Logger struct {
 	log.Logger
 	out *multiWriter
+	level byte
 }
 
 func (l *Logger) AddWriter(out io.Writer) {
@@ -54,8 +62,80 @@ func NewLogger(out io.Writer, prefix string, flag int) *Logger {
 	l := &Logger{}
 	l.out = MultiWriter(out)
 	l.Logger = *log.New(l.out, prefix, flag)
+	l.level = LOG_ALL
 	return l
 }
+
+func (l *Logger) SetLogLevel(level byte) {
+		l.level = level
+}
+
+
+func (l *Logger) Panicf(format string, v ...interface{}) {
+		s := fmt.Sprintf(format, v...)
+		panic(s)
+}
+
+func (l *Logger) Println_Debug(v ...interface{}) {
+		if l.level & LOG_DEBUG > 0 {
+			l.Println(v...)
+		}
+}
+
+func (l *Logger) Printf_Debug(format string, v ...interface{}) {
+		if l.level & LOG_DEBUG > 0 {
+			l.Printf(format, v...)
+		}
+}
+
+func (l *Logger) Print_Debug(v ...interface{}) {
+		if l.level & LOG_DEBUG > 0 {
+			l.Print(v...)
+		}
+}
+
+func (l *Logger) Println_Warning(v ...interface{}) {
+		if l.level & LOG_WARNING > 0 {
+			l.Println(v...)
+		}
+}
+
+func (l *Logger) Printf_Warning(format string, v ...interface{}) {
+		if l.level & LOG_WARNING > 0 {
+			l.Printf(format, v...)
+		}
+}
+
+func (l *Logger) Print_Warning(v ...interface{}) {
+		if l.level & LOG_WARNING > 0 {
+			l.Print(v...)
+		}
+}
+
+func (l *Logger) Println_Info(v ...interface{}) {
+		if l.level & LOG_INFO > 0 {
+			l.Println(v...)
+		}
+}
+
+func (l *Logger) Printf_Info(format string, v ...interface{}) {
+		if l.level & LOG_INFO > 0 {
+			l.Printf(format, v...)
+		}
+}
+
+func (l *Logger) Print_Info(v ...interface{}) {
+		if l.level & LOG_INFO > 0 {
+			l.Print(v...)
+		}
+}
+
+
+
+
+
+
+
 
 func PanicPath() string{
 	fullPath := ""
@@ -80,8 +160,3 @@ func PanicPath() string{
    	}
    	return fullPath
 }  
-
-func (l *Logger) Panicf(format string, v ...interface{}) {
-		s := fmt.Sprintf(format, v...)
-		panic(s)
-}

@@ -57,7 +57,7 @@ func init() {
 }
 
 func (serv *LServer) OnConnect(socket *net.TCPConn) {
-	serv.Log.Printf("Client connected to LoginServer!")
+	serv.Log.Printf_Info("Client connected to LoginServer! %s", socket.RemoteAddr())
 	client := new(LClient)
 	client.Server = serv
 	Core.SetupClient(client, socket, serv)

@@ -54,9 +54,9 @@ func PlayerAppear(c *GClient) *SGPacket {
 	packet.WriteUInt32(c.ID)
 	packet.WriteUInt32(13)
 
-	//
-	//c.Log().Printf("%d %d", c.Player.X, c.Player.Y)
-	//
+	
+	c.Log().Printf_Debug("Player[%s] Appeared at (%d,%d)",  c.Player.Name, c.Player.X, c.Player.Y)
+	
 
 	packet.WriteInt16(c.Player.X)
 	packet.WriteInt16(c.Player.Y)
@@ -126,7 +126,7 @@ func SendShopInformation(c *GClient) {
 }
 
 func ProfileInfo(c *GClient, p *Player) *SGPacket {
-	c.Log().Println("ProfileInfo")
+	c.Log().Println_Debug("ProfileInfo packet")
 
 	packet := NewPacket2(200)
 

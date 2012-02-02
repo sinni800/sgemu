@@ -120,7 +120,7 @@ func (serv *GServer) OnShutdown() {
 }
 
 func (serv *GServer) OnConnect(socket *net.TCPConn) {
-	serv.Log.Printf("Client connected to GServer!")
+	serv.Log.Printf_Info("Client connected to GServer! %s", socket.RemoteAddr())
 	client := new(GClient)
 	client.Server = serv
 	Core.SetupClient(client, socket, serv)

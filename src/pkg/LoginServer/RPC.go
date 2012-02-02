@@ -18,7 +18,7 @@ func startRPC() {
  
  	var client net.Conn
  
-	Server.Log.Println("Trying to connect to the RPC Server...")
+	Server.Log.Println_Info("Trying to connect to the RPC Server...")
 	for {
 		var err error
 		client, err = net.Dial("tcp", SG.Config.RPCConfig.WANIP + ":" + strconv.Itoa(SG.Config.RPCConfig.Port))
@@ -38,9 +38,9 @@ func startRPC() {
 	}
 	
 	if Ok[0] == 0 {
-		Server.Log.Println("Wrong RPC Key!")
+		Server.Log.Println_Warning("Wrong RPC Key!")
 	} else {	
-		Server.Log.Println("Conneted to RPC Server!")
+		Server.Log.Println_Info("Conneted to RPC Server!")
 	}
 	
 	RPCClient = rpc.NewClient(client)

@@ -53,7 +53,7 @@ func HandleAuth(client net.Conn) {
 	client.SetReadDeadline(time.Time{}) 
 	 
 	n, err = client.Write([]byte{1}) 
-	Server.Log.Println("RPC Client Connected!")
+	Server.Log.Printf_Info("RPC Client Connected! %s", client.RemoteAddr())
 	
 	Server.RPCServer.ServeConn(client) 
 }

@@ -6,7 +6,7 @@ import (
 )
 
 func OnWelcome(c *LClient, p *SGPacket) {
-	c.Log().Println("OnWelcome Packet")
+	c.Log().Println_Debug("OnWelcome Packet")
 	packet := NewPacket2(15)
 	packet.WriteHeader(CSM_WELCOME)
 	packet.WriteUInt16(46381)
@@ -16,7 +16,7 @@ func OnWelcome(c *LClient, p *SGPacket) {
 }
 
 func OnWelcome2(c *LClient, p *SGPacket) {
-	c.Log().Printf("OnWelcome2 Packet")
+	c.Log().Printf_Debug("OnWelcome2 Packet")
 	switch p.ReadByte() {
 	case 0:
 		packet := NewPacket2(20)
@@ -39,7 +39,7 @@ func OnWelcome2(c *LClient, p *SGPacket) {
 }
 
 func OnPlanetDataRequest(c *LClient, p *SGPacket) {
-	c.Log().Printf("OnPlanetDataRequest Packet")
+	c.Log().Printf_Debug("OnPlanetDataRequest Packet")
 	p = NewPacket2(200)
 	p.WriteHeader(CS_PLANET_DATA)
 
@@ -70,7 +70,7 @@ func OnRegister(c *LClient, p *SGPacket) {
 	user := p.ReadString()
 	pass := p.ReadString()
 	email := p.ReadString()
-	c.Log().Printf("OnRegister Packet User Register: User(%s) EMail(%s)", user, email)
+	c.Log().Printf_Debug("OnRegister Packet User Register: User(%s) EMail(%s)", user, email)
 
 	ec, s := D.CheckUser(user, email, pass)
 	if ec == 1 {
@@ -81,7 +81,7 @@ func OnRegister(c *LClient, p *SGPacket) {
 
 func OnFriendSelect(c *LClient, p *SGPacket) {
 	user := p.ReadString()
-	c.Log().Printf("OnFriendSelect Packet: User(%s)", user)
+	c.Log().Printf_Debug("OnFriendSelect Packet: User(%s)", user)
 
 	//55 00 - not found
 	//55 01 00 00 00 0C - found and faction
@@ -93,7 +93,7 @@ func OnFriendSelect(c *LClient, p *SGPacket) {
 }
 
 func OnRegisterDone(c *LClient, p *SGPacket) {
-	c.Log().Printf("OnRegisterDone: % #X\n", p.Buffer)
+	c.Log().Printf_Debug("OnRegisterDone: % #X\n", p.Buffer)
 	if c.TempUser != nil {
 
 		player := D.NewPlayer()
@@ -119,7 +119,7 @@ func OnRegisterDone(c *LClient, p *SGPacket) {
 }
 
 func OnLoginWelcome(c *LClient, p *SGPacket) {
-	c.Log().Printf("OnLoginWelcome Packet")
+	c.Log().Printf_Debug("OnLoginWelcome Packet")
 	packet := NewPacket2(20)
 	packet.WriteHeader(SM_REG_METHOD)
 	packet.WriteByte(1) //1 advanced reg , else simple reg
@@ -128,7 +128,7 @@ func OnLoginWelcome(c *LClient, p *SGPacket) {
 }
 
 func OnFactionDataRequest(c *LClient, p *SGPacket) {
-	c.Log().Printf("OnFactionDataRequest Packet")
+	c.Log().Printf_Debug("OnFactionDataRequest Packet")
 	packet := NewPacket2(1000)
 	packet.WriteHeader(CSM_FACTION_DATA)
 	packet.WriteBytes([]byte{0x23, 
@@ -203,7 +203,7 @@ func OnFactionDataRequest(c *LClient, p *SGPacket) {
 func OnLogin(c *LClient, p *SGPacket) {
 	user := p.ReadString()
 	pass := p.ReadString()
-	c.Log().Printf("OnLogin Packet User Register: User(%s)", user)
+	c.Log().Printf_Info("OnLogin Packet User Register: User(%s)", user)
 
 	ec, s, id := D.Login(user, pass)
 	SendMessage(c, ec, s)

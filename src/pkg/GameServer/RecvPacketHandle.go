@@ -5,11 +5,11 @@ import (
 )
 
 func OnWelcome(c *GClient, p *SGPacket) {
-	c.Log().Println("OnWelcome Packet")
+	c.Log().Println_Debug("OnWelcome Packet")
 }
 
 func OnDisconnectPacket(c *GClient, p *SGPacket) {
-	c.Log().Println("OnDisconnect Packet")
+	c.Log().Println_Debug("OnDisconnect Packet")
 	c.OnDisconnect()
 }
 
@@ -17,7 +17,7 @@ func OnChat(c *GClient, p *SGPacket) {
 	p.ReadByte() //type?
 	text := p.ReadString()
 
-	c.Log().Print("OnChat Packet ", text)
+	c.Log().Println_Debug("OnChat Packet ", text)
 
 	SendNormalChat(c, text)
 }
@@ -65,12 +65,11 @@ func OnGameEnter(c *GClient, p *SGPacket) {
 }
 
 func OnMove(c *GClient, p *SGPacket) {
-
+	c.Log().Println_Debug("OnMove Packet")
 	p.RSkip(6)
 	tp := p.ReadByte() //type
 
 	if tp == 0x16 {
-		c.Log().Println("OnMove Packet")
 		p.RSkip(4) //id
 		c.Player.X = p.ReadInt16()
 		c.Player.Y = p.ReadInt16()
@@ -86,7 +85,7 @@ func OnMove(c *GClient, p *SGPacket) {
 		packet.WriteInt16(0x0c)
 		packet.WriteByte(0x1a)
 
-		c.Log().Printf("%x %x", c.Player.X, c.Player.Y)
+		c.Log().Printf_Debug("Player[%s] Moved (%x,%x)", c.Player.Name, c.Player.X, c.Player.Y)
 
 		packet.WriteUInt32(c.ID)
 		packet.WriteInt16(c.Player.X)
@@ -100,7 +99,7 @@ func OnMove(c *GClient, p *SGPacket) {
 }
 
 func OnShopRequest(c *GClient, p *SGPacket) {
-	c.Log().Println("OnShopRequest Packet")
+	c.Log().Println_Debug("OnShopRequest Packet")
 
 	p.ReadInt32()
 	action := p.ReadByte()
@@ -112,9 +111,9 @@ func OnShopRequest(c *GClient, p *SGPacket) {
 		p.ReadByte()   // shop unit id
 		p.ReadString() // unit name
 		p.ReadByte()   // unkown
-		c.Log().Println("Buying units is not supported yet!")
+		c.Log().Println_Debug("Buying units is not supported yet!")
 	default:
-		c.Log().Println("Unkown shop action")
+		c.Log().Println_Debug("Unkown shop action")
 	}
 	c.Log().Println(p)
 }

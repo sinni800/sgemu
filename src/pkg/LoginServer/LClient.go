@@ -38,7 +38,7 @@ func (client *LClient) OnConnect() {
 
 func (client *LClient) OnDisconnect() {
 	if x := recover(); x != nil {
-		client.Log().Printf("panic : %v \n %s", x, C.PanicPath())
+		client.Log().Printf_Warning("panic : %v \n %s", x, C.PanicPath())
 	}
 	
 	if client.Disconnecting {
@@ -47,7 +47,7 @@ func (client *LClient) OnDisconnect() {
 	client.Disconnecting = true
 	
 	client.Socket.Close()
-	client.MainServer.Server().Log.Println("Client Disconnected!")
+	client.MainServer.Server().Log.Println_Info("Client Disconnected! %s", client.Socket.RemoteAddr())
 }
 
 func (client *LClient) Send(p *SGPacket) {
@@ -82,7 +82,7 @@ func (client *LClient) ParsePacket(p *SGPacket) {
 
 	fnc, exist := Handler[int(header)]
 	if !exist {
-		client.Log().Printf("Header(%d) len(%d) isnt registred : % #X\n %s", header, len(p.Buffer), p.Buffer, p.Buffer)
+		client.Log().Printf_Warning("isnt registred : %s", p)
 		return
 	}
 	//client.MainServer.GetServer().Log.Printf("Header(%d) len(%d) : % #X\n %s", header, len(p.Buffer), p.Buffer, p.Buffer)
