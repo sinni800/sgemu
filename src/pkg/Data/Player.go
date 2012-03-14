@@ -132,6 +132,16 @@ func NewPlayer() *Player {
 	return p
 }
 
+func (p *Player) AddUnit(name string) *UnitDB {
+	u := CreateUnit(name)
+	if u == nil {
+		panic("No such unit Shade")
+	} else {
+		p.UnitsData[u.DBID] = u
+	}
+	return u
+}
+
 func (p *Player) SetDefaultStats() {
 	p.Points = 0
 	p.Money = 300000

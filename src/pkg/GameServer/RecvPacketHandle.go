@@ -2,6 +2,7 @@ package GameServer
 
 import (
 	. "SG"
+	. "Data"
 )
 
 func OnWelcome(c *GClient, p *SGPacket) {
@@ -165,14 +166,51 @@ func OnShopRequest(c *GClient, p *SGPacket) {
 	case 1:
 		SendShopInformation(c)
 	case 2:
-		p.ReadByte()   // shop unit id
-		p.ReadString() // unit name
+		uid := p.ReadByte()   // shop unit id
+		uname := p.ReadString() // unit name
 		p.ReadByte()   // unkown
-		c.Log().Println_Debug("Buying units is not supported yet!")
+		//c.Log().Println_Debug("Buying units is not supported yet!")
+		OnUnitBuyRequest(c, uid, uname)
 	default:
 		c.Log().Println_Debug("Unkown shop action")
 	}
 	c.Log().Println(p)
+}
+
+func OnUnitBuyRequest(c *GClient, unitID byte, unitName string) {
+	if unitID >= byte(len(Shopdata.ShopUnits)) {
+		panic("This unit does not exist");
+	} 
+	 
+	u := Shopdata.ShopUnits[unitID]
+	 
+	
+	unitdb := c.Player.AddUnit(u.Name)
+	c.Player.Money -= u.Money
+	c.Player.Ore -= u.Ore
+	c.Player.Silicon -= u.Silicon
+	c.Player.Sulfur -= u.Sulfur
+	
+	id, r := c.Server.IDG.Next()
+	if !r {
+		c.Log().Println_Warning("No more ids left - server is full!")
+		return
+	}
+	name, e := Units[unitdb.Name]
+	if !e {
+		c.Log().Println_Warning("Unit name does not exists")
+		return
+	}
+	unit := &Unit{unitdb, id, c.Player, name}
+	c.Units[id] = unit
+	
+	packet := NewPacket2(110)
+	packet.WriteHeader(SM_UNIT_STAT)
+	packet.WriteByte(2)
+	unit.WriteToPacket(packet)
+	c.Send(packet)
+
+	SendUnitInventory(c, unit)
 }
 
 func OnProfileRequest(c *GClient, p *SGPacket) {
