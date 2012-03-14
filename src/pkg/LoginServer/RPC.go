@@ -44,13 +44,10 @@ func startRPC() {
 	}
 	
 	RPCClient = rpc.NewClient(client)
+	//TODO: handle disconnect
 }
 
 func addClient(ip, id string) {
 	var b int
 	RPCClient.Go("AcceptorRPC.Queue", Data.InStruct{IP:ip, ID:id}, &b, nil)
-	//<-c.Done
-	//if c.Error != nil {
-		//handle error
-	//}
 }

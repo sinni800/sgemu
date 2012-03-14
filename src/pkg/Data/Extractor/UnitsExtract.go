@@ -1,7 +1,7 @@
 package Extractor
 
 import (
-	"Data/xml"
+	"encoding/xml"
 	//"encoding/xml"
 	. "SG"
 	. "encoding/binary"
@@ -65,10 +65,15 @@ func ExtractUnits(path string, outpath string, UnitExtractDone chan bool) {
 	l := &dummyXML{}
 	l.UnitGroupData = UnitGroups
 
-	e = xml.NewEncoder(outUnits).Encode(l)
+	b,e := xml.MarshalIndent(l,"","\t")
 	if e != nil {
 		log.Panicln(e)
 	}
+	_, e = outUnits.Write(b)
+	if e != nil {
+		log.Panicln(e)
+	}
+
 }
 
 func ReadUnitsHelper(file *os.File) {

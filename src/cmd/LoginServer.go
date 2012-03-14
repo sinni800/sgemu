@@ -25,7 +25,7 @@ func main() {
 	log.SetPrefix("[Log]")
      
 	D.InitializeDatabase()
-	D.CreateDatabase()
+	D.CreateDatabase()  
 	
 	//Note: do this in the game server?
 	D.LoadData() 
@@ -70,7 +70,7 @@ func OnClose() {
 		log.Println("Press enter to quit...")
 		fmt.Scanln(&cmd)
 		os.Exit(0)
-	}()
+	}() 
 
 	if LS.Server != nil {
 		//Do stuff with LS

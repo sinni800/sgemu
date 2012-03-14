@@ -29,7 +29,7 @@ func main() {
       
 	D.LoadData()
 	
-	SG.ReadConfig()
+	SG.ReadConfig()  
 
 	GS.Server = new(GS.GServer)
 	GS.Server.Start("GameServer", SG.Config.GSConfig.IP, SG.Config.GSConfig.Port, SG.Config.GSConfig.WANIP)

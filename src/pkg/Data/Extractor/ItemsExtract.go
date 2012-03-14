@@ -1,7 +1,7 @@
 package Extractor
 
 import (
-	"Data/xml"
+	"encoding/xml"
 	//"encoding/xml"
 	. "SG"
 	. "encoding/binary"
@@ -54,7 +54,11 @@ func ExtractItems(path string, outpath string, ItemExtractDone chan bool) {
 		l.ItemDataGroup = append(l.ItemDataGroup, g)
 	}
 
-	e = xml.NewEncoder(outItems).Encode(l)
+	b,e := xml.MarshalIndent(l,"","\t")
+	if e != nil {
+		log.Panicln(e)
+	}
+	_, e = outItems.Write(b)
 	if e != nil {
 		log.Panicln(e)
 	}

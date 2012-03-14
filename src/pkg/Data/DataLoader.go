@@ -2,12 +2,12 @@ package Data
 
 import (
 	C "Core"
-	"Data/xml"
+	"encoding/xml"
 	//"encoding/xml"
 	"fmt"
 	"log"
 	"os"
-)
+) 
 
 type Group byte
 

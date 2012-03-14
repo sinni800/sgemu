@@ -1,7 +1,7 @@
 package SG
 
 import (
-	"Data/xml"
+	"encoding/xml"
 	"log"
 	"net"
 	"os"
@@ -96,9 +96,14 @@ func CreateConfig() (f *os.File, e error) {
 		RPCConfig:  &RPCConfig{"127.0.0.1", "127.0.0.1", 1234},
 	}
 
-	e = xml.NewEncoder(f).Encode(Config)
+
+	b,e := xml.MarshalIndent(Config,"","\t")
 	if e != nil {
-		return nil, e
+		log.Panicln(e)
+	}
+	_, e = f.Write(b)
+	if e != nil {
+		log.Panicln(e)
 	}
 
 	return f, nil

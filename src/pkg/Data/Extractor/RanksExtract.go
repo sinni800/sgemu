@@ -1,7 +1,7 @@
 package Extractor
 
 import (
-	"Data/xml"
+	"encoding/xml"
 	//"encoding/xml"
 	//. "SG"
 	. "encoding/binary"
@@ -38,10 +38,16 @@ func ExtractRanks(path string, outpath string, RanksExtractDone chan bool) {
 	
 	l := &dummyXML{}
 	l.Ranks = RanksData
-	e = xml.NewEncoder(outRanks).Encode(l)
+
+	b,e := xml.MarshalIndent(l,"","\t")
 	if e != nil {
 		log.Panicln(e)
-	} 
+	}
+	_, e = outRanks.Write(b)
+	if e != nil {
+		log.Panicln(e)
+	}
+
 }
 
 func ReadRanks(file *os.File) {
