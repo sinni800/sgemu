@@ -171,17 +171,19 @@ func OnShopRequest(c *GClient, p *SGPacket) {
 		p.ReadByte()   // unkown
 		//c.Log().Println_Debug("Buying units is not supported yet!")
 		OnUnitBuyRequest(c, uid, uname)
+	case 3:
+		c.Log().Println_Debug("Unit selling is not supported yet")
 	default:
 		c.Log().Println_Debug("Unkown shop action")
 	}
-	c.Log().Println(p)
+	c.Log().Println(p) 
 }
 
 func OnUnitBuyRequest(c *GClient, unitID byte, unitName string) {
 	if unitID >= byte(len(Shopdata.ShopUnits)) {
 		panic("This unit does not exist");
 	} 
-	 
+	  
 	u := Shopdata.ShopUnits[unitID]
 	 
 	
@@ -209,6 +211,8 @@ func OnUnitBuyRequest(c *GClient, unitID byte, unitName string) {
 	packet.WriteByte(2)
 	unit.WriteToPacket(packet)
 	c.Send(packet)
+	 
+	
 
 	SendUnitInventory(c, unit)
 }

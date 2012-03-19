@@ -90,6 +90,7 @@ func (serv *CoreServer) acceptClients(in chan *net.TCPConn) {
 		c, err := serv.Socket.AcceptTCP()
 		if err != nil {
 			serv.Log.Printf("Server accept failed %s", err.Error())
+			return
 		}
 		in <- c
 	}

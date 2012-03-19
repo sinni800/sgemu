@@ -7,6 +7,7 @@ import (
 	"fmt" 
 	"log"
 	"os"
+	"os/signal"
 	"runtime" 
 	"SG"
 	//"WebAdmin"
@@ -42,14 +43,14 @@ func main() {
 }
 
 func ListenSignals() {
-	/*
-	for sig := range signal.Incoming {
-		if os.SIGINT == sig || os.SIGTERM == sig || os.SIGKILL == sig || os.SIGQUIT == sig {
+	signals := make(chan os.Signal, 10)
+	signal.Notify(signals)
+	for sig := range signals {	
+		if sig == os.Interrupt || sig == os.Kill  {
 			OnClose()
-			return
+			return 
 		}
 	}
-	*/
 }  
 
 func OnClose() {
