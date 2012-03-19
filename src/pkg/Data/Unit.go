@@ -113,18 +113,18 @@ func (unit *Unit) WriteToPacket(packet *SG.SGPacket) {
 	packet.WriteInt32(0)               //xp modifier
 	packet.WriteUInt32(unit.TotalXP()) //xp total
 	packet.WriteByte(unit.Level)
-	packet.WriteByte(1)
-	packet.WriteByte(6)					//hotkey (shows as hotkey - 1, 6 as 5) 
+	packet.WriteByte(0)	//hot key related
+	packet.WriteByte(0)	//hot key related
 	packet.WriteUInt16(1570)                 //hp 
 	packet.WriteUInt16(1570)                 //max hp
 	packet.WriteUInt16(unit.MaxWeight())     //max-weight?
 	packet.WriteUInt16(8)                    //space?
 	packet.WriteUInt16(0x48)                 //weight?
 	packet.WriteUInt16(8)                    //space?
-	packet.WriteUInt16(unit.Data.UnitWeight) //unit-weight? 
+	packet.WriteUInt16(unit.Data.UnitWeight) //unit-weight? unit.Data.UnitWeight
 	packet.WriteUInt16(0x30)                 //speed *10
 	packet.WriteUInt16(0x12c)
-	packet.WriteByte(1)
+	packet.WriteByte(1) 
 	packet.WriteUInt16(unit.Data.Armor) //armor?
 	packet.WriteUInt16(0)
 	packet.WriteUInt16(100) 
@@ -138,4 +138,4 @@ func (unit *Unit) WriteToPacket(packet *SG.SGPacket) {
 	packet.WriteUInt16(unit.Kills) //kills
 	packet.WriteString(unit.CustomName)
 	packet.WriteString(unit.Name) 
-}
+} 

@@ -133,9 +133,31 @@ func (client *GClient) SendRaw(p *SGPacket) {
 
 func (client *GClient) SendWelcome() {
 
+	packet := NewPacket2(13)
+	packet.WriteHeader(0x02)
+	packet.Write([]byte{0x00, 0x00})
+	//client.Send(packet)
+	
+ 
+	packet = NewPacket2(14)
+	packet.WriteHeader(0x5A)
+	packet.Write([]byte{0x1E, 0x06, 0x00})
+	//client.Send(packet)
+	
+	packet = NewPacket2(16)
+	packet.WriteHeader(0x66)
+	packet.Write([]byte{0x02, 0x01, 0x02, 0x00, 0x02})
+	//client.Send(packet)
+ 
+	packet = NewPacket2(20)
+	packet.WriteHeader(0x7D)
+	packet.Write([]byte{0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
+	//client.Send(packet)
+	
+
 	SendPlayerStats(client)
 
-	packet := NewPacket2(10 + len(client.Units)*100)
+	packet = NewPacket2(10 + len(client.Units)*100)
 	packet.WriteHeader(SM_UNIT_STAT)
 	packet.WriteByte(1)
 	packet.WriteByte(byte(len(client.Units)))	
