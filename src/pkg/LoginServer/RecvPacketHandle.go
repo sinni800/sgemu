@@ -110,6 +110,7 @@ func OnRegisterDone(c *LClient, p *SGPacket) {
 
 		if D.RegisterUser(c.TempUser) == true {
 			player.ID = D.NewID()
+			
 			player.UserID = c.TempUser.ID
 			player.SetDefaultStats() 
 			D.RegisterPlayer(player)

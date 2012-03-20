@@ -21,23 +21,26 @@ type GServer struct {
 	Core.CoreServer
 	WANAddr *net.TCPAddr
 	WANIP   string
-	Maps    map[int]*Map
+	Maps    map[uint32]*Map
 
 	IDG   *Core.IDGen
 	Run   *Core.Runner
 	DBRun *Core.Runner
 	Sdr   *Core.Scheduler
 
-	RPCClient *rpc.Client
-	RPCServer *rpc.Server
+	RPCClient   *rpc.Client
+	RPCServer   *rpc.Server
 	RPCListener net.Listener
 }
 
 func (serv *GServer) OnSetup() {
 	serv.CoreServer.OnSetup()
-	serv.Maps = make(map[int]*Map)
+	serv.Maps = make(map[uint32]*Map)
 	serv.IDG = Core.NewIDG()
-	serv.Maps[0] = NewMap()
+	
+	serv.Maps[100706] = NewMap(100706, BaseZone)
+	
+	
 	serv.Run = Core.NewRunner()
 	serv.DBRun = Core.NewRunner()
 	serv.Sdr = Core.NewScheduler()
@@ -46,25 +49,26 @@ func (serv *GServer) OnSetup() {
 	serv.Sdr.Start()
 
 	serv.Sdr.AddMin(func() { serv.SavePlayers() }, 1)
-	 
+
 	startRPCServer()
-	
+
 	go serv.AcceptClients()
 	//serv.Sdr.AddSec(func() { serv.SavePlayers() }, 5)
 }
 
 func init() {
 	Handler = map[int]GamePacketFunc{
-		CSM_CHAT:         OnChat,
-		CM_PING:          OnPing,
-		CSM_MOVE:         OnMove,
-		CM_PROFILE:       OnProfileRequest,
-		CM_LEAVE_PROFILE: OnProfileLeave,
-		CM_SHOP_REQUEST:  OnShopRequest,
-		CSM_GAME_ENTER:   OnGameEnter,
-		CM_DISCONNECT:    OnDisconnectPacket,
-		CSM_LAB_ENTER:	  OnLabraryEnter,
-		CM_UNIT_EDIT:	  OnUnitEdit,
+		CSM_CHAT:             OnChat,
+		CM_PING:              OnPing,
+		CSM_MOVE:             OnMove,
+		CM_PROFILE:           OnProfileRequest,
+		CM_LEAVE_PROFILE:     OnProfileLeave,
+		CM_SHOP_REQUEST:      OnShopRequest,
+		CSM_GAME_ENTER:       OnGameEnter,
+		CM_DISCONNECT:        OnDisconnectPacket,
+		CSM_LAB_ENTER:        OnLabraryEnter,
+		CM_UNIT_EDIT:         OnUnitEdit,
+		CM_MAPCHANGE_REQUEST: OnMapChangeRequest,
 	}
 }
 
@@ -111,10 +115,10 @@ func (serv *GServer) OnShutdown() {
 	}
 	serv.CoreServer.Socket.Close()
 	serv.Log.Printf("GServer socket closed!")
-	
+
 	if serv.RPCListener != nil {
 		e := serv.RPCListener.Close()
-		if e != nil  {
+		if e != nil {
 			panic(e)
 		}
 	}

@@ -1,8 +1,8 @@
 package GameServer
 
 import (
-	. "SG"
 	. "Data"
+	. "SG"
 )
 
 func SendNormalChat(c *GClient, text string) {
@@ -54,9 +54,7 @@ func PlayerAppear(c *GClient) *SGPacket {
 	packet.WriteUInt32(c.ID)
 	packet.WriteUInt32(13)
 
-	
-	c.Log().Printf_Debug("Player[%s] Appeared at (%d,%d)",  c.Player.Name, c.Player.X, c.Player.Y)
-	
+	c.Log().Printf_Debug("Player[%s] Appeared at (%d,%d)", c.Player.Name, c.Player.X, c.Player.Y)
 
 	packet.WriteInt16(c.Player.X)
 	packet.WriteInt16(c.Player.Y)
@@ -65,6 +63,58 @@ func PlayerAppear(c *GClient) *SGPacket {
 	packet.WriteByte(0)
 	packet.WriteInt16(0)
 	return packet
+}
+
+func SendMapData(client *GClient) {
+	//send map info
+	packet := NewPacket2(198)
+	packet.WriteHeader(0x17)
+	packet.WriteUInt32(client.Map.MapID)
+	if client.Map.Type == BaseZone {
+		packet.WriteByte(1) //force base
+	} else {
+		packet.WriteByte(0)
+	}
+	packet.WriteBytes([]byte{0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x7B, 0x48, 0x98, 0xE4, 0x7B, 0x49, 0xF8, 0x74})
+	
+	packet.WriteByte(0)
+	//	 00 - non battle
+	//	 01 - start/end/banned mode
+	//	 02 - same as 00?
+	//	 03 - spectator
+	//	 04 - battle
+	//	 05 - same as 03?
+	//	 06 - same as 00?
+	//	 07 - same as 04?
+	//	 FF - same as 00?
+	packet.WriteByte(0x0D)
+	packet.WriteByte(0x00) //number of things on map 
+	client.Send(packet)
+
+	//17 D9 0A A0 00 00 00 00 00 00 01 FD 73 AC 33 FD 75 32 D3 04 09 00 - alien cave
+	//17 D9 0A A0 00 00 00 00 00 02 01 02 6E D2 2F 02 70 58 CF 04 09 00 - alien cave with units
+	//00 01 89 62 01 00 00 00 0D 00 00 FD 73 D3 12 FD 75 32 A2 00 0D 00 - main base
+	//00 01 89 62 01 00 00 00 0D 00 00 FD 73 D3 05 FD 75 32 95 00 0D 00 - main base
+	//
+	//                                                            0D - base
+	//														      09 - battle
+	//														      0c - empty field
+	//														   00 - non battle
+	//														   01 - start/end/banned mode
+	//														   02 - same as 00?
+	//														   03 - spectator
+	//														   04 - battle
+	//														   05 - same as 03?
+	//														   06 - same as 00?
+	//														   07 - same as 04?
+	//														   FF - same as 00?
+
+	//Zoo Alien Cave Packet
+	//packet = NewPacket2(183)
+	//packet.WriteHeader(0x17)																												   //change 0x00 to 0x0a
+	//packet.Write([]byte{0x17, 0xD9, 0x0A, 0xA0, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xFD, 0x73, 0xAC, 0x33, 0xFD, 0x75, 0x32, 0xD3, 0x04, 0x09, 0x00, 0x00, 0x00, 0x15, 0xCC, 0x02, 0x00, 0x01, 0x40, 0x00, 0x34, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xCB, 0x07, 0x20, 0x05, 0x00, 0x00, 0x11, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xCA, 0x0B, 0x80, 0x0C, 0x20, 0x00, 0x0A, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC9, 0x0B, 0x80, 0x02, 0x60, 0x00, 0x0A, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC8, 0x03, 0x00, 0x0C, 0x20, 0x00, 0x20, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC7, 0x04, 0xA0, 0x06, 0x60, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC6, 0x0B, 0xC0, 0x09, 0x80, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC5, 0x0D, 0x80, 0x02, 0x80, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC4, 0x0C, 0x40, 0x01, 0xA0, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC3, 0x05, 0x40, 0x0A, 0xC0, 0x0B, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00})
+	//client.Send(packet)
+
 }
 
 func SendPlayerLeave(c *GClient) {
@@ -89,14 +139,14 @@ func SendShopInformation(c *GClient) {
 			packet.WriteByte(byte(len(units)))
 			packet.WriteByte(1)
 		}
-		
+
 		//this map should be removed from here
 		u, exist := Units[units[i].Name]
 
 		if exist {
 			packet.WriteByte(c.Player.Divisions[u.DType].Influence(c.Player))
 			packet.WriteByte(u.Influence)
-		} else { 
+		} else {
 			packet.WriteByte(0)
 			packet.WriteByte(0)
 		}
@@ -118,8 +168,8 @@ func SendShopInformation(c *GClient) {
 		packet.WriteUInt32(2)
 		packet.WriteUInt64(0)
 		packet.WriteUInt64(0)
-	} 
-	
+	}
+
 	packet.WriteByte(0)
 
 	c.Send(packet)
@@ -155,13 +205,52 @@ func SendPlayerStats(client *GClient) {
 func SendUnitStats(c *GClient, unit *Unit) {
 	packet := NewPacket2(100)
 	packet.WriteHeader(SM_UNIT_STAT)
-	packet.WriteByte(4)	
+	packet.WriteByte(4)
 	unit.WriteToPacket(packet)
 	c.Send(packet)
 }
 
+func SendNewUnit(c *GClient, unit *Unit) {
+	packet := NewPacket2(110)
+	packet.WriteHeader(SM_UNIT_STAT)
+	packet.WriteByte(2)
+	unit.WriteToPacket(packet)
+	c.Send(packet)
+}
+
+func SendRemoveUnit(c *GClient, unitID uint32) {
+	packet := NewPacket2(20)
+	packet.WriteHeader(SM_UNIT_STAT)
+	packet.WriteByte(3)
+	packet.WriteUInt32(unitID)
+	packet.WriteByte(0)
+	c.Send(packet)
+}
+
+func SendNewUnits(c *GClient, units []*Unit) {
+	packet := NewPacket2(10 + len(units)*100)
+	packet.WriteHeader(SM_UNIT_STAT)
+	packet.WriteByte(1)
+	packet.WriteByte(byte(len(units)))
+	for _, unit := range units {
+		unit.WriteToPacket(packet)
+	}
+	c.Send(packet)
+}
+
+func SendNewUnitsMap(c *GClient, units map[uint32]*Unit) {
+	packet := NewPacket2(10 + len(units)*100)
+	packet.WriteHeader(SM_UNIT_STAT)
+	packet.WriteByte(1)
+	packet.WriteByte(byte(len(units)))
+	for _, unit := range units {
+		unit.WriteToPacket(packet)
+	}
+	c.Send(packet)
+}
+
 func SendUnitInventory(c *GClient, unit *Unit) {
-	packet := NewPacket2(20+len(unit.Items)*2)
+	packet := NewPacket2(20 + len(unit.Items)*2)
 	packet.WriteHeader(SM_INVENTORY_UPDATE)
 	packet.WriteUInt32(unit.ID)
 
@@ -183,7 +272,7 @@ func SendUnitInventory(c *GClient, unit *Unit) {
 }
 
 func SendPlayerInventory(c *GClient) {
-	packet := NewPacket2(20+len(c.Player.Items)*2) 
+	packet := NewPacket2(20 + len(c.Player.Items)*2)
 	packet.WriteHeader(SM_INVENTORY_UPDATE)
 	packet.WriteUInt32(c.ID)
 	packet.WriteByte(byte(len(c.Player.Items)))
@@ -269,5 +358,3 @@ func ProfileInfo(c *GClient, p *Player) *SGPacket {
 
 	return packet
 }
-
-

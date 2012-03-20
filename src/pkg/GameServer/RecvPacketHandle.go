@@ -172,11 +172,21 @@ func OnShopRequest(c *GClient, p *SGPacket) {
 		//c.Log().Println_Debug("Buying units is not supported yet!")
 		OnUnitBuyRequest(c, uid, uname)
 	case 3:
-		c.Log().Println_Debug("Unit selling is not supported yet")
+		OnUnitSellRequest(c, p.ReadUInt32())
 	default:
 		c.Log().Println_Debug("Unkown shop action")
 	}
 	c.Log().Println(p) 
+}
+
+
+
+func OnUnitSellRequest(c *GClient, unitID uint32) {
+	if c.RemoveUnit(unitID) {
+		//TODO: Fix the sell value
+		c.Player.Money += 1 
+		SendPlayerStats(c)
+	}
 }
 
 func OnUnitBuyRequest(c *GClient, unitID byte, unitName string) {
@@ -186,35 +196,15 @@ func OnUnitBuyRequest(c *GClient, unitID byte, unitName string) {
 	  
 	u := Shopdata.ShopUnits[unitID]
 	 
-	
-	unitdb := c.Player.AddUnit(u.Name)
-	c.Player.Money -= u.Money
-	c.Player.Ore -= u.Ore
-	c.Player.Silicon -= u.Silicon
-	c.Player.Sulfur -= u.Sulfur
-	
-	id, r := c.Server.IDG.Next()
-	if !r {
-		c.Log().Println_Warning("No more ids left - server is full!")
-		return
+	unit := c.AddUnit(u.Name, unitName)
+	if unit != nil {
+		c.Player.Money -= u.Money
+		c.Player.Ore -= u.Ore
+		c.Player.Silicon -= u.Silicon
+		c.Player.Sulfur -= u.Sulfur
+		
+		SendPlayerStats(c)
 	}
-	name, e := Units[unitdb.Name]
-	if !e {
-		c.Log().Println_Warning("Unit name does not exists")
-		return
-	}
-	unit := &Unit{unitdb, id, c.Player, name}
-	c.Units[id] = unit
-	
-	packet := NewPacket2(110)
-	packet.WriteHeader(SM_UNIT_STAT)
-	packet.WriteByte(2)
-	unit.WriteToPacket(packet)
-	c.Send(packet)
-	 
-	
-
-	SendUnitInventory(c, unit)
 }
 
 func OnProfileRequest(c *GClient, p *SGPacket) {
@@ -228,6 +218,51 @@ func OnProfileRequest(c *GClient, p *SGPacket) {
 			if exists {
 				c.Send(ProfileInfo(c, player.Player))
 			}
+		})
+	}
+}
+
+func OnMapChangeRequest(c *GClient, p *SGPacket) {
+	mapid := p.ReadUInt32()
+	x,y := p.ReadInt16(),p.ReadInt16()
+	maptype := p.ReadByte()
+	p.ReadByte() //dunno
+	
+	c.Log().Printf_Debug("Map id:%d [%d,%d] type:%d", mapid,x,y,maptype)
+	//0 - base
+	//1 - peace
+	//2 - battle
+	
+	Server.Run.Funcs <- func() {
+		m, exists := c.Server.Maps[mapid] 
+	
+		c.Player.X = x
+		c.Player.Y = y
+		
+		if !exists {
+			m = NewMap(mapid, PeaceZone)
+			c.Server.Maps[mapid] = NewMap(mapid, PeaceZone)
+		} 
+		
+		c.Map = m
+		c.Player.MapID = m.MapID
+		c.Log().Printf_Debug("Going to map %d", m.MapID)
+		
+		m.Run.Add(func() {
+		
+		m.OnPlayerJoin(c)
+		SendMapData(c) 
+		c.Map.OnPlayerAppear(c)
+		
+		packet := NewPacket2(18)
+		packet.WriteHeader(0x0E)
+		packet.WriteBytes([]byte{0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
+		c.Send(packet)
+		
+		packet = NewPacket2(13)
+		packet.WriteHeader(0x0E)
+		packet.WriteBytes([]byte{0x05, 0x00})
+		c.Send(packet)
 		})
 	}
 }

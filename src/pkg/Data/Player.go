@@ -59,8 +59,8 @@ type Player struct {
 
 	Reincatnation byte
 
-	Map  int16
-	X, Y int16
+	MapID   uint32
+	X, Y 	int16
 
 	UnitsData map[string]*UnitDB
 	Items     map[string]*Item
@@ -125,6 +125,8 @@ func NewPlayer() *Player {
 	p.Divisions[Mobile] = Division{Mobile, 1, "", 0}
 	p.Divisions[Aviation] = Division{Aviation, 1, "", 0}
 	p.Divisions[Organic] = Division{Organic, 1, "", 0}
+	
+	p.MapID = 100706;
 
 	p.UnitsData = make(map[string]*UnitDB)
 	p.Items = make(map[string]*Item)

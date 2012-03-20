@@ -4,7 +4,7 @@ const (
 	//CM - Client Message
 	//SM - Server Message
 	//CSM - Client and Server Message
-	
+
 	CSM_CHAT = 42
 
 	CM_PING = 0x58
@@ -17,18 +17,19 @@ const (
 
 	CM_LEAVE_PROFILE = 0x25
 
-	CM_SHOP_REQUEST  = 0x2D
-	SM_SHOP_RESPONSE = 0x2F
+	CM_SHOP_REQUEST      = 0x2D
+	CM_MAPCHANGE_REQUEST = 0x2E
+	SM_SHOP_RESPONSE     = 0x2F
 
 	CM_DISCONNECT = 0x15
-	
+
 	CSM_LAB_ENTER = 0x33
-	
-	CM_UNIT_EDIT = 0x22
+
+	CM_UNIT_EDIT        = 0x22
 	SM_INVENTORY_UPDATE = 0x1F
-	SM_UNIT_STAT = 0x16
-	
-	SM_PLAYER_NAME = 0x47
+	SM_UNIT_STAT        = 0x16
+
+	SM_PLAYER_NAME  = 0x47
 	SM_PLAYER_STATS = 0x15
 
 	CSM_GAME_ENTER = 0xE
