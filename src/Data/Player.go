@@ -1,6 +1,6 @@
 package Data
 
-import . "../launchpad.net/mgo/bson"
+import . "launchpad.net/mgo/bson"
 import "strconv"
 
 //import "container/list"

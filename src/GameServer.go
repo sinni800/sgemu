@@ -1,25 +1,25 @@
 package main
 
 import (
-	C "./Core"
-	D "./Data"
-	GS "./GameServer"
+	C "Core"
+	D "Data"
+	. "GameServer" 
+	"SG"
 	"fmt" 
 	"log"
 	"os"
 	"os/signal"
 	"runtime" 
-	"./SG"
 	//"WebAdmin"
-)      
-       
+)          
+          
 var (
 	Closing = false
 )
     
 func main() {
 	defer OnClose()
-
+ 
 	runtime.GOMAXPROCS(5)
  
 	log.SetFlags(log.Ltime | log.Lshortfile)
@@ -32,8 +32,8 @@ func main() {
 	
 	SG.ReadConfig()  
 
-	GS.Server = new(GS.GServer)
-	GS.Server.Start("GameServer", SG.Config.GSConfig.IP, SG.Config.GSConfig.Port, SG.Config.GSConfig.WANIP)
+	Server = new(GServer)
+	Server.Start("GameServer", SG.Config.GSConfig.IP, SG.Config.GSConfig.Port, SG.Config.GSConfig.WANIP)
   	 
   	//go WebAdmin.Start(GS.Server.Log) 
 	go ListenSignals() 
@@ -72,8 +72,8 @@ func OnClose() {
 		os.Exit(0)
 	}()
 
-	if GS.Server != nil {
-		GS.Server.OnShutdown()
+	if Server != nil {
+		Server.OnShutdown()
 	}
 }
 

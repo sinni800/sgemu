@@ -1,8 +1,8 @@
 package LoginServer
 
 import (
-	. "../SG"
-	D "../Data"
+	. "SG"
+	D "Data"
 )
 
 func OnWelcome(c *LClient, p *SGPacket) {

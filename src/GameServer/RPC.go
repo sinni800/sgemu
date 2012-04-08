@@ -2,8 +2,8 @@ package GameServer
 
 import "net/rpc"
 import "net"
-import "../Data"
-import "../SG"
+import "Data"
+import "SG"
 import "strconv"
 //import "errors"
 import "time"

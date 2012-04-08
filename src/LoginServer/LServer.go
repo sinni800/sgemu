@@ -1,8 +1,8 @@
 package LoginServer
 
 import (
-	"../Core"
-	. "../SG"
+	"Core"
+	. "SG"
 	"net"
 	"strconv"
 )

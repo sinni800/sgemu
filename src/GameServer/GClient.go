@@ -1,11 +1,11 @@
 package GameServer
 
 import (
-	C "../Core"
-	D "../Data"
-	. "../SG"
+	C "Core"
+	D "Data"
+	. "SG"
 	//R "reflect"
-)
+) 
 
 type GClient struct {
 	C.CoreClient

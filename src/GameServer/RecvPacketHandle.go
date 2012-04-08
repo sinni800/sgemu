@@ -1,13 +1,13 @@
 package GameServer
 
 import (
-	. "../SG"
-	. "../Data"
+	. "SG"
+	. "Data"
 )
 
 func OnWelcome(c *GClient, p *SGPacket) {
 	c.Log().Println_Debug("OnWelcome Packet")
-}
+} 
 
 func OnDisconnectPacket(c *GClient, p *SGPacket) {
 	c.Log().Println_Debug("OnDisconnect Packet")

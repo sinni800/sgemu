@@ -1,7 +1,7 @@
 package Data
 
 import (
-	C "../Core"
+	C "Core"
 	"encoding/xml"
 	//"encoding/xml"
 	"fmt"

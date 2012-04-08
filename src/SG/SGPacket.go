@@ -1,7 +1,7 @@
 package SG
 
 import (
-	C "../Core"
+	C "Core"
 	"fmt"
 	"io"
 )
@@ -12,7 +12,7 @@ const (
 
 type Packet interface {
 	BasePacket() *C.Packet
-}
+} 
 
 type SGPacket struct {
 	C.Packet

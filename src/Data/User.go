@@ -3,7 +3,7 @@ package Data
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"../launchpad.net/mgo/bson"
+	"launchpad.net/mgo/bson"
 	"strings"
 )
 

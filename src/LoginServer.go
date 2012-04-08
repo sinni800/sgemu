@@ -1,18 +1,18 @@
 package main
  
 import (  
-	C "./Core"
-	D "./Data"
-	LS "./LoginServer" 
+	C "Core"
+	D "Data"
+	. "LoginServer"
 	"fmt" 
 	"log"
 	"os"
 	"os/signal"
-	"runtime" 
-	"./SG"  
-	//"WebAdmin"
-)                       
-          
+	"runtime"  
+	"SG"  
+	//"WebAdmin" 
+)                                      
+              
 var ( 
 	Closing = false
 )
@@ -33,8 +33,8 @@ func main() {
 	
 	SG.ReadConfig()
 	
-	LS.Server = new(LS.LServer)
-	LS.Server.Start("LoginServer", SG.Config.LSConfig.IP, SG.Config.LSConfig.Port, SG.Config.LSConfig.WANIP)
+	Server = new(LServer)
+	Server.Start("LoginServer", SG.Config.LSConfig.IP, SG.Config.LSConfig.Port, SG.Config.LSConfig.WANIP)
 	 
 	
 	go ListenSignals() 
@@ -73,7 +73,7 @@ func OnClose() {
 		os.Exit(0)
 	}() 
 
-	if LS.Server != nil {
+	if Server != nil {
 		//Do stuff with LS
 	}
 } 

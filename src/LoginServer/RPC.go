@@ -1,8 +1,8 @@
 package LoginServer
 
 import "net/rpc"
-import "../Data"
-import "../SG"
+import "Data"
+import "SG"
 import "strconv"
 import "net"
 

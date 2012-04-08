@@ -1,7 +1,7 @@
 package GameServer
 
 import (
-	. "../Data"
+	. "Data"
 )
 
 func (c *GClient) RemoveUnit(unitID uint32) bool {

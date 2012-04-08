@@ -1,8 +1,8 @@
 package GameServer
 
 import (
-	. "../Data"
-	. "../SG"
+	. "Data"
+	. "SG"
 )
 
 func SendNormalChat(c *GClient, text string) {

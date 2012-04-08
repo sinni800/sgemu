@@ -1,7 +1,7 @@
 package Data
 
 import "strings"
-import "../SG"
+import "SG"
 
 type UnitGroupData struct {
 	ID       uint16   `xml:",attr"`

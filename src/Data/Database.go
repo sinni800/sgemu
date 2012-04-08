@@ -2,8 +2,8 @@ package Data
 
 import (
 	"encoding/hex"
-	"../launchpad.net/mgo/bson"
-	"../launchpad.net/mgo"
+	"launchpad.net/mgo/bson"
+	"launchpad.net/mgo"
 	"fmt"
 	"log"
 )

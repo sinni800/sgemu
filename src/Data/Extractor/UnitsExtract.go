@@ -3,11 +3,11 @@ package Extractor
 import (
 	"encoding/xml"
 	//"encoding/xml"
-	. "../../SG"
+	. "SG"
 	. "encoding/binary"
 	"os"
 	//"fmt" 
-	. "../../Data"
+	. "Data"
 	"log"
 )
 

@@ -1,9 +1,9 @@
 package GameServer
 
 import (
-	"../Core"
-	"../Data"
-	. "../SG"
+	"Core"
+	"Data"
+	. "SG"
 	"net"
 	"net/rpc"
 	"strconv"

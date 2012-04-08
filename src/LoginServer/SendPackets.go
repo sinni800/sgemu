@@ -1,7 +1,7 @@
 package LoginServer
 
 import (
-	. "../SG"
+	. "SG"
 ) 
 
 func SendMessage(c *LClient, errcode int, msg string) {

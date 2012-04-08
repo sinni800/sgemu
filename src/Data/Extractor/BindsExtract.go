@@ -1,7 +1,7 @@
 package Extractor
 
 import (
-	. "../../Data"
+	. "Data"  
 	//"Data/xml"
 	"encoding/xml"
 	"bufio"
@@ -9,7 +9,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
-)
+) 
 
 func ExtractNtt(path string, outpath string, NttExtractDone chan bool) {
 	defer Panic()

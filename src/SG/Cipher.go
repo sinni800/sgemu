@@ -4,7 +4,7 @@ var (
 	Key1 []byte
 	Key2 []byte
 )
- 
+   
 func init() {
 	sKey1 := "NexonInc.NexonInc.NexonInc.NexonInc."
 	Key1 = make([]byte, len(sKey1))

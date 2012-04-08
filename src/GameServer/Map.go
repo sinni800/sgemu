@@ -1,7 +1,7 @@
 package GameServer
 
-import C "../Core"
-import . "../SG"
+import C "Core"
+import . "SG"
 
 type MapType byte
 

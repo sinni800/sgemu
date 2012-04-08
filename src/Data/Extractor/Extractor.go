@@ -2,7 +2,7 @@
 package Extractor
 
 import (
-	. "../../Data"
+	. "Data"
 	"bufio"
 	"log"
 	"os"

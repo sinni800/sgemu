@@ -1,11 +1,11 @@
 package LoginServer
 
 import (
-	C "../Core"
-	D "../Data"
-	. "../SG" 
-)
-
+	C "Core"
+	D "Data"
+	. "SG" 
+)  
+  
 type LClient struct {
 	C.CoreClient
 	Key           byte

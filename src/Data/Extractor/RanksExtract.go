@@ -7,7 +7,7 @@ import (
 	. "encoding/binary"
 	"os"
 	//"fmt" 
-	. "../../Data"
+	. "Data"
 	"log"
 )
 
