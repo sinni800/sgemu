@@ -4,7 +4,7 @@ import (
 	C "Core"
 	D "Data"
 	. "SG" 
-)  
+)   
   
 type LClient struct {
 	C.CoreClient
@@ -14,7 +14,7 @@ type LClient struct {
 	Server        *LServer
 	Disconnecting bool
 }
- 
+  
 func (client *LClient) StartRecive() {
 	defer client.OnDisconnect()
 
@@ -26,7 +26,7 @@ func (client *LClient) StartRecive() {
 			return
 		}
 	}
-}
+} 
 
 func (client *LClient) OnConnect() {
 	defer client.OnDisconnect() 

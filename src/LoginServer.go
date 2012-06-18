@@ -12,14 +12,14 @@ import (
 	"SG"  
 	//"WebAdmin" 
 )                                      
-              
+                
 var ( 
 	Closing = false
-)
+)     
     
 func main() {
 	defer OnClose()
-	
+
 	runtime.GOMAXPROCS(5)
  
 	log.SetFlags(log.Ltime | log.Lshortfile)

@@ -44,6 +44,7 @@ func (client *GClient) OnConnect() {
 	id, r := client.Server.IDG.Next()
 
 	if !r {
+		client.Log().Println_Warning("No more ids left - server is full!")
 		return
 	}
 

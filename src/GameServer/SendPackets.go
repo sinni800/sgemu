@@ -66,6 +66,9 @@ func PlayerAppear(c *GClient) *SGPacket {
 }
 
 func SendMapData(client *GClient) {
+
+	client.Log().Printf_Debug("Player[%s] Appeared in %d", client.Player.Name, client.Map.MapID)
+
 	//send map info
 	packet := NewPacket2(198)
 	packet.WriteHeader(SM_MAP_LOAD)

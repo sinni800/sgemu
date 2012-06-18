@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	. "Data/Extractor"
-)           
+)               
    
 //Args: use like extractor.exe "game path"
 func main() { 
@@ -18,7 +18,7 @@ func main() {
 	} else {
 		fmt.Println("No game path, Use like extractor.exe \"game path\"")
 	} 
-    
+     
 	//path = "C:/Games/Shattered Galaxy/" //Default path used for debugging
  
 	ReadFiles(path, "/../")
@@ -26,4 +26,4 @@ func main() {
 	cmd := ""
 	fmt.Println("Done! Press enter to quit...")
 	fmt.Scanln(&cmd)
-} 
+}  

@@ -11,7 +11,7 @@ import (
 	"os/signal"
 	"runtime" 
 	//"WebAdmin"
-)          
+)           
           
 var (
 	Closing = false
@@ -19,7 +19,7 @@ var (
     
 func main() {
 	defer OnClose()
- 
+  
 	runtime.GOMAXPROCS(5)
  
 	log.SetFlags(log.Ltime | log.Lshortfile)
@@ -29,7 +29,7 @@ func main() {
 	D.CreateDatabase()
        
 	D.LoadData()
-	
+	 
 	SG.ReadConfig()  
 
 	Server = new(GServer)
