@@ -2,6 +2,6 @@
 package SG
 
 var (
-	configPath = "../config.xml"
-	RPCKey = []byte("RpcKeyRpcKeyRpcKeyRpcKeyRpcKey")
-) 
+	configPath = "./config.xml"
+	RPCKey     = []byte("RpcKeyRpcKeyRpcKeyRpcKeyRpcKey")
+)
