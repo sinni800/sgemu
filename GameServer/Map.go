@@ -6,17 +6,17 @@ import . "code.google.com/p/sgemu/SG"
 type MapType byte
 
 const (
-	BaseZone = MapType(0)
-	PeaceZone = MapType(1)
+	BaseZone   = MapType(0)
+	PeaceZone  = MapType(1)
 	BattleZone = MapType(2)
 )
 
-
 type Map struct {
-	MapID	uint32
-	Type	MapType
+	MapID   uint32
+	Type    MapType
 	Players map[uint32]*GClient
 	Run     *C.Runner
+	Ticks   uint32
 }
 
 func NewMap(mapid uint32, typ MapType) *Map {

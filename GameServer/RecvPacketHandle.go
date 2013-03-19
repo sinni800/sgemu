@@ -1,13 +1,13 @@
 package GameServer
 
 import (
-	. "code.google.com/p/sgemu/SG"
 	. "code.google.com/p/sgemu/Data"
+	. "code.google.com/p/sgemu/SG"
 )
 
 func OnWelcome(c *GClient, p *SGPacket) {
 	c.Log().Println_Debug("OnWelcome Packet")
-} 
+}
 
 func OnDisconnectPacket(c *GClient, p *SGPacket) {
 	c.Log().Println_Debug("OnDisconnect Packet")
@@ -33,7 +33,7 @@ func OnPing(c *GClient, p *SGPacket) {
 }
 
 func OnLabraryEnter(c *GClient, p *SGPacket) {
-	
+
 	packet := NewPacket2(20)
 	packet.WriteHeader(CSM_LAB_ENTER)
 	packet.WriteByte(0)
@@ -65,37 +65,54 @@ func OnGameEnter(c *GClient, p *SGPacket) {
 	}
 }
 
+func OnNameRequest(c *GClient, p *SGPacket) {
+	SendPlayerNames(c)
+}
+
 func OnMove(c *GClient, p *SGPacket) {
 	c.Log().Println_Debug("OnMove Packet")
 	p.RSkip(6)
 	tp := p.ReadByte() //type
 
 	if tp == 0x16 {
-		p.RSkip(4) //id
-		c.Player.X = p.ReadInt16()
-		c.Player.Y = p.ReadInt16()
+		id := p.ReadUInt32()
+		x := p.ReadInt16()
+		y := p.ReadInt16()
+		if id == c.ID {
+			c.Player.X = x
+			c.Player.Y = y
+			c.Log().Printf_Debug("Player[%s] Moved (%x,%x)", c.Player.Name, x, y)
+		} else {
+			unit, exists := c.Units[id]
+			if !exists {
+				panic("moving unkown id")
+			}
+			unit.X = x
+			unit.Y = y
+			c.Log().Printf_Debug("Unit[%s] Moved (%x,%x)", unit.CustomName, x, y)
+		}
 
 		packet := NewPacket2(50)
 		packet.WriteHeader(CSM_MOVE)
 		packet.WriteInt16(0)
 
-		packet.WriteInt16(1752)
-		packet.WriteInt16(c.Player.X + c.Player.Y)
+		packet.WriteUInt32(c.Map.Ticks)
+		c.Map.Ticks++
 
 		packet.WriteInt16(1)
 		packet.WriteInt16(0x0c)
 		packet.WriteByte(0x1a)
 
-		c.Log().Printf_Debug("Player[%s] Moved (%x,%x)", c.Player.Name, c.Player.X, c.Player.Y)
-
-		packet.WriteUInt32(c.ID)
-		packet.WriteInt16(c.Player.X)
-		packet.WriteInt16(c.Player.Y)
+		packet.WriteUInt32(id)
+		packet.WriteInt16(x)
+		packet.WriteInt16(y)
 
 		packet.WriteInt16(0)
 		packet.WriteByte(0)
 
 		Server.Run.Funcs <- func() { c.Map.Send(packet) }
+	} else {
+		c.Log().Printf_Debug("Player[%s] Move packet unkown type %d %s", c.Player.Name, tp, p)
 	}
 }
 
@@ -104,10 +121,10 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 	unit, exist := c.Units[id]
 	if exist {
 		itemsRemove := p.ReadByte()
-		
-		for i:=byte(0);i<itemsRemove;i++ {
+
+		for i := byte(0); i < itemsRemove; i++ {
 			id := p.ReadUInt16()
-			for i :=0;i< len(unit.Items);i++ {
+			for i := 0; i < len(unit.Items); i++ {
 				item := unit.Items[i]
 				if item != nil && item.ID == id {
 					unit.Items[i] = nil
@@ -117,15 +134,15 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 				}
 			}
 		}
-		
+
 		itemsEquip := p.ReadByte()
-		
-		for i:=byte(0);i<itemsEquip;i++ {
-			id := p.ReadUInt16() 
-			for dbid,item := range c.Player.Items  {
+
+		for i := byte(0); i < itemsEquip; i++ {
+			id := p.ReadUInt16()
+			for dbid, item := range c.Player.Items {
 				if item.ID == id {
-					t := item.Data().GroupType 
-					it := unit.Items[t] 
+					t := item.Data().GroupType
+					it := unit.Items[t]
 					if it == nil {
 						unit.Items[t] = item
 						delete(c.Player.Items, dbid)
@@ -136,21 +153,21 @@ func OnUnitEdit(c *GClient, p *SGPacket) {
 				}
 			}
 		}
-		
+
 		name := p.ReadString()
 		if len(name) > 0 {
 			unit.CustomName = name
 		}
-		
+
 		SendPlayerInventory(c)
-		SendUnitInventory(c,unit)
+		SendUnitInventory(c, unit)
 		SendUnitStats(c, unit)
-		
+
 		packet := NewPacket2(14)
 		packet.WriteHeader(CSM_LAB_ENTER)
 		packet.Write([]byte{0x01, 0x00, 0x00})
-		c.Send(packet)	
-		
+		c.Send(packet)
+
 	} else {
 		//c.Log().Println_Debug("Access to not existed unit %s", c.Player.Name)
 	}
@@ -166,9 +183,9 @@ func OnShopRequest(c *GClient, p *SGPacket) {
 	case 1:
 		SendShopInformation(c)
 	case 2:
-		uid := p.ReadByte()   // shop unit id
+		uid := p.ReadByte()     // shop unit id
 		uname := p.ReadString() // unit name
-		p.ReadByte()   // unkown
+		p.ReadByte()            // unkown
 		//c.Log().Println_Debug("Buying units is not supported yet!")
 		OnUnitBuyRequest(c, uid, uname)
 	case 3:
@@ -176,33 +193,31 @@ func OnShopRequest(c *GClient, p *SGPacket) {
 	default:
 		c.Log().Println_Debug("Unkown shop action")
 	}
-	c.Log().Println(p) 
+	c.Log().Println(p)
 }
-
-
 
 func OnUnitSellRequest(c *GClient, unitID uint32) {
 	if c.RemoveUnit(unitID) {
 		//TODO: Fix the sell value
-		c.Player.Money += 1 
+		c.Player.Money += 1
 		SendPlayerStats(c)
 	}
 }
 
 func OnUnitBuyRequest(c *GClient, unitID byte, unitName string) {
 	if unitID >= byte(len(Shopdata.ShopUnits)) {
-		panic("This unit does not exist");
-	} 
-	  
+		panic("This unit does not exist")
+	}
+
 	u := Shopdata.ShopUnits[unitID]
-	 
+
 	unit := c.AddUnit(u.Name, unitName)
 	if unit != nil {
 		c.Player.Money -= u.Money
 		c.Player.Ore -= u.Ore
 		c.Player.Silicon -= u.Silicon
 		c.Player.Sulfur -= u.Sulfur
-		
+
 		SendPlayerStats(c)
 	}
 }
@@ -224,45 +239,54 @@ func OnProfileRequest(c *GClient, p *SGPacket) {
 
 func OnMapChangeRequest(c *GClient, p *SGPacket) {
 	mapid := p.ReadUInt32()
-	x,y := p.ReadInt16(),p.ReadInt16()
+	x, y := p.ReadInt16(), p.ReadInt16()
 	maptype := p.ReadByte()
 	p.ReadByte() //dunno
-	
-	c.Log().Printf_Debug("Map id:%d [%d,%d] type:%d", mapid,x,y,maptype)
+
+	c.Log().Printf_Debug("Map id:%d [%d,%d] type:%d", mapid, x, y, maptype)
 	//0 - base
 	//1 - peace
 	//2 - battle
-	
+
 	Server.Run.Funcs <- func() {
-		m, exists := c.Server.Maps[mapid] 
-	
+		m, exists := c.Server.Maps[mapid]
+
 		c.Player.X = x
 		c.Player.Y = y
-		
+
 		if !exists {
-			m = NewMap(mapid, PeaceZone)
-			c.Server.Maps[mapid] = NewMap(mapid, PeaceZone)
-		} 
-		
+			m = NewMap(mapid, BattleZone)
+			c.Server.Maps[mapid] = m
+		}
+
+		c.Map.OnLeave(c)
 		c.Map = m
 		c.Player.MapID = m.MapID
 		c.Log().Printf_Debug("Going to map %d", m.MapID)
-		
+
 		m.Run.Add(func() {
-		
-		m.OnPlayerJoin(c)
-		SendMapData(c) 
-		c.Map.OnPlayerAppear(c)
-		
-		packet := NewPacket2(18)
-		packet.WriteHeader(0x0E)
-		packet.WriteBytes([]byte{0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
-		c.Send(packet)
-		
-		packet = NewPacket2(13)
-		packet.WriteHeader(0x0E)
-		packet.WriteBytes([]byte{0x05, 0x00})
-		c.Send(packet)
+
+			m.OnPlayerJoin(c)
+			if m.Type == BattleZone {
+				SendPlayerNamesBattle(c)
+			} else {
+				SendPlayerNames(c)
+			}
+			SendPlayerNames(c)
+			SendMapData(c)
+			if m.Type != BattleZone {
+				m.OnPlayerAppear(c)
+			}
+
+			packet := NewPacket2(18)
+			packet.WriteHeader(0x0E)
+			packet.WriteBytes([]byte{0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
+			c.Send(packet)
+
+			packet = NewPacket2(13)
+			packet.WriteHeader(0x0E)
+			packet.WriteBytes([]byte{0x05, 0x00})
+			c.Send(packet)
 		})
 	}
 }

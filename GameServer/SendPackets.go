@@ -79,12 +79,22 @@ func SendMapData(client *GClient) {
 		packet.WriteByte(0)
 	}
 	packet.WriteInt32(12)
-	packet.WriteByte(0)
-	packet.WriteByte(0)
+	if client.Map.Type == BattleZone {
+		packet.WriteByte(2) //needs to be 2 when in battle
+		packet.WriteByte(1) //needs to be 1 when in battle
+	} else {
+		packet.WriteByte(0)
+		packet.WriteByte(0)
+	}
 	packet.WriteInt32(2068355300)
 	packet.WriteInt32(2068445300)
-	
-	packet.WriteByte(0)
+
+	if client.Map.Type == BattleZone {
+		packet.WriteByte(4)
+	} else {
+		packet.WriteByte(0)
+	}
+
 	//	 00 - non battle
 	//	 01 - start/end/banned mode
 	//	 02 - same as 00?
@@ -94,7 +104,7 @@ func SendMapData(client *GClient) {
 	//	 06 - same as 00?
 	//	 07 - same as 04?
 	//	 FF - same as 00?
-	packet.WriteByte(0x0D)
+	packet.WriteByte(0x0D) //changes tiles textures
 	packet.WriteByte(0x00) //number of things on map 
 	client.Send(packet)
 
@@ -121,18 +131,71 @@ func SendMapData(client *GClient) {
 	//packet.WriteHeader(0x17)																												   //change 0x00 to 0x0a
 	//packet.Write([]byte{0x17, 0xD9, 0x0A, 0xA0, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xFD, 0x73, 0xAC, 0x33, 0xFD, 0x75, 0x32, 0xD3, 0x04, 0x09, 0x00, 0x00, 0x00, 0x15, 0xCC, 0x02, 0x00, 0x01, 0x40, 0x00, 0x34, 0x05, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xCB, 0x07, 0x20, 0x05, 0x00, 0x00, 0x11, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xCA, 0x0B, 0x80, 0x0C, 0x20, 0x00, 0x0A, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC9, 0x0B, 0x80, 0x02, 0x60, 0x00, 0x0A, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC8, 0x03, 0x00, 0x0C, 0x20, 0x00, 0x20, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC7, 0x04, 0xA0, 0x06, 0x60, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC6, 0x0B, 0xC0, 0x09, 0x80, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC5, 0x0D, 0x80, 0x02, 0x80, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC4, 0x0C, 0x40, 0x01, 0xA0, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0xC3, 0x05, 0x40, 0x0A, 0xC0, 0x0B, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00})
 	//client.Send(packet)
-	
-	packet = NewPacket2(150)
-	packet.WriteHeader(0x18)
-	packet.WriteInt16(0x0113) //unit id
-	packet.WriteByte(0x01) //unit space index
-	packet.WriteByte(0)
-	packet.WriteString("Shade") //unit custom name
-	packet.WriteString(client.Player.Name) //player name 
-	packet.Write([]byte{0x06, 0x47, 0x19, 0xF0, 0x00, 0x00, 0x30, 0x01, 0x2C, 0x01, 0x00, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00, 0x58, 0x01, 0x68, 0x00, 0xC8, 0x00, 0x58, 0x01, 0x68, 0x00, 0xC8, 0x01, 0x06, 0x00, 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x06, 0x02, 0x01, 0x00, 0x2B, 0x00, 0x00, 0x02, 0x01, 0x4A, 0x00, 0x04, 0x00, 0x18, 0xEC, 0xBE, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x0D, 0x01, 0x97, 0x0C, 0x13, 0x02, 0x53, 0x00, 0x00, 0x00, 0x00})
-	client.Send(packet)
-	//18 01 13 06 00 05 53 68 61 64 65 0A 65 76 69 6C 6D 6F 72 74 61 6C 06 47 19 F0 00 00 30 01 2C 01 00 09 00 00 00 00 00 58 01 68 00 C8 00 58 01 68 00 C8 01 06 00 00 00 00 09 00 00 06 02 01 00 2B 00 00 02 01 4A 00 04 00 18 EC BE 00 00 00 0D 00 00 00 0D 01 97 0C 13 02 53 00 00 00 00
 
+	if client.Map.Type == BattleZone {
+
+		index := byte(1)
+		for id, unit := range client.Units {
+			unit.X = client.Player.X
+			unit.Y = client.Player.Y
+			index++
+			packet = NewPacket2(150)
+			packet.WriteHeader(0x18)
+			packet.WriteUInt16(unit.Data.IID) //unit id
+			packet.WriteByte(index)           //unit space index
+			packet.WriteByte(0)
+			packet.WriteString(unit.CustomName)    //unit custom name
+			packet.WriteString(client.Player.Name) //player name 
+			packet.WriteUInt16(1635)
+			packet.WriteUInt16(10090)
+			packet.WriteUInt16(0)
+			packet.WriteByte(0x30)
+			packet.WriteUInt16(0x1C2)
+			packet.WriteUInt16(0x100)
+			packet.WriteByte(9)
+			packet.WriteUInt32(0)
+
+			packet.WriteUInt16(0x58)
+			packet.WriteUInt16(0x195)
+			packet.WriteUInt16(0xC8)
+
+			packet.WriteUInt16(0x58)
+			packet.WriteUInt16(0x195)
+			packet.WriteUInt16(0xC8)
+
+			packet.WriteByte(1)
+			packet.WriteByte(6)
+			packet.WriteUInt32(0)
+			packet.WriteByte(9)
+			packet.WriteUInt16(0)
+
+			packet.WriteByte(6)
+			packet.WriteByte(2)
+			packet.WriteByte(1)
+
+			packet.WriteUInt16(0x2B)
+			packet.WriteByte(0)
+
+			packet.WriteUInt16(2)
+			packet.WriteUInt16(0x6E)
+			packet.WriteUInt16(3)
+			packet.WriteUInt32(id) //unit id
+			packet.WriteUInt32(13)
+			packet.WriteUInt32(13)
+			packet.WriteUInt16(unit.HP)
+			packet.WriteInt16(unit.X)
+			packet.WriteInt16(unit.Y)
+			packet.WriteUInt32(0)
+			client.Send(packet)
+		}
+
+		packet = NewPacket2(10)
+		packet.WriteHeader(0x43)
+		packet.WriteUInt16(0)
+		client.Send(packet)
+
+		//18 01 13 06 00 05 53 68 61 64 65 0A 65 76 69 6C 6D 6F 72 74 61 6C 06 47 19 F0 00 00 30 01 2C 01 00 09 00 00 00 00 00 58 01 68 00 C8 00 58 01 68 00 C8 01 06 00 00 00 00 09 00 00 06 02 01 00 2B 00 00 02 01 4A 00 04 00 18 EC BE 00 00 00 0D 00 00 00 0D 01 97 0C 13 02 53 00 00 00 00
+	}
 }
 
 func SendPlayerLeave(c *GClient) {
@@ -192,6 +255,31 @@ func SendShopInformation(c *GClient) {
 
 	c.Send(packet)
 
+}
+
+func SendPlayerNames(client *GClient) {
+	packet := NewPacket2(28 + len(client.Map.Players)*13)
+	packet.WriteHeader(CSM_PLAYER_NAME)
+	packet.WriteByte(0)
+	packet.WriteInt16(int16(len(client.Map.Players)))
+	for _, s := range client.Map.Players {
+		packet.WriteString(s.Player.Name)
+		packet.WSkip(2)
+	}
+	client.Send(packet)
+}
+
+func SendPlayerNamesBattle(client *GClient) {
+	packet := NewPacket2(28 + len(client.Map.Players)*15)
+	packet.WriteHeader(SM_PLAYER_NAME_BATTLE)
+	packet.WriteByte(byte(len(client.Map.Players)))
+	for _, s := range client.Map.Players {
+		packet.WriteString(s.Player.Name)
+		packet.WriteInt16(12)
+		packet.WriteInt16(-1)
+		packet.WSkip(2)
+	}
+	client.Send(packet)
 }
 
 func SendPlayerStats(client *GClient) {

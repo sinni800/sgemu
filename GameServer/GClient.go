@@ -5,7 +5,7 @@ import (
 	D "code.google.com/p/sgemu/Data"
 	. "code.google.com/p/sgemu/SG"
 	//R "reflect"
-) 
+)
 
 type GClient struct {
 	C.CoreClient
@@ -26,7 +26,7 @@ func (client *GClient) StartRecive() {
 
 	for {
 		err := client.packet.ReadPacketFromStream(client.Socket, callback)
-		if err != 0{
+		if err != 0 {
 			return
 		}
 	}
@@ -34,7 +34,7 @@ func (client *GClient) StartRecive() {
 
 func (client *GClient) OnConnect() {
 	defer client.OnDisconnect()
-	
+
 	client.Disconnecting = false
 	userID, q := D.LoginQueue.Check(client.IP)
 	if !q {
@@ -64,7 +64,7 @@ func (client *GClient) OnConnect() {
 			client.Log().Println_Warning("Unit name does not exists")
 			continue
 		}
-		client.Units[id] = &D.Unit{unitdb, id, client.Player, name}
+		client.Units[id] = &D.Unit{unitdb, id, client.Player, name, 0, 0}
 	}
 
 	client.Log().Println("name " + client.Player.Name)
@@ -73,43 +73,43 @@ func (client *GClient) OnConnect() {
 	client.packet.Index = 0
 	client.ID = id
 
-	
 	Server.Run.Funcs <- func() {
+		client.Player.MapID = 100106
 		mapid := client.Player.MapID
-		m, exists := client.Server.Maps[mapid] 
-		
+		m, exists := client.Server.Maps[mapid]
+
 		client.Map = m
-		
+
 		if !exists {
 			m = NewMap(mapid, PeaceZone)
 			client.Server.Maps[mapid] = NewMap(mapid, PeaceZone)
 		}
-		
+
 		m.Run.Add(func() {
-		m.OnPlayerJoin(client)
-		client.SendWelcome()
+			m.OnPlayerJoin(client)
+			client.SendWelcome()
 		})
 	}
 	client.StartRecive()
 }
 
-func (client *GClient) OnDisconnect() {	
+func (client *GClient) OnDisconnect() {
 	if x := recover(); x != nil {
 		client.Log().Printf("panic : %v \n %s", x, C.PanicPath())
 	}
-	
+
 	if client.Disconnecting {
 		return
 	}
 	client.Disconnecting = true
-	
+
 	client.Socket.Close()
-	
+
 	if client.Map != nil {
 		client.Map.Run.Add(
-		func() {
-			client.Map.OnLeave(client)
-		})
+			func() {
+				client.Map.OnLeave(client)
+			})
 	}
 	if client.Units != nil {
 		for id, _ := range client.Units {
@@ -148,23 +148,21 @@ func (client *GClient) SendWelcome() {
 	packet.WriteHeader(0x02)
 	packet.Write([]byte{0x00, 0x00})
 	//client.Send(packet)
-	
- 
+
 	packet = NewPacket2(14)
 	packet.WriteHeader(0x5A)
 	packet.Write([]byte{0x1E, 0x06, 0x00})
 	//client.Send(packet)
-	
+
 	packet = NewPacket2(16)
 	packet.WriteHeader(0x66)
 	packet.Write([]byte{0x02, 0x01, 0x02, 0x00, 0x02})
 	//client.Send(packet)
- 
+
 	packet = NewPacket2(20)
 	packet.WriteHeader(0x7D)
 	packet.Write([]byte{0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00})
 	//client.Send(packet)
-	
 
 	SendPlayerStats(client)
 
@@ -176,22 +174,9 @@ func (client *GClient) SendWelcome() {
 
 	SendPlayerInventory(client)
 
-	
 	SendMapData(client)
- 
-     
- 
- 	
- 
-	//send player name 
-	packet = NewPacket2(28 + len(client.Map.Players)*13)
-	packet.WriteHeader(SM_PLAYER_NAME)
-	packet.WriteInt16(int16(len(client.Map.Players)))
-	for _, s := range client.Map.Players {
-		packet.WriteString(s.Player.Name)
-		packet.WSkip(2)
-	}
-	client.Send(packet)
+
+	SendPlayerNames(client)
 
 	//send spawn palyer
 	client.Map.OnPlayerAppear(client)
@@ -221,14 +206,14 @@ func (client *GClient) Log() *C.Logger {
 
 func (client *GClient) ParsePacket(p *SGPacket) {
 	header := p.ReadByte()
-	
+
 	fnc, exist := Handler[int(header)]
-	
+
 	if !exist {
 		client.Log().Printf_Warning("isnt registred : %s", p)
 		return
 	}
 	//client.Log().Printf("Header(%d) len(%d) : % #X\n %s", header, len(p.Buffer), p.Buffer, p.Buffer)
 	//client.Log().Printf("Handle %s\n", R.TypeOf(fnc))
-	fnc(client, p)	
+	fnc(client, p)
 }

@@ -4,37 +4,37 @@ import "strings"
 import "code.google.com/p/sgemu/SG"
 
 type UnitGroupData struct {
-	ID       uint16   `xml:",attr"`
-	Division string   `xml:",attr"`
-	Name     string   `xml:",attr"`
+	ID       uint16      `xml:",attr"`
+	Division string      `xml:",attr"`
+	Name     string      `xml:",attr"`
 	Units    []*UnitData `xml:"Unit"`
 }
 
 type UnitData struct {
-	Name        string  `xml:",attr"`
-	UID         string  `xml:",attr"`
-	IID         uint16  `xml:",attr"`
-	GID         uint16  `xml:",attr"`
-	Influence   byte    `xml:",attr"`
-	Space       uint16  `xml:",attr"`
-	Health      uint16  `xml:",attr"`
-	Armor       uint16  `xml:",attr"`
-	ViewRange   float32 `xml:",attr"`
-	Speed       float32 `xml:",attr"`
-	UnitType    string  `xml:",attr"`
-	Slots       uint16  `xml:",attr"`
-	UnitWeight  uint16  `xml:",attr"`
-	Max_Weight  uint16  `xml:",attr"`
-	ViewType    string  `xml:",attr"`
-	U1          uint16  `xml:",attr"`
-	U2          uint8   `xml:",attr"`
-	U3          uint32  `xml:",attr"`
-	U4          uint8   `xml:",attr"`
-	U5          int16   `xml:",attr"`
-	U6          uint8   `xml:",attr"`
-	U7          uint32  `xml:",attr"`
-	U8          uint16  `xml:",attr"`
-	DType       DType	`xml:",attr"`
+	Name       string  `xml:",attr"`
+	UID        string  `xml:",attr"`
+	IID        uint16  `xml:",attr"`
+	GID        uint16  `xml:",attr"`
+	Influence  byte    `xml:",attr"`
+	Space      uint16  `xml:",attr"`
+	Health     uint16  `xml:",attr"`
+	Armor      uint16  `xml:",attr"`
+	ViewRange  float32 `xml:",attr"`
+	Speed      float32 `xml:",attr"`
+	UnitType   string  `xml:",attr"`
+	Slots      uint16  `xml:",attr"`
+	UnitWeight uint16  `xml:",attr"`
+	Max_Weight uint16  `xml:",attr"`
+	ViewType   string  `xml:",attr"`
+	U1         uint16  `xml:",attr"`
+	U2         uint8   `xml:",attr"`
+	U3         uint32  `xml:",attr"`
+	U4         uint8   `xml:",attr"`
+	U5         int16   `xml:",attr"`
+	U6         uint8   `xml:",attr"`
+	U7         uint32  `xml:",attr"`
+	U8         uint16  `xml:",attr"`
+	DType      DType   `xml:",attr"`
 }
 
 type Unit struct {
@@ -42,6 +42,7 @@ type Unit struct {
 	ID    uint32
 	Owner *Player
 	Data  *UnitData
+	X, Y  int16
 }
 
 type UnitDB struct {
@@ -113,10 +114,10 @@ func (unit *Unit) WriteToPacket(packet *SG.SGPacket) {
 	packet.WriteInt32(0)               //xp modifier
 	packet.WriteUInt32(unit.TotalXP()) //xp total
 	packet.WriteByte(unit.Level)
-	packet.WriteByte(0)	//hot key related
-	packet.WriteByte(0)	//hot key related
-	packet.WriteUInt16(1570)                 //hp 
-	packet.WriteUInt16(1570)                 //max hp
+	packet.WriteByte(0)                      //hot key related
+	packet.WriteByte(0)                      //hot key related
+	packet.WriteUInt16(unit.HP)              //hp 
+	packet.WriteUInt16(unit.Data.Health)     //max hp
 	packet.WriteUInt16(unit.MaxWeight())     //max-weight?
 	packet.WriteUInt16(8)                    //space?
 	packet.WriteUInt16(0x48)                 //weight?
@@ -124,10 +125,10 @@ func (unit *Unit) WriteToPacket(packet *SG.SGPacket) {
 	packet.WriteUInt16(unit.Data.UnitWeight) //unit-weight? unit.Data.UnitWeight
 	packet.WriteUInt16(0x30)                 //speed *10
 	packet.WriteUInt16(0x12c)
-	packet.WriteByte(1) 
+	packet.WriteByte(1)
 	packet.WriteUInt16(unit.Data.Armor) //armor?
 	packet.WriteUInt16(0)
-	packet.WriteUInt16(100) 
+	packet.WriteUInt16(100)
 	packet.WriteUInt16(0x62)  //fire power?
 	packet.WriteUInt16(0x168) //range * 2 / 10
 	packet.WriteUInt16(0xc8)  //cooldown * 100
@@ -137,5 +138,5 @@ func (unit *Unit) WriteToPacket(packet *SG.SGPacket) {
 	packet.WriteUInt64(0x9000006)
 	packet.WriteUInt16(unit.Kills) //kills
 	packet.WriteString(unit.CustomName)
-	packet.WriteString(unit.Name) 
-} 
+	packet.WriteString(unit.Name)
+}

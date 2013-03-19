@@ -37,10 +37,10 @@ func (serv *GServer) OnSetup() {
 	serv.CoreServer.OnSetup()
 	serv.Maps = make(map[uint32]*Map)
 	serv.IDG = Core.NewIDG()
-	
+
 	serv.Maps[100706] = NewMap(100706, BaseZone)
-	
-	
+	serv.Maps[100106] = NewMap(100106, BaseZone)
+
 	serv.Run = Core.NewRunner()
 	serv.DBRun = Core.NewRunner()
 	serv.Sdr = Core.NewScheduler()
@@ -69,6 +69,7 @@ func init() {
 		CSM_LAB_ENTER:        OnLabraryEnter,
 		CM_UNIT_EDIT:         OnUnitEdit,
 		CM_MAPCHANGE_REQUEST: OnMapChangeRequest,
+		CSM_PLAYER_NAME:      OnNameRequest,
 	}
 }
 

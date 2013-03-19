@@ -126,7 +126,7 @@ func NewPlayer() *Player {
 	p.Divisions[Aviation] = Division{Aviation, 1, "", 0}
 	p.Divisions[Organic] = Division{Organic, 1, "", 0}
 
-	p.MapID = 100706
+	p.MapID = 100106
 
 	p.UnitsData = make(map[string]*UnitDB)
 	p.Items = make(map[string]*Item)
