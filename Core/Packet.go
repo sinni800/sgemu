@@ -2,10 +2,11 @@ package Core
 
 import (
 	. "encoding/binary"
+	"errors"
 	"fmt"
 	"io"
 	"math"
-	"errors"
+	"strings"
 )
 
 var (
@@ -13,8 +14,8 @@ var (
 )
 
 type Packet struct {
-	Buffer    []byte
-	Index     int
+	Buffer []byte
+	Index  int
 }
 
 func NewPacket() (p *Packet) {
@@ -29,7 +30,7 @@ func NewPacket2(size int) (p *Packet) {
 	p.Index = 0
 	p.Buffer = make([]byte, size)
 	return p
-} 
+}
 
 func NewPacket3(buffer []byte) (p *Packet) {
 	p = new(Packet)
@@ -47,7 +48,8 @@ func NewPacketRef(buffer []byte) (p *Packet) {
 }
 
 func (p *Packet) String() string {
-	return fmt.Sprintf("len(%d) : % #X\n %s",  len(p.Buffer), p.Buffer, p.Buffer)
+	pString := strings.Replace(string(p.Buffer), "\x07", " ", -1)
+	return fmt.Sprintf("len(%d) : % #X\n %s", len(p.Buffer), p.Buffer, pString)
 }
 
 func (p *Packet) Clone() (pn *Packet) {
@@ -72,19 +74,19 @@ func (p *Packet) RCheck(size int) bool {
 }
 
 func (p *Packet) Resize(newSize int) {
-	
+
 	if cap(p.Buffer) > newSize {
 		p.Buffer = p.Buffer[:newSize]
 		return
 	}
-	if (newSize-cap(p.Buffer) > 1024) {
+	if newSize-cap(p.Buffer) > 1024 {
 		p.Buffer = append(p.Buffer, make([]byte, newSize-cap(p.Buffer))...)
 	} else {
 		p.Buffer = append(p.Buffer, make([]byte, 1024)...)
 	}
-	
+
 	p.Buffer = p.Buffer[:cap(p.Buffer)]
-	
+
 	//temp := make([]byte, newSize)
 	//copy(temp, p.Buffer)
 	//p.Buffer = temp
@@ -101,7 +103,6 @@ func (p *Packet) RSkip(times int) {
 	}
 	p.Index += times
 }
-
 
 func (p *Packet) WriteByte(b byte) {
 	p.WCheck(1)
@@ -319,3 +320,6 @@ func (p *Packet) Write(bytes []byte) (n int, err error) {
 	return n, nil
 }
 
+func (p *Packet) Bytes() []byte {
+	return p.Buffer[:p.Index]
+}
