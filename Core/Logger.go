@@ -1,61 +1,62 @@
 package Core
 
-import( 
+import (
+	"fmt"
+	"io"
+	"log"
 	"runtime"
-	 "fmt"
-	 "log"
-	 "io"
-	 "container/list"
- )
- 
-const ( 
-	LOG_DEBUG = 1
-	LOG_WARNING = 2
-	LOG_INFO = 4
-	LOG_ALL = LOG_DEBUG | LOG_WARNING | LOG_INFO
 )
- 
+
+const (
+	LOG_DEBUG   = 1
+	LOG_WARNING = 2
+	LOG_INFO    = 4
+	LOG_ALL     = LOG_DEBUG | LOG_WARNING | LOG_INFO
+)
+
 type multiWriter struct {
-	writers *list.List
+	writers []io.Writer
 }
 
 func (t *multiWriter) Write(p []byte) (n int, err error) {
-	for e := t.writers.Front(); e != nil; e = e.Next() {
-		w := e.Value.(io.Writer)
-		n, err = w.Write(p)
-		if err != nil {
-			t.writers.Remove(e)
+	for i := 0; i < len(t.writers); i++ {
+		n, e := t.writers[i].Write(p)
+		if e != nil {
+			t.writers[len(t.writers)-1], t.writers[i], t.writers = nil, t.writers[len(t.writers)-1], t.writers[:len(t.writers)-1]
+			err = e
+			i--
 			continue
 		}
 		if n != len(p) {
+			t.writers[len(t.writers)-1], t.writers[i], t.writers = nil, t.writers[len(t.writers)-1], t.writers[:len(t.writers)-1]
 			err = io.ErrShortWrite
-			t.writers.Remove(e)
+			i--
 			continue
 		}
 	}
-	return len(p), nil
+	return len(p), err
 }
 
 func (t *multiWriter) AddWriter(out io.Writer) {
-	t.writers.PushBack(out)
+	t.writers = append(t.writers, out)
 }
 
 func MultiWriter(writers ...io.Writer) *multiWriter {
-	l := list.New()
-	for _,writer := range writers {
-		l.PushBack(writer)
+	w := &multiWriter{make([]io.Writer, 0, 10)}
+	for _, writer := range writers {
+		w.writers = append(w.writers, writer)
 	}
-	return &multiWriter{l}
+	return w
 }
 
 type Logger struct {
 	log.Logger
-	out *multiWriter
+	out   *multiWriter
 	level byte
 }
 
 func (l *Logger) AddWriter(out io.Writer) {
- 	l.out.AddWriter(out)
+	l.out.AddWriter(out)
 }
 
 func NewLogger(out io.Writer, prefix string, flag int) *Logger {
@@ -67,96 +68,88 @@ func NewLogger(out io.Writer, prefix string, flag int) *Logger {
 }
 
 func (l *Logger) SetLogLevel(level byte) {
-		l.level = level
+	l.level = level
 }
 
-
 func (l *Logger) Panicf(format string, v ...interface{}) {
-		s := fmt.Sprintf(format, v...)
-		panic(s)
+	s := fmt.Sprintf(format, v...)
+	panic(s)
 }
 
 func (l *Logger) Println_Debug(v ...interface{}) {
-		if l.level & LOG_DEBUG > 0 {
-			l.Println(v...)
-		}
+	if l.level&LOG_DEBUG > 0 {
+		l.Println(v...)
+	}
 }
 
 func (l *Logger) Printf_Debug(format string, v ...interface{}) {
-		if l.level & LOG_DEBUG > 0 {
-			l.Printf(format, v...)
-		}
+	if l.level&LOG_DEBUG > 0 {
+		l.Printf(format, v...)
+	}
 }
 
 func (l *Logger) Print_Debug(v ...interface{}) {
-		if l.level & LOG_DEBUG > 0 {
-			l.Print(v...)
-		}
+	if l.level&LOG_DEBUG > 0 {
+		l.Print(v...)
+	}
 }
 
 func (l *Logger) Println_Warning(v ...interface{}) {
-		if l.level & LOG_WARNING > 0 {
-			l.Println(v...)
-		}
+	if l.level&LOG_WARNING > 0 {
+		l.Println(v...)
+	}
 }
 
 func (l *Logger) Printf_Warning(format string, v ...interface{}) {
-		if l.level & LOG_WARNING > 0 {
-			l.Printf(format, v...)
-		}
+	if l.level&LOG_WARNING > 0 {
+		l.Printf(format, v...)
+	}
 }
 
 func (l *Logger) Print_Warning(v ...interface{}) {
-		if l.level & LOG_WARNING > 0 {
-			l.Print(v...)
-		}
+	if l.level&LOG_WARNING > 0 {
+		l.Print(v...)
+	}
 }
 
 func (l *Logger) Println_Info(v ...interface{}) {
-		if l.level & LOG_INFO > 0 {
-			l.Println(v...)
-		}
+	if l.level&LOG_INFO > 0 {
+		l.Println(v...)
+	}
 }
 
 func (l *Logger) Printf_Info(format string, v ...interface{}) {
-		if l.level & LOG_INFO > 0 {
-			l.Printf(format, v...)
-		}
+	if l.level&LOG_INFO > 0 {
+		l.Printf(format, v...)
+	}
 }
 
 func (l *Logger) Print_Info(v ...interface{}) {
-		if l.level & LOG_INFO > 0 {
-			l.Print(v...)
-		}
+	if l.level&LOG_INFO > 0 {
+		l.Print(v...)
+	}
 }
 
-
-
-
-
-
-
-
-func PanicPath() string{
+func PanicPath() string {
 	fullPath := ""
 	skip := 3
-	for i:=skip;;i++ {
+	for i := skip; ; i++ {
 		_, file, line, ok := runtime.Caller(i)
-   		if !ok {
-   				break;
-   		}
-   		if i > skip {
-   			fullPath += ", ";
-   		}
+		if !ok {
+			break
+		}
+		if i > skip {
+			fullPath += ", "
+		}
 		short := file
-  		for i := len(file) - 1; i > 0; i-- {
-  				if file[i] == '/' {
-   					short = file[i+1:]
-   					break
-  				} 
-   		}
-	   	file = short
-	   	fullPath += fmt.Sprintf("%s:%d", file , line)
-   	}
-   	return fullPath
-}  
+		for i := len(file) - 1; i > 0; i-- {
+			if file[i] == '/' {
+				short = file[i+1:]
+				break
+			}
+		}
+		file = short
+		fullPath += fmt.Sprintf("%s:%d", file, line)
+	}
+	return fullPath
+}
