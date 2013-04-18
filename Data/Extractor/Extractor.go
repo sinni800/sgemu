@@ -2,8 +2,8 @@
 package Extractor
 
 import (
-	. "code.google.com/p/sgemu/Data"
 	"bufio"
+	. "code.google.com/p/sgemu/Data"
 	"log"
 	"os"
 )
@@ -26,7 +26,7 @@ var (
 	BindingGroups []*BindingGroup
 	UnitGroups    []*UnitGroupData
 	RanksData     []*RankData
-	fileHelper 	  *os.File
+	fileHelper    *os.File
 )
 
 //Path: Game folder.
@@ -37,7 +37,7 @@ func ReadFiles(path string, outpath string) {
 
 	//Float16Bits
 	//Float16FromBits
-	/* 
+	/*
 		log.Printf("%x\n", Float16Bits2(3.1))
 		log.Printf("%x\n", Float16Bits2(1.6))
 		log.Printf("%x\n", Float16Bits(45))
@@ -52,7 +52,7 @@ func ReadFiles(path string, outpath string) {
 	if e != nil {
 		log.Panicln(e)
 	}
-	
+
 	fileHelper, e = os.Open(HelperPath)
 	if e != nil {
 		log.Panicln(e)
@@ -69,19 +69,18 @@ func ReadFiles(path string, outpath string) {
 	NttExtractDone := make(chan bool)
 	UnitsExtractDone := make(chan bool)
 	RanksExtractDone := make(chan bool)
-	
+
 	go ExtractItems(path, outpath, ItemExtractDone)
 	go ExtractNtt(path, outpath, NttExtractDone)
 	go ExtractUnits(path, outpath, UnitsExtractDone)
 	go ExtractRanks(path, outpath, RanksExtractDone)
-	
+
 	<-ItemExtractDone
 	<-NttExtractDone
 	<-UnitsExtractDone
 	<-RanksExtractDone
 
-
-	fileHelper.Close();
+	fileHelper.Close()
 }
 
 func Panic() {
