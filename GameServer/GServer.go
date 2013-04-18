@@ -7,6 +7,7 @@ import (
 	"net"
 	"net/rpc"
 	"strconv"
+	"time"
 )
 
 type GamePacketFunc func(c *GClient, p *SGPacket)
@@ -28,9 +29,15 @@ type GServer struct {
 	DBRun *Core.Runner
 	Sdr   *Core.Scheduler
 
+	ServerTime time.Time
+
 	RPCClient   *rpc.Client
 	RPCServer   *rpc.Server
 	RPCListener net.Listener
+}
+
+func (serv *GServer) Ticks() uint32 {
+	return uint32(time.Since(serv.ServerTime).Nanoseconds() / 10000000)
 }
 
 func (serv *GServer) OnSetup() {
@@ -47,6 +54,8 @@ func (serv *GServer) OnSetup() {
 	serv.Run.Start()
 	serv.DBRun.Start()
 	serv.Sdr.Start()
+
+	serv.ServerTime = time.Now()
 
 	serv.Sdr.AddMin(func() { serv.SavePlayers() }, 1)
 

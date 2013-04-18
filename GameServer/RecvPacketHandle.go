@@ -96,8 +96,7 @@ func OnMove(c *GClient, p *SGPacket) {
 		packet.WriteHeader(CSM_MOVE)
 		packet.WriteInt16(0)
 
-		packet.WriteUInt32(c.Map.Ticks)
-		c.Map.Ticks++
+		packet.WriteUInt32(Server.Ticks())
 
 		packet.WriteInt16(1)
 		packet.WriteInt16(0x0c)

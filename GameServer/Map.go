@@ -16,7 +16,6 @@ type Map struct {
 	Type    MapType
 	Players map[uint32]*GClient
 	Run     *C.Runner
-	Ticks   uint32
 }
 
 func NewMap(mapid uint32, typ MapType) *Map {
@@ -26,7 +25,6 @@ func NewMap(mapid uint32, typ MapType) *Map {
 	m.Run.Start()
 	m.MapID = mapid
 	m.Type = typ
-	m.Ticks = 10000
 	return m
 }
 
