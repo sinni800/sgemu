@@ -269,10 +269,9 @@ func OnMapChangeRequest(c *GClient, p *SGPacket) {
 			m.OnPlayerJoin(c)
 			if m.Type == BattleZone {
 				SendPlayerNamesBattle(c)
-			} else {
-				SendPlayerNames(c)
 			}
 			SendPlayerNames(c)
+
 			SendMapData(c)
 			if m.Type != BattleZone {
 				m.OnPlayerAppear(c)

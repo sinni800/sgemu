@@ -26,6 +26,7 @@ func NewMap(mapid uint32, typ MapType) *Map {
 	m.Run.Start()
 	m.MapID = mapid
 	m.Type = typ
+	m.Ticks = 10000
 	return m
 }
 
