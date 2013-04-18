@@ -67,7 +67,7 @@ func CreateUnit(unitName string) *UnitDB {
 		return nil
 	}
 
-	var items [8]*Item
+	var items [9]*Item
 	bitems, exits := Binds[unit.UID]
 	if exits {
 		for _, bind := range bitems.Binds {
@@ -86,7 +86,7 @@ func CreateUnit(unitName string) *UnitDB {
 	return &UnitDB{NewID(), 1, unit.Health, 0, 0, unitName, unitName, items[:]}
 }
 
-//Unit Quality 
+//Unit Quality
 func (u *Unit) UQ() byte {
 	return u.Level + (u.Owner.Clout / 2)
 }
@@ -116,7 +116,7 @@ func (unit *Unit) WriteToPacket(packet *SG.SGPacket) {
 	packet.WriteByte(unit.Level)
 	packet.WriteByte(0)                      //hot key related
 	packet.WriteByte(0)                      //hot key related
-	packet.WriteUInt16(unit.HP)              //hp 
+	packet.WriteUInt16(unit.HP)              //hp
 	packet.WriteUInt16(unit.Data.Health)     //max hp
 	packet.WriteUInt16(unit.MaxWeight())     //max-weight?
 	packet.WriteUInt16(8)                    //space?
