@@ -1,0 +1,1 @@
+A purely educational project that aims at replicating the server software of the game "Shattered Galaxy".
