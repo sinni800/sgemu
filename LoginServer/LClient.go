@@ -1,9 +1,9 @@
 package LoginServer
 
 import (
-	C "code.google.com/p/sgemu/Core"
-	D "code.google.com/p/sgemu/Data"
-	. "code.google.com/p/sgemu/SG"
+	C "github.com/hjf288/sgemu/Core"
+	D "github.com/hjf288/sgemu/Data"
+	. "github.com/hjf288/sgemu/SG"
 )
 
 type LClient struct {

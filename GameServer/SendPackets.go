@@ -1,8 +1,8 @@
 package GameServer
 
 import (
-	. "code.google.com/p/sgemu/Data"
-	. "code.google.com/p/sgemu/SG"
+	. "github.com/hjf288/sgemu/Data"
+	. "github.com/hjf288/sgemu/SG"
 )
 
 func SendNormalChat(c *GClient, text string) {

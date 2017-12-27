@@ -3,7 +3,7 @@ package Data
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"labix.org/v2/mgo/bson"
+	"gopkg.in/mgo.v2/bson"
 	"strings"
 )
 

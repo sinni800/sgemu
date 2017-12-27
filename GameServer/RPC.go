@@ -2,8 +2,8 @@ package GameServer
 
 import "net/rpc"
 import "net"
-import "code.google.com/p/sgemu/Data"
-import "code.google.com/p/sgemu/SG"
+import "github.com/hjf288/sgemu/Data"
+import "github.com/hjf288/sgemu/SG"
 import "strconv"
 //import "errors"
 import "time"
