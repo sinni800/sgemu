@@ -3,7 +3,7 @@ package Extractor
 
 import (
 	"bufio"
-	. "code.google.com/p/sgemu/Data"
+	. "github.com/hjf288/sgemu/Data"
 	"log"
 	"os"
 )

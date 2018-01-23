@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "code.google.com/p/sgemu/Data/Extractor"
+	. "github.com/hjf288/sgemu/Data/Extractor"
 	"flag"
 	"fmt"
 )

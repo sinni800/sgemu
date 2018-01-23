@@ -1,10 +1,10 @@
 package main
 
 import (
-	C "code.google.com/p/sgemu/Core"
-	D "code.google.com/p/sgemu/Data"
-	. "code.google.com/p/sgemu/LoginServer"
-	"code.google.com/p/sgemu/SG"
+	C "github.com/hjf288/sgemu/Core"
+	D "github.com/hjf288/sgemu/Data"
+	. "github.com/hjf288/sgemu/LoginServer"
+	"github.com/hjf288/sgemu/SG"
 	"fmt"
 	"log"
 	"os"

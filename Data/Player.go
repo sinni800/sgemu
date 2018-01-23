@@ -1,6 +1,6 @@
 package Data
 
-import . "labix.org/v2/mgo/bson"
+import . "gopkg.in/mgo.v2/bson"
 import "strconv"
 
 //import "container/list"

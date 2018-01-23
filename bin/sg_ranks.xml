@@ -21,7 +21,7 @@
 	<Rank Level="34" Infantry="Scoria" Mobile="Flare" Aviation="Squall" Organic="Alluvion" Unk="12"></Rank>
 	<Rank Level="16" Infantry="Earth" Mobile="Ember" Aviation="Zephyr" Organic="River" Unk="3"></Rank>
 	<Rank Level="9" Infantry="Dirt" Mobile="Cinder" Aviation="Breeze" Organic="Stream" Unk="2"></Rank>
-	<Rank Level="78" Infantry="code.google.com/p/sgemu/Core" Mobile="Neutron" Aviation="Nighthawk" Organic="Waterfall" Unk="22"></Rank>
+	<Rank Level="78" Infantry="github.com/hjf288/sgemu/Core" Mobile="Neutron" Aviation="Nighthawk" Organic="Waterfall" Unk="22"></Rank>
 	<Rank Level="85" Infantry="Valley" Mobile="Rod" Aviation="Titan" Organic="Pocosin" Unk="5"></Rank>
 	<Rank Level="46" Infantry="Obsidian" Mobile="Blaze" Aviation="Tornado" Organic="Tsunami" Unk="15"></Rank>
 	<Rank Level="28" Infantry="Basalt" Mobile="Spark" Aviation="Simoom" Organic="Gush" Unk="8"></Rank>
