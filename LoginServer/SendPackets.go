@@ -1,7 +1,7 @@
 package LoginServer
 
 import (
-	. "github.com/hjf288/sgemu/SG"
+	. "code.google.com/p/sgemu/SG"
 ) 
 
 func SendMessage(c *LClient, errcode int, msg string) {

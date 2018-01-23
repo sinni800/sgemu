@@ -1,7 +1,7 @@
 package SG
 
 import (
-	C "github.com/hjf288/sgemu/Core"
+	C "code.google.com/p/sgemu/Core"
 	"fmt"
 	"io"
 	"strings"

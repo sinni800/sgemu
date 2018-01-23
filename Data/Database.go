@@ -3,8 +3,8 @@ package Data
 import (
 	"encoding/hex"
 	"fmt"
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
+	"labix.org/v2/mgo"
+	"labix.org/v2/mgo/bson"
 	"log"
 )
 

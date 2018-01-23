@@ -1,7 +1,7 @@
 package Data
 
 import "strings"
-import "github.com/hjf288/sgemu/SG"
+import "code.google.com/p/sgemu/SG"
 
 type UnitGroupData struct {
 	ID       uint16      `xml:",attr"`

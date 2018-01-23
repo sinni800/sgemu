@@ -1,7 +1,7 @@
 package Extractor
 
 import (
-	. "github.com/hjf288/sgemu/Data"  
+	. "code.google.com/p/sgemu/Data"  
 	//"Data/xml"
 	"encoding/xml"
 	"bufio"

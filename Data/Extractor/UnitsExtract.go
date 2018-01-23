@@ -3,11 +3,11 @@ package Extractor
 import (
 	"encoding/xml"
 	//"encoding/xml"
-	. "github.com/hjf288/sgemu/SG"
+	. "code.google.com/p/sgemu/SG"
 	. "encoding/binary"
 	"os"
 	//"fmt" 
-	. "github.com/hjf288/sgemu/Data"
+	. "code.google.com/p/sgemu/Data"
 	"log"
 )
 
