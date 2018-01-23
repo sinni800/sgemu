@@ -1,8 +1,8 @@
 package LoginServer
 
 import "net/rpc"
-import "github.com/hjf288/sgemu/Data"
-import "github.com/hjf288/sgemu/SG"
+import "github.com/sinni800/sgemu/Data"
+import "github.com/sinni800/sgemu/SG"
 import "strconv"
 import "net"
 

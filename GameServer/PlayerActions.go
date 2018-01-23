@@ -1,7 +1,7 @@
 package GameServer
 
 import (
-	. "github.com/hjf288/sgemu/Data"
+	. "github.com/sinni800/sgemu/Data"
 )
 
 func (c *GClient) RemoveUnit(unitID uint32) bool {

@@ -1,9 +1,9 @@
 package GameServer
 
 import (
-	C "github.com/hjf288/sgemu/Core"
-	D "github.com/hjf288/sgemu/Data"
-	. "github.com/hjf288/sgemu/SG"
+	C "github.com/sinni800/sgemu/Core"
+	D "github.com/sinni800/sgemu/Data"
+	. "github.com/sinni800/sgemu/SG"
 	//R "reflect"
 )
 

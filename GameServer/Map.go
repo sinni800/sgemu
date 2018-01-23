@@ -1,7 +1,7 @@
 package GameServer
 
-import C "github.com/hjf288/sgemu/Core"
-import . "github.com/hjf288/sgemu/SG"
+import C "github.com/sinni800/sgemu/Core"
+import . "github.com/sinni800/sgemu/SG"
 
 type MapType byte
 

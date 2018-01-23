@@ -1,8 +1,8 @@
 package LoginServer
 
 import (
-	. "github.com/hjf288/sgemu/SG"
-	D "github.com/hjf288/sgemu/Data"
+	. "github.com/sinni800/sgemu/SG"
+	D "github.com/sinni800/sgemu/Data"
 )
 
 func OnWelcome(c *LClient, p *SGPacket) {
